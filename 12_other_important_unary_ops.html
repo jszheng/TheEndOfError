@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>12 其他重要的一元运算 &#8212; THE END of ERROR - Unum Computing 0.1 documentation</title>
+
+    <link rel="stylesheet" href="_static/material-design-lite-1.3.0/material.blue-deep_orange.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx_materialdesign_theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fontawesome/all.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/d2l.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/d2l.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="13 融合操作（一次性表达式）" href="13_fused_operations.html" />
+    <link rel="prev" title="11 求幂" href="11_power.html" /> 
+  </head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header mdl-layout__header--waterfall ">
+    <div class="mdl-layout__header-row">
+        
+        <nav class="mdl-navigation breadcrumb">
+            <a class="mdl-navigation__link is-active">12 其他重要的一元运算</a>
+        </nav>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+        
+<form class="form-inline pull-sm-right" action="search.html" method="get">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+        <label id="quick-search-icon" class="mdl-button mdl-js-button mdl-button--icon"  for="waterfall-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q"  id="waterfall-exp" placeholder="Search" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </div>
+      </div>
+      <div class="mdl-tooltip" data-mdl-for="quick-search-icon">
+      Quick search
+      </div>
+</form>
+        
+<a id="button-show-source"
+    class="mdl-button mdl-js-button mdl-button--icon"
+    href="_sources/12_other_important_unary_ops.rst.txt" rel="nofollow">
+  <i class="material-icons">code</i>
+</a>
+<div class="mdl-tooltip" data-mdl-for="button-show-source">
+Show Source
+</div>
+        </nav>
+    </div>
+    <div class="mdl-layout__header-row header-links">
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation">
+          
+              <a  class="mdl-navigation__link" href="https://github.com/jszheng/TheEndOfError">
+                  <i class="fab fa-github"></i>
+                  Github
+              </a>
+      </nav>
+    </div>
+</header><header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_TheOriginalSin.html">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_hidden_scratchpads_3_layers.html">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_info_per_bit.html">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_comparison_operations.html">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_mul_div.html">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">12 其他重要的一元运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_fused_operations.html">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_TheOtherKindOfError.html">15. 另外一种误差</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_avoid_interval_arith_pitfalls.html">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_meaning_of_solve_equ.html">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_permission_to_guess.html">18 准许猜测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_pendulums_done_correctly.html">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_calculus_evil.html">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_end_of_error.html">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+        <main class="mdl-layout__content" tabIndex="0">
+
+	<script type="text/javascript" src="_static/sphinx_materialdesign_theme.js "></script>
+    <header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_TheOriginalSin.html">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_hidden_scratchpads_3_layers.html">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_info_per_bit.html">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_comparison_operations.html">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_mul_div.html">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">12 其他重要的一元运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_fused_operations.html">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_TheOtherKindOfError.html">15. 另外一种误差</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_avoid_interval_arith_pitfalls.html">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_meaning_of_solve_equ.html">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_permission_to_guess.html">18 准许猜测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_pendulums_done_correctly.html">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_calculus_evil.html">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_end_of_error.html">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+
+    <div class="document">
+        <div class="page-content" role="main">
+        
+  <div class="section" id="id1">
+<h1>12 其他重要的一元运算<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="id2">
+<h2>12.1 原型的范围<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>为了测试 unum 的优点，我们需要在科学计算器按钮上能找得到的那种功能。
+原型中<em>未</em>包含的一类函数是反三角函数，例如反正切。
+这些留给读者作为练习； 本书中的任何实验都不需要它们。</p>
+<p>“一元”运算是仅采用一个输入值并产生一个输出值的运算。 与基本的<span class="math notranslate nohighlight">\(+\)</span>
+<span class="math notranslate nohighlight">\(-\)</span> <span class="math notranslate nohighlight">\(\times\)</span> <span class="math notranslate nohighlight">\(\div\)</span>运算和 <span class="math notranslate nohighlight">\(x^y\)</span>
+函数不同，一元运算仅将 <strong>ubismoved</strong> 计数增加一个输入和一个输出 ubound
+中的位计数，并将 <strong>numbermoved</strong> 增加 2 而不是 3</p>
+<p>关于三角函数的部分包含一个有点激进的建议，它巧妙地解决了第 5.4.2
+节中提到的参数减少问题，但可能需要一些时间来适应。</p>
+</div>
+<div class="section" id="id3">
+<h2>12.2 绝对值<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<p>通常，绝对值函数是可以想象到的最简单的任务：将符号位设置为零。 对于
+unums 和 ubounds，绝对值有一些需要注意的事项。
+如果区间端点都小于零，我们必须记住反转区间端点的顺序。
+如果零位于区间内，则闭零是下界，端点绝对值的最大值是右侧端点。
+问题又是在细节上，详细信息参见附录 C.16。</p>
+<p>请注意，当取反反转值的左右位置时，它们会携带打开或关闭状态。 因此，代表
+<span class="math notranslate nohighlight">\([-3, -2)\)</span> 的 ubound 的绝对值应该是 <span class="math notranslate nohighlight">\((2, 3]\)</span> ：</p>
+<div class="figure align-default" id="id6">
+<img alt="_images/image-20230627083036422.png" src="_images/image-20230627083036422.png" />
+<p class="caption"><span class="caption-number">Fig. 187 </span><span class="caption-text">image-20230627083036422</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>尽管该操作看起来微不足道，<strong>absu</strong> 仍会更新 <strong>ubitsmoved</strong> 和
+<strong>numbermoved</strong> 计数。
+当端点交换位置时，需要移动数字和比特，这需要能量。 也可能没有必要有一个
+g-layer 版本，而这些东西显然可以在 u-layers
+中完成，而无需任何暂存器设施，但为了完整性，它也包含在原型中。</p>
+</div>
+<div class="section" id="id4">
+<h2>12.3 自然对数，及以 2 为底的对数<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<p>自然对数 <span class="math notranslate nohighlight">\(e^x\)</span> 的逆运算具有三个特殊的精确值。 0、1 和
+<span class="math notranslate nohighlight">\(\infty\)</span> 的对数分别恰好是 <span class="math notranslate nohighlight">\(–\infty\)</span>、0 和
+<span class="math notranslate nohighlight">\(\infty\)</span>。 当然，对于任何负实参，我们都会返回
+NaN，因为那里的对数是复值。 <strong>logg</strong> 和 <strong>logu</strong> 的代码在附录 C.16 中。
+下面是求范围 [0, 1] 的对数的示例，结果具有特别精确的界限：</p>
+<div class="figure align-default" id="id7">
+<img alt="_images/image-20230627085144237.png" src="_images/image-20230627085144237.png" />
+<p class="caption"><span class="caption-number">Fig. 188 </span><span class="caption-text">image-20230627085144237</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p>与指数函数一样，如果我们使用 2 而不是 e
+作为基数，我们可以从对数函数得到更精确的结果。
+这里有一个反复出现的主题：当有类似的函数承诺对某些精确输入提供精确答案时，为什么要在几乎所有地方使用不精确的函数？
+如果将该原理应用于三角函数，则会带来许多计算优势。</p>
+</div>
+<div class="section" id="id5">
+<h2>12.4 三角函数：逐渐结束疯狂<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
+<p>当学生第一次学习三角学时，通常会以度为单位介绍角度。
+每个人都知道“180度”和“45度”这样的角度，即使他们从未学过三角学。
+后来，微积分及以上级别的课程教授弧度是测量角度的更好方法，因为导数和微分方程的公式看起来更简单。
+由于高等数学的影响力，所有标准语言库都使用弧度作为正弦、余弦、正切等的参数。
+如果要计算 90° 的正弦，则必须在浮点数词汇表中尽可能接近弧度等效值
+<span class="math notranslate nohighlight">\(\pi/2\)</span>。 想象一下要求 90° 的正切； 使用略低于 <span class="math notranslate nohighlight">\(\pi/2\)</span>
+的浮点数会产生一个巨大的正数，但使用略高于 <span class="math notranslate nohighlight">\(\pi/2\)</span>
+的浮点数会产生一个巨大的负数。</p>
+<p>弧度的使用放弃了表达精确问题的精确答案的有用机会。
+<strong>那么为什么不使用度数而不是弧度来定义三角函数呢</strong>？ 如果您要求 30
+度的正弦，您将得到正好 1/2 。 135 度的正切值正好是 –1。 正切的 unum
+函数知道返回 NaN 作为精确 90° 角的正切。</p>
+<p>一旦你决定使用弧度，你就放弃了使用浮点数或
+unum表示的数字来达到这样一个特殊角度值的希望。
+在这方面，计算机就像人类一样：它们使用度数比使用弧度更容易！</p>
+<p>而且使用度的好处比这要更大：它解决了参数减少的问题。 回想一下第 5.4.2
+节中的示例，其中计算一个大数的三角函数需要使用<span class="math notranslate nohighlight">\(\pi\)</span>来“展开”其值，使用大量位来存储到<span class="math notranslate nohighlight">\(\pi\)</span>到足够的精度。
+如果我们只需要知道一个大浮点数除以整数 180 的余数怎么办？
+这根本不需要太多工作，当然也不需要存储数百位超越数 <span class="math notranslate nohighlight">\(\pi\)</span> 的值。
+如果有人提出愚蠢的请求，要求计算机将 <span class="math notranslate nohighlight">\(10^{100}\)</span>
+的余弦值视为精确数字，以度为单位则参数<span class="math notranslate nohighlight">\(10^{100}\)</span>度 与 10
+度完全相同。</p>
+<p>该原型包含几个三角函数，但不是完整的集合：</p>
+<div class="figure align-default" id="id8">
+<img alt="_images/image-20230627092840256.png" src="_images/image-20230627092840256.png" />
+<p class="caption"><span class="caption-number">Fig. 189 </span><span class="caption-text">image-20230627092840256</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<p>区间界限的方法是将下界参数减少到接近零的可管理范围，然后将上限参数减少到比下界大不超过两个周期的值。
+这可以捕获函数在输入区间内某处具有最小值或最大值的情况。
+例如，想象一下绕单位圆的 2/3，从 60° 到
+300°，两端的角度间隔都开放的情况如下图：</p>
+<div class="figure align-default" id="id9">
+<img alt="_images/image-20230627093333316.png" src="_images/image-20230627093333316.png" />
+<p class="caption"><span class="caption-number">Fig. 190 </span><span class="caption-text">image-20230627093333316</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<p>余弦是该角度区间的水平投影，其范围从 –1 到 cos(60°) =
+1/2，但函数值在右侧打开（蓝色条在右侧圆角化，以显示这一点） 。</p>
+<div class="figure align-default" id="id10">
+<img alt="_images/image-20230627093531906.png" src="_images/image-20230627093531906.png" />
+<p class="caption"><span class="caption-number">Fig. 191 </span><span class="caption-text">image-20230627093531906</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<p>正弦是该角度间隔的垂直投影，虽然 sin(60°) 和 sin(300°) 不能表示为精确的
+unum 值，但这并不重要，因为总体界限是单位圆的整个范围， 闭区间：</p>
+<div class="figure align-default" id="id11">
+<img alt="_images/image-20230627093629473.png" src="_images/image-20230627093629473.png" />
+<p class="caption"><span class="caption-number">Fig. 192 </span><span class="caption-text">image-20230627093629473</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+<p>定义了基本操作后，我们准备开始尝试测试问题来比较 unum 和 float。
+然而，还有一点未完成的事情：可以融合的操作的定义，即在
+g-layer中计算，使得返回到 u-layer 的值达到 u-layer 环境可能的最高精度。
+这就是确保可移植性（跨计算机系统的位相同结果）同时提高准确性的原因。
+它与 Java 使用的方法相反，在 Java
+中，通过简化操作以匹配最不准确的系统的操作来确保位相同的结果。
+具有明确定义的融合运算的结果之一是，它可以大大减少数值表示中对小数和指数字段位数的需求。</p>
+</div>
+</div>
+
+
+        </div>
+        <div class="side-doc-outline">
+            <div class="side-doc-outline--content"> 
+<div class="localtoc">
+    <p class="caption">
+      <span class="caption-text">Table Of Contents</span>
+    </p>
+    <ul>
+<li><a class="reference internal" href="#">12 其他重要的一元运算</a><ul>
+<li><a class="reference internal" href="#id2">12.1 原型的范围</a></li>
+<li><a class="reference internal" href="#id3">12.2 绝对值</a></li>
+<li><a class="reference internal" href="#id4">12.3 自然对数，及以 2 为底的对数</a></li>
+<li><a class="reference internal" href="#id5">12.4 三角函数：逐渐结束疯狂</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+            </div>
+        </div>
+
+      <div class="clearer"></div>
+    </div><div class="pagenation">
+     <a id="button-prev" href="11_power.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="P">
+         <i class="pagenation-arrow-L fas fa-arrow-left fa-lg"></i>
+         <div class="pagenation-text">
+            <span class="pagenation-direction">Previous</span>
+            <div>11 求幂</div>
+         </div>
+     </a>
+     <a id="button-next" href="13_fused_operations.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
+         <i class="pagenation-arrow-R fas fa-arrow-right fa-lg"></i>
+        <div class="pagenation-text">
+            <span class="pagenation-direction">Next</span>
+            <div>13 融合操作（一次性表达式）</div>
+        </div>
+     </a>
+  </div>
+        
+        </main>
+    </div>
+  </body>
+</html>

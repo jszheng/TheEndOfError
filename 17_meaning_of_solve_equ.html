@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>17 “解”方程到底是什么意思？ &#8212; THE END of ERROR - Unum Computing 0.1 documentation</title>
+
+    <link rel="stylesheet" href="_static/material-design-lite-1.3.0/material.blue-deep_orange.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx_materialdesign_theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fontawesome/all.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/d2l.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/d2l.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="18 准许猜测" href="18_permission_to_guess.html" />
+    <link rel="prev" title="16 避免区间算术陷阱" href="16_avoid_interval_arith_pitfalls.html" /> 
+  </head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header mdl-layout__header--waterfall ">
+    <div class="mdl-layout__header-row">
+        
+        <nav class="mdl-navigation breadcrumb">
+            <a class="mdl-navigation__link is-active">17 “解”方程到底是什么意思？</a>
+        </nav>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+        
+<form class="form-inline pull-sm-right" action="search.html" method="get">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+        <label id="quick-search-icon" class="mdl-button mdl-js-button mdl-button--icon"  for="waterfall-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q"  id="waterfall-exp" placeholder="Search" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </div>
+      </div>
+      <div class="mdl-tooltip" data-mdl-for="quick-search-icon">
+      Quick search
+      </div>
+</form>
+        
+<a id="button-show-source"
+    class="mdl-button mdl-js-button mdl-button--icon"
+    href="_sources/17_meaning_of_solve_equ.rst.txt" rel="nofollow">
+  <i class="material-icons">code</i>
+</a>
+<div class="mdl-tooltip" data-mdl-for="button-show-source">
+Show Source
+</div>
+        </nav>
+    </div>
+    <div class="mdl-layout__header-row header-links">
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation">
+          
+              <a  class="mdl-navigation__link" href="https://github.com/jszheng/TheEndOfError">
+                  <i class="fab fa-github"></i>
+                  Github
+              </a>
+      </nav>
+    </div>
+</header><header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_TheOriginalSin.html">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_hidden_scratchpads_3_layers.html">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_info_per_bit.html">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_comparison_operations.html">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_mul_div.html">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_other_important_unary_ops.html">12 其他重要的一元运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_fused_operations.html">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_TheOtherKindOfError.html">15. 另外一种误差</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_avoid_interval_arith_pitfalls.html">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_permission_to_guess.html">18 准许猜测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_pendulums_done_correctly.html">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_calculus_evil.html">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_end_of_error.html">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+        <main class="mdl-layout__content" tabIndex="0">
+
+	<script type="text/javascript" src="_static/sphinx_materialdesign_theme.js "></script>
+    <header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_TheOriginalSin.html">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_hidden_scratchpads_3_layers.html">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_info_per_bit.html">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_comparison_operations.html">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_mul_div.html">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_other_important_unary_ops.html">12 其他重要的一元运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_fused_operations.html">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_TheOtherKindOfError.html">15. 另外一种误差</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_avoid_interval_arith_pitfalls.html">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_permission_to_guess.html">18 准许猜测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_pendulums_done_correctly.html">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_calculus_evil.html">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_end_of_error.html">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+
+    <div class="document">
+        <div class="page-content" role="main">
+        
+  <div class="section" id="id1">
+<h1>17 “解”方程到底是什么意思？<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<div class="figure align-default" id="id14">
+<img alt="_images/image-20230703120902426.png" src="_images/image-20230703120902426.png" />
+<p class="caption"><span class="caption-number">Fig. 298 </span><span class="caption-text">image-20230703120902426</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+<blockquote>
+<div><p>这是一个绝望的同学如何回答这个问题的。本章也是关于找x的，就像这个例子一样，我们可能以一种数学老师没有想到的方式找到这个x.</p>
+</div></blockquote>
+<div class="section" id="id2">
+<h2>17.1 传统数值方法的另一个突破<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>在试图用ubox完整地解决一个应用前，我们需要有一个ubox版本的解方程的工具，就像你编程用的一个软件库一样。关于如何接方程，有堆成山的文献讲述了各种复杂的方法。但是ubox的方法与这些很不一样。首先一点，ubox方法一点也不复杂，因此很容易使用。</p>
+<p>传统的方法是要尽可能减少舍入误差。既然unum和ubox都不产生舍入误差，而是追踪在一个ULP范围的精确值，我们需要重新审视在计算机上“解方程”的真正含义。同样地，我们寻找的是不需要程序员有数值计算知识的一种方式，从而把绝大多数的工作都转到计算机来做正确的工作。</p>
+<p>即使一个最简单的一元线性方程也说明了需要一个新的方式</p>
+</div>
+<div class="section" id="id3">
+<h2>17.2 一元线性方程，用逆运算解决<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<p>每个人都应该在小学就看到过类似 “<span class="math notranslate nohighlight">\(3x+6=0\)</span>，那么x是多少？”
+这样的问题。数学老师在问你“解x”或是“找到x”时候，隐含是让你“重新安排方程，尽量把未知的量独自放到左边，其他放右边”。</p>
+<p>代数老师的方式就是不停地撤销对于x的操作，通过做逆运算直到只剩下x自身在方程的左边，而右边就是对已知数的各自操作。所以要撤销左边的+6，我们两边同时减6，得到“<span class="math notranslate nohighlight">\(3x=-6\)</span>”，然后我们撤销乘3操作，对方程用逆运算除3得到：“<span class="math notranslate nohighlight">\(x=-6/3\)</span>”。方程右边现在是已知量，可以简化成-2.
+这样解问题“x取什么值才能满足方程<span class="math notranslate nohighlight">\(bx+c=0\)</span>”的答案是<span class="math notranslate nohighlight">\(x=-c/b\)</span>。显然这是很合理一个让计算机解方程<span class="math notranslate nohighlight">\(bx+c=0\)</span>的方法.
+c取反再被b除，完了。</p>
+<p>但是b要是0呢？是要用-c除以0得到NaN吗？重新研究下原始问题。如果b是0
+（而且我们假设x是有限值），问题就变成了“x为什么值的时候c=0?”
+看上去是个愚蠢的问题，因为x都不在方程中。但是这个问题有一个合乎逻辑的答案。如果c不等于0，
+答案就是“无解，没有x的值满足c=0”。而如果c碰巧就是0，那么答案就是“x取任何值都满足方程0=0”。</p>
+<p>要是b是无限呢？或是负无限呢？如果c是有限的，那么公式<span class="math notranslate nohighlight">\(\frac{-c}{b}\)</span>得出0是答案。但是这不对，因为<span class="math notranslate nohighlight">\(\infty\cdot0=NaN\)</span>。又如果c是无限或是负无限呢？你没有办法把无限或是负无限相加得出一个有限数。所以一个很谨慎的答案有3个情况</p>
+<div class="figure align-default" id="id15">
+<img alt="_images/image-20230703133428436.png" src="_images/image-20230703133428436.png" />
+<p class="caption"><span class="caption-number">Fig. 299 </span><span class="caption-text">image-20230703133428436</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+<p>所以得出的一个基本原则是：计算“解算”一个方程跟数学上“解”一个方程是不一样的含义。你也许被教育着首先根据数学原理用逆函数把x变换到方程左边，然后将方程右边公式输入计算机。这过程中如上面所说，忽略了很多特殊情况从而带来了错误。</p>
+<p>更重要的是传统的计算数学有舍入-上溢-下溢的错误，所以不能相信它能匹配数学的答案，即使上面是最简单的情况。</p>
+<table border="2"><tr><td bgcolor="lightblue"><p>在计算机上“解方程”实际上是这个意思：找到一个最小的但是是完全的可表示值的集合，其计算机版本的数学方程式是真。换句话说，找到转换后的方程c-solution</p>
+</td></tr></table><p>奇怪的是，所有声称解方程的计算机程序几乎没有一个真的做到这些。他们要么只给出一个值而忽略了其他可以满足的值，所以解是不完全的，要么就含有不能让原始方程式相等的值。即使是Mathematica软件也有时候糊涂了，比如说满足“0=0”的数值解是空集。</p>
+<div class="figure align-default" id="id16">
+<img alt="_images/image-20230703135521864.png" src="_images/image-20230703135521864.png" />
+<p class="caption"><span class="caption-number">Fig. 300 </span><span class="caption-text">image-20230703135521864</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+<p>如果你用浮点算术，对方程“<span class="math notranslate nohighlight">\(bx+c=0\)</span>”的解几乎<strong>总是错的</strong>。比如如果你试图用浮点解<span class="math notranslate nohighlight">\(7x-2=0\)</span>并使用<span class="math notranslate nohighlight">\(\frac{-c}{b}\)</span>公式计算，你会得到：</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x=\frac{2}{7}\)</span>, 半精度是<span class="math notranslate nohighlight">\(\frac{585}{2048}\)</span>,
+但是代回方程<span class="math notranslate nohighlight">\(7x-2\)</span>得到<span class="math notranslate nohighlight">\(-\frac{1}{2048}\)</span>, 不等于0.</p></li>
+<li><p><span class="math notranslate nohighlight">\(x=\frac{2}{7}\)</span>, 单精度是<span class="math notranslate nohighlight">\(\frac{9586981}{33554432}\)</span>,
+但是代回方程<span class="math notranslate nohighlight">\(7x-2\)</span>得到<span class="math notranslate nohighlight">\(\frac{3}{33554432}\)</span>,
+不等于0.</p></li>
+<li><p><span class="math notranslate nohighlight">\(x=\frac{2}{7}\)</span>,
+双精度是<span class="math notranslate nohighlight">\(\frac{10293942005418277}{36028797018963968}\)</span>,
+但是代回方程<span class="math notranslate nohighlight">\(7x-2\)</span>得到<span class="math notranslate nohighlight">\(\frac{3}{36028797018963968}\)</span>,
+不等于0.</p></li>
+</ul>
+<p>所以最终如果一个用浮点解x的程序后面来到一个像下面的测试语句</p>
+<div class="figure align-default" id="id17">
+<img alt="_images/image-20230703141436948.png" src="_images/image-20230703141436948.png" />
+<p class="caption"><span class="caption-number">Fig. 301 </span><span class="caption-text">image-20230703141436948</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+<p>不管用什么精度它总是会去做错误的事情。所以浮点数的一个绕过问题的方法是测试结果是否“<em>接近</em>”，而“接近”的定义是靠人定义，每个地方都不同。而且“接近”的定义到底是按绝对误差还是相对误差啊？还有更多需要人来决定的。这些绕过问题的方法让代码既难写又难读。</p>
+<div class="section" id="unum">
+<h3>17.2.1 unum和间隔的求逆<a class="headerlink" href="#unum" title="Permalink to this heading">¶</a></h3>
+<p>因为unum是遵循数学规则的，所以用求逆运算是安全的。结果永远含有上面定义的，但不是永远是满足原始方程的最小集合。其实就是c-solution。如果结果是按最小的ULP宽度为单位的多个ULP，
+那么一个方法就是构建一个ubox集合作为逆操作的结果，做法是测试原始方程，丢弃失败的，就得到了方程的c-solution.</p>
+<p>对于线性方程，<span class="math notranslate nohighlight">\(\frac{-c}{b}\)</span>总是最小宽度无需再调优。比如一个中等的环境{1,
+3},
+对于<span class="math notranslate nohighlight">\(7x-2=0\)</span>方程的unum版本<span class="math notranslate nohighlight">\(\hat{7} \otimes xu \ominus \hat{2} \approx \hat{0}\)</span>解<span class="math notranslate nohighlight">\(\frac{-c}{b}\)</span>是</p>
+<div class="math notranslate nohighlight" id="equation-17-meaning-of-solve-equ-0">
+<span class="eqno">(68)<a class="headerlink" href="#equation-17-meaning-of-solve-equ-0" title="Permalink to this equation">¶</a></span>\[negateu[\hat{-2}] \odot \hat{7} = (\frac{73}{256}, \frac{74}{256})\]</div>
+<p>也就是<span class="math notranslate nohighlight">\(0.28515625 \le x \le 0.2890625\)</span>；这是一个正确的声明，而且unum是一个最小ULP宽度，没有必要再分割了。而且结果是一致的，unum的比特表示是0
+00 01001001
+11111，只占用16bit，代回到<span class="math notranslate nohighlight">\(7x-2\)</span>得到开区间<span class="math notranslate nohighlight">\((-\frac{1}{256}, \frac{3}{256})\)</span>,
+其中包含0.</p>
+<p>一个unum程序后面可以做如下测试</p>
+<div class="figure align-default" id="id18">
+<img alt="_images/image-20230703150759553.png" src="_images/image-20230703150759553.png" />
+<p class="caption"><span class="caption-number">Fig. 302 </span><span class="caption-text">image-20230703150759553</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+</div>
+<p>无论使用什么环境，结果的True或是False都是正确的，也不需要插入“接近度”容错的修正代码</p>
+<p>那这跟区间算术有什么不一样呢？区间算术如果说使用半精度浮点表示边界点，就是<span class="math notranslate nohighlight">\(\frac{585}{2048} \le x \le \frac{586}{2048}\)</span>，
+是一个真的声明，只是没有必要包含边界点。而且占用了32b来描述x.</p>
+<p>更大的问题在于，传统的间隔非常容易上溢或下溢，
+即使是单变量线性方程。比如用单精度回答下面问题</p>
+<blockquote>
+<div><p>满足<span class="math notranslate nohighlight">\(\frac{1}{64}x-10000=0\)</span>的x值是什么？</p>
+</div></blockquote>
+<p>整数算术是数学上完全严格的，所以我们可以用<span class="math notranslate nohighlight">\(\frac{-c}{b}\)</span>公式。而且值<span class="math notranslate nohighlight">\(b=\frac{1}{64}\)</span>和<span class="math notranslate nohighlight">\(c=-10000\)</span>都是半精度可以准确表示的值。而且b或c都没有0，所以不需要处理特别情况。但是传统的间隔算术在做上边界除法的时候上溢了，答案变成了x可以是正无穷。</p>
+<p>更糟糕的事情是比如下面这个方程</p>
+<blockquote>
+<div><p>满足<span class="math notranslate nohighlight">\(10^{-8}x+10^{-8}=0\)</span>的x的值是什么？</p>
+</div></blockquote>
+<p>显然结果应该是<span class="math notranslate nohighlight">\(x=-1\)</span>,
+但是b和c的值在半精度下都下溢了。所以最终方程的b和c都被当成了0.
+一个浮点算法跌到了第三个选项，答案是所有的实数都是解。</p>
+<p>如果我们试图用传统的间隔，边界bounds，b 和
+c都是闭区间<span class="math notranslate nohighlight">\([0, \frac{1}{16777216}]\)</span>, 那么去匹配下面这些选项吧</p>
+<div class="figure align-default" id="id19">
+<img alt="_images/image-20230703152746757.png" src="_images/image-20230703152746757.png" />
+<p class="caption"><span class="caption-number">Fig. 303 </span><span class="caption-text">image-20230703152746757</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>选哪个case呢</strong>？b和c都可以被当做非零或是零，答案就是很难看的多种选择包括:
+间隔<span class="math notranslate nohighlight">\([-\infty, 0]\)</span>, “空集”或是“所有实数”。</p>
+<p>目前我们所有的样例都是用精确的值作为b和c。
+那么用ubound表示的间隔作为系数又如何呢？</p>
+</div>
+<div class="section" id="ubound">
+<h3>17.2.2 ubound作为系数<a class="headerlink" href="#ubound" title="Permalink to this heading">¶</a></h3>
+<p>目前我们看到的都是b和c表示为单个unum，所以他们要么是精确的，或是一个ULP宽度，不会跨越0.
+线性方程的b和c可以不仅仅是实数，也可以是一般间隔。这个情况就更复杂了。有18中情况出现，其中有些还很怪异。方程<span class="math notranslate nohighlight">\(y=bx+c\)</span>描述了一根直线，斜率为b，在y轴上交点为c.
+但是当b和c是一个范围的值的话，方程表示的图就像一个领结，斜率是摆动的，中间是宽度不为零的夹点在y轴上。</p>
+<p>比如下图是<span class="math notranslate nohighlight">\(bx+c\)</span>的图，其中b的范围是-0.5到0.25，交在y轴上的c范围是0.25到0.375.</p>
+<div class="figure align-default" id="id20">
+<img alt="_images/image-20230703154001093.png" src="_images/image-20230703154001093.png" />
+<p class="caption"><span class="caption-number">Fig. 304 </span><span class="caption-text">image-20230703154001093</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
+<p>从这个图上可以看到方程<span class="math notranslate nohighlight">\(bx+c=0\)</span>是两个不相连的范围。一个是从<span class="math notranslate nohighlight">\(-\infty\)</span>到-1,
+另外一个是从0.5到<span class="math notranslate nohighlight">\(\infty\)</span>.
+端点-1和0.5的开闭取决与b和c端点的开闭情况。</p>
+<p>假设b的范围是(-0.5, 0.25), 而y的交点是(0, 0.375),
+结果就是所有的数除了零。</p>
+<div class="figure align-default" id="id21">
+<img alt="_images/image-20230703154420787.png" src="_images/image-20230703154420787.png" />
+<p class="caption"><span class="caption-number">Fig. 305 </span><span class="caption-text">image-20230703154420787</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>读者的练习</strong>：方程<span class="math notranslate nohighlight">\(bx+c=0\)</span>也可以用融合的乘加来表示:
+<span class="math notranslate nohighlight">\(fmau[\hat{b},\hat{x}, \hat{c}]\approx\hat{0}\)</span>.
+使用融合乘加的结果会得到比分离的<span class="math notranslate nohighlight">\(\hat{b}\otimes\hat{x}\oplus\hat{c}\approx\hat{0}\)</span>更紧的结果吗？</p>
+<p>回忆一下什么叫“解方程”？：是找到<strong>所有</strong>的满足方程的值，而不只是通过逆运算得到的一个值。逆运算需要处理很多特例，所以这不是最好的方法。要写一个直接解方程<span class="math notranslate nohighlight">\(bx+c=0\)</span>的程序，我们需要考虑6种b可能的情况</p>
+<ol class="arabic simple">
+<li><p>精确的0</p></li>
+<li><p>精确的0到正数</p></li>
+<li><p>负数到精确的0</p></li>
+<li><p>严格大于0的数</p></li>
+<li><p>严格小于0的数</p></li>
+<li><p>从负数到正数</p></li>
+</ol>
+<p>而c需要考虑以下三个情况</p>
+<ol class="arabic simple">
+<li><p>含有0</p></li>
+<li><p>严格大于0</p></li>
+<li><p>严格小于0</p></li>
+</ol>
+<p>这就是为什么需要18种情况，还没有考虑特殊输入值如无穷和NaN情况。应该把这么复杂的代码做成数学库，让普通程序员无需处理这样的事情。下面的x-y图是这些case对于方程<span class="math notranslate nohighlight">\(y=bx+c\)</span>的所有表示</p>
+<div class="figure align-default" id="id22">
+<img alt="_images/image-20230703160428137.png" src="_images/image-20230703160428137.png" />
+<p class="caption"><span class="caption-number">Fig. 306 </span><span class="caption-text">image-20230703160428137</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+</div>
+<p>其中比较微妙的一个方面是第一列，当c包含0，b=0的情况，解集是
+<span class="math notranslate nohighlight">\(-\infty \lt x \lt \infty\)</span>，为什么解集不包含无穷，图上画的好像是包含的。除非我们仔细定义方程为</p>
+<div class="figure align-default" id="id23">
+<img alt="_images/image-20230703161009911.png" src="_images/image-20230703161009911.png" />
+<p class="caption"><span class="caption-number">Fig. 307 </span><span class="caption-text">image-20230703161009911</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+</div>
+<p>没有这样的定义，就不能说<span class="math notranslate nohighlight">\(x=\infty\)</span>满足方程<span class="math notranslate nohighlight">\(0 x+c=0\)</span>，因为乘法的结果将会是NaN.</p>
+<p>而注意左下角的解就变成了包含无穷了。b包含0且c包含0，结果的确是
+<span class="math notranslate nohighlight">\(-\infty \le x \le \infty\)</span>,
+无穷乘以一个跨越0的区间的确产生了范围包含整个实数区域。这就是一个典型例子来说明一个数学的陈述翻译成计算机通常并不一定是相同的。</p>
+<table border="2"><tr><td bgcolor="lightblue"><p>到目前的讨论都是对于一个哪怕最简单的数学问题找到c-solution都是很复杂的。下一节将反过来，ubox提供了令人惊讶的简单和鲁棒的方法，可用于大范围的问题，且不需要程序员拥有除了编程以外的任何知识</p>
+</td></tr></table></div>
+</div>
+<div class="section" id="id4">
+<h2>17.3 “尝试所有的！”数轴上的穷举搜索<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="id5">
+<h3>17.3.1 重温二次方程<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
+<div class="figure align-default" id="id24">
+<img alt="_images/image-20230703162600603.png" src="_images/image-20230703162600603.png" />
+<p class="caption"><span class="caption-number">Fig. 308 </span><span class="caption-text">image-20230703162600603</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+</div>
+<p>在本书第一部分中，我们展示了用unum和最原始的二次方程解的公式求解如下二次方程<span class="math notranslate nohighlight">\(ax^2+bx+c=0\)</span>可以得出安全和可用的结果。二次方程解的公式是一个很好的逆操作方式的例子，一些人首先就需要努力才能推导出这个解</p>
+<div class="math notranslate nohighlight" id="equation-17-meaning-of-solve-equ-1">
+<span class="eqno">(69)<a class="headerlink" href="#equation-17-meaning-of-solve-equ-1" title="Permalink to this equation">¶</a></span>\[r_1, r_2 = \frac{-b\pm\sqrt{b^2-4ac}}{2a}\]</div>
+<p>除非你常常用数学，小学以后也许你就忘记这个公式了，需要的时候还需要查一下。</p>
+<p>上一节展示了解决线性方程用逆运算有多复杂。如果你需要建立一个unum库来解二次方程，用不同情况来逐一解决，那么下图就显示你要处理多么复杂的情况</p>
+<div class="figure align-default" id="id25">
+<img alt="_images/image-20230703170035500.png" src="_images/image-20230703170035500.png" />
+<p class="caption"><span class="caption-number">Fig. 309 </span><span class="caption-text">image-20230703170035500</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+</div>
+<p>你一直被教导说二次方程最多有两个根，但是如果系数是非精确的，那么实际上实数轴上有三个区域都可以让方程为0.
+至少我们知道，如果a=0,
+方程退化为前一节讲的只有18种情况的一次方程。而如果a不是严格的0，那么就有附加几十种情况需要折腾，如同上面这种奇怪的状况。平方根号里面的数可以是0或是负数，也需要分开处理。为每种状况分别处理不是一种很有效的方法，有更好的方法。</p>
+</div>
+<div class="section" id="id6">
+<h3>17.3.2 大胆地分割无穷大：尝试一切<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
+<p>Unum
+math提供了如此简单和无痛的东西，以至于它似乎好得令人难以置信。它可以快速测试整个实数线，以筛选出不必要的工作。例如，假设要求解的二次方程为</p>
+<div class="math notranslate nohighlight" id="equation-17-meaning-of-solve-equ-2">
+<span class="eqno">(70)<a class="headerlink" href="#equation-17-meaning-of-solve-equ-2" title="Permalink to this equation">¶</a></span>\[x^2+1=0\]</div>
+<p>如果答案必须是实数，则无解。您可以计算平方根内的值，<span class="math notranslate nohighlight">\(b^2 - 4 a c\)</span>
+并测试它是否为负数，但这算是很多工作了。我们可以更轻松地完成：尝试
+<span class="math notranslate nohighlight">\([-\infty, \infty]\)</span>。如果有任何地方存在<span class="math notranslate nohighlight">\(x^2 + 1 = 0\)</span>
+的解，那么 unum 版本将产生 True。试试吧：</p>
+<div class="figure align-default" id="id26">
+<img alt="_images/image-20230703195956414.png" src="_images/image-20230703195956414.png" />
+<p class="caption"><span class="caption-number">Fig. 310 </span><span class="caption-text">image-20230703195956414</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+</div>
+<p>只需一次乘法、一次加法和一次比较，unum math
+就筛选出是否需要任何进一步工作。False
+结果并不意味着该方法根本找不到解;它证明了在整个实数线的任何地方都没有解，并且
+<span class="math notranslate nohighlight">\(-\infty\)</span> 或 <span class="math notranslate nohighlight">\(+\infty\)</span>
+也不是方程的解。使用“<span class="math notranslate nohighlight">\(\approx\)</span>”而不用“<span class="math notranslate nohighlight">\(\equiv\)</span>”作为相等性测试是关键，因为“<span class="math notranslate nohighlight">\(\approx \hat{0}\)</span>’”表示与零相交。</p>
+<p>有了这个想法，我们可以重新审视第 1 部分中的示例:
+<span class="math notranslate nohighlight">\(3x^2+100x+2=0\)</span>。用unum形式定义函数为<strong>quadu</strong>[ub],
+ub是任何ubound，这里用了polyu来避免任何依赖性问题让函数求值变得更宽松。</p>
+<div class="figure align-default" id="id27">
+<img alt="_images/image-20230703201727673.png" src="_images/image-20230703201727673.png" />
+<p class="caption"><span class="caption-number">Fig. 311 </span><span class="caption-text">image-20230703201727673</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+</div>
+<p>第一步只是看看是否有解。找出答案只需要调用quad，使用整个实数线<span class="math notranslate nohighlight">\((-\infty, \infty)\)</span></p>
+<div class="figure align-default" id="id28">
+<img alt="_images/image-20230703201927438.png" src="_images/image-20230703201927438.png" />
+<p class="caption"><span class="caption-number">Fig. 312 </span><span class="caption-text">image-20230703201927438</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+</div>
+<p>结果为真意味着值得再做一些检查。在第 1 部分中，使用的环境是最接近 IEEE
+单精度的环境，即 {3、5} 的环境;
+直接使用二次公式对于最接近零的根（因数字抵消而丢失信息的根）给出了以下结果：</p>
+<blockquote>
+<div><p>(–<strong>0.02001201</strong>60…,–<strong>0.02001201</strong>36…)</p>
+</div></blockquote>
+<p>很难阅读这么多小数，因此数字不同的以橙色显示。上述界限的宽度为<span class="math notranslate nohighlight">\(2.4\cdots\times 10^{-9}\)</span>，比最小ULP尺寸大数百倍。这意味着它可能包含一些不满足原始方程的unum，因此可能不符合c解的定义。</p>
+<p>原型中的<strong>solveforub</strong>[domain]函数采用一组ubounds域，这些域定义了要在其中搜索的实数线的区域，并假定已经定义了真条件函数<strong>conditionQ</strong>[ub]。<strong>solveforub</strong>
+的代码在附录 D.8 中。该算法的说明如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>将trials集设置为域，将solutions设置为空集 {}。
+当trials集为非空时：
+    将 new 设置为空集 {}。
+    对于trials中的每个 ubound ub：
+        测试 ub 是否满足真值条件。
+        如果是，尝试将其拆分为较小的 ubound。
+            如果 ub 是最小的 ULP（不可拆分），请将其添加到solution集中;
+            否则，将拆分添加到new和trials中;从trials中删除 ub 。
+        将trials设置为new。
+返回solutions 作为真值条件的 c-solution。
+</pre></div>
+</div>
+<p>在向solutions集添加 ubound
+时，它会与已经存在的任何邻居合并。执行此操作的原型函数是
+<strong>ubinsert</strong>[set， ub]，其中 set 包含 ubounds，ub 是要添加到set中的
+ubound，可以作为实数的独立范围，也可以（如果可能）连接到集合中的现有
+ubound。</p>
+<p>其中“<em>尝试将其拆分为较小的
+ubound</em>”的任务可以用各种不同方式做，原型中做分割的函数是<strong>splitub</strong>[ub]，你可以给splitub整个实数区间，和无限边界点。它首先被分割为<span class="math notranslate nohighlight">\(-\infty, (-\infty, \infty)\)</span></p>
+<p>和<span class="math notranslate nohighlight">\(\infty\)</span>。优先是使得探索的区域落到有限的区域。所以<span class="math notranslate nohighlight">\((-\infty, \infty)\)</span>又被分割为<span class="math notranslate nohighlight">\((-\infty,-maxreal), -maxreal, (-maxreal, \infty)\)</span>。然后右边区间<span class="math notranslate nohighlight">\((-maxreal, \infty)\)</span>在maxreal点被分割。然后优先级是在正负数区分上，分割点在0.
+再往下就是使用最粗粒度的ULP尺度分割了。下图显示了整个分割过程。</p>
+<div class="figure align-default" id="id29">
+<img alt="_images/image-20230703211947848.png" src="_images/image-20230703211947848.png" />
+<p class="caption"><span class="caption-number">Fig. 313 </span><span class="caption-text">image-20230703211947848</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>solveforub</strong>函数返回c-solution:
+最小，完全和最紧致的满足方程式的可表示值的集合。试试在二次方程上使用看能否自动找到跟好的集合。我们不需要很大的指数，一个{2,
+5}的环境就足够了。解的范围付给变量<strong>sols</strong>。然后用十进制显示</p>
+<div class="figure align-default" id="id30">
+<img alt="_images/image-20230704074026301.png" src="_images/image-20230704074026301.png" />
+<p class="caption"><span class="caption-number">Fig. 314 </span><span class="caption-text">image-20230704074026301</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+</div>
+<p>两个根的开区间表示边界只有一个最小ULP宽度，比用求逆的方式得出来的结果信息量多上百倍。</p>
+</div>
+<div class="section" id="id7">
+<h3>17.3.3 高度可调的并行度<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
+<p>每个区域拆分都会创建三个独立的 ubound
+进行测试。这些测试可以使用最简单的并行形式并行完成：对不同的数据进行相同的操作。如果我们愿意，分割出的子区域数量可能远远超过三个。任何
+ubound 都可以使用 uboxlist 拆分为多个较小的
+ubound，而不是简单的拆分。如果你手边有 1024
+个处理器，为什么不给他们每个人一些事情来推进答案呢？这是计算机系统可以做出的选择，而不是用户，因为操作系统知道哪些处理器处于空闲状态，哪些处理器处于繁忙状态。也许一次使用
+1024 个处理器会将通向 c -solution 的路径加快 30 倍;值得吗？</p>
+<p>这取决于速度和成本之间的权衡。在这种情况下，高度并行版本将比将开放
+ubound 最小拆分为三个 ubound
+消耗更多的电力。但这很可能是片上并行计算，比片外通信经济得多，因此它可能对总电费增加很少。人等待答案的时间减少则具有可量化的财务价值，这很可能证明处理器内核的额外工作是合理的。</p>
+<p>与许多并行方法不同，无论使用多少个处理器，或使用超精细的 ubound
+拆分都会产生<strong>相同的</strong>最终结果。只有一个c-solution，无论何种方式去测试各自可能性，尝试一切的方法都会找到它。</p>
+<p>重点是：在使用 <strong>solveforub</strong>
+方法时，可以选择使用并行处理。这是一个可选择的并行级别，因此是进行速度-功耗权衡的简单方法。有时候值得付出更多的总工作量，来提高获取信息的速度。</p>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>17.4 通用方程求解器<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="id9">
+<h3>17.4.1 那些通常可以工作的方法<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h3>
+<p>一本经典的数值分析书是Forman S. Acton的《Numerical Methods that
+Work》。如果你有原版的拷贝，你可以看到标题中有个浮雕的单词“USUALLY”，没有墨水，在“WORK”之前。在重印本中，USUALLY以小字显示，但不是正式标题的一部分。</p>
+<p>阿克顿开玩笑的“注意小字印刷”的警告承认了现有数值技术的不令人满意的状态。就像积分例程一样，传统的数值分析教材提供单变量求解方程（求根）的大量方法，并附有这样的建议：“在情况A中使用它，但要小心，因为这样那样可能会出错，然后你应该尝试不同的方法。</p>
+<div class="figure align-default" id="id31">
+<img alt="_images/image-20230704082834198.png" src="_images/image-20230704082834198.png" />
+<p class="caption"><span class="caption-number">Fig. 315 </span><span class="caption-text">image-20230704082834198</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
+</div>
+<p>目前已有的数值上求解方程 <span class="math notranslate nohighlight">\(f(x) = 0\)</span> 根的方法通常具有如下缺点：</p>
+<ul class="simple">
+<li><p>有些需要你选择一个初始的猜测值。如果你猜得不好，你将完全错过你所寻找的根，或者你将无法找到<em>所有的</em>根。</p></li>
+<li><p>一种方法需要知道或计算函数 f 的导数，但倒数可以可能并非到处都存在。</p></li>
+<li><p>某些方法在函数与 x 轴相交时有效，但当它与 x 轴<em>相切</em>时不起作用;
+或者它们在理论上工作，但运行速度要慢得多。</p></li>
+<li><p>寻找交叉过零的方法会看不到当函数与 x 轴交叉但又在<em>一个ULP
+的尺度</em>内穿回的情况。（回想一下第 15.7
+节中描述的“平滑惊喜”的函数)。</p></li>
+<li><p>为<em>不连续</em>函数寻找零交叉的方法也可能进入死循环迭代，或者错误地认为在它跳过
+x 轴的不连续处必然有一个根。</p></li>
+<li><p>分而治之的方法需要艺术地选择“递归界限”作为停止点，即使极限设置到极高的水平，他们仍然会错过一些根。（同样，第
+15.7 节中的“平滑惊喜”就是这种例子)。</p></li>
+<li><p>任何方法使用浮点数（包括传统的区间算术）时，下溢都可能被误认为根。例如，如果
+f(x)
+是钟形曲线（高斯分布）的公式，则大多数根查找器会错误地将离原点不远的
+x 值 f(x) 当做就是零。</p></li>
+</ul>
+<table border="2"><tr><td bgcolor="lightblue"><p>ubox的方程求解/寻根方法不会遗漏任何东西，因为它没有对实数线进行采样;它检查整体，每个值。这是一种（总是，而不是也许）可行的的数值方法</p>
+</td></tr></table><p>而且这种方法也是特别快的因为它可以从极低的精度开始工作，逐渐提升直到在解集上达到任何需要的信息精度。</p>
+<p>下面是一些用ubox求根的例子，来演示想击败“尝试所有”的方法有多难。</p>
+<p>区间<span class="math notranslate nohighlight">\((0, \infty)\)</span>可以用{ubitmask, posinfu}表示</p>
+<div class="figure align-default" id="id32">
+<img alt="_images/image-20230704085710344.png" src="_images/image-20230704085710344.png" />
+<p class="caption"><span class="caption-number">Fig. 316 </span><span class="caption-text">image-20230704085710344</span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
+</div>
+<p>说明<span class="math notranslate nohighlight">\(1/x\)</span>在上面区间是有根的。试试Warlpiri unum,
+唯一可用的解是<span class="math notranslate nohighlight">\(\infty\)</span></p>
+<div class="figure align-default" id="id33">
+<img alt="_images/image-20230704090029236.png" src="_images/image-20230704090029236.png" />
+<p class="caption"><span class="caption-number">Fig. 317 </span><span class="caption-text">image-20230704090029236</span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
+</div>
+<p>另外一个例子，
+将环境设为足够低，并且问“满足方程<span class="math notranslate nohighlight">\(sin(x)=1\)</span>的x是什么？”。本质上就是问arcsin(1)的值。如果你只需要限制结果在主要范围中，你可以在conditionQ中约束角的范围。下面的代码找到所有的满足解，使用{2,
+3}环境。<img alt="image-20230704090542006" src="_images/image-20230704090542006.png" /></p>
+<p>对于习惯于使用弧度的程序员来说，看到如此简洁、准确的答案可能会令人惊讶。在范围(-maxreal,
+maxreal)之间有三个精确的以角度为单位的值满足<span class="math notranslate nohighlight">\(sin(x)=1\)</span>。在这个之外还有无穷多个满足方程的解，函数<strong>solveforub</strong>也都找到了并放在左右两个无限长的区间里面。</p>
+<p><strong>读者的练习</strong>：函数<span class="math notranslate nohighlight">\(sin(\frac{1}{x})\)</span>在接近0的附近有无限多个根。使用Warlpiri
+unum能产生什么样的ubound可以满足<span class="math notranslate nohighlight">\(sin(\frac{1}{x})\)</span>=0?
+从<span class="math notranslate nohighlight">\([-\infty, \infty]\)</span>dmain开始找</p>
+</div>
+<div class="section" id="id10">
+<h3>17.4.2 求逆方法通常会失败<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h3>
+<p>本节的开头显示了对线性和二次方程使用求逆方法时会发生什么情况。解三次方程和四次方程也有封闭的形式;而且会是非常复杂的表达式。很长一段时间以来，没有人能弄清楚五次方程的反演公式，人们一直认为这是因为需要去做很多页看起来很糟糕的代数带来的挑战。</p>
+<p>大约两百年前，数学家发现了一个证明，证明对于五次或更高的多项式不存在闭式解。“这很好，”你可能会说，“因为我们总是可以使用标准的数值方法来找到根。</p>
+<p>事实上不行的。看看下一页的五次多项式的图：</p>
+<div class="figure align-default" id="id34">
+<img alt="_images/image-20230704103410123.png" src="_images/image-20230704103410123.png" />
+<p class="caption"><span class="caption-number">Fig. 318 </span><span class="caption-text">image-20230704103410123</span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
+</div>
+<p>基于浮点数的数值寻根方法在遇到这样的问题时很艰难。即使它们足够复杂，可以处理多阶根（多项式中在
+–1 处有一个三重根，在 2 处有一个双根），它们也会错误地将许多接近 –1
+和接近 2 的 x 值声明为根，因为下溢为零。</p>
+<p><strong>给读者的练习</strong>：对于 IEEE
+单精度，即使多项式计算为完美的浮点精度，上述多项式中 –1 和 2
+周围的哪些值范围也会被舍入为零（下溢）？</p>
+<p>所以这里既没有逆函数，传统的数值方法给出最多也只能给出很差的答案。那么ubox方法可以解决这个问题吗？试试看</p>
+<div class="figure align-default" id="id35">
+<img alt="_images/image-20230704105031050.png" src="_images/image-20230704105031050.png" />
+<p class="caption"><span class="caption-number">Fig. 319 </span><span class="caption-text">image-20230704105031050</span><a class="headerlink" href="#id35" title="Permalink to this image">¶</a></p>
+</div>
+<p>ubox方法对高阶的多项式也是可行的，五阶没有什么特殊，只是一个最低的没有逆公式的多项式而已。如果根无法在计算环境中精确地表达，就返回包含根的最小ULP宽度的unum。</p>
+<p>这感觉就像一个进了糖果店的小孩，拥有了这样一个可以很好工作在如此多的场景下的求解器，还不需要什么思考，也不需要背什么求逆的代数公式了。</p>
+<p>即使方程<span class="math notranslate nohighlight">\(f(x)=0\)</span>存在求逆公式，有许多函数甚至与多项式并不相似，而且不能对超越函数求逆。</p>
+<p>比如这个</p>
+<div class="math notranslate nohighlight" id="equation-17-meaning-of-solve-equ-3">
+<span class="eqno">(71)<a class="headerlink" href="#equation-17-meaning-of-solve-equ-3" title="Permalink to this equation">¶</a></span>\[log(x)-\frac{1}{x}=0\]</div>
+<p>你如何才能把x全部变换到方程左边呢？没有办法。但是“尝试所有”的方法不需要变换，因为它直接测试方程是否成立。在把上面例子装入<strong>solveforub</strong>前，考虑下一种有意思的用NaN的方法。solveforub可以自动算出函数在哪个domain。条件测试是这样：“f的求值会产生NaN吗？”。我们用整个实数区间作为初始</p>
+<div class="figure align-default" id="id36">
+<img alt="_images/image-20230704110425344.png" src="_images/image-20230704110425344.png" />
+<p class="caption"><span class="caption-number">Fig. 320 </span><span class="caption-text">image-20230704110425344</span><a class="headerlink" href="#id36" title="Permalink to this image">¶</a></p>
+</div>
+<p>这表明除非x是严格的正数，函数<span class="math notranslate nohighlight">\(log(x)-\frac{1}{x}\)</span>的答案是NaN。这个求解器抓住了0是不允许的，虽然log允许，但是<span class="math notranslate nohighlight">\(\frac{1}{x}\)</span>不可以。</p>
+<p><strong>注意：小心你要的是什么</strong>！solveforub只有当检查到区域的条件是真的才会继续优化，它不对返回假的区域做什么。这是上面这个技巧的作用。如果测试条件是“f
+不是NaN”,
+如果你在区间{<span class="math notranslate nohighlight">\(-\infty, \infty\)</span>}做，求解器会立刻返回空集{}，因为测试是False，它就不再进行下去了。这就是为什么测试条件要改为
+“f 是 NaN”而不是逆问题。</p>
+<p>使用刚才得到的函数的domain <span class="math notranslate nohighlight">\((0, \infty]\)</span>,
+环境精确到32比特，下面就是设置求解器<img alt="image-20230704113111216" src="_images/image-20230704113111216.png" /></p>
+<p>得出一个ULP宽度的解，下面用橙色显示数据差别</p>
+<p>1.76322283409524883847177734375 &lt; x &lt; 1.7632228345610201358795166015625</p>
+<p>有64bit的浮点数可以快速接近到这个根，但是结果不是答案的边界。用IEEE浮点的区间算术可能达到这个精度，但是需要128b来存储这个区间。这里只用了43b.
+更少的比特数，更好的答案。</p>
+</div>
+<div class="section" id="id11">
+<h3>17.4.3 不相等检验;寻找极值<a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h3>
+<p>目前所做的测试都相等检验(或者是NaN)，不相等也同样可以检测。类似的需要小心地问问题，如果我们的条件是<img alt="image-20230704164831076" src="_images/image-20230704164831076.png" /></p>
+<p>那么solveforub方法是不工作的，因为一旦看到一个区域条件是Fail就会停止。给求解器提问题的方式是要条件返回真。所以&gt;3为真其实是说<strong>跟区间:math:`(3, infty]`有交就应该返回True</strong>.
+而不是有不在的返回False。</p>
+<div class="figure align-default" id="id37">
+<img alt="_images/image-20230704165332342.png" src="_images/image-20230704165332342.png" />
+<p class="caption"><span class="caption-number">Fig. 321 </span><span class="caption-text">image-20230704165332342</span><a class="headerlink" href="#id37" title="Permalink to this image">¶</a></p>
+</div>
+<p>这样一开始范围是[<span class="math notranslate nohighlight">\(-\infty, \infty\)</span>]就会是真，
+<strong>solveforub</strong>就开始检查交的区域并且迭代优化子范围。</p>
+<p>能做不等式就隐含可以用<strong>solveforub</strong>迭代来找到函数某个区域的最大或是最小值。（如果指定的区域是整个实数轴，那么找到的就是全局的最大最小值，而且它还能找到局部极值）。如果寻找函数<span class="math notranslate nohighlight">\(f(x)\)</span>的最大值，初始开始看<span class="math notranslate nohighlight">\(f(x)&gt;maxreal\)</span>条件。如果任何区域可以找到，那么就结束了，这就是可表示的最大值。否则就做二分法，如同<strong>splitub</strong>一样。找到最大值的条件</p>
+<div class="figure align-default" id="id38">
+<img alt="_images/image-20230704174905485.png" src="_images/image-20230704174905485.png" />
+<p class="caption"><span class="caption-number">Fig. 322 </span><span class="caption-text">image-20230704174905485</span><a class="headerlink" href="#id38" title="Permalink to this image">¶</a></p>
+</div>
+<p>且有答案是非空集合。找最大值需要不超过<span class="math notranslate nohighlight">\(log_2(n)\)</span>次分割。如果unum环境有n个可以表示的值，那么这种方法找最大不超过<span class="math notranslate nohighlight">\(nlog_2(n)\)</span>次函数求值。这可能让让某些读者感到惊讶，以前他们在理论的计算机科学书中看到是寻找一个通用的连续函数的最大最小值是<strong>极为困难</strong>的，有句话是说“没有人知道如何快速地做到”。</p>
+</div>
+<div class="section" id="id12">
+<h3>17.4.4 “棘手”的谬误<a class="headerlink" href="#id12" title="Permalink to this heading">¶</a></h3>
+<p>存在一个定理，它说找到方程根和极值通常是“NP-hard”，这是计算机科学家用来描述<strong>没有已知算法只耗费多项式时间就能解的问题</strong>;
+也就是说，答案需要指数级的搜索时间，甚至更糟。即使所讨论的函数只是一个多项式，该定理也成立！如果ubox方法使它如此简单，这怎么可能是真的？</p>
+<p>上一节展示了一种最多做<span class="math notranslate nohighlight">\(nlog_2(n)\)</span> 次函数计算来查找函数 f
+极值的方法，当函数用 unum 数学表示并且有 n 个可能的 unum
+值时。这显然不是指数时间。</p>
+<p>再回顾检查这个定理，发现它们都是关于数学定义上的“解决”，而不是计算上的定义。谬误有两个方面：假设纯符号数学的困难也一定是数值计算的困难，以及未能意识到用实数计算需要表示范围（开区间）和精确点。ubox
+方法不会以代数公式的形式产生“解决方案”，但那又怎样？它总是产生一个答案界限，并且无论出于何种实际目的，都可以根据需要设置该界限严格程度。</p>
+<table border="2"><tr><td bgcolor="lightblue"><p>Ubox方法将代数问题转换为有限集合问题，然后生成数学上正确的集合声明来表示答案的位置。</p>
+</td></tr></table><p>在“P =
+NP？”问题上人们已经做了大量的工作，即NP-hard问题是否与可以在多项式时间内完成的P问题属于一个单独的类。众所周知，如果你不需要对某些NP困难问题有一个完美的答案，而只是保证在答案的百分之几之内，那么是的，一些NP困难问题可以在多项式时间内完成。但这就是实数的实际计算的全部内容：在值的一定距离内，因为大多数实数没有精确的表示。</p>
+<p>在估计将 n
+个元素按顺序排序所需的时间时也会出现类似的谬误。许多文献断言，对于低效排序（如气泡排序），时间是
+<span class="math notranslate nohighlight">\(n^2\)</span> 阶，对于更复杂的方法（如 HeapSort），时间是 <span class="math notranslate nohighlight">\(n log(n)\)</span>
+阶。这种分析忽略了一个简单的事实，即数字可以表示的不同值数量有限;
+只需用直方图，则时间是 n 阶（也称为桶排序）！Ubox
+也利用离散值提供的简化。</p>
+</div>
+</div>
+<div class="section" id="id13">
+<h2>17.5 大于一维的求解器<a class="headerlink" href="#id13" title="Permalink to this heading">¶</a></h2>
+<p>到目前为止讨论的方法可以推广到多个未知数中的多个方程（或不等式）。part1简要介绍了有两个未知量的两个线性方程的示例。现在我们已经掌握了<em>油漆桶</em>方法和<em>尝试一切</em>方法，我们可以在一个简单的系统上试试它们。</p>
+<p>比如这个：</p>
+<div class="math notranslate nohighlight" id="equation-17-meaning-of-solve-equ-4">
+<span class="eqno">(72)<a class="headerlink" href="#equation-17-meaning-of-solve-equ-4" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{array}{l}
+x+\frac{7}{16}=3 \text{ and } \\
+\frac{7}{8}+y=4
+\end{array}\end{split}\]</div>
+<p>下面是用矩阵-向量方程来表示同一个问题</p>
+<div class="math notranslate nohighlight" id="equation-17-meaning-of-solve-equ-5">
+<span class="eqno">(73)<a class="headerlink" href="#equation-17-meaning-of-solve-equ-5" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{pmatrix}
+ 1  &amp; \frac{7}{16} \\
+\frac{7}{8}  &amp; 1
+\end{pmatrix}
+\begin{pmatrix}
+x \\
+y
+\end{pmatrix}
+=
+\begin{pmatrix}
+3 \\
+4
+\end{pmatrix}\end{split}\]</div>
+<p>任何线性方程的系统可以被看做一个点积等式的集合。这个例子我们可以写做
+<span class="math notranslate nohighlight">\((1, \frac{7}{16})\cdot \begin{pmatrix} x \\ y \end{pmatrix}=3\)</span> 和
+<span class="math notranslate nohighlight">\((\frac{7}{8}, 1)\cdot \begin{pmatrix} x \\ y \end{pmatrix}=4\)</span></p>
+<p>这是非常重要的，因为点积可以用unum计算环境里的融合计算做到最高精度。</p>
+<p>下面是两个方程的系统，作为一个几何问题，是两条直线的交点。</p>
+<div class="figure align-default" id="id39">
+<img alt="_images/image-20230704193834586.png" src="_images/image-20230704193834586.png" />
+<p class="caption"><span class="caption-number">Fig. 323 </span><span class="caption-text">image-20230704193834586</span><a class="headerlink" href="#id39" title="Permalink to this image">¶</a></p>
+</div>
+<p>为了更实战且更有挑战性，假设系数不是准确的，而是有一个最小尺寸ULP的不确定性。比如</p>
+<div class="figure align-default" id="id40">
+<img alt="_images/image-20230704193913674.png" src="_images/image-20230704193913674.png" />
+<p class="caption"><span class="caption-number">Fig. 324 </span><span class="caption-text">image-20230704193913674</span><a class="headerlink" href="#id40" title="Permalink to this image">¶</a></p>
+</div>
+<p>这使得解集被拓宽成类似于平行四边形，因为现在解交叠的两个区域，那不是真的平行四边形，因为其对边并不平行。</p>
+<p>绘制上述系数的高值和低值的每个可能组合会创建一组边界，看起来像有人在 x-y
+平面上掉了一些未煮熟的意大利面</p>
+<div class="figure align-default" id="id41">
+<img alt="_images/image-20230704194346022.png" src="_images/image-20230704194346022.png" />
+<p class="caption"><span class="caption-number">Fig. 325 </span><span class="caption-text">image-20230704194346022</span><a class="headerlink" href="#id41" title="Permalink to this image">¶</a></p>
+</div>
+<p>一些传统区间算术的倡导者建议弄清楚 16
+条线中的哪一条构成了四边形的边界，这是一项非常繁琐的任务，绝对是“NP-hard”的处理方式。</p>
+<p>虽然原型不包括 solveforub 搜索函数的二维版本，但使用 ubox 平铺 x-y
+平面并测试它们是否符合以下条件并不困难：</p>
+<div class="figure align-default" id="id42">
+<img alt="_images/image-20230704195202805.png" src="_images/image-20230704195202805.png" />
+<p class="caption"><span class="caption-number">Fig. 326 </span><span class="caption-text">image-20230704195202805</span><a class="headerlink" href="#id42" title="Permalink to this image">¶</a></p>
+</div>
+<p>其中au是unum的矩阵表示<span class="math notranslate nohighlight">\(\begin{pmatrix} (1, 1.0625) &amp;&amp; (0.4375, 0.5) \\ (0.8125, 0.875) &amp;&amp; (1, 1.0625) \end{pmatrix}\)</span>,
+xu表示未知量 (x, y), bu 表示右边值
+<span class="math notranslate nohighlight">\(\begin{pmatrix} (3, 3.125) \\ (4, 4.25) \end{pmatrix}\)</span>.
+用{1，2}环境就足以在不损失的情况下表达所有这些范围。生成二维“尝试一切”ubox测试集的一种简单方法是创建该集的元组
+<strong>uboxlist</strong>[{<span class="math notranslate nohighlight">\(\hat{-\infty}, \hat{\infty}\)</span>},
+0]。令人惊讶的是结果的fails集是红色，solves集（绿色）则有4个区域。</p>
+<div class="figure align-default" id="id43">
+<img alt="_images/image-20230704201313546.png" src="_images/image-20230704201313546.png" />
+<p class="caption"><span class="caption-number">Fig. 327 </span><span class="caption-text">image-20230704201313546</span><a class="headerlink" href="#id43" title="Permalink to this image">¶</a></p>
+</div>
+<p>左上和右下角的solves区域是ubox的扩展区域，跨越<span class="math notranslate nohighlight">\((maxreal, \infty)\)</span>和(<span class="math notranslate nohighlight">\(-\infty, -maxreal\)</span>)。两个斜带其实都穿过了该区。这就是17.2.2节显示的二维形式的效果。注意准确的正负无穷是不满足条件的。</p>
+<p>在x=(3, 4)和y=(0,
+1)的孤立的ubox也穿过了两个斜带，但是他们满血这两个方程的位置点是不同的。</p>
+<div class="figure align-default" id="id44">
+<img alt="_images/image-20230704202355654.png" src="_images/image-20230704202355654.png" />
+<p class="caption"><span class="caption-number">Fig. 328 </span><span class="caption-text">image-20230704202355654</span><a class="headerlink" href="#id44" title="Permalink to this image">¶</a></p>
+</div>
+<p>我们应该把这个ubox当做虚假的结果而丢弃吗？这个例子是的。因为我们如果提升精度使得ULP从1变为<span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>,
+就会把这个点划掉了。但是如果环境是更粗的比如{0,
+1}，那这个ubox就是个合法的c-solution.
+当前的环境下这还只是trial的ubox。当然我们感兴趣的还是这个ubox左上方的折叠形状区域。</p>
+<p><strong>请注意，线性方程并没有什么特别之处</strong>。与单变量求解器一样，该方法可以容忍您给它的任何复杂函数，因为无需查找反演公式。你只需要能够使用unum算术陈述你想要满足的条件，计算机就可以（并行）搜索所有候选ubox。</p>
+<p>现在考虑油漆桶方法。获得起始种子的一种方法是使用“尝试所有”方法，直到找到在所有维度上都精确的ubox。另一种方法是尝试传统的数值方法，如高斯消除，从不精确的范围内选择精确值：</p>
+<div class="figure align-default" id="id45">
+<img alt="_images/image-20230704203325891.png" src="_images/image-20230704203325891.png" />
+<p class="caption"><span class="caption-number">Fig. 329 </span><span class="caption-text">image-20230704203325891</span><a class="headerlink" href="#id45" title="Permalink to this image">¶</a></p>
+</div>
+<p>为了确保我们没有像上面那样的解被单独拐角的情况，请在传统求解器的结果附近选择一对精确的unum，例如表示
+2 和 2.25 的
+unum。由于浮点数只是猜测，因此仍然需要验证unum对是否满足条件：</p>
+<div class="figure align-default" id="id46">
+<img alt="_images/image-20230704203506989.png" src="_images/image-20230704203506989.png" />
+<p class="caption"><span class="caption-number">Fig. 330 </span><span class="caption-text">image-20230704203506989</span><a class="headerlink" href="#id46" title="Permalink to this image">¶</a></p>
+</div>
+<p>我们现在有种子了。在调用油漆桶算法之前，请考虑如果我们尝试使用传统的区间算术和高斯消除会发生什么。</p>
+<p>结果如往常一样，很宽松</p>
+<div class="figure align-default" id="id47">
+<img alt="_images/image-20230704203656379.png" src="_images/image-20230704203656379.png" />
+<p class="caption"><span class="caption-number">Fig. 331 </span><span class="caption-text">image-20230704203656379</span><a class="headerlink" href="#id47" title="Permalink to this image">¶</a></p>
+</div>
+<p>反演线性方程组的公式，如克莱默规则或高斯消除，多次使用输入值并遇到依赖问题。相比之下，<strong>conditionQ</strong>检验中的方程每个输入值使用一次，因此答案没有松散开。</p>
+<p>ubox结果已合并在下面的图上。黑点显示单个值，类似于可能由传统数字“求解器”生成的值。但如您所见，当系数不精确时，它只是一个更大集合中的一个值。这就像问“找到x和y使得<span class="math notranslate nohighlight">\(x^2 + y^2 = 1\)</span>”并得到答案“x
+= 0，y =
+1”句点。我们需要所有有效的值，而不仅仅是一个。单值浮点解隐藏了一些问题的不稳定性;
+ubox解将不稳定性暴露为偏心形状的解集，有效地执行“灵敏度分析”，显示不精确的输入如何影响答案。</p>
+<div class="figure align-default" id="id48">
+<img alt="_images/image-20230704204521628.png" src="_images/image-20230704204521628.png" />
+<p class="caption"><span class="caption-number">Fig. 332 </span><span class="caption-text">image-20230704204521628</span><a class="headerlink" href="#id48" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>灰色</strong>矩形是由使用传统区间算术和高斯消除方法产生的松散边界。虽然松散，但它并非完全无用，因为它可以用作尝试一切搜索的起点，这比从整个
+x-y 平面开始搜索更快。</p>
+<p><strong>琥珀</strong>线显示了系数和右侧区间端点的每种组合，其中重叠的确切形状是计算几何中一个指数级困难的问题，它定义了线性系统的最终数学答案。</p>
+<p>ubox解和失败求值不需要指数时间，它们在数学上并不完美，但它们像我们要求的那样准确地接近数学答案，并且它们大量使用蛮力并行处理而不是算法复杂性。油漆桶方法比
+try-everything
+方法具有优势，因为它可以找到满足两个方程的连接点集，并且不包括只有 ubox
+的单独部分满足每个方程的 ubox。</p>
+</div>
+<div class="section" id="ubox">
+<h2>17.6 总结ubox求解器方法<a class="headerlink" href="#ubox" title="Permalink to this heading">¶</a></h2>
+<p>俗话说：“如果你不能解决问题，试着重新定义问题。或类似的东西。本章将这一建议更进一步：</p>
+<table border="2"><tr><td bgcolor="lightblue"><center><p>如果你不能解决问题，试着重新定义“解决”的含义。</p>
+</center><center><p>解脱是通过不去做方程的反转，而是提出更简单直接的问题：</p>
+</center><center><p>这些方程在哪里成立？</p>
+</center></td></tr></table><p>如果使用尝试一切 ubox
+求解器方法有什么棘手之处，那就是确保条件语句提出正确的问题，一个导致细化返回
+True 的区域的问题。</p>
+<p>向严谨的逻辑学家提问可能会令人恼火。想象一下，在法庭审判中担任证人的人被问到：</p>
+<blockquote>
+<div><p>你能分辨出受害者是男人还是女人吗？ 是的。 那么，是男人还是女人？
+是的。 你能告诉我受害者是一个男人吗？ （暂停）是的。
+所以受害者是一个男人。 不。</p>
+</div></blockquote>
+<p>当律师询问一个非常合乎逻辑思维的证人时，必须非常仔细地提问。试图找到数学方程式的真假也是如此。一旦你问对了问题，真相就会让你不必学习数值计算“秘诀”。计算本身只会花费您有限数量的ubox操作。</p>
+</div>
+</div>
+
+
+        </div>
+        <div class="side-doc-outline">
+            <div class="side-doc-outline--content"> 
+<div class="localtoc">
+    <p class="caption">
+      <span class="caption-text">Table Of Contents</span>
+    </p>
+    <ul>
+<li><a class="reference internal" href="#">17 “解”方程到底是什么意思？</a><ul>
+<li><a class="reference internal" href="#id2">17.1 传统数值方法的另一个突破</a></li>
+<li><a class="reference internal" href="#id3">17.2 一元线性方程，用逆运算解决</a><ul>
+<li><a class="reference internal" href="#unum">17.2.1 unum和间隔的求逆</a></li>
+<li><a class="reference internal" href="#ubound">17.2.2 ubound作为系数</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">17.3 “尝试所有的！”数轴上的穷举搜索</a><ul>
+<li><a class="reference internal" href="#id5">17.3.1 重温二次方程</a></li>
+<li><a class="reference internal" href="#id6">17.3.2 大胆地分割无穷大：尝试一切</a></li>
+<li><a class="reference internal" href="#id7">17.3.3 高度可调的并行度</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id8">17.4 通用方程求解器</a><ul>
+<li><a class="reference internal" href="#id9">17.4.1 那些通常可以工作的方法</a></li>
+<li><a class="reference internal" href="#id10">17.4.2 求逆方法通常会失败</a></li>
+<li><a class="reference internal" href="#id11">17.4.3 不相等检验;寻找极值</a></li>
+<li><a class="reference internal" href="#id12">17.4.4 “棘手”的谬误</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id13">17.5 大于一维的求解器</a></li>
+<li><a class="reference internal" href="#ubox">17.6 总结ubox求解器方法</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+            </div>
+        </div>
+
+      <div class="clearer"></div>
+    </div><div class="pagenation">
+     <a id="button-prev" href="16_avoid_interval_arith_pitfalls.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="P">
+         <i class="pagenation-arrow-L fas fa-arrow-left fa-lg"></i>
+         <div class="pagenation-text">
+            <span class="pagenation-direction">Previous</span>
+            <div>16 避免区间算术陷阱</div>
+         </div>
+     </a>
+     <a id="button-next" href="18_permission_to_guess.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
+         <i class="pagenation-arrow-R fas fa-arrow-right fa-lg"></i>
+        <div class="pagenation-text">
+            <span class="pagenation-direction">Next</span>
+            <div>18 准许猜测</div>
+        </div>
+     </a>
+  </div>
+        
+        </main>
+    </div>
+  </body>
+</html>

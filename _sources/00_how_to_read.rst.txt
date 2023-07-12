@@ -1,0 +1,152 @@
+
+如何读这本书
+============
+
+除了部分标记了的章节，这里描述的一切都只需要高中数学知识就可以了．尤其是避免了微积分。实际上，甚至不需要高中数学就可以理解95％以上的材料。引入了一些符号，例如\ :math:`\bigotimes`\ 和\ :math:`\hat{\infty}`\ 可能看起来有些晦涩难懂，但是当您阅读它们时，它们却一点也不令人恐惧或很难掌握意思。
+这本书不是供数学家使用的，而是供所使用计算机做科学技术计算的的人用的．
+
+本书甚至拒绝使用希腊字母，这对于一个数学家是很困难的。
+:math:`\pi`\ 例外，它在许多例子中都扮演着重要角色。
+
+引入术语时（其中一些是行业范围内的，有些是在本书中创造的），其首次使用在“**定义**”框中进行了说明，如下所示：
+
+.. raw:: html
+
+   <table border="4">
+
+.. raw:: html
+
+   <tr>
+
+.. raw:: html
+
+   <td bgcolor="lightblue">
+
+Definition: The h-layer is where numbers (and exception quantities) are
+represented in a form understandable to humans.
+
+.. raw:: html
+
+   </td>
+
+.. raw:: html
+
+   </tr>
+
+.. raw:: html
+
+   </table>
+
+“定义”框中的所有术语也都收集到最后的术语表中，因此，如果您发现自己忘记了某个单词的含义以及它在文本中介绍的位置，只需在词汇表中按字母顺序查找即可。
+
+背景颜色通常用于向阅读器发出信号。 浅红色(本翻译用markdown,
+无颜色)的背景方框通常是一个\ **公式**\ 或一些数学上的东西，例如
+
+.. math::
+
+
+   x=b_{n-1}2^{n-1}+...+b_22^2+b_12^1+b_02^0-(2^{n-1}-1)
+
+可执行的代码是绿色背景．如果代码实际执行并生成输出，则该代码为粗体．如果它描述的是用C或类似语言编写的代码，那么为纯文本．公式和代码会使阅读速度变慢，读者通常可以略读那些而不会丢失文本的主题。
+很大块的计算机代码块放到了附录，以免妨碍阅读。
+
+除了一些用C或抽象语言编写的示例外，任何与计算机之间的交互是在Mathematica中进行的，这使得代码看起来像就像现有的任何编程语言一样，都接近于传统数学。
+它仍然可能有些含糊不清，因此除非您有兴趣创建自己的带新功能版本，否则请随时忽略它．
+
+另一方面，带有浅蓝色背景的带框段落，是重要的（引用替代）
+
+.. raw:: html
+
+   <table border="2">
+
+.. raw:: html
+
+   <tr>
+
+.. raw:: html
+
+   <td bgcolor="lightblue">
+
+If you think rounding error, overflow, and underflow are only obscure
+academic worries, think again. The errors caused by floats can kill
+people, and they have.
+
+.. raw:: html
+
+   </td>
+
+.. raw:: html
+
+   </tr>
+
+.. raw:: html
+
+   </table>
+
+浅黄色背景的带框段落也是为了强调，但警告该段表示即使这个想法乍看之下似乎足够合理，也可能是错误或谬误的想法
+
+.. raw:: html
+
+   <table border="2">
+
+.. raw:: html
+
+   <tr>
+
+.. raw:: html
+
+   <td bgcolor="lightyellow">
+
+If a result is too large to represent, the Standard says to substitute
+infinity for the correct answer
+
+.. raw:: html
+
+   </td>
+
+.. raw:: html
+
+   </tr>
+
+.. raw:: html
+
+   </table>
+
+为了清楚起见，还使用了不同的字体。
+由于像Courier这样的等宽字体总是让我们想起老式的计算机输出，Courier用于显示二进制数字，例如\ ``01101101``\ 。十进制数字与正文一样。
+Courier还用于计算机功能和变量名，例如
+
+``setenv [{3,5}]``\ 和\ ``posbig``\ 。
+原始计算的输出使用Courier中，但是不是粗体（某些计算出的输出不是原始的，而是将文本做格式化输出）。浅灰色是给读者的练习
+
+.. raw:: html
+
+   <table border="2">
+
+.. raw:: html
+
+   <tr>
+
+.. raw:: html
+
+   <td bgcolor="lightgray">
+
+Exercise for the reader: Find the closure plot for six-bit rational
+arithmetic, with various allocations of bits to the numerator and the
+denominator. Does rational arithmetic yield more results that are
+representable within the format? Does it help to make the first bit a
+sign bit?
+
+.. raw:: html
+
+   </td>
+
+.. raw:: html
+
+   </tr>
+
+.. raw:: html
+
+   </table>
+
+\``\`

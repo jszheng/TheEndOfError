@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>21 微积分被认为是邪恶的：离散物理 &#8212; THE END of ERROR - Unum Computing 0.1 documentation</title>
+
+    <link rel="stylesheet" href="_static/material-design-lite-1.3.0/material.blue-deep_orange.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx_materialdesign_theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fontawesome/all.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/d2l.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/d2l.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="22 错误的终结" href="22_end_of_error.html" />
+    <link rel="prev" title="20 二体问题(以及多体问题)" href="20_two_body_problem.html" /> 
+  </head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header mdl-layout__header--waterfall ">
+    <div class="mdl-layout__header-row">
+        
+        <nav class="mdl-navigation breadcrumb">
+            <a class="mdl-navigation__link is-active">21 微积分被认为是邪恶的：离散物理</a>
+        </nav>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+        
+<form class="form-inline pull-sm-right" action="search.html" method="get">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+        <label id="quick-search-icon" class="mdl-button mdl-js-button mdl-button--icon"  for="waterfall-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q"  id="waterfall-exp" placeholder="Search" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </div>
+      </div>
+      <div class="mdl-tooltip" data-mdl-for="quick-search-icon">
+      Quick search
+      </div>
+</form>
+        
+<a id="button-show-source"
+    class="mdl-button mdl-js-button mdl-button--icon"
+    href="_sources/21_calculus_evil.rst.txt" rel="nofollow">
+  <i class="material-icons">code</i>
+</a>
+<div class="mdl-tooltip" data-mdl-for="button-show-source">
+Show Source
+</div>
+        </nav>
+    </div>
+    <div class="mdl-layout__header-row header-links">
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation">
+          
+              <a  class="mdl-navigation__link" href="https://github.com/jszheng/TheEndOfError">
+                  <i class="fab fa-github"></i>
+                  Github
+              </a>
+      </nav>
+    </div>
+</header><header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_TheOriginalSin.html">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_hidden_scratchpads_3_layers.html">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_info_per_bit.html">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_comparison_operations.html">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_mul_div.html">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_other_important_unary_ops.html">12 其他重要的一元运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_fused_operations.html">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_TheOtherKindOfError.html">15. 另外一种误差</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_avoid_interval_arith_pitfalls.html">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_meaning_of_solve_equ.html">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_permission_to_guess.html">18 准许猜测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_pendulums_done_correctly.html">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_end_of_error.html">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+        <main class="mdl-layout__content" tabIndex="0">
+
+	<script type="text/javascript" src="_static/sphinx_materialdesign_theme.js "></script>
+    <header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_TheOriginalSin.html">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_hidden_scratchpads_3_layers.html">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_info_per_bit.html">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_comparison_operations.html">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_mul_div.html">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_other_important_unary_ops.html">12 其他重要的一元运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_fused_operations.html">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_TheOtherKindOfError.html">15. 另外一种误差</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_avoid_interval_arith_pitfalls.html">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_meaning_of_solve_equ.html">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_permission_to_guess.html">18 准许猜测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_pendulums_done_correctly.html">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_end_of_error.html">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+
+    <div class="document">
+        <div class="page-content" role="main">
+        
+  <div class="section" id="id1">
+<h1>21 微积分被认为是邪恶的：离散物理<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<div class="figure align-default" id="id6">
+<img alt="_images/image-20230710114113324.png" src="_images/image-20230710114113324.png" />
+<p class="caption"><span class="caption-number">Fig. 420 </span><span class="caption-text">image-20230710114113324</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="id2">
+<h2>21.1 连续物理与离散物理<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>前言提到，本书读者不需要了解微积分。
+微积分被回避的原因不仅仅是为了便于阅读：微积分和计算机是奇怪的伙伴，它们的结合可能会破坏结果的有效性。
+微积分处理无穷小量； 计算机不计算无穷小。
+本章中出现了一些微积分，但只是为了与更容易理解的方法进行对比，这些方法为物理行为提供了可证明正确的有界计算而不是估计。</p>
+<p>我们在摆物理章节中看到了一些这种冲突。
+在摆锤的振动无穷小的极限下，摆锤上的恢复力与其位移成正比（而不是其位移的正弦）。
+然后，微积分给出了描述当振动不是无穷小时时摆锤运动的微分方程的错误答案。</p>
+<table border="2"><tr><td bgcolor="lightyellow"><p>当计算物理学家试图对计算机算术进行编程来模拟具有导数的方程时，就会出现一种更严重的微积分错误。</p>
+</td></tr></table><p>数学运算加、减、乘、除、平方根等都有计算机版本，物理学家和工程师用它们来模拟数学的数值；
+但不存在以函数 <span class="math notranslate nohighlight">\(u(t, x)\)</span> 作为输入并产生偏一阶导数
+<span class="math notranslate nohighlight">\(\frac{\partial u}{\partial t}\)</span> 或二阶导数
+<span class="math notranslate nohighlight">\(\frac{\partial^2u}{\partial t^2}\)</span> 作为输出的<strong>数值函数</strong>。</p>
+<p>导数用差分方程近似，例如</p>
+<div class="math notranslate nohighlight" id="equation-21-calculus-evil-0">
+<span class="eqno">(94)<a class="headerlink" href="#equation-21-calculus-evil-0" title="Permalink to this equation">¶</a></span>\[\frac{\partial u}{\partial t} \cong \frac{u(x, t+h)-u(x,t)}{h} \text{ and } \frac{\partial ^2 u}{\partial t^2} \cong \frac{u(x, t+h)-2u(x, t)+u(x, t-h)}{h^2}\]</div>
+<p>导数被定义为当 h 变得无穷小时的极限； 因此，我们很容易想到用 h
+的一些小的非零值来计算它们。 也就是说，使用<em>有限差分</em>而不是微积分。
+那么上面的两个表达式看起来像是你可以实际计算的东西，但这几乎是你可以要求计算机做的最糟糕的事情，从数字上来说。
+如果 u
+使用浮点数计算，则分子将是类似的四舍五入数字，在相减时会抵消其有效数字；
+h越小，相对于结果的<em>舍入误差</em>越大。 如果您尝试使用较大的 h
+值来减少舍入误差，则会增加<em>采样误差</em>，因为您是在一个范围而不是单个点上对函数
+u 进行采样，因此您无法获胜。 如果使用 unum
+进行计算，至少程序员可以看到使用差分近似造成的信息丢失；
+对于浮点数，程序员通常不知道有限差分有多不准确。
+有一种不同的方法，一种绕过微积分的方法，可以对物理系统的行为产生严格的边界。</p>
+<p>举一个简单的例子，一维的波动方程描述了像一根弦在张力下将如何振动，其中弦被建模为一个连续体。
+函数 u 描述了绳子在位置 x 和时间 t 处的位移，c
+是一个常数，取决于张力、绳子的长度和绳子的质量。
+（如果您觉得以下内容完全晦涩难懂，请不要担心：）</p>
+<div class="math notranslate nohighlight" id="equation-21-calculus-evil-1">
+<span class="eqno">(95)<a class="headerlink" href="#equation-21-calculus-evil-1" title="Permalink to this equation">¶</a></span>\[\frac{\partial ^2 u}{\partial t^2}=C^2\frac{\partial^2u}{\partial x^2}\]</div>
+<p>这个方程最初是从哪里来的？
+在大多数推导中，它是对不需要微积分的<em>离散</em>问题进行推理的结果！
+绳子在弹簧张力下被分解成质量元素，并且使用近似值导出加速度，如果所有量都是无穷小，则该近似值是正确的。</p>
+<table border="2"><tr><td bgcolor="lightblue"><p>与其将离散问题转化为微积分的连续问题，然后在计算机上对微积分进行较差的近似，不如直接对离散问题进行建模，并有严格的界限。</p>
+</td></tr></table><p>计算机越强大，可以正确建模的离散元素就越多。
+从这个意义上说，我们可以“采取极限”，使模型越来越像连续体问题，而不会出现舍入误差或采样误差。
+我们研究的第一个例子是上面的例子，振动弦的物理原理。</p>
+</div>
+<div class="section" id="id3">
+<h2>21.2 振动弦的离散版本<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<p>当然，弦并不是真正的连续体。 它由通过化学键结合在一起的原子组成。
+不要将其视为连续体，而应将其视为由真正大的原子组成，原子之间具有良好的弹簧而不是化学键。
+质量和弹簧常数都可以缩放以复制弦的质量和张力。
+通过像前几章中所示的有界方法来解决该问题，然后增加“大原子”的数量，直到行为的界限如此严格以至于超过输入值的准确性。</p>
+<p>考虑三个质量为 m/3 的物体，它们在张力 T 下等距分布。
+这个离散问题近似于相同张力下质量为 m 的连续弦。</p>
+<div class="figure align-default" id="id7">
+<img alt="_images/image-20230710164355055.png" src="_images/image-20230710164355055.png" />
+<p class="caption"><span class="caption-number">Fig. 421 </span><span class="caption-text">image-20230710164355055</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p>微积分推导估计“小垂直位移”作用在每个质量上的力，然后采用极限来创建微分方程。
+位移必须小且仅在垂直方向；
+这允许用已知解决方案的简单表达式替换复杂的表达式，就像第一年模拟摆运动的物理方法一样。
+如果我们只有三个离散质量，是否有可能通过对牛顿力的严格限制而没有近似值来解决问题？</p>
+<p>想象一下拉下最左边的质点并放开。
+这些质点会上下（稍微向左和向右）发出叮当声，并形成一种类似于拉伸弦的模式，其质点和张力与在那里拨动的质点和张力相同。
+使用 ubox 方法，可以计算三个质量的轨迹，而不会出现任何错误；
+毕竟，这只是一个 n 体问题，其中力来自弹簧而不是重力。 它比自由空间 n
+体重力问题更容易，因为每个质点上的力仅取决于其两个弹簧，而不取决于所有 n
+- 1 个其他质点。</p>
+<p>除了两个弹簧力之外，我们还可以在每个质量上添加垂直重力，以考虑所有力。
+经典推导忽略了重力的影响，假设与弹簧引起的加速度相比可以忽略不计，但无需在计算机模拟中做那样的近似。
+经典推导也假设运动是平面的，但质量实际上可以在三个维度上移动。</p>
+<p>一旦可以严格限制三个物体的行为，为什么不使用质量为<span class="math notranslate nohighlight">\(m/1000\)</span>的1000
+个物体，或甚至更多呢？
+行为的界限可以缩小到任何所需的大小，而不会犯用导数表达问题然后逼近导数的错误。</p>
+<p>前一章中有关摆和二体运动的详细方法也适用于此；
+首先选择一个盒形空间步长、即每个质点的运动范围，然后确定加速度和速度边界，以导出第一个质点到达其空间步长边界之前的时间量。
+使用该遍历时间作为时间步，收紧位置的界限，使用它来收紧力（加速度）的界限，然后迭代，直到有关解决方案的信息没有变化。
+这通常只需要两到三次迭代。</p>
+<p>虽然我们在这里只展示该方法的草图，而不是像前两章那样进行实际计算，但值得指出其中的价值是，使用每个质点上的所有牛顿力的完整且正确的模型，而不是使用
+大多数振动弦模型中使用的近似值。 例如，大多数近似假设绳子上的张力为
+T，不受将其拉出直线的额外张力的影响。
+想象一下将中心质量向下拉得很远，使其弹簧形成 90° 角；
+这会将每个弹簧拉伸到比图中所示长 2 倍，这肯定会增加张力。</p>
+<p>弹簧的理想模型是，它施加的力与它从某个无应力长度拉伸的量成线性比例。
+与摆模型不同，实际弹簧的行为可能接近理想状态，不仅适用于无限小的位移，而且适用于相当大的运动范围。
+比例常数是弹簧的刚度 k。 假设 <span class="math notranslate nohighlight">\(L_0\)</span> 是弹簧不受力时的长度。
+那么当它被拉伸到长度L时所施加的力是</p>
+<div class="math notranslate nohighlight" id="equation-21-calculus-evil-2">
+<span class="eqno">(96)<a class="headerlink" href="#equation-21-calculus-evil-2" title="Permalink to this equation">¶</a></span>\[T=-k(L-L_0)\]</div>
+<p>如果 T 是在线质量的测量张力，我们可以测量 <span class="math notranslate nohighlight">\(L_0\)</span>
+作为无张力下弹簧的长度，L 在这里只是
+<span class="math notranslate nohighlight">\(\frac{D}{4}\)</span>，然后就确定了弹簧常数 k：</p>
+<div class="math notranslate nohighlight" id="equation-21-calculus-evil-3">
+<span class="eqno">(97)<a class="headerlink" href="#equation-21-calculus-evil-3" title="Permalink to this equation">¶</a></span>\[k=-\frac{T}{D/4-L_0}\]</div>
+<p>与处于一条直线上的质量相比，想象一下将中心的质量向下拉：不是一个小的位移，而是一个很大的位移。
+精确地说，力以矢量的形式相加。 没有任何哪一项好被视为“可忽略不计”。</p>
+<div class="figure align-default" id="id8">
+<img alt="_images/image-20230710171123057.png" src="_images/image-20230710171123057.png" />
+<p class="caption"><span class="caption-number">Fig. 422 </span><span class="caption-text">image-20230710171123057</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<p>每个弹簧从 <span class="math notranslate nohighlight">\(\frac{D}{4}\)</span> 延长到 <span class="math notranslate nohighlight">\(\frac{\sqrt{2} D}{4}\)</span>
+，因此每个弹簧上的张力增加到</p>
+<div class="math notranslate nohighlight" id="equation-21-calculus-evil-4">
+<span class="eqno">(98)<a class="headerlink" href="#equation-21-calculus-evil-4" title="Permalink to this equation">¶</a></span>\[\text{new } T=-k(\sqrt{2}L-L_0)=T\frac{\sqrt{2}D/4-L_0}{D/4-L_0}\]</div>
+<p>中心质量上的力在垂直方向上，是两个力矢量的总和，在几何上形成一个正方形，因此中心质量上的力是新张力
+T 的 <span class="math notranslate nohighlight">\(\sqrt{2}\)</span> 倍，加上 <span class="math notranslate nohighlight">\(m g\)</span>，其中 g 是重力加速度 。
+对于那些发出音符的琴弦, 承受的足够张力够大，<span class="math notranslate nohighlight">\(m g\)</span>
+将远小于张力，但在一般情况下没有理由放弃重力项。</p>
+<p>正如我们使用 60°
+大角度来表明摆锤近似值相当遥远一样，我们在这里使用如此大的位移，很明显张力不能简单地视为恒定。
+然而，拿起任何一本关于振动弦的行为的物理教科书，你会发现一个充满近似值的推导。
+为什么？</p>
+<p>首先，它使运动方程看起来更简单，而那些不得不与丑陋的方程作斗争的科学家们总是在寻找方法，用在某些条件下“接近”的更简单的方程来替换方程中的项。
+其次，通过足够的简化，无限数量的质点和无限数量的仅具有无限小的偏转的微小弹簧这样的受限情况，让微积分可以用基本函数提供一种好看解。</p>
+<p>随着高速计算的出现，我们需要控制我们的简化本能，因为它不再是必要的，它让我们开始接受错误的答案作为实际物理行为的指导。
+相反，我们可以有可证明的界限，即真正的<em>科学</em>。</p>
+<p>当用实际拉伸的绳子进行实验时，计算结果与实验结果之间的任何差异都证明物理模型中有些东西是不完整的。
+例如，如果用高速摄像机观察一根钢丝，使其处于拉紧状态并被拉动，那么第一个被打破的假设是“绳子”是完全柔韧的，没有刚性。
+拨弦处的尖锐扭结实际上因刚度而略微变圆。
+在硬弦情况下，计算模型必须使用弹簧上质量的三维网格来匹配材料特性。
+也许琴弦会像预测的那样振动，但振动时间不会很长；
+这表明需要考虑空气中声能的能量损失和琴弦的加热。
+<strong>如果模型是离散的，则可以对每个物理效应进行建模，而不会产生舍入误差或采样误差</strong>。
+如果使离散模型越来越精细但不能收敛到与实验结果相匹配，则计算机可用于检测物理模型中的不完整性。</p>
+</div>
+<div class="section" id="id4">
+<h2>21.3 单原子气体<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<p>如果我们无耻地使用老式的英语单位，下面的思想实验可能会让读者更容易想象。</p>
+<p>想象一下，六个硬方块在太空真空（无重力）中形成一个盒子，每边一英尺。
+里面有一个直径为 2/3 英寸的 1 盎司钢球，以每小时 1000 英里的速度移动。
+就像一颗被困的子弹一样，它每秒击中每面数百次。
+想象一下，弹跳是完美的弹性碰撞，球不会旋转，只是从墙壁上弹起。
+这是一个非常好的谜题，可以弄清楚球可以采取什么路径在相等的时间间隔击中每个面一次。
+下图显示了一个解决方案，从两个不同的角度看，它平等地对待立方体的三个维度：</p>
+<div class="figure align-default" id="id9">
+<img alt="_images/image-20230710174125462.png" src="_images/image-20230710174125462.png" />
+<p class="caption"><span class="caption-number">Fig. 423 </span><span class="caption-text">image-20230710174125462</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<p>如果立方体是单位立方体，其中 x、y 和 z 的范围为 0 到 1，则弹跳位置的坐标
+{x、y、z} 会形成循环模式：</p>
+<div class="figure align-default" id="id10">
+<img alt="_images/image-20230710174714681.png" src="_images/image-20230710174714681.png" />
+<p class="caption"><span class="caption-number">Fig. 424 </span><span class="caption-text">image-20230710174714681</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<p>每次弹跳都会产生动量，因为速度 v 在一个维度上是被反转的。
+每个维度的速度是 v 乘以 <span class="math notranslate nohighlight">\(\frac{1}{\sqrt{3}}\)</span> 。 如果 L
+是边的长度，则反弹之间的距离为</p>
+<div class="math notranslate nohighlight" id="equation-21-calculus-evil-5">
+<span class="eqno">(99)<a class="headerlink" href="#equation-21-calculus-evil-5" title="Permalink to this equation">¶</a></span>\[L\times\sqrt{\left (\frac{1}{3} \right )^2+\left (\frac{1}{3} \right)^2+ \left (\frac{1}{3} \right )^2}=\frac{L}{\sqrt{3}}\]</div>
+<p>其中每六个都是一个循环，因此球撞击任何特定墙壁的速率是速度除以该距离：</p>
+<div class="math notranslate nohighlight" id="equation-21-calculus-evil-6">
+<span class="eqno">(100)<a class="headerlink" href="#equation-21-calculus-evil-6" title="Permalink to this equation">¶</a></span>\[\text{碰撞速率} = \frac{v}{6\frac{L}{\sqrt{3}}}=\frac{v}{2\sqrt{3}L}\]</div>
+<p>每次碰撞都会从掠射角传递动量：</p>
+<div class="math notranslate nohighlight" id="equation-21-calculus-evil-7">
+<span class="eqno">(101)<a class="headerlink" href="#equation-21-calculus-evil-7" title="Permalink to this equation">¶</a></span>\[\text{动量变化}=m\frac{v}{\sqrt{3}}-m\left( \frac{-v}{\sqrt{3}} \right) = \frac{2mv}{\sqrt3}\]</div>
+<p>动量变化率就是作用在墙上的力； 事情开始变得更简单：</p>
+<div class="math notranslate nohighlight" id="equation-21-calculus-evil-8">
+<span class="eqno">(102)<a class="headerlink" href="#equation-21-calculus-evil-8" title="Permalink to this equation">¶</a></span>\[\text{力} = \text{碰撞速率} \times \text{动量变化} = \frac{mv^2}{3L}\]</div>
+<p>压强是单位面积上的力，因此如果我们除以立方体面的面积
+L2，结果分母是立方体体积 V 的三倍：</p>
+<div class="math notranslate nohighlight" id="equation-21-calculus-evil-9">
+<span class="eqno">(103)<a class="headerlink" href="#equation-21-calculus-evil-9" title="Permalink to this equation">¶</a></span>\[\text{压强}=\frac{mv^2}{3L^3}=\frac{mv^2}{3V}\]</div>
+<p>墙壁上的平均力约为每平方英寸十五磅。 气压！</p>
+<p>在海平面和 78 °F (25 °C) 下，一立方英尺空气的重量约为一盎司。
+室温下空气分子的速度约为每小时一千英里。
+一立方英尺空气中氧和氮分子的数量接近阿伏加德罗数，即本书开头示例中使用的值<span class="math notranslate nohighlight">\(6\times 10^{23}\)</span>。
+但似乎可以将模拟 <span class="math notranslate nohighlight">\(6\times 10^{23}\)</span>
+分子的问题一直扩展到<em>一个</em>粒子（一种超级原子（钢球）），并利用弹性碰撞的基本物理原理推导出压力的特性。
+没有微积分，也没有连续近似。</p>
+<p>也没有用统计学。
+这个思想实验是气体动力学理论的一种形式，是一个非常古老的想法，如此古老，以至于最初的开发者（麦克斯韦、玻尔兹曼等人）比计算机时代早了几十年。
+传统动力学理论和思想实验之间的区别在于，动力学理论使用随机速度的统计平均值。</p>
+<p>根据 3D 毕达哥拉斯定理</p>
+<div class="math notranslate nohighlight" id="equation-21-calculus-evil-10">
+<span class="eqno">(104)<a class="headerlink" href="#equation-21-calculus-evil-10" title="Permalink to this equation">¶</a></span>\[\overline{v^2} = \overline{v_x^2}+\overline{v_y^2}+\overline{v_z^2}\]</div>
+<p>其中上横线表示其下方内容是“平均值”。 但对于随机运动，x、y 或 z
+方向上的速度平方平均值之间没有差异。 可以仅选择 x 方向，也就是</p>
+<div class="math notranslate nohighlight" id="equation-21-calculus-evil-11">
+<span class="eqno">(105)<a class="headerlink" href="#equation-21-calculus-evil-11" title="Permalink to this equation">¶</a></span>\[\overline{v^2} = 3 \overline{v_x^2}\]</div>
+<p>在钢球沿着弯曲六边形形状的路径弹跳的思想实验中，六边形的每条边都沿着连接立方体相对角的线的方向。
+换句话说，速度 v 的方向为向量
+{<span class="math notranslate nohighlight">\(\pm 1, \pm 1, \pm 1\)</span>}。所以<span class="math notranslate nohighlight">\(v_x=\pm \frac{1}{\sqrt{3}}v\)</span></p>
+<p>值得注意的是，单原子气体模型与基于统计平均值的推理完全匹配：<span class="math notranslate nohighlight">\(v^2=3v_x^2\)</span></p>
+<p>维基百科在其动力学理论条目中对统计模型有很好的解释，如果有人想要并排比较推导，则这里已尽力匹配变量名称。</p>
+<p>顺便说一句，“气体gas”一词来自希腊语，我们发音为“混乱chaos”。
+我们的弹道单原子模型消除了系统中的所有混乱，但最终却得到了相同的结果。</p>
+<p>如果用两个重量一半的钢球代替钢球，以相同的速度沿相同的路径移动，则墙壁上的压力将相同。
+如果以相同的速度用 <span class="math notranslate nohighlight">\(6\times 10^{23}\)</span> 个小质量替换钢球，每个质量为
+<span class="math notranslate nohighlight">\(\frac{1}{6\times 10^{23}}\)</span>，则壁上的压力仍将相同，并且每个质量几乎与氮或氧分子完全相同！
+想到所有分子组成一个车队，绕着世界上最有组织的气体——弯曲六边形形状飞驰，真是有趣。
+要点是，当缩放质量时，<em>速度</em>要保持不变。</p>
+<p>现在让我们再次进行计算，使用国际单位和更高的精度。
+压力的标准单位是帕斯卡（牛顿每平方米），美国标准大气压是 101325 帕斯卡。
+求解大原子的速度，因为该模型还可以得出大气层的另一个特征：</p>
+<div class="math notranslate nohighlight" id="equation-21-calculus-evil-12">
+<span class="eqno">(106)<a class="headerlink" href="#equation-21-calculus-evil-12" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{array}{l}
+\text{压强}=101325\text{帕斯卡}=\frac{mv^2}{3V}, \text{其中} \\
+m=0.028964 \text{ 千克 (空气的平均摩尔质量)} \\
+V = 0.023644 \text{ 海平面立方米} \\
+\\
+\Rightarrow v = 498.14 \text{ 米/秒}
+\end{array}\end{split}\]</div>
+<p>想象一下，立方体是密封的，放置在海平面的地球表面，重力为 9.80
+米/秒平方。 由于重力加速度，球撞击立方体地板的力将略大于撞击天花板的力。
+质量块形成的弹道路径不是直线路径，而是稍微弯曲成抛物线。
+它撞击侧壁的位置仅改变约 3 微米 (<span class="math notranslate nohighlight">\(3 \times 10^{-6}\)</span>
+米)，因此不需要对几何形状进行太多改变即可使球以相同的稳定频率撞击。
+如果计算出压力差，立方体顶部的压力差会比底部小 0.344 帕斯卡。
+立方体的边长为 0.287 米，因此压力随着高度的增加以每米
+<span class="math notranslate nohighlight">\(0.344 \div 0.287 = 1.20\)</span> 帕斯卡的速率下降，在接近海平面附近。</p>
+<p>这与实际测量值一致，精确到小数点后三位。
+该模型不仅可以预测压力，还可以预测大气压力如何随高度变化。</p>
+<p><strong>读者的练习</strong>：使用单原子气体的弹道模型计算速度降和压差。
+请记住，动能的变化 <span class="math notranslate nohighlight">\(\frac{1}{2} m v^2\)</span> 等于势能的变化
+<span class="math notranslate nohighlight">\(m g h\)</span>，其中 h 是立方体的高度，并且只有速度的垂直分量受到影响。</p>
+<p>因此至少可以通过这样一个简单的设置来模拟压力。
+粘度和湍流等效应又如何呢？
+显然，我们需要更多的“大原子”才能开始看到这种效应。
+通过更有趣和更现实的粒子集合速度随机分布，也可以进行精确的有界计算。
+与完美气体模型的第一个偏差是允许气体粒子不仅与容器壁碰撞，而且还与彼此碰撞。
+这种情况发生的速率可以通过调整模拟中弹性球的大小来缩放；
+球体直径越小，碰撞率越低。</p>
+<p>它们也不一定是真实气体中的球体，而是具有旋转能和振动能的分子。
+计算机当然能够对一个非常大的弹簧球集合进行建模，这些集合可以完成模拟双原子氧和氮分子的粗略工作。
+通过调整“大分子”的参数，我们应该能够匹配气体的实验特性，或者发现模型中缺失的物理特性，并进行迭代直到它们匹配。
+在某种程度上，通过与测量的气体特性相匹配，该模型应该能够为有关机翼升力和阻力或汽车阻力系数的问题提供有限的答案。</p>
+<p>微积分的替代方案是纳维-斯托克斯方程，这是您见过的最令人讨厌的偏微分方程之一。
+（还有一些最常发音错误的词。Navier 是法语，所以这部分听起来像
+NAH-vee-ay。） 一共有五个方程；
+一个用于质量守恒，三个用于动量守恒（每个空间维度一个），一个用于能量守恒。
+它们是非线性和耦合的，并且在使用不可压缩流体（如水）与可压缩流体（如空气）时看起来非常不同。
+当你考虑到纳维-斯托克斯方程必须描述热量如何在气体中扩散以及声波如何传播时，纳维-斯托克斯方程似乎是所有计算物理方程的结合。</p>
+<p>处理纳维-斯托克斯方程的通常方法是尽可能地简化它们，艺术地删除物理的某些方面，希望它们对结果影响不大。
+然后，程序员开始弄清楚如何将所有有趣的小
+<span class="math notranslate nohighlight">\(\frac{\partial}{\partial t}\)</span>
+和其他导数转化为离散的东西，比如差分近似，并使用步进方法来步进时间。
+随着模拟与真实情况的逐渐偏离，除了把它与真实实验进行比较之外，绝对没有办法知道它到底偏了多远。其代价也可能非常昂贵，
+比如是为了设计高超音速飞机做模拟的话。</p>
+<p>进行计算流体动力学 (CFD)
+的程序是几十年来开发的令人惊叹的工艺作品，它们的作者设法解决了舍入和采样误差问题，使结果可以为工程师提供实用指导。
+借助 unum
+算术，开发限制离散粒子行为的程序可能会很有趣，以了解基于连续介质近似和微积分的经典
+CFD 近似与基于动力学理论的严格模型（不需要任何微积分）的不同之处。</p>
+</div>
+<div class="section" id="id5">
+<h2>21.4 结构分析<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
+<div class="figure align-default" id="id11">
+<img alt="_images/image-20230711145627257.png" src="_images/image-20230711145627257.png" />
+<p class="caption"><span class="caption-number">Fig. 425 </span><span class="caption-text">image-20230711145627257</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+<p>左边是价值数十亿美元的北海石油平台 Sleipner A，1991 年 8 月 23
+日建成。右边是 1991 年 8 月 24 日的同一地点。Oops。
+它塌陷到海底，并引发了3.0级地震。
+幸好没有人伤亡，甚至连负责该项目的工程师也没有伤亡。他的经理发现这场灾难是由计算错误造成的，高估了混凝土柱部分的抗剪强度47%。
+尽管使用了 64 位浮点数和备受推崇的有限元分析软件包
+(NASTRAN)，但还是发生了这种情况。</p>
+<p>结构分析是一个工程领域，几乎与CFD一样多的投入在连续介质物理的困难微积分上的深入研究。
+想象一个大橡皮擦，它可以在三个空间维度中的任何一个维度上被挤压、拉动、扭曲或剪切应力。
+它就像一个弹簧，不仅具有弹簧常数，还具有弹簧矩阵来描述其在压力下应变时的所有相互作用方式。</p>
+<p>橡胶性能良好且可预测，但许多材料的应力和应变并不具有线性关系，这会扰乱通常将结构分析问题视为线性方程组的建模工作。（混凝土的抗剪强度是非线性应力-应变响应的一个很好的例子。或者，如果您拥有上面的
+Sleipner A 石油平台的股票，就是一个非常糟糕的例子。）</p>
+<p>这是结构分析中的一个问题，至少在三个维度上是最简单的。
+它不需要微积分，也不需要任何关于物体在剪切力或扭转力下如何弯曲的知识。</p>
+<p>求支撑具有三个构件的质量 M
+所需的结构力：一根支柱（显示为蓝色圆柱体，标记为
+1）和两根连接到垂直墙上的缆绳（显示为红色圆柱体，标记为 2 和 3）。
+缆索承受拉力，支柱承受压力。</p>
+<div class="figure align-default" id="id12">
+<img alt="_images/image-20230711150826009.png" src="_images/image-20230711150826009.png" />
+<p class="caption"><span class="caption-number">Fig. 426 </span><span class="caption-text">image-20230711150826009</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+<p>三个构件在一点处连接，但该连接点不能施加扭矩。
+它是一个“销连接器”，可以被认为允许构件在连接点旋转。
+这意味着构件上唯一可能发生的事情是压缩力（支柱）和拉力（电缆）。</p>
+<p>现在，忽略构件、电缆以及它们连接处的接头的重量；
+<strong>结构各部分所受的力是多少？</strong> 只需使用两个常识性事实即可回答这个问题：</p>
+<ul class="simple">
+<li><p>力量必须平衡，因为没有任何东西在加速。</p></li>
+<li><p>力在每个维度上分别相加。 换句话说，它们是向量。</p></li>
+</ul>
+<p>假设墙壁对缆索和支柱施加的任何力提供反作用力。
+由于它们只是电缆和支柱，因此它们可以施加力的唯一方向是沿着它们的长度。</p>
+<p>在问题的二维版本中，力平衡更容易可视化。</p>
+<p>在左图中，红色电缆的坡度为 <span class="math notranslate nohighlight">\(-1/4\)</span>，蓝色支柱的坡度为
+<span class="math notranslate nohighlight">\(1/2\)</span>；
+通过将每个力方向除以其成员的长度，将力的方向制成单位向量。</p>
+<div class="figure align-default" id="id13">
+<img alt="_images/image-20230711151504210.png" src="_images/image-20230711151504210.png" />
+<p class="caption"><span class="caption-number">Fig. 427 </span><span class="caption-text">image-20230711151504210</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+<p>在垂直方向 <span class="math notranslate nohighlight">\(z\)</span>上，质量 <span class="math notranslate nohighlight">\(M\)</span> 施加大小为 <span class="math notranslate nohighlight">\(g M\)</span>
+的力，其中 <span class="math notranslate nohighlight">\(g\)</span> 是重力。 因此，支柱必须在z方向施加<span class="math notranslate nohighlight">\(+g M\)</span>
+的反作用力来抵消。
+但事实上，它只能在其长度方向上施加力，这意味着支柱上还必须有四倍大的水平力，即
+<span class="math notranslate nohighlight">\(+4g M\)</span>。这又意味着电缆必须水平拉动（x 方向） 力为
+<span class="math notranslate nohighlight">\(–4gM\)</span>。 然后每个维度上的所有力加起来为零。</p>
+<p>平衡两个构件相交处的水平力并支撑质量 M：</p>
+<div class="math notranslate nohighlight" id="equation-21-calculus-evil-13">
+<span class="eqno">(107)<a class="headerlink" href="#equation-21-calculus-evil-13" title="Permalink to this equation">¶</a></span>\[\frac{4}{\sqrt{4^2+(-1)^2}}F_1 + \frac{4}{\sqrt{4^2+2^2}}F_2 + \frac{0}{\sqrt{0^2+(-1)^2}}F_M = 0\]</div>
+<p>平衡同一点的垂直力：</p>
+<div class="math notranslate nohighlight" id="equation-21-calculus-evil-14">
+<span class="eqno">(108)<a class="headerlink" href="#equation-21-calculus-evil-14" title="Permalink to this equation">¶</a></span>\[\frac{-1}{\sqrt{4^2+(-1)^2}}F_1 + \frac{2}{\sqrt{4^2+2^2}}F_2 + \frac{-1}{\sqrt{0^2+(-1)^2}}F_M = 0\]</div>
+<p>由于我们知道 <span class="math notranslate nohighlight">\(F_M = g M\)</span>，因此上面的两个方程形成了两个未知量
+<span class="math notranslate nohighlight">\(F_1\)</span> 和 <span class="math notranslate nohighlight">\(F_2\)</span> 的一对线性方程。
+以矩阵形式表示，它看起来像这样：</p>
+<div class="math notranslate nohighlight" id="equation-21-calculus-evil-15">
+<span class="eqno">(109)<a class="headerlink" href="#equation-21-calculus-evil-15" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{pmatrix}
+\frac{4}{\sqrt{17}} &amp; \frac{4}{\sqrt{20}}\\
+\frac{-1}{\sqrt{17}} &amp; \frac{2}{\sqrt{20}}
+\end{pmatrix}
+\begin{pmatrix}
+F_1 \\
+F_2
+\end{pmatrix} =
+\begin{pmatrix}
+0 \\
+gM
+\end{pmatrix}\end{split}\]</div>
+<p>该系统的精确解是 <span class="math notranslate nohighlight">\(F_1 = -\frac{\sqrt{17}}{3}gM\)</span>
+，<span class="math notranslate nohighlight">\(F_2=\frac{\sqrt{20}}{3}gM\)</span></p>
+<p>为了更好地理解这个结果，假设 M 是一公吨，大约相当于英制单位的一吨。
+那么上缆索必须提供 <span class="math notranslate nohighlight">\(\frac{\sqrt{17}}{3} = 1.37 \cdots\)</span>
+吨重量的拉力（负向力），支柱必须提
+<span class="math notranslate nohighlight">\(\frac{\sqrt{20}}{3} = 1.49 \cdots\)</span> 吨的支撑力度。</p>
+<p>通过 unum math，所有输入都可以有界，并且可以使用包含所有可表示解的
+c-solution来计算产生的力，并且没有无法解决问题的 <span class="math notranslate nohighlight">\(F_1、F_2\)</span> 对。
+如果结构是“刚性的”，即对输入的变化非常敏感，那么 c-solution
+将是一个非常瘦的四边形，<strong>工程师会立即发现该设计是可疑的</strong>。
+比如说，如果问题看起来像这样的话，就会发生这种情况：</p>
+<div class="figure align-default" id="id14">
+<img alt="_images/image-20230711153720499.png" src="_images/image-20230711153720499.png" />
+<p class="caption"><span class="caption-number">Fig. 428 </span><span class="caption-text">image-20230711153720499</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+<p>目前使用的一种方法称为“敏感性分析”，通过改变输入参数来了解答案如何受到影响。
+这往往需要一些艺术选择，因为实际工程结构问题有很多自由度。 有了
+ubox，所有可能的参数敏感性都已经在 c-solution中，供所有人查看。</p>
+<p>要在三维和具有多个关节的更复杂的结构中应用该技术，只需编写描述每个关节处
+x、y 和 z 方向上的平衡力的方程即可。</p>
+<p><strong>给读者最后一个练习</strong>: 如果本节开头所示的三维结构的附着点坐标为 {0, -1,
+4.5}、{0, 1, 4.5}、{0, 0, 2} 并且三者在 {4,0,3}聚集，建立三个力方程。</p>
+<p>可以通过利用每个构件的重量均等地由构件的两端承受的事实来考虑来自构件本身的重量的力。
+例如，如果上面显示的红色电缆的质量为 m，则方程需要将 <span class="math notranslate nohighlight">\(g m/2\)</span>
+添加到悬挂质量 M 的两端力中。</p>
+<div class="figure align-default" id="id15">
+<img alt="_images/image-20230711155820226.png" src="_images/image-20230711155820226.png" />
+<p class="caption"><span class="caption-number">Fig. 429 </span><span class="caption-text">image-20230711155820226</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+<p>这时做工程开始变得有趣，因为如果建造一座钢桥，假设您需要查找钢材的拉伸和压缩强度，并计算出保持在安全限度内的最小重量。
+试错过程可以自动化。 如果所有输入的不确定性都用 ubound
+表示，并且方程组的解不会像简单使用区间算术那样被依赖性问题所影响，那么设计过程就会变得更容易、更安全。
+工程师已经有很多不确定性需要应对，而不必怀疑计算机中的底层算法是否正确。</p>
+<div class="figure align-default" id="id16">
+<img alt="_images/image-20230711160023903.png" src="_images/image-20230711160023903.png" />
+<p class="caption"><span class="caption-number">Fig. 430 </span><span class="caption-text">image-20230711160023903</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+<p>现在想象一个由关节连接的成员组成的大型三维网格，如下所示：</p>
+<div class="figure align-default" id="id17">
+<img alt="_images/image-20230711160104039.png" src="_images/image-20230711160104039.png" />
+<p class="caption"><span class="caption-number">Fig. 431 </span><span class="caption-text">image-20230711160104039</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+<p>尽管这种网格由连接在不能施加扭矩或剪切力的接头处的简单直构件组成，但它可以模拟扭矩和剪切力。
+到目前为止，假设结构上没有应力产生应变，因此每个关节的坐标是固定的。
+一旦您允许构件充当线性弹簧并且关节移动，并且可以单独调整每个弹簧刚度，则可以模拟各种属性来模仿连续材料的行为。
+<em>有限元方法</em>与此处描述的非常相似，但请注意，与您会发现的任何有关该方法的书籍不同，<em>推导中没有微积分</em>。
+只是受牛顿力学控制的离散物体。
+由此产生的大型方程组不可能用手求解，但可以通过计算机求解，并且结果有<em>可证明的界限</em>。</p>
+</div>
+</div>
+
+
+        </div>
+        <div class="side-doc-outline">
+            <div class="side-doc-outline--content"> 
+<div class="localtoc">
+    <p class="caption">
+      <span class="caption-text">Table Of Contents</span>
+    </p>
+    <ul>
+<li><a class="reference internal" href="#">21 微积分被认为是邪恶的：离散物理</a><ul>
+<li><a class="reference internal" href="#id2">21.1 连续物理与离散物理</a></li>
+<li><a class="reference internal" href="#id3">21.2 振动弦的离散版本</a></li>
+<li><a class="reference internal" href="#id4">21.3 单原子气体</a></li>
+<li><a class="reference internal" href="#id5">21.4 结构分析</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+            </div>
+        </div>
+
+      <div class="clearer"></div>
+    </div><div class="pagenation">
+     <a id="button-prev" href="20_two_body_problem.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="P">
+         <i class="pagenation-arrow-L fas fa-arrow-left fa-lg"></i>
+         <div class="pagenation-text">
+            <span class="pagenation-direction">Previous</span>
+            <div>20 二体问题(以及多体问题)</div>
+         </div>
+     </a>
+     <a id="button-next" href="22_end_of_error.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
+         <i class="pagenation-arrow-R fas fa-arrow-right fa-lg"></i>
+        <div class="pagenation-text">
+            <span class="pagenation-direction">Next</span>
+            <div>22 错误的终结</div>
+        </div>
+     </a>
+  </div>
+        
+        </main>
+    </div>
+  </body>
+</html>

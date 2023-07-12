@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>19 摆的正确计算 &#8212; THE END of ERROR - Unum Computing 0.1 documentation</title>
+
+    <link rel="stylesheet" href="_static/material-design-lite-1.3.0/material.blue-deep_orange.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx_materialdesign_theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fontawesome/all.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/d2l.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/d2l.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="20 二体问题(以及多体问题)" href="20_two_body_problem.html" />
+    <link rel="prev" title="18 准许猜测" href="18_permission_to_guess.html" /> 
+  </head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header mdl-layout__header--waterfall ">
+    <div class="mdl-layout__header-row">
+        
+        <nav class="mdl-navigation breadcrumb">
+            <a class="mdl-navigation__link is-active">19 摆的正确计算</a>
+        </nav>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+        
+<form class="form-inline pull-sm-right" action="search.html" method="get">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+        <label id="quick-search-icon" class="mdl-button mdl-js-button mdl-button--icon"  for="waterfall-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q"  id="waterfall-exp" placeholder="Search" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </div>
+      </div>
+      <div class="mdl-tooltip" data-mdl-for="quick-search-icon">
+      Quick search
+      </div>
+</form>
+        
+<a id="button-show-source"
+    class="mdl-button mdl-js-button mdl-button--icon"
+    href="_sources/19_pendulums_done_correctly.rst.txt" rel="nofollow">
+  <i class="material-icons">code</i>
+</a>
+<div class="mdl-tooltip" data-mdl-for="button-show-source">
+Show Source
+</div>
+        </nav>
+    </div>
+    <div class="mdl-layout__header-row header-links">
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation">
+          
+              <a  class="mdl-navigation__link" href="https://github.com/jszheng/TheEndOfError">
+                  <i class="fab fa-github"></i>
+                  Github
+              </a>
+      </nav>
+    </div>
+</header><header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_TheOriginalSin.html">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_hidden_scratchpads_3_layers.html">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_info_per_bit.html">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_comparison_operations.html">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_mul_div.html">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_other_important_unary_ops.html">12 其他重要的一元运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_fused_operations.html">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_TheOtherKindOfError.html">15. 另外一种误差</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_avoid_interval_arith_pitfalls.html">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_meaning_of_solve_equ.html">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_permission_to_guess.html">18 准许猜测</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_calculus_evil.html">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_end_of_error.html">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+        <main class="mdl-layout__content" tabIndex="0">
+
+	<script type="text/javascript" src="_static/sphinx_materialdesign_theme.js "></script>
+    <header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_TheOriginalSin.html">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_hidden_scratchpads_3_layers.html">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_info_per_bit.html">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_comparison_operations.html">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_mul_div.html">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_other_important_unary_ops.html">12 其他重要的一元运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_fused_operations.html">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_TheOtherKindOfError.html">15. 另外一种误差</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_avoid_interval_arith_pitfalls.html">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_meaning_of_solve_equ.html">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_permission_to_guess.html">18 准许猜测</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_calculus_evil.html">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_end_of_error.html">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+
+    <div class="document">
+        <div class="page-content" role="main">
+        
+  <div class="section" id="id1">
+<h1>19 摆的正确计算<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<div class="figure align-default" id="id6">
+<img alt="_images/image-20230706104502916.png" src="_images/image-20230706104502916.png" />
+<p class="caption"><span class="caption-number">Fig. 359 </span><span class="caption-text">image-20230706104502916</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<blockquote>
+<div><p>当物理学家分析钟摆时，他们更喜欢谈论“小振荡”。
+但你遇到过不喜欢大振荡的孩子吗？</p>
+</div></blockquote>
+<div class="section" id="id2">
+<h2>19.1 物理学入门方法<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>读者可能会迫不及待地想看到一些可以毫无错误地解决的实际问题的例子，而不仅仅是数学家提出的极其聪明的挑战。
+摆的行为是任何物理课程中首先介绍的动力学问题之一，所以从这里开始。</p>
+<table border="2"><tr><td bgcolor="lightyellow"><p>每门物理入门课程都以单摆作为谐振子的例子：偏离平衡的位移越大，恢复力越大，这意味着解就是波动方程。
+也就是说，位移角是时间的正弦函数。</p>
+</td></tr></table><div class="figure align-default" id="id7">
+<img alt="_images/image-20230706105031904.png" src="_images/image-20230706105031904.png" />
+<p class="caption"><span class="caption-number">Fig. 360 </span><span class="caption-text">image-20230706105031904</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p>分析还表明，振荡周期并不取决于振幅，这是伽利略首先指出的违反直觉的结果。
+如果摆的长度为L，重力加速度为g（约9.8米/秒），那么摆的周期为<span class="math notranslate nohighlight">\(2 \pi \sqrt{L/g}\)</span></p>
+<p><strong>不幸的是，事实并非如此</strong>。 恢复力与位移不成正比。 钟摆不是谐振子。
+任何使用过游乐场秋千的人都知道，较大的秋千比小秋千需要更长的时间。
+将波动方程应用于钟摆是物理学教学中潜藏的“小谎言”之一。
+这个神话源于强烈的愿望，即使用我们所拥有的优雅的分析工具，并获得看起来像基本函数的结果，即使它们…其实不太适合这个问题。
+说钟摆近似于谐振子，就像地球近似于平的而不是圆的一样。</p>
+<p>对于钟摆的真实行为<strong>是有</strong>一个理论上的解决方案，但它涉及的数学是如此可怕，以至于只有少数物理专业的本科生接触过它，当你查看这个“解决方案”时，它并不能洞察到底发生了什么
+。
+有很多方法可以精确描述摆运动，但所有这些方法都需要组合无限多个初等函数。</p>
+</div>
+<div class="section" id="id3">
+<h2>19.2 通常的数值方法<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<p>假设摆锤开始摆动时，摆锤与垂直方向呈 –60° 角，长度为 L 的绳子上的质量为
+m。</p>
+<div class="figure align-default" id="id8">
+<img alt="_images/image-20230706110955195.png" src="_images/image-20230706110955195.png" />
+<p class="caption"><span class="caption-number">Fig. 361 </span><span class="caption-text">image-20230706110955195</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<p>使用计算机模拟物理动力学的常用方法是通过重复执行以下每个时间片的步骤： -
+使用位置来估计质量上的力。 - 使用力来估计加速度。 -
+使用加速度和当前速度来估计未来的速度。 - 使用速度来估计未来位置。</p>
+<p>每个估计都会受到采样误差的影响，因为位置、力和速度都在一个时间步长内发生变化。
+有许多复杂的方法试图变得聪明，例如，通过使用过去、现在和未来的加速度和速度之间的插值来更接近事实，但它们都会犯采样错误。</p>
+<p>当使用浮点数执行时，计算也会累积舍入误差。
+由于采样和舍入误差，计算的物理模拟与现实的距离越来越远。
+你不知道答案已经偏离了多远，因为所有的错误都是无声的、看不见的。
+传统的数值分析还规定了时间步长方法的采样误差，以及另一个非常不令人满意的误差界，例如数值计算曲线下面积的误差界。
+采样误差的总量可能是无限的。</p>
+<table border="2"><tr><td bgcolor="lightyellow"><p>采样和舍入误差并不是时间步长方法的唯一缺点：它也无法通过并行计算来完成。
+每个时间步都依赖于前一个时间步，因此该方法别无选择，只能按顺序执行时间步。
+这导致运行模拟的人们需要非常快的单处理器计算机，以便他们可以采取更精细的时间步长（以尝试减少采样误差）</p>
+</td></tr></table><p>ubox 方法有着根本的不同，它把时间维度简单地视为多了一个 ubox 维度。
+位置和时间二维空间中的每个 ubox 必须保证 - 能量守恒， -
+保持连续性（不传送到空间中的新点），并且 -
+速度没有瞬时变化，因为这需要无穷大的力</p>
+<p>假设起始位置为角度 x = –60°，如图所示。 想象一下，一个重 25
+公斤的孩子坐在 2 米长的秋千上。 假设目前所有值都是精确的，包括重力为 9.8
+米每秒平方。</p>
+<p>势能等于质量 m 乘以重力 g 乘以相对高度 h，即 m g h。
+这里，相对高度是到摆动弧线底部的距离，对于位移角<span class="math notranslate nohighlight">\(\theta\)</span>来说是<span class="math notranslate nohighlight">\(L (1 - cos(\theta))\)</span>。
+在起始位置，所有能量都是势能，因为速度为零。 对于此摆动，总能量始终为
+245 焦耳。
+（我们可以忽略空气阻力，并假设有人在每个周期结束时稍微推一下孩子，以将振幅保持在
+± 60°。）</p>
+<div class="math notranslate nohighlight" id="equation-19-pendulums-done-correctly-0">
+<span class="eqno">(75)<a class="headerlink" href="#equation-19-pendulums-done-correctly-0" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{array}{c}
+\text{势能}(\theta) = mgL(1-\cos(\theta)) \\
+\text{总能量} = \text{势能}(-60^\circ) = 245\text{ joules}
+\end{array}\end{split}\]</div>
+<p>动能是 <span class="math notranslate nohighlight">\(\frac{1}{2} mv^2\)</span>，其中 v 是速度。
+它是总能量减去势能，因为总能量是守恒的。</p>
+<div class="math notranslate nohighlight" id="equation-19-pendulums-done-correctly-1">
+<span class="eqno">(76)<a class="headerlink" href="#equation-19-pendulums-done-correctly-1" title="Permalink to this equation">¶</a></span>\[\text{动能}(\theta)=\text{总能量}-\text{势能}(\theta)=\frac{1}{2}mv^2\]</div>
+<p>这意味着可以从位置推导出速度。
+沿着运动弧线的速度以米/秒为单位，因此必须将角速度（以度为单位）按
+<span class="math notranslate nohighlight">\(\frac{\pi L}{180°}\)</span> 缩放才能找到悬浮质量 M
+的速度。以下公式从动能推断出速度；
+请注意，这要求动能非负，否则速度将是一个虚数！</p>
+<div class="math notranslate nohighlight" id="equation-19-pendulums-done-correctly-2">
+<span class="eqno">(77)<a class="headerlink" href="#equation-19-pendulums-done-correctly-2" title="Permalink to this equation">¶</a></span>\[v(\theta)=\sqrt{2 \text{ 动能}(\theta)/m}\]</div>
+<p>我们还可以根据位置确定加速度。 它只是重力乘以偏转角的负正弦值。
+（一年级物理学用 <span class="math notranslate nohighlight">\(\theta\)</span> 近似 <span class="math notranslate nohighlight">\(sin(\theta)\)</span>
+以使事情变得更容易，尽管这是错误的。）</p>
+<div class="math notranslate nohighlight" id="equation-19-pendulums-done-correctly-3">
+<span class="eqno">(78)<a class="headerlink" href="#equation-19-pendulums-done-correctly-3" title="Permalink to this equation">¶</a></span>\[a(\theta)=-g\sin(\theta)\]</div>
+<p>像摆动力学这样的问题称为非线性常微分方程。
+位置、速度和加速度通过简单的线性方程相关。这么好的事情在现实世界问题中并不像在物理课程中那样经常发生。传统的数值方法提供了对此类非线性问题的解决方案的<em>猜测</em>，但对于“某个时间点质点在哪里？”这个简单问题的答案却没有保证的界限。</p>
+</div>
+<div class="section" id="id4">
+<h2>19.3 空间步进：大规模并行性的新来源<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<p>下图提醒我们，物理学的大部分内容不需要微积分。 距离是速度乘以时间。
+如果速度随时间变化，则距离是描述速度的函数下的面积。
+如果加速度恒定，则不需要积分求面积；
+我们只需要三角形和矩形面积的基本几何。</p>
+<p><img alt="image-20230706135753917" src="_images/image-20230706135753917.png" /></p>
+<div class="math notranslate nohighlight" id="equation-19-pendulums-done-correctly-4">
+<span class="eqno">(79)<a class="headerlink" href="#equation-19-pendulums-done-correctly-4" title="Permalink to this equation">¶</a></span>\[X_{new}=X_{old}+u_0t+\frac{1}{2}at^2\]</div>
+<p>为什么不简单地使用上式与传统的区间算术，使用速度 <span class="math notranslate nohighlight">\(u_0\)</span> 和加速度
+<span class="math notranslate nohighlight">\(a\)</span> 的界限来限制 <span class="math notranslate nohighlight">\(x_{new}\)</span> 的值？
+因为这样做会产生先有鸡还是先有蛋的问题：在知道时间步中可能位置的范围之前，您不知道可能的加速度和速度的范围。
+在找出可能的加速度和速度的范围之前，您不知道时间步中可能的位置。
+对于钟摆来说，在第一个四分之一周期内，速度低至零，加速度也低至零(<em>错了吧，有力就有加速度</em>)，这意味着区间算术预测钟摆可能根本不会移动，只是挂在那里，处于
+Wile E. Coyote 时刻。（一个经济学的比喻，如下图）</p>
+<div class="figure align-default" id="id9">
+<img alt="_images/F1tc8.jpg" src="_images/F1tc8.jpg" />
+<p class="caption"><span class="caption-number">Fig. 362 </span><span class="caption-text">enter image description here</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<p>The metaphor of Wile E. Coyote moment has been recently used by Ben
+Bernake suggesting that the U.S. economy might face a real slump in a
+few years.</p>
+<p>相反，我们将时间视为位置的函数。
+在一个位置范围内，速度和加速度有严格的界限。
+（这种情况发生在许多类型的动力学问题中，而不仅仅是摆。）从速度和加速度的界限，我们可以使用基本几何导出遍历每个位置范围所花费的时间间隔的严格界限，正如我们稍后将展示的那样。
+这可能会让您感到不舒服，因为空间步进与我们通常思考运动的方式相反，在运动中位置是时间的函数。
+但请考虑这个事实：</p>
+<table border="2"><tr><td bgcolor="lightblue"><center><p>所有的遍历时间边界的工作都可以并行啦。</p>
+</center></td></tr></table><p>这是一个令人震惊的结果，因为这意味着我们不仅可以获得物理行为的严格界限，而且我们可以使用计算机系统中尽可能多的处理器来获得任何所需质量的答案。
+大自然可能会将钟摆作为时间的串行函数来操作，但这并不意味着我们也必须串行计算其行为。</p>
+<p>当人们寻找借口不使用并行计算来解决问题时，他们经常会指出看似本质上是串行的问题，其中事物显然必须按顺序计算（每个步骤都取决于前一个步骤）。
+摆模拟就是一个完美的例子，计算轨道轨迹的问题也是如此。
+多年来，计算机用户一直滥用阿姆达尔定律作为不应用并行编程的借口，声称这样做的好处非常有限。
+同样，物理模拟的时间依赖性也被滥用为不将现有串行软件更改为并行运行的借口。
+现在也是时候放弃这个借口了。</p>
+<p>每个计算出的遍历时间都会受到一定数量的 ULP
+的影响，当我们将所有时间排列起来以创建质点在任何时间范围内的位置的图表时，ULP
+就会累积。 应选择 unum 环境，以便累积的 ULP
+误差与最慢和最快时间之间的累积理论界限大致相同，可以通过使用更多的空间步长将其变得尽可能小。
+这与舍入误差和抽样误差有很大不同；
+它同时消除了数值计算中的这两个误差源，并用有保证的界限代替它们。</p>
+<p>这是一个简单的示例，说明如何限制在某个角度范围内花费的时间。 从 –60°
+的开始时间到摆锤穿过垂直方向 0°
+的点的整个范围开始。（之后的行为是对称的，因此计算四分之一周期就足以计算摆动的整个周期。）角度下标表示特定角度的物理值，因此
+<span class="math notranslate nohighlight">\(a_{-60^\circ}\)</span> 表示摆在 –60 时的加速度 °，例如：</p>
+<div class="figure align-default" id="id10">
+<img alt="_images/image-20230706190839189.png" src="_images/image-20230706190839189.png" />
+<p class="caption"><span class="caption-number">Fig. 363 </span><span class="caption-text">image-20230706190839189</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<p>紫色曲线显示了作为时间函数的正确速度。
+我们不知道速度函数是什么，但我们确实知道它的物理极限是什么。
+它可以是最大值，如果它以最大加速度<span class="math notranslate nohighlight">\(a_{-60^\circ}\)</span>增加，直到达到最大速度<span class="math notranslate nohighlight">\(v_{0^\circ}\)</span>，即红色所示的曲线。
+注意最大加速度变化处的红点；
+当我们使用速度来查找位置时，这将有助于可视化。</p>
+<p>最小值（以蓝色显示）是速度加速到足以达到最大值的情况。
+为什么它不能比这个更低，或者靠右时候向上弯曲？
+因为在这个角度范围内加速度是减小的。
+它不能在任何地方向上弯曲，因为这意味着加速度正在增加。</p>
+<p>顶部曲线达到最大速度的角点是时间等于<span class="math notranslate nohighlight">\(\frac{v_{0^\circ}}{a_{-60^\circ} }\)</span>
+时。
+这样，我们就得到了找到红色曲线下和蓝色曲线下面积公式所需的每个点的坐标，这两个曲线都代表行驶的距离。
+但请记住，我们不是在计算行驶的距离。 我们知道行驶的距离；
+我们不知道的是完成钟摆摆动的那部分所需的时间。</p>
+<p>将红色曲线下的三角形和矩形的面积相加得出穿过角度范围的<strong>最短时间</strong>，因为这是<strong>最大速度</strong>。</p>
+<div class="math notranslate nohighlight" id="equation-19-pendulums-done-correctly-5">
+<span class="eqno">(80)<a class="headerlink" href="#equation-19-pendulums-done-correctly-5" title="Permalink to this equation">¶</a></span>\[\text{穿过的距离}=\text{面积}=\frac{1}{2}(\frac{V_{0^\circ}}{a_{-60^\circ}})+(t_{min}-\frac{V_{0^\circ}}{a_{-60^\circ}})v_{0^\circ} = L\times(\frac{60^\circ\pi}{180^\circ})\]</div>
+<p>解上述方程得到<span class="math notranslate nohighlight">\(t_{min}\)</span>表达式如下</p>
+<div class="math notranslate nohighlight" id="equation-19-pendulums-done-correctly-6">
+<span class="eqno">(81)<a class="headerlink" href="#equation-19-pendulums-done-correctly-6" title="Permalink to this equation">¶</a></span>\[t_{min}=\frac{L\pi}{3v_{0^\circ}}+\frac{v_{0^\circ}}{2a_{-60^\circ}}\]</div>
+<p>对于这个特定的摆，最小可能时间<span class="math notranslate nohighlight">\(t_{min}\)</span> 为
+<span class="math notranslate nohighlight">\(0.733896\cdots\)</span> 秒，这很有趣，因为谐振子模型表示周期为
+<span class="math notranslate nohighlight">\(0.709613\cdots\)</span>秒！
+我们刚刚证明了从微积分导出的通常模型是错误的，并且用初等几何和代数做到了这一点。</p>
+<p>现在对于下限，蓝色曲线，它告诉我们穿过角度范围的最大时间，因为它是可能的最慢速度。
+这个更简单，因为行驶的距离只是三角形的面积：</p>
+<div class="math notranslate nohighlight" id="equation-19-pendulums-done-correctly-7">
+<span class="eqno">(82)<a class="headerlink" href="#equation-19-pendulums-done-correctly-7" title="Permalink to this equation">¶</a></span>\[\text{穿过的距离}=\text{面积}=\frac{1}{2}t_{max}V_{0^\circ}= L\times(\frac{60^\circ\pi}{180^\circ})\]</div>
+<p>解这个<span class="math notranslate nohighlight">\(t_{max}\)</span>得到</p>
+<div class="math notranslate nohighlight" id="equation-19-pendulums-done-correctly-8">
+<span class="eqno">(83)<a class="headerlink" href="#equation-19-pendulums-done-correctly-8" title="Permalink to this equation">¶</a></span>\[t_{max}=\frac{2L\pi}{3V_{0^\circ}}\]</div>
+<p>这给出了时间的上限 <span class="math notranslate nohighlight">\(0.94632\cdots\)</span> 秒。 如果使用 {2, 3}
+环境（小数最多 8 位精度）计算 ubox
+时间和空间界限，则有界解仍然足够紧，可以排除一年级物理解，如下图琥珀色所示</p>
+<div class="figure align-default" id="id11">
+<img alt="_images/image-20230706194528004.png" src="_images/image-20230706194528004.png" />
+<p class="caption"><span class="caption-number">Fig. 364 </span><span class="caption-text">image-20230706194528004</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+<p>红色曲线上的点对应于上图中速度曲线上的红点。
+它显示了加速度这时候发生了变化，这很难看出来，因为那里的曲线很平滑。
+该图在开始处和结束处显示了一个青色
+ubound，但是有关加速度和速度bound的信息意味着我们有抛物线轨迹来限制其间的时间和位置。
+请注意，起始 ubound
+在两个维度上都是精确的，因为我们知道时间恰好为零且位置恰好为
+–60°（尽管角度绘制为弧上的位置）。</p>
+<p>最终的 ubound
+在位置上是精确的，因为我们知道位置恰好为零，而对于时间来说是不精确的。
+两个红色和单个蓝色加速度-速度对的 unum
+界限使用有限精度算术产生轨迹的严格界限。</p>
+<p>你可以猜到接下来会发生什么：将空间区域一分为二。 评估
+<span class="math notranslate nohighlight">\(–30^\circ\)</span>处的加速度和速度: <span class="math notranslate nohighlight">\(a_{-30^\circ}\)</span> 和
+<span class="math notranslate nohighlight">\(v_{-30^\circ}\)</span> ，并将边界区域和斜率“固定”到这些值。
+形状边界变得更有趣：</p>
+<div class="figure align-default" id="id12">
+<img alt="_images/image-20230707111015536.png" src="_images/image-20230707111015536.png" />
+<p class="caption"><span class="caption-number">Fig. 365 </span><span class="caption-text">image-20230707111015536</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+<p>看一眼图表就可以看出，这已经是未知的紫色速度曲线上更严格的界限。
+另外用两个处理器可以并行计算两个时间段的界限。
+对于这个新的角度空间细分，面积边界计算如下：</p>
+<blockquote>
+<div><p>花在<span class="math notranslate nohighlight">\(-60^\circ\)</span>到<span class="math notranslate nohighlight">\(-30^\circ\)</span>的时间：<span class="math notranslate nohighlight">\(0.50486\cdots\)</span>
+到 <span class="math notranslate nohighlight">\(0.55291\cdots\)</span>秒</p>
+<p>花在<span class="math notranslate nohighlight">\(-30^\circ\)</span>到<span class="math notranslate nohighlight">\(-0^\circ\)</span>的时间：<span class="math notranslate nohighlight">\(0.24595\cdots\)</span>
+到 <span class="math notranslate nohighlight">\(0.25494\cdots\)</span>秒</p>
+</div></blockquote>
+<p>这使得从 –60° 到 0° 的总时间介于 <span class="math notranslate nohighlight">\(0.7508\cdots\)</span> 到
+<span class="math notranslate nohighlight">\(0.8079\cdots\)</span>
+秒之间，几乎比我们之前计算的界限（<span class="math notranslate nohighlight">\(0.7338\cdots\)</span> 到
+<span class="math notranslate nohighlight">\(0.9463\cdots\)</span> 秒）收紧了四倍：</p>
+<div class="figure align-default" id="id13">
+<img alt="_images/image-20230707112055066.png" src="_images/image-20230707112055066.png" />
+<p class="caption"><span class="caption-number">Fig. 366 </span><span class="caption-text">image-20230707112055066</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+<p>中点角度的计算在精确的 –30° 处添加了新的 ubound。
+用这种以计算时间变化而定义的通用技术，尝试以 10°
+弧的空间步长来限制摆时间。
+这些图表是如此精确，以至于我们必须使用更细的线来区分最短时间和最长时间。
+一年级的物理答案相差甚远，很容易区分。</p>
+<div class="figure align-default" id="id14">
+<img alt="_images/image-20230707112343574.png" src="_images/image-20230707112343574.png" />
+<p class="caption"><span class="caption-number">Fig. 367 </span><span class="caption-text">image-20230707112343574</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+<p>青色 ubox
+边界几乎太小而无法看到，但它们在垂直维度上是精确的，并且在水平维度上有一个很小的范围，从最左边的
+ubox（我们确切知道开始时间）到最右边的 ubox 累积。 该范围是 unum ULP
+宽度和每个位置范围内速度变化的结果。 如果我们使用更高精度的 unum 来减少
+ULP 宽度，最终的时间范围将是 <span class="math notranslate nohighlight">\(0.759494\cdots\)</span> 到
+<span class="math notranslate nohighlight">\(0.768758\cdots\)</span> 秒，宽度约为 <span class="math notranslate nohighlight">\(0.009\)</span> 秒。
+回想一下，我们使用了 {2, 3} unum 环境，因此最大可能的分数仅为
+<span class="math notranslate nohighlight">\(2^3 = 8\)</span> 位。 这会导致每一步都会损失额外的信息，因此结果界限在
+<span class="math notranslate nohighlight">\(0.773438\cdots\)</span> 到 <span class="math notranslate nohighlight">\(0.753906\cdots\)</span> 秒之间，范围约为
+<span class="math notranslate nohighlight">\(0.02\)</span> 秒。 这表明空间步离散化和 unum
+精度之间匹配良好的，因为两者都没有使用“过度”来获得更准确的答案。
+如果我们使用 {2, 4} unum 环境，分数中最多可以有 24 = 16
+位，那么就值得将问题分解为更多的空间步骤，来保持平衡。</p>
+<p>总共只有六个独立的空间步进，我们计算摆锤行为的精度几乎达到小数点后三位，并且具有可证明的界限。
+此外，我们使用的最复杂的数学是小学代数。
+无需人的深入思考，而是通过暴力计算，我们可以将解边界算到任何所需的精度。
+换句话说，我们“求解”了一个非线性微分方程而没有使用任何微积分。</p>
+<p>这说明了为什么现在可能是推翻一个世纪以来的数值分析的时候了。
+解决动力学问题的经典方法可以是替换成另一个问题，仅使用初等函数就可以简洁地解决，或者是执行充满错误的时间步长模拟，该模拟不能并行运行并且它得出的数值猜测结果是没有严格的边界的。</p>
+<p>通过将空间步进与 ubox 和 unum
+算术相结合，我们可以获得一个可以像我们想要的那样紧密的结果边界，并且可以使用的我们所有的尽可能多的处理器核心来计算。</p>
+<div class="figure align-default" id="id15">
+<img alt="_images/image-20230707121233283.png" src="_images/image-20230707121233283.png" />
+<p class="caption"><span class="caption-number">Fig. 368 </span><span class="caption-text">image-20230707121233283</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>19.4 不仅仅是给单摆用<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
+<p>问题只要是物质的动能和势能仅取决于其沿已知路径的位置，该方法就有效，这使得我们能够将速度和力计算为空间位置而不是时间的函数。
+例如，它可以得出真实谐振子的解边界（就像理想弹簧上的质点）。
+许多以时间步长计算电流和电压的电路仿真可以被重写，以计算电路状态变化的时间，再次应用能量守恒。</p>
+<p>钟摆的例子展示了一种通用技术的前景，值得为其构建一套工具。
+该技术要求质量块上的力及其速度由质量块的位置决定。
+例如，这将涵盖球从形状复杂的滑梯上滚下的运动。
+它不适用于像火箭这样的东西，火箭在燃烧燃料时质量会减少。
+（流行的说法“这是火箭科学”源于求解方程的挑战，其中物理学取决于火箭的位置和历史。）</p>
+<p>这是一般类型的动力学问题：质量从点 <span class="math notranslate nohighlight">\(x_1\)</span> 移动到点 <span class="math notranslate nohighlight">\(x_2\)</span>。
+它在 <span class="math notranslate nohighlight">\(x_1\)</span> 处的速度为 <span class="math notranslate nohighlight">\(v_1\)</span>； 它在 <span class="math notranslate nohighlight">\(x_2\)</span> 处的速度为
+<span class="math notranslate nohighlight">\(v_2\)</span>，在 <span class="math notranslate nohighlight">\(x_1\)</span> 和 <span class="math notranslate nohighlight">\(x_2\)</span>
+之间，速度永远不会超出该范围。 类似地，点 <span class="math notranslate nohighlight">\(x_1\)</span> 以及点 <span class="math notranslate nohighlight">\(x_2\)</span>
+处的加速度为 <span class="math notranslate nohighlight">\(a_1\)</span>和 <span class="math notranslate nohighlight">\(a_2\)</span> ，并且永远不会超出该范围。
+质量体完成这一行程所需的时间 t 范围是多少？ 请注意，我们不要求
+<span class="math notranslate nohighlight">\(v1 \le v2\)</span> 或 <span class="math notranslate nohighlight">\(a1 \le a2\)</span>。</p>
+<p>下一页的图表显示了当 <span class="math notranslate nohighlight">\(a_1 \gt a_2\)</span>
+时速度范围的微妙之处，其中红色表示最大速度，蓝色表示最小速度</p>
+<div class="figure align-default" id="id16">
+<img alt="_images/image-20230707125352234.png" src="_images/image-20230707125352234.png" />
+<p class="caption"><span class="caption-number">Fig. 369 </span><span class="caption-text">image-20230707125352234</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+<p>首先，请注意 v1 和 v2 显示为不精确，以提醒我们它们是计算值，通常用
+ubound 表示； 即左右端点红蓝线之间有间隙.</p>
+<p>第一个红色斜率是计算的加速度 <span class="math notranslate nohighlight">\(a_1\)</span>
+的上限，第二个红色斜率是计算的加速度 <span class="math notranslate nohighlight">\(a_2\)</span> 的下限。
+实际的物理行为在数学上是有限的。 另外，请注意两条绿色曲线。
+底部的斜率根据要求以 <span class="math notranslate nohighlight">\(a_1\)</span>
+开始，但几乎立即转变到接近连接起点和终点的线的斜率。 就在到达结束时间 t
+之前，它又快速向下弯曲刚好足以匹配 <span class="math notranslate nohighlight">\(a_2\)</span>
+的斜率（结束时间的加速度）。
+显示为蓝线的下限限制了任何时间的最低可能速度。
+上面的绿线尽可能长时间地采用较高的加速度 <span class="math notranslate nohighlight">\(a_1\)</span>，但在某个时间
+<span class="math notranslate nohighlight">\(t_c\)</span> 它必须切换到加速度 <span class="math notranslate nohighlight">\(a_2\)</span>，否则无法达到最终速度
+<span class="math notranslate nohighlight">\(v_2\)</span>。
+由于速度的瞬时变化是不可能的（需要无穷大的力），上面的绿线在 <span class="math notranslate nohighlight">\(t_c\)</span>
+处显示圆肘。</p>
+<p>当速度最大时，行程时间最短； 当速度最小时出现最大时间。
+蓝线下方的面积是行驶的距离，<span class="math notranslate nohighlight">\(x = x_2 - x_1\)</span>。
+如果我们比较懒的话，我们可以直接说最小速度是 <span class="math notranslate nohighlight">\(v_2\)</span>，最大速度是
+<span class="math notranslate nohighlight">\(v_1\)</span>，所以</p>
+<div class="math notranslate nohighlight" id="equation-19-pendulums-done-correctly-9">
+<span class="eqno">(84)<a class="headerlink" href="#equation-19-pendulums-done-correctly-9" title="Permalink to this equation">¶</a></span>\[v_1t_{min}=x=v_2t_{max}, 所以 \frac{x}{v_1} \le t \le \frac{x}{v_2}\]</div>
+<p>简单的界限使问题很容易反演，以求解 t 作为 x 的函数。
+问题在于最小速度可能为零，在这种情况下，行程时间的界限是无穷大，这并不能提供有用的答案。</p>
+<div class="figure align-default" id="id17">
+<img alt="_images/image-20230707132039644.png" src="_images/image-20230707132039644.png" />
+<p class="caption"><span class="caption-number">Fig. 370 </span><span class="caption-text">image-20230707132039644</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+<p>蓝线下方的面积很容易计算：<span class="math notranslate nohighlight">\(x = \frac{1}{2} (v1 + v2) t_{max}\)</span>，反转为
+<span class="math notranslate nohighlight">\(t_{max} = \frac{2 x}{v_1+v_2}\)</span> 。
+两条红线段下方的面积要复杂得多，因为我们首先要找到交点，而该面积是时间 t
+内的二次多项式，这意味着反演求解 t 需要求解一个二次方程。 拥抱代数吧。</p>
+<p>两条红线相交点</p>
+<div class="math notranslate nohighlight" id="equation-19-pendulums-done-correctly-10">
+<span class="eqno">(85)<a class="headerlink" href="#equation-19-pendulums-done-correctly-10" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{array}{l}
+v_1+a_1t_c=v_c=v_2+a_2(t_c-t), 所以 \\
+t_c=\frac{v_1-v_2+a_2t}{a_2-a_1} 和 v_c=\frac{a_1v_2-a_2v_1-a_1a_2t}{a_1-a_2}
+\end{array}\end{split}\]</div>
+<p>左侧红线段下方的面积为
+<span class="math notranslate nohighlight">\(\frac{1}{2} (v_1 + v_c) t_c\)</span>，右侧红线段下方的面积为
+<span class="math notranslate nohighlight">\(\frac{1}{2} (v_c + v_2) (t - tc)\)</span>。
+展开这些乘积再合并后，我们得到总面积：</p>
+<div class="math notranslate nohighlight" id="equation-19-pendulums-done-correctly-11">
+<span class="eqno">(86)<a class="headerlink" href="#equation-19-pendulums-done-correctly-11" title="Permalink to this equation">¶</a></span>\[总面积=x=\frac{1}{2}(v_1t_c+v_ct+v_2t-v_2t_c)\]</div>
+<p>求解 t 给出最短时间，这是一个复杂的表达式，但没有计算机无法处理的。 通过
+tmin 和 tmax 的表达式，我们可以直接计算可能的时间范围：</p>
+<div class="math notranslate nohighlight" id="equation-19-pendulums-done-correctly-12">
+<span class="eqno">(87)<a class="headerlink" href="#equation-19-pendulums-done-correctly-12" title="Permalink to this equation">¶</a></span>\[t_{min}=\frac{v_2}{a_2}-\frac{v_1}{a_1}-\frac{\sqrt{(a_2-a_1)(a_2(v_1^2+2a_1x)-a_1v_2^2)}}{a_1a_2}\]</div>
+<p>如果需要最紧的可能界限，也可以使用上一章中描述的<strong>solvforub</strong>函数而不是使用二次方程来计算最小值。
+如果 <span class="math notranslate nohighlight">\(a_1 &lt; a_2\)</span>，情况就不同了：</p>
+<p>在这种情况下，<span class="math notranslate nohighlight">\(t_{min}\)</span> 和 <span class="math notranslate nohighlight">\(t_{max}\)</span>
+的方程互换，我们需要二次公式的另一种 ± 情况。 我们还需要处理 <span class="math notranslate nohighlight">\(a_1\)</span>
+或 <span class="math notranslate nohighlight">\(a_2\)</span> 为零的情况，以及两者都为零（即速度恒定）的简单情况</p>
+<p><img alt="image-20230707140435338" src="_images/image-20230707140435338.png" /></p>
+<div class="math notranslate nohighlight" id="equation-19-pendulums-done-correctly-13">
+<span class="eqno">(88)<a class="headerlink" href="#equation-19-pendulums-done-correctly-13" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{array}{l}
+v_1+a_1t_c=v_c=v_2+a_2(t_c-t), 所以 \\
+t_c=\frac{v_1-v_2+a_2t}{a_2-a_1} 和 v_c=\frac{a_1v_2-a_2v_1-a_1a_2t}{a_1-a_2}
+\end{array}\end{split}\]</div>
+<p>下面的函数 <strong>delt</strong>
+实现从加速度界限、速度界限和距离导出经过的时间，并仔细考虑任一加速度为零的情况。
+它用于生成前面的图，如下所示。 它的参数是加速度范围 a1 和 a2、速度范围
+v1 和 v2 以及要移动的距离 x。 <strong>delt</strong> 的 unum 版本用于进行钟摆行为的
+ubox 计算。</p>
+<div class="figure align-default" id="id18">
+<img alt="_images/image-20230707141928682.png" src="_images/image-20230707141928682.png" />
+<p class="caption"><span class="caption-number">Fig. 371 </span><span class="caption-text">image-20230707141928682</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+</div>
+<p>如果我们的计算机资源有可以并行工作的处理器，那么 <strong>delt</strong>
+就是每个处理器可以独立执行的任务，以解决此类空间步进问题。
+并行性的唯一限制是最终答案需要的精度是多少。 例如，如果我们只知道 g =
+9.80
+到小数点后三位，那么将摆行为计算到小数点后十位的精度就没有什么意义。 g
+的值范围从赤道处的 9.78036 到两极处的 9.83208，并且还随海拔高度而变化。
+如果您使用以下公式计算 g（以米每秒平方为单位），其中 p 是纬度，h
+是以公里为单位的高度，并且摆锤的空气阻力很小，那么您可能有理由计算到小数点后七位：</p>
+<div class="math notranslate nohighlight" id="equation-19-pendulums-done-correctly-14">
+<span class="eqno">(89)<a class="headerlink" href="#equation-19-pendulums-done-correctly-14" title="Permalink to this equation">¶</a></span>\[g = 9.780356 (1 + 0.0052885 \sin^2(p) - 0.0000059 \sin^2(2 p) - 0.003086 h\]</div>
+<p>增加次数以达到任何所需的累积时间，可以用像二叉树折叠这样的归约操作来并行完成。
+使用该方法对 n 个值进行求和需要 <span class="math notranslate nohighlight">\(log_2(n)\)</span>
+次，这比在一个处理器上通过 <span class="math notranslate nohighlight">\(n\)</span>个步骤进行计算有了很大的改进。
+除了并行求和速度快之外，如果还有融合求和操作，就意味着无论如何添加时间间隔，答案都一样。</p>
+<p>只需稍微增些对折叠求和的复杂性，就可以在大约相同的时间内计算<em>前缀和</em>，生成部分和$
+t1, t1 + t2, t1 + t2 + t3 $以及完整和。
+这将空间并行的答案恢复为我们思考模拟的通常方式：就是位置（或其他一些量）作为时间的函数。</p>
+<p>本章从钟摆问题经典解的正弦图开始。 下面再画出该图，以及粗略 10°
+角度间距的<em>严格 ubox 时间</em>界限图。
+最初看起来两个结果在水平（时间）维度上可能存在微小差异，但请注意时间向图表右侧部分的位移值的差异。
+例如，当摆锤第四次实际经过 0° 时，经典正弦解显示摆锤在 –40°
+左右，这是一个巨大的误差。</p>
+<div class="figure align-default" id="id19">
+<img alt="_images/image-20230707143401391.png" src="_images/image-20230707143401391.png" />
+<p class="caption"><span class="caption-number">Fig. 372 </span><span class="caption-text">image-20230707143401391</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+</div>
+<p>由于 ubox
+方法中的不确定性随着经过时间的范围从左到右累积而累积，因此可以看到最小时间（红色）和最大时间（蓝色）的分叉。
+而将空间步长减小到 <span class="math notranslate nohighlight">\(\frac{1}{16}^\circ\)</span>
+不仅会使分叉太小而无法在图表上显示，而且还会填充图中采样点间空白。
+由于最大时间是在最短时间之后绘制的，因此蓝色图覆盖了红色图。如下所示</p>
+<div class="figure align-default" id="id20">
+<img alt="_images/image-20230707144434917.png" src="_images/image-20230707144434917.png" />
+<p class="caption"><span class="caption-number">Fig. 373 </span><span class="caption-text">image-20230707144434917</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
+<p>将ubound和空间步进应用于数值物理有哪些限制？
+接下来的章节表明该技术当然<strong>不</strong>仅限于用在非线性常微分方程上。</p>
+</div>
+</div>
+
+
+        </div>
+        <div class="side-doc-outline">
+            <div class="side-doc-outline--content"> 
+<div class="localtoc">
+    <p class="caption">
+      <span class="caption-text">Table Of Contents</span>
+    </p>
+    <ul>
+<li><a class="reference internal" href="#">19 摆的正确计算</a><ul>
+<li><a class="reference internal" href="#id2">19.1 物理学入门方法</a></li>
+<li><a class="reference internal" href="#id3">19.2 通常的数值方法</a></li>
+<li><a class="reference internal" href="#id4">19.3 空间步进：大规模并行性的新来源</a></li>
+<li><a class="reference internal" href="#id5">19.4 不仅仅是给单摆用</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+            </div>
+        </div>
+
+      <div class="clearer"></div>
+    </div><div class="pagenation">
+     <a id="button-prev" href="18_permission_to_guess.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="P">
+         <i class="pagenation-arrow-L fas fa-arrow-left fa-lg"></i>
+         <div class="pagenation-text">
+            <span class="pagenation-direction">Previous</span>
+            <div>18 准许猜测</div>
+         </div>
+     </a>
+     <a id="button-next" href="20_two_body_problem.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
+         <i class="pagenation-arrow-R fas fa-arrow-right fa-lg"></i>
+        <div class="pagenation-text">
+            <span class="pagenation-direction">Next</span>
+            <div>20 二体问题(以及多体问题)</div>
+        </div>
+     </a>
+  </div>
+        
+        </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>13 融合操作（一次性表达式） &#8212; THE END of ERROR - Unum Computing 0.1 documentation</title>
+
+    <link rel="stylesheet" href="_static/material-design-lite-1.3.0/material.blue-deep_orange.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx_materialdesign_theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fontawesome/all.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/d2l.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/d2l.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="14 试运行：Unums 面临计算挑战" href="14_trial_runs.html" />
+    <link rel="prev" title="12 其他重要的一元运算" href="12_other_important_unary_ops.html" /> 
+  </head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header mdl-layout__header--waterfall ">
+    <div class="mdl-layout__header-row">
+        
+        <nav class="mdl-navigation breadcrumb">
+            <a class="mdl-navigation__link is-active">13 融合操作（一次性表达式）</a>
+        </nav>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+        
+<form class="form-inline pull-sm-right" action="search.html" method="get">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+        <label id="quick-search-icon" class="mdl-button mdl-js-button mdl-button--icon"  for="waterfall-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q"  id="waterfall-exp" placeholder="Search" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </div>
+      </div>
+      <div class="mdl-tooltip" data-mdl-for="quick-search-icon">
+      Quick search
+      </div>
+</form>
+        
+<a id="button-show-source"
+    class="mdl-button mdl-js-button mdl-button--icon"
+    href="_sources/13_fused_operations.rst.txt" rel="nofollow">
+  <i class="material-icons">code</i>
+</a>
+<div class="mdl-tooltip" data-mdl-for="button-show-source">
+Show Source
+</div>
+        </nav>
+    </div>
+    <div class="mdl-layout__header-row header-links">
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation">
+          
+              <a  class="mdl-navigation__link" href="https://github.com/jszheng/TheEndOfError">
+                  <i class="fab fa-github"></i>
+                  Github
+              </a>
+      </nav>
+    </div>
+</header><header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_TheOriginalSin.html">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_hidden_scratchpads_3_layers.html">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_info_per_bit.html">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_comparison_operations.html">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_mul_div.html">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_other_important_unary_ops.html">12 其他重要的一元运算</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_TheOtherKindOfError.html">15. 另外一种误差</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_avoid_interval_arith_pitfalls.html">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_meaning_of_solve_equ.html">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_permission_to_guess.html">18 准许猜测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_pendulums_done_correctly.html">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_calculus_evil.html">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_end_of_error.html">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+        <main class="mdl-layout__content" tabIndex="0">
+
+	<script type="text/javascript" src="_static/sphinx_materialdesign_theme.js "></script>
+    <header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_TheOriginalSin.html">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_hidden_scratchpads_3_layers.html">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_info_per_bit.html">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_comparison_operations.html">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_mul_div.html">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_other_important_unary_ops.html">12 其他重要的一元运算</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_TheOtherKindOfError.html">15. 另外一种误差</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_avoid_interval_arith_pitfalls.html">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_meaning_of_solve_equ.html">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_permission_to_guess.html">18 准许猜测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_pendulums_done_correctly.html">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_calculus_evil.html">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_end_of_error.html">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+
+    <div class="document">
+        <div class="page-content" role="main">
+        
+  <div class="section" id="id1">
+<h1>13 融合操作（一次性表达式）<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<div class="figure align-default" id="id14">
+<img alt="_images/image-20230627094357246.png" src="_images/image-20230627094357246.png" />
+<p class="caption"><span class="caption-number">Fig. 193 </span><span class="caption-text">image-20230627094357246</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+<blockquote>
+<div><p>用于执行复杂算术的标准库例程因担心“从世界的边缘掉下来”而受到削弱，因为简单的算术可能会在临时计算中上溢或下溢。
+这些例程通常将浮点输入分解为指数和分数部分以避免此问题，这会破坏浮点运算硬件的大部分速度优势。
+本章提出了一种更好的方法，通过声明融合运算并明确其使用，来避免可表示实数集“掉落边缘”。</p>
+</div></blockquote>
+<div class="section" id="id2">
+<h2>13.1 标准化一组融合操作<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>本章讨论的是建立标准融合表达式的可能性，其中输入值仅使用一次，或“单次使用表达式”。
+第 2 部分将探讨多项式或 <span class="math notranslate nohighlight">\(x + \frac{1}{x}\)</span>
+等融合表达式的完美计算，其中输入值会多次使用，因为此类计算自引入以来就是困扰着区间算术的新挑战。</p>
+<p>必须有严格的规则来规定允许计算链在暂存器层中保留多长时间以及什么类型的计算，以避免不切实际的暂存器存储需求。
+否则，程序员会忍不住要求整个程序在暂存区中运行，只有在完全完成后才近似得到答案！</p>
+<p>即使是简单的计算也可以很快生成数十亿位，因此我们在考虑哪些操作应该以融合形式提供时要谨慎。</p>
+</div>
+<div class="section" id="id3">
+<h2>13.2 融合乘加和融合乘减<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<p>正如第 5
+章所讨论的，融合指令应始终表示为不同的操作，以便程序员知道正在使用哪一个。
+这避免了不同计算系统给出的令人费解的不同答案的问题。
+如果聪明的编译器想要用乘法融合来代替乘法加法，则必须在源代码中明确该替换，并在编译之前作为选项提供给程序员。</p>
+<p>对于加法，累加器只需略大于小数位数。
+对于融合乘加，累加器需要两倍的位数，因为它将在进行加法之前保存完整的乘积（对于
+{4, 5} 环境，最多 66 位）。 这对于硬件来说是很小的代价。</p>
+<p>计算机制造商倾向于不支持单独的融合乘减指令，因为它与操作数取反并执行融合乘加相同。
+由于求反是一种完美的操作，不会丢失任何信息，因此这像是一个合理的决定。
+在本章中，我们将不把减法作为一种特定运算，因为它总是可以通过加上负数来完成，结果是完美的。</p>
+<p>注意到融合乘加很像 Kulisch 的 EDP
+想法，其中乘积以扩展精度进行累加，然后返回到工作区的精度水平。
+不同于点积的是累加器中已经存在一个数字，且向量的长度为 1。</p>
+<p>在原型中，g-layer 函数 <strong>fmag</strong>[<span class="math notranslate nohighlight">\(ag\)</span>, <span class="math notranslate nohighlight">\(bg\)</span>, <span class="math notranslate nohighlight">\(cg\)</span>]
+精确计算一般区间 <span class="math notranslate nohighlight">\(ag\)</span>、<span class="math notranslate nohighlight">\(bg\)</span> 和 <span class="math notranslate nohighlight">\(cg\)</span> 的
+<span class="math notranslate nohighlight">\((ag \times bg) + cg\)</span>。 u-layer 函数 <strong>fmau</strong>[<span class="math notranslate nohighlight">\(au\)</span>,
+<span class="math notranslate nohighlight">\(bu\)</span>, <span class="math notranslate nohighlight">\(cu\)</span>]
+与其等效，如果可能则返回精确的答案，否则返回在最小可用 ULP
+宽度内的答案。 同样的，u-layer 例程还记录移动的数字个数和总位数。 对于 3
+个输入和 1 个输出，<strong>numbersmoved</strong> 计数增加 4。 <strong>ubitsmoved</strong>
+计数增加 ubound 输出中的位数以及 3 个 ubound 输入中的位数；
+注意暂存器层中的位的移动没有被记录。</p>
+<p>这意味着 <strong>fmau</strong>[<span class="math notranslate nohighlight">\(au\)</span>, <span class="math notranslate nohighlight">\(bu\)</span>, <span class="math notranslate nohighlight">\(cu\)</span>]
+使用的带宽比单独执行<span class="math notranslate nohighlight">\((au \odot bu) \oplus cu\)</span> 操作要少，它移动了
+<span class="math notranslate nohighlight">\((au \odot bu)\)</span> 两次（结果从 g-layer 到 u-layer，然后返回到
+g-layer 作为输入）。
+距离处理器越远，在计算机中移动位的成本就会增加，我们在这里使用近似值，即暂存器位移动是无成本的，而
+u-layer 位移动则需要一些成本，无论是片外存储还是片上存储缓存。 <strong>fmag</strong>
+和 <strong>fmau</strong> 的代码如附录 C.13 所示</p>
+<p>为了说明融合乘加的优点，即使是 Warlpiri unum 也足够了。 如果我们将
+<span class="math notranslate nohighlight">\((2 \times 2) - 2\)</span> 作为单独的操作来计算，那么当返回到 u-layer 时
+<span class="math notranslate nohighlight">\(2 \times 2\)</span>
+就会变成“很多”，尽管返回了正确的边界，但信息都丢失了：</p>
+<div class="figure align-default" id="id15">
+<img alt="_images/image-20230627105659670.png" src="_images/image-20230627105659670.png" />
+<p class="caption"><span class="caption-number">Fig. 194 </span><span class="caption-text">image-20230627105659670</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+<p>作为融合操作，答案在 u-layer 中保持精确且可表达：</p>
+<div class="figure align-default" id="id16">
+<img alt="_images/image-20230627105805151.png" src="_images/image-20230627105805151.png" />
+<p class="caption"><span class="caption-number">Fig. 195 </span><span class="caption-text">image-20230627105805151</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>13.3 解决复数数学运算缓慢的悖论<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<p>即使早期版本的 Fortran 也支持 COMPLEX（一对单精度浮点数）和 DOUBLE
+COMPLEX（一对双精度浮点数）来表示数字 <span class="math notranslate nohighlight">\(a + bi\)</span>，其中
+<span class="math notranslate nohighlight">\(i = \sqrt{-1}\)</span> 。 支持复数的最新语言（C 语言在 1999
+年标准化了复数数据类型）与那些早期的 Fortran 版本有一个奇怪的缺点：</p>
+<table border="2"><tr><td bgcolor="lightyellow"><p>如果您不使用 COMPLEX 类型，而是详细说明如何使用 REAL 和 DOUBLE
+变量类型获取复杂运算的实部和虚部，那么性能会好得多！</p>
+</td></tr></table><p>应用程序程序员对此摸不着头脑很久了。
+使用计算机供应商提供的优化库怎么可能会慢呢？ 复数 <span class="math notranslate nohighlight">\(z = a + bi\)</span> 和
+<span class="math notranslate nohighlight">\(w = c + di\)</span> 的乘积为</p>
+<div class="math notranslate nohighlight" id="equation-13-fused-operations-0">
+<span class="eqno">(41)<a class="headerlink" href="#equation-13-fused-operations-0" title="Permalink to this equation">¶</a></span>\[z \times w = (a \times c - b \times d) + (a \times d + b \times c) i\]</div>
+<p>此运算应进行四次浮点乘法、一次浮点减法和一次浮点加法来确定实部和虚部。
+为什么在程序中写入“<span class="math notranslate nohighlight">\(z \times w\)</span>”会导致其运行速度比转换complex<span class="math notranslate nohighlight">\((a \times c-b \times d,a \times d+b \times c)\)</span>慢得多？</p>
+<p>原因是程序员和计算机系统之间缺乏关于需求和让步的沟通，导致隐藏的暂存区提供了不必要的帮助。
+优化的库例程的设计考虑到了溢出或下溢的恐惧，这很像对驶离地球边缘的恐惧。</p>
+<p>假设 a、b、c 和 d 是浮点数可以表示的非常大或非常小的数值，无论精度如何。
+如果 <span class="math notranslate nohighlight">\(a \times c\)</span> 上溢或下溢怎么办？ 如果
+<span class="math notranslate nohighlight">\(a \times c - b \times d\)</span> 是可表示的数字，但临时计算的
+<span class="math notranslate nohighlight">\(a \times c\)</span> 和 <span class="math notranslate nohighlight">\(b \times d\)</span>
+超出了可表示值集合的边缘怎么办？
+大多数程序员并不要求他们的复数计算有效，即使数字数字非常大或非常小，但他们没有办法向计算环境表达这种让步。
+因此，库设计者假设用户要求复杂的运算适用于浮点类型的整个动态范围。
+这意味着复杂的运算必须仔细剖析浮点数以重新调整指数以防止上溢或下溢，进行算术运算，然后替换指数。</p>
+<p>难怪这样的方式运行得如此缓慢：它们将快速的硬件降低到软件模拟的速度，就因为担心会脱离可表示的边缘。
+用户没有办法告诉计算机系统：“我不打算使用<span class="math notranslate nohighlight">\(10^{-150}\)</span>到<span class="math notranslate nohighlight">\(10^{150}\)</span>动态范围之外的数字，所以请直接进行用硬件进行复数运行。</p>
+<p>融合操作彻底解决了这个问题。 <span class="math notranslate nohighlight">\(a \times c - b \times d\)</span> 和
+<span class="math notranslate nohighlight">\(a \times d + b \times c\)</span> 都是长度为 2
+的向量的点积。这意味着任何具有融合点积指令的系统都已经具备在暂存器内进行复数乘法的能力，从而防止错误地落在动态范围之外
+中间计算。 Kulisch 的 EDP 操作理念看起来一直是很好。
+下一节将介绍如何使用 unum 硬件构建，特别是使用 unum 的解压寄存器形式。</p>
+<p><strong>读者的练习</strong>：创建复数除法 <span class="math notranslate nohighlight">\(\frac{a+bi}{c+di}\)</span>
+的融合运算，假设暂存器可以保存 <span class="math notranslate nohighlight">\(c^2 + d^2\)</span> 和其他临时值。
+需要多少个精确累加器才能避免计算两次？</p>
+</div>
+<div class="section" id="unum">
+<h2>13.4 完整累加器的 Unum 硬件<a class="headerlink" href="#unum" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="id5">
+<h3>13.4.1 未打包的 unum 环境中的成本<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
+<p>为了在不损失精度的情况下累加乘积，可以将累加器想象为一个非常大的定点数，在二进制小数点的两侧有足够的位，以便任何两个浮点数的乘积落在该范围内的某个位置。
+在 IEEE 单精度中执行此操作大约需要 600 位，而在 IEEE 双精度中则需要 4000
+位。 决定精确累加器大小的主要因素是动态范围。 如果您将其视为
+size是subnormal 的 ULP 数量，则位串必须足够大才能表示整数
+<span class="math notranslate nohighlight">\(\frac{maxreal}{smallsubnormal}\)</span> 。
+扩展精度算术不必每次都对所有这些位进行运算。 精确 unum
+的任何乘积的结果都是最多 <span class="math notranslate nohighlight">\(2^{fsizesize+1} - 1\)</span> 位的整数。</p>
+<p>将位“移位”到正确的位置很像写入内存地址，如果将 4000
+位视为一个内存块，那么寻址 4K 内存似乎并不困难。 寄存器必须比
+<span class="math notranslate nohighlight">\(\frac{maxreal}{smallsubnormal}\)</span>
+更大，以允许将最大数重复添加到累加器中；
+它只在累加器的长度上添加了几十位，以防止溢出，即使对于天文数字般的累加也是如此。</p>
+<p>如果我们对最高可达 {4, 5} 环境的 unum
+提供直接硬件支持，则指数范围甚至比四倍精度 IEEE 浮点数更大。
+使用最大动态范围（大约 <span class="math notranslate nohighlight">\(10^{-9874}\)</span> 到
+<span class="math notranslate nohighlight">\(10^{9864}\)</span>）意味着精确累加器需要大约 66000 位。
+用于这么多存储的很可能只能放在主（一级）缓存，而不能用寄存器存放。</p>
+<p>理想情况下，需要有两个这样的寄存器，因此 EDP
+的左右间隔端点可以并行累加。 累积的乘积始终被视为精确的，即使它们是把
+ubit 置位以指示不精确范围的 unum。 这是 unum
+算术与重要性算术有何不同的另一个例子。 例如，如果您手工计算并发现 200
+位数字的累加大约超过17位，那么您很可能会从该点开始将
+17位右侧的每个数字都作为不值得跟踪的垃圾丢弃。 但它不是垃圾。
+每个乘积都会产生非常精确定义的实数范围，在端点处开放或封闭。
+只有在所有累加结束时，才有可能知道总数的下限和上限，然后将其返回到
+u-layer ，在 u-layer中它可能或可能无法准确表示，但最多会损失最小的
+ULP大小的边界宽度。</p>
+<p>回想一下，对于 {4, 5} 环境，可以构建乘法器硬件来获取高达 33
+位的无符号整数的乘积，并产生高达 66 位的结果。
+对指数求和以确定“移位”的数量，但这实际上看起来更像是内存索引操作，以查找累加器中从右到左开始做加法的位置。
+看起来可能需要将进位位从精确累加器的最低位一直传播到最高位。
+是有，但不需要花费线性时间；
+硬件设计者很久以前就想出了如何“向前看”以更快地传播进位位，在时间上更像是总位数的对数。
+而且累积可以在计算下一个乘积时同时发生。</p>
+<p>相同的硬件足以计算任意长度的 unum 列表的精确总和（在g-layer中）。
+从数学上讲，求和与一个向量所有值均为 1
+的向量的点积相同，但总和运算需要一条单独的指令，以使计算机不必调用乘法器硬件来乘以
+1。 如前所述，长累加器 这也正是扩展精度乘法所需要的。</p>
+</div>
+<div class="section" id="id6">
+<h3>13.4.2 原型中的融合点积和融合和<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
+<p>在原型中，g-layer融合点积为<strong>fdotg</strong>[ag,
+bg]，其中ag和bg是等长的一般区间的列表。 u-layer版本是
+<strong>fdotu</strong>[au,bu]，其中 au 和 bu 是 unum 或 ubound 的等长列表。
+但请注意，<strong>fdotu</strong>
+中的算术完全在暂存器中作为精确计算执行，并且仅在最后作为精确或不精确的
+ubound 返回。 类似地，使用 <strong>fsumg</strong>[ag] 找到一般区间列表ag的g-layer
+融合和，其u-layer等效项是<strong>fsumu</strong>[au]，其中 au 是 unum 或 ubound
+的列表。 <strong>fsumu</strong> 函数同时也统计移动的位和移动的个数。</p>
+<p>拥有<em>融合和</em>是一种解放。 比如加法结合律表示对于数字 a、b 和 c，满足</p>
+<div class="math notranslate nohighlight" id="equation-13-fused-operations-1">
+<span class="eqno">(42)<a class="headerlink" href="#equation-13-fused-operations-1" title="Permalink to this equation">¶</a></span>\[(a + b) + c = a + (b + c)\]</div>
+<p>此恒等式不适用于浮点数。 浮点数初等代数不及格。 例如，单精度中的
+<span class="math notranslate nohighlight">\((-10^8 + 10^8) + 1 = 1\)</span>，但 <span class="math notranslate nohighlight">\(-10^8 + (10^8 + 1)\)</span>
+错误地计算为 0。浮点运算 <span class="math notranslate nohighlight">\(10^8 + 1\)</span> 会产生舍入错误，准确地返回
+<span class="math notranslate nohighlight">\(10^8 = 100000000\)</span>，而不是 <span class="math notranslate nohighlight">\(100000001\)</span>，因为
+后者不是单精度浮点数可以表示的数字。 Unum
+在两个层面上遵守结合律：首先，当它出现在区间算术中时，有时被称为“<em>子结合律</em>”，因为等号被替换为“并非处处相等”的符号：</p>
+<div class="math notranslate nohighlight" id="equation-13-fused-operations-2">
+<span class="eqno">(43)<a class="headerlink" href="#equation-13-fused-operations-2" title="Permalink to this equation">¶</a></span>\[(\hat{a}\oplus\hat{b})\oplus\hat{c} \approx \hat{a}\oplus(\hat{b}\oplus\hat{c})\]</div>
+<p>其次，g-layer求和对于其操作数的任何排序都会产生相同的结果，这是通过满足结合律得到的解放。
+聪明的数值分析师不遗余力地设计了将浮点数相加的算法，以使舍入误差最小。
+这一切都很好，但是做加法这样的简单行为不应该需要查找和编码复杂的方法！
+拥有不受排序影响且受硬件支持的<em>融合和</em>意味着无需思考。
+它就是直接可用的。</p>
+<p>作为一个如果以直接的方式完成可能不太顺利的求和示例，假设我们编写一个循环来查找从
+1 到 100
+的倒数平方和，也就是<span class="math notranslate nohighlight">\(1 + \frac{1}{2^2} + \frac{1}{3^2} + \cdots + \frac{1}{100^2}\)</span>,
+只使用<span class="math notranslate nohighlight">\(2^3=8\)</span>bit
+作为小数。（顺便说一句，求和从1加到<span class="math notranslate nohighlight">\(\infty\)</span>的结果是<span class="math notranslate nohighlight">\(\frac{\pi^2}{6}=1.64493\cdots\)</span>）</p>
+<div class="figure align-default" id="id17">
+<img alt="_images/image-20230627144147870.png" src="_images/image-20230627144147870.png" />
+<p class="caption"><span class="caption-number">Fig. 196 </span><span class="caption-text">image-20230627144147870</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+<p>总和的限制比需要的要宽松得多； 它有 95 个 ULP 宽！
+一些数值分析专家表示，提高准确性的方法是找到对总和进行分组的方法，使相加的数字接近相同的量级，你可以想象这需要多少编程。
+相反，只需使用融合和将列表精确地添加到 g-layer中，仅在末尾转换为一个 ULP
+宽的不精确值：</p>
+<div class="figure align-default" id="id18">
+<img alt="_images/image-20230627144515773.png" src="_images/image-20230627144515773.png" />
+<p class="caption"><span class="caption-number">Fig. 197 </span><span class="caption-text">image-20230627144515773</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+</div>
+<p>该代码更容易编写，更容易阅读，执行速度更快（因为每次添加时它不必在
+g-layer和 u-layer之间来回），并且在此环境中尽可能准确（以最高精度的一个
+ULP 宽）。 它在各个方面都获胜。 最重要的是，不需要数字专业知识。</p>
+</div>
+<div class="section" id="id7">
+<h3>13.4.3 并行计算的一致结果<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
+<div class="figure align-default" id="id19">
+<img alt="_images/image-20230627144909325.png" src="_images/image-20230627144909325.png" />
+<p class="caption"><span class="caption-number">Fig. 198 </span><span class="caption-text">image-20230627144909325</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+</div>
+<blockquote>
+<div><p>天河二号超级计算机是2014年计算机集群的代表。 它拥有超过 300
+万个处理器核心，能够在 9 微秒的启动延迟后以每秒约 50 Gbps/lane
+的速度通信。</p>
+</div></blockquote>
+<table border="2"><tr><td bgcolor="lightyellow"><p>浮点数关联律的缺乏阻碍了并行计算的使用。</p>
+</td></tr></table><p>当将顺序程序转换为并行运行时，我们经常需要对浮点数列表进行求和。
+顺序程序将以这种方式添加四个元素</p>
+<div class="math notranslate nohighlight" id="equation-13-fused-operations-3">
+<span class="eqno">(44)<a class="headerlink" href="#equation-13-fused-operations-3" title="Permalink to this equation">¶</a></span>\[s=x_1+x_2+x_3+x_4\]</div>
+<p>其实真正的意思是从左到右做加法</p>
+<div class="math notranslate nohighlight" id="equation-13-fused-operations-4">
+<span class="eqno">(45)<a class="headerlink" href="#equation-13-fused-operations-4" title="Permalink to this equation">¶</a></span>\[s=((x_1+x_2)+x_3)+x_4\]</div>
+<p>如果并行求和，一个处理器可以同时求和
+<span class="math notranslate nohighlight">\(s = x_1 + x_2\)</span>，另一个处理器可以同时求和
+<span class="math notranslate nohighlight">\(t = x_3 + x_4\)</span>，然后可以通过将 <span class="math notranslate nohighlight">\(s\)</span> 和 <span class="math notranslate nohighlight">\(t\)</span>
+相加来组合。 但这意味着总和计算为</p>
+<div class="math notranslate nohighlight" id="equation-13-fused-operations-5">
+<span class="eqno">(46)<a class="headerlink" href="#equation-13-fused-operations-5" title="Permalink to this equation">¶</a></span>\[s=(x_1+x_2)+(x_3+x_4)\]</div>
+<p>而浮点数结果是不同的答案。
+对于这种类型的差异，通常的反应是：“并行处理不起作用；它给出了错误的答案。
+我要回到顺序执行的版本。”
+或者，如果程序员有足够的决心，他或她将编写一个模仿并行操作顺序的顺序版本，这会创建看起来奇特的复杂代码。
+我们已经知道 unum 消除了处理器内的问题，因为它们可以在 g-layer
+内精确地求和。那 unum
+对使用多个处理器求和时获得不同答案的问题提供任何帮助吗？</p>
+<p>如果合并多个部分和，通常会得到与从左到右连续做加法结果不同的bound。
+但是，除非代码中存在真正的错误，否则两种bound将始终相交。
+这意味着程序员可以立即发现错误和精确信息丢失之间的区别。 Unum
+有一个内置的“服务质量”度量，即答案中边bound界宽度的倒数；
+这意味着提交给网络上的抽象机器的作业可以在各种硬件配置上运行。
+机器越强大，bound就越严格，但是没有逻辑错误的 unum
+程序总是会返回一定准确度的正确答案。
+然而，<em>我们还可以比这个做得更好</em>。</p>
+<p>没有规定说 g-layer中的值不能在<strong>处理器之间交换</strong>。
+如果部分和以扩展精度形式交换（对于 {4, 5} 环境可能有两组 66 000
+位），则总和<em>不会</em>有差异，并且系统可以自由使用任意数量的处理器而不会造成结果差异。</p>
+<p>如果将如此多的比特位发送到片外的想法听起来像是真正的能源浪费，并且需要花费太多时间，请考虑当前老式集群计算机的数字，如本节开头所示，使用消息传递来
+协调并行性：由于建立链接的时间原因，交换尽可能小的消息需要大约<strong>九微秒</strong>的延迟。
+一旦建立链路，核心处理器之间的连接可以维持每秒约 50 Gbps 的速度。
+按照这个速度，即使是必须以最大内部长度发送两个 g-layer
+边界的最坏情况，在九微秒的设置之后也只需要不到<strong>两微秒</strong>！
+（我们很少需要传整个长累加器，因此通常会比这个少。）对于完美的、可重现的结果来说，这似乎是一个很小的代价。</p>
+<p>正如 unum 以及 g-layer和 u-layer
+之间的区分消除了不同计算机对实数计算产生神秘不同答案的现象一样，<strong>它们也可以消除串行和并行计算之间无法解释的差异</strong>。</p>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>13.5 其他的融合操作<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="id9">
+<h3>13.5.1 不是所有成对的操作都应该融合起来<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h3>
+<p>还有哪些其他算术运算对可以进行融合？
+主要标准是，与执行单独操作相比，融合可以显着减少信息丢失，且可以利用我们现有的暂存器资源。例如融合除法-加法和加法-除法会增加硬件的复杂性，但通常带来的好处很少。
+第二个考虑因素是一些融合运算允许使用较小的最大尺寸指数，因为只有暂存器需要处理非常大或非常小的数字。
+下面的融合操作可以说是值得的</p>
+</div>
+<div class="section" id="id10">
+<h3>13.5.2 融合乘法<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h3>
+<p>除非超出动态范围，否则乘法不像加法或减法那样容易导致灾难性的信息丢失。
+我们可以定义“融合乘法”，但更有意义的是：列表中
+n个数字的融合乘，类似于融合加的乘法。</p>
+<p>即使 <span class="math notranslate nohighlight">\(a \times b\)</span> 或 <span class="math notranslate nohighlight">\(b \times c\)</span>
+的中间计算在第二次乘法之前返回到 u-layer会落入
+<span class="math notranslate nohighlight">\(\pm(0、smallsubnormal)\)</span> 或 <span class="math notranslate nohighlight">\(\pm(maxreal, \infty)\)</span>
+区域，<span class="math notranslate nohighlight">\(a \times b \times c\)</span> 也可能在动态范围内。
+融合乘解决了这个问题。</p>
+<p>想要融合乘的另一个原因是它遵循结合律：</p>
+<div class="math notranslate nohighlight" id="equation-13-fused-operations-6">
+<span class="eqno">(47)<a class="headerlink" href="#equation-13-fused-operations-6" title="Permalink to this equation">¶</a></span>\[(a \times b) \times c = a \times (b \times c).\]</div>
+<p>硬件在计算融合乘积时应该做的第一件事是检查所有输入值是否存在异常，因为它们可能允许快速得出u-layer结果。
+硬件应该做的第二件事就是简单地将所有指数相加；
+如果它们落在环境的动态范围之外，则区域 <span class="math notranslate nohighlight">\(\pm(0、smallsubnormal)\)</span> 或
+<span class="math notranslate nohighlight">\(\pm(maxreal, \infty)\)</span> 之一就是答案，同样不需要进行算术运算。
+在这种情况下，与单独进行乘法相比，融合乘积实际上可以节省大量时间和能量。</p>
+<p>在必须完成所有算术的其他情况下，当数字列表很长时，很容易想象会耗尽内存。
+融合乘法的硬件需求不需要比我们已经拥有的更多，但在用于乘法的“可调扳手”组中，它可能会强制使用下一个尺寸，其中需要一些扩展的精度。
+与所有 unum
+乘法一样，硬件首先注意到要使用哪个工具：部分积的专用平行四边形、使用长累加器的扩展精度乘法，或者对非常大的数字有效的复杂例程。
+用户应该期望融合乘积比单独乘法更慢且更耗能，就像选择更高精度的运算一样。
+仅在少数可能超出动态范围的情况下使用融合乘法，可以使程序员不必将环境设置更改为更大的esizesize。</p>
+<p>原型中g-layer对一般间隔列表ag的融合乘法函数是<strong>fprodg</strong>[ag],
+u-layer的函数是<strong>fprodu</strong>[au].</p>
+<p>要了解融合乘积为何有用，请尝试一个小环境 {2, 3}，其中 maxreal 仅为
+510，并且小数域仅提供大约两位十进制的精度：</p>
+<div class="figure align-default" id="id20">
+<img alt="_images/image-20230627153729472.png" src="_images/image-20230627153729472.png" />
+<p class="caption"><span class="caption-number">Fig. 199 </span><span class="caption-text">image-20230627153729472</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
+<p>鉴于 0.02 被转换为不精确的 unum，乘积
+<span class="math notranslate nohighlight">\(400 \times 30 \times 0.02 = 240\)</span> 在 g-layer
+中得到了相当好的求值：</p>
+<div class="figure align-default" id="id21">
+<img alt="_images/image-20230627153901919.png" src="_images/image-20230627153901919.png" />
+<p class="caption"><span class="caption-number">Fig. 200 </span><span class="caption-text">image-20230627153901919</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+</div>
+<p>与另外两种使用单独乘法的方式进行对比：</p>
+<div class="figure align-default" id="id22">
+<img alt="_images/image-20230627154044440.png" src="_images/image-20230627154044440.png" />
+<p class="caption"><span class="caption-number">Fig. 201 </span><span class="caption-text">image-20230627154044440</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+</div>
+<p>信息丢失可能是常见的在动态范围内的ULP宽度增加，或者如果中间的乘积落入
+<span class="math notranslate nohighlight">\((maxreal、\infty)\)</span> 范围（如上述第二种情况），则信息丢失会很严重.</p>
+</div>
+<div class="section" id="id11">
+<h3>13.5.3 融合的加乘<a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h3>
+<p>第一眼看上去，这就像一个失败的选择。 在暂存器中精确计算
+<span class="math notranslate nohighlight">\((a + b)\times c\)</span> 意味着将 a 和 b 精确相加，这需要与 EDP
+相同的巨大累加器，然后将其相乘。 但算术分配律说</p>
+<div class="math notranslate nohighlight" id="equation-13-fused-operations-7">
+<span class="eqno">(48)<a class="headerlink" href="#equation-13-fused-operations-7" title="Permalink to this equation">¶</a></span>\[(a+b)\times c = (a \times c) + (b \times c)\]</div>
+<p>右侧的表达式只是 (a, b) 与 (c, c) 的点积。 这意味着融合加乘只是 EDP
+的一种特殊情况，并且比最精确的点积更容易计算，因为如果两个乘积的大小不同以致缩放后的位串不重叠，则可以跳过加法。（这种情况只需要设置
+ubit
+来指示在较大数字的小数中最后一位之后还有更多含有1的位。）相同的技巧可用于任何加法；
+唯一的区别是 g-layer 中的乘积的小数比特串长度是u-layer中的两倍。</p>
+<p>一般区间的原型函数是g-layer的 <strong>famg</strong>[ag, bg, cg] , u-layer中的
+<strong>famu</strong>[au,bu, cu]。
+与往常一样，u-layer版本会统计移动的位和移动的数字，以评估 unum
+数学相对于浮点数学的成本。</p>
+<p>顺便说一句，如果加法和乘法作为单独的 unum 运算完成，则 unum
+算术遵循“次分配律”：</p>
+<div class="math notranslate nohighlight" id="equation-13-fused-operations-8">
+<span class="eqno">(49)<a class="headerlink" href="#equation-13-fused-operations-8" title="Permalink to this equation">¶</a></span>\[(au \oplus bu) \otimes cu \approx (au \otimes cu) \oplus (bu \otimes cu)\]</div>
+<p>这不适用于浮点算术。 方程两边产生的 ubounds
+总是重叠的，如果它们不相同，那么它们的交集就是加乘法的改进界限。
+但通过融合加乘，总是会返回最佳可能的边界，而不必担心此类事情。</p>
+</div>
+<div class="section" id="id12">
+<h3>13.5.4 融合乘比率<a class="headerlink" href="#id12" title="Permalink to this heading">¶</a></h3>
+<p>代数学说
+<span class="math notranslate nohighlight">\((a \times b) \div c = a \times (b \div c)\)</span>，因此<em>融合除乘</em>与<em>融合乘除</em>是一样的。
+对于浮点型表示，首先执行乘法始终是正确的做法，因为它始终可以在暂存器中精确完成，而除法通常会产生余数。</p>
+<p>包含融合乘除法的原因是它有助于抓住获得精确结果的所有可能性。
+例如，对于浮点数，<span class="math notranslate nohighlight">\((x \div 7) \times 7\)</span> 通常会产生与 x
+不同的数字（由舍入误差引起），而对于nums，<span class="math notranslate nohighlight">\((xu \odot \hat{7}) \otimes \hat{7}\)</span>通常会产生包含
+<span class="math notranslate nohighlight">\(xu\)</span> 但与 <span class="math notranslate nohighlight">\(xu\)</span> 不同的不精确 ubound。
+与这些数字进行融合乘除将准确返回 <span class="math notranslate nohighlight">\(xu\)</span> ，不会丢失任何信息。</p>
+<p>硬件实际上已经能用于做融合乘除法，因为暂存器中的乘法会产生精确的整数乘积。
+除以分数只是意味着对整个整数乘积进行长除法，而不是首先剪掉超过最大小数大小的位。
+当结果不精确时，单独乘法和除法的 ubound ULP
+宽度通常是融合乘法除法宽度的两倍，因此融合形式有助于保留有关答案的信息。</p>
+<p>很容易推广融合乘除法，而不违反任何关于计算序列可以在 g-layer
+中保留多长时间的规则。 假设我们想要计算</p>
+<div class="math notranslate nohighlight" id="equation-13-fused-operations-9">
+<span class="eqno">(50)<a class="headerlink" href="#equation-13-fused-operations-9" title="Permalink to this equation">¶</a></span>\[x=\frac{m_1 \times m_2 \times \dots m_j}{n_1 \times n_2 \times \dots n_k}\]</div>
+<p>g-layer中的乘法可以是精确的； 最终的长除法仅需要达到 u-layer
+所能表达的极限。 将此称为<em>融合乘积比</em>。
+它包括融合乘除法和融合除乘法。 注意 j 和 k 是独立的；
+分子和分母列表的长度不需要相同。</p>
+<p>g-layer中一般区间列表numeratorsg 和denominatorsg
+的融合乘积比的原型函数是 <strong>fprodratiog</strong>[numeratorsg, denominatorsg]。
+u-layer 版本是 <strong>fprodratiou</strong>[numeratorsu,
+denominatorsu]，它还计算移动的位数和数字个数。
+作为它能有啥帮助的示例，请尝试在没有融合的情况下评估
+<span class="math notranslate nohighlight">\((5 \times (3 \div 10))\)</span>，其中我们故意进行不利分组，首先进行除法操作：</p>
+<div class="figure align-default" id="id23">
+<img alt="_images/image-20230627162005119.png" src="_images/image-20230627162005119.png" />
+<p class="caption"><span class="caption-number">Fig. 202 </span><span class="caption-text">image-20230627162005119</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+</div>
+<p>对应的融合操作保留了精确的结果</p>
+<div class="figure align-default" id="id24">
+<img alt="_images/image-20230627162044641.png" src="_images/image-20230627162044641.png" />
+<p class="caption"><span class="caption-number">Fig. 203 </span><span class="caption-text">image-20230627162044641</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+</div>
+<p>几个世纪前，一位名叫约翰·沃利斯 (John Wallis)
+的英国数学家发现了一个奇怪的<span class="math notranslate nohighlight">\(\pi\)</span> 公式（“沃利斯积”）。
+它提供了一种方法来演示在分子和分母中进行大量乘法的融合乘积：</p>
+<div class="figure align-default" id="id25">
+<img alt="_images/image-20230627162218677.png" src="_images/image-20230627162218677.png" />
+<p class="caption"><span class="caption-number">Fig. 204 </span><span class="caption-text">image-20230627162218677</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+</div>
+<p>也就是分子中无限多对偶数整数的乘积，除以分母中无限多对错开的奇数整数对的乘积。(
+顺便说一句，沃利斯是“<span class="math notranslate nohighlight">\(\infty\)</span>”符号的发明者，尽管他对它的数学定义更像是
+<span class="math notranslate nohighlight">\((maxreal, \infty)\)</span>，而不是精确的无穷大。）</p>
+<p>以下是融合乘积比率例程如何计算 Wallis 产品的前几项，以及初始因子 2：</p>
+<div class="figure align-default" id="id26">
+<img alt="_images/image-20230627162716094.png" src="_images/image-20230627162716094.png" />
+<p class="caption"><span class="caption-number">Fig. 205 </span><span class="caption-text">image-20230627162716094</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+</div>
+<p>环境设置为 {2, 4} 以演示使用此类融合操作的原因之一。 在 {2, 4}
+环境中，maxreal 约为
+512，因此动态范围足以表达上面显示的所有数字，但对于临时计算来说太小。
+分子乘积为 832359628800，分母乘积为 273922023375，如果使用单独的 unum
+运算进行计算，则需要更强大的指数字段（大小为 3 或更大）。
+但融合计算工作得很好，并返回了尽可能准确的答案。 所有大整数都在 g
+层中处理，它返回范围内的 u 层数作为最终比率。 计算中的平均 unum 大小为
+13.5 位，这对于精确到小数点后五位的答案来说非常便宜！</p>
+<p>大约需要沃利斯乘积的 n 项才能达到 <span class="math notranslate nohighlight">\(\pi\)</span> 正确值的大约
+1/n，因此我们不应该对缺乏收敛性感到太失望。
+要点是任何长的有理数和整数的乘积序列都可以而且应该由融合乘积比率例程处理。
+如果我们明确地向
+g-layer请求帮助，则该任务不需要具有大指数的环境来处理中间计算结果。
+此外，如果融合函数可以在 u-layer 中表达，则融合函数可以产生精确的结果。</p>
+</div>
+<div class="section" id="id13">
+<h3>13.5.5 融合范数、融合根点积和融合均值<a class="headerlink" href="#id13" title="Permalink to this heading">¶</a></h3>
+<p>最后三个融合函数不是原型的一部分，但在这里作为更全面的 unum
+计算环境的建议提出。 这里的“范数”的意思是“平方和的平方根”。 它可以像坐标
+(x、y)与原点的距离一样简单：</p>
+<div class="math notranslate nohighlight" id="equation-13-fused-operations-10">
+<span class="eqno">(51)<a class="headerlink" href="#equation-13-fused-operations-10" title="Permalink to this equation">¶</a></span>\[r = \sqrt{x^2+y^2}\]</div>
+<p>或者它可能是数百万个平方数之和的平方根。
+它是科学计算中最常见的表达方式之一。
+也是担心超出数字世界定义边缘的另一个原因，因为数字在临时计算中会被平方。
+取平方根的最后一步使动态范围接近输入值的范围。
+如果计算机中唯一必须承受暂时太大或太小的指数负担的部分是
+g-layer，则可以在 u 层中使用较小的 esizesize。</p>
+<p>应仔细计算平方，并注意第 11.1 节中详述的问题。
+求和是通过完整的累加器完成的，因此一切都是精确的整数算术，直到算平方根前。如果平方根不精确，只需与
+u-layer中的 fsizemax 分数位所需的精度一样。</p>
+<p>出于同样的原因，在将答案返回到 u-layer
+之前，使用在末尾执行平方根的版本来扩展 EDP 点积将是有价值的。
+对于许多几何计算，我们需要尽可能准确地知道<span class="math notranslate nohighlight">\(\sqrt{a\cdot b}\)</span>，其中a和b是向量。
+融合平方根可以减少少量信息丢失，但它再次使我们不必在中间结果使用过大的指数大小。</p>
+<p>最后，在对一组 n 个数字求和后，通常希望通过除以 n 来求出它们的平均值。
+如果 n 很大，则在 g-layer 中使用除以 n
+的融合均值同样可以消除对过大指数大小的需要，因为均值将与求和的输入值处于相同的动态范围内。</p>
+<p>我们现在有足够的操作来测试 unum 计算环境的可行性。
+我们需要回答的一些问题：</p>
+<ul class="simple">
+<li><p>ubound 是否经常像传统间隔一样扩展，给出无用的大范围？</p></li>
+<li><p>为了得到满意的答案，它们使用的位数比浮点数多还是少？</p></li>
+<li><p>它们是否容易在经典测试问题上遇到与浮点数相同的陷阱？</p></li>
+<li><p>它们比浮点数更容易使用还是更困难？</p></li>
+</ul>
+<p>在将 unum 应用到经典计算物理问题（第 2
+部分）之前，我们首先对它们进行一些“酸性测试”，这些问题是数学家多年来发明的，旨在暴露计算机数字的缺陷。</p>
+</div>
+</div>
+</div>
+
+
+        </div>
+        <div class="side-doc-outline">
+            <div class="side-doc-outline--content"> 
+<div class="localtoc">
+    <p class="caption">
+      <span class="caption-text">Table Of Contents</span>
+    </p>
+    <ul>
+<li><a class="reference internal" href="#">13 融合操作（一次性表达式）</a><ul>
+<li><a class="reference internal" href="#id2">13.1 标准化一组融合操作</a></li>
+<li><a class="reference internal" href="#id3">13.2 融合乘加和融合乘减</a></li>
+<li><a class="reference internal" href="#id4">13.3 解决复数数学运算缓慢的悖论</a></li>
+<li><a class="reference internal" href="#unum">13.4 完整累加器的 Unum 硬件</a><ul>
+<li><a class="reference internal" href="#id5">13.4.1 未打包的 unum 环境中的成本</a></li>
+<li><a class="reference internal" href="#id6">13.4.2 原型中的融合点积和融合和</a></li>
+<li><a class="reference internal" href="#id7">13.4.3 并行计算的一致结果</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id8">13.5 其他的融合操作</a><ul>
+<li><a class="reference internal" href="#id9">13.5.1 不是所有成对的操作都应该融合起来</a></li>
+<li><a class="reference internal" href="#id10">13.5.2 融合乘法</a></li>
+<li><a class="reference internal" href="#id11">13.5.3 融合的加乘</a></li>
+<li><a class="reference internal" href="#id12">13.5.4 融合乘比率</a></li>
+<li><a class="reference internal" href="#id13">13.5.5 融合范数、融合根点积和融合均值</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+            </div>
+        </div>
+
+      <div class="clearer"></div>
+    </div><div class="pagenation">
+     <a id="button-prev" href="12_other_important_unary_ops.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="P">
+         <i class="pagenation-arrow-L fas fa-arrow-left fa-lg"></i>
+         <div class="pagenation-text">
+            <span class="pagenation-direction">Previous</span>
+            <div>12 其他重要的一元运算</div>
+         </div>
+     </a>
+     <a id="button-next" href="14_trial_runs.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
+         <i class="pagenation-arrow-R fas fa-arrow-right fa-lg"></i>
+        <div class="pagenation-text">
+            <span class="pagenation-direction">Next</span>
+            <div>14 试运行：Unums 面临计算挑战</div>
+        </div>
+     </a>
+  </div>
+        
+        </main>
+    </div>
+  </body>
+</html>

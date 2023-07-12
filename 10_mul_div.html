@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>10 乘法和除法 &#8212; THE END of ERROR - Unum Computing 0.1 documentation</title>
+
+    <link rel="stylesheet" href="_static/material-design-lite-1.3.0/material.blue-deep_orange.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx_materialdesign_theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fontawesome/all.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/d2l.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/d2l.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="11 求幂" href="11_power.html" />
+    <link rel="prev" title="9 加减法和无偏差舍入的迷" href="09_add_sub_unbias_round.html" /> 
+  </head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header mdl-layout__header--waterfall ">
+    <div class="mdl-layout__header-row">
+        
+        <nav class="mdl-navigation breadcrumb">
+            <a class="mdl-navigation__link is-active">10 乘法和除法</a>
+        </nav>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+        
+<form class="form-inline pull-sm-right" action="search.html" method="get">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+        <label id="quick-search-icon" class="mdl-button mdl-js-button mdl-button--icon"  for="waterfall-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q"  id="waterfall-exp" placeholder="Search" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </div>
+      </div>
+      <div class="mdl-tooltip" data-mdl-for="quick-search-icon">
+      Quick search
+      </div>
+</form>
+        
+<a id="button-show-source"
+    class="mdl-button mdl-js-button mdl-button--icon"
+    href="_sources/10_mul_div.rst.txt" rel="nofollow">
+  <i class="material-icons">code</i>
+</a>
+<div class="mdl-tooltip" data-mdl-for="button-show-source">
+Show Source
+</div>
+        </nav>
+    </div>
+    <div class="mdl-layout__header-row header-links">
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation">
+          
+              <a  class="mdl-navigation__link" href="https://github.com/jszheng/TheEndOfError">
+                  <i class="fab fa-github"></i>
+                  Github
+              </a>
+      </nav>
+    </div>
+</header><header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_TheOriginalSin.html">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_hidden_scratchpads_3_layers.html">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_info_per_bit.html">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_comparison_operations.html">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_other_important_unary_ops.html">12 其他重要的一元运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_fused_operations.html">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_TheOtherKindOfError.html">15. 另外一种误差</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_avoid_interval_arith_pitfalls.html">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_meaning_of_solve_equ.html">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_permission_to_guess.html">18 准许猜测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_pendulums_done_correctly.html">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_calculus_evil.html">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_end_of_error.html">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+        <main class="mdl-layout__content" tabIndex="0">
+
+	<script type="text/javascript" src="_static/sphinx_materialdesign_theme.js "></script>
+    <header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_TheOriginalSin.html">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_hidden_scratchpads_3_layers.html">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_info_per_bit.html">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_comparison_operations.html">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_other_important_unary_ops.html">12 其他重要的一元运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_fused_operations.html">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_TheOtherKindOfError.html">15. 另外一种误差</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_avoid_interval_arith_pitfalls.html">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_meaning_of_solve_equ.html">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_permission_to_guess.html">18 准许猜测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_pendulums_done_correctly.html">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_calculus_evil.html">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_end_of_error.html">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+
+    <div class="document">
+        <div class="page-content" role="main">
+        
+  <div class="section" id="id1">
+<h1>10 乘法和除法<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<div class="figure align-default" id="id9">
+<img alt="_images/image-20230621153224229.png" src="_images/image-20230621153224229.png" />
+<p class="caption"><span class="caption-number">Fig. 147 </span><span class="caption-text">image-20230621153224229</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<blockquote>
+<div><p>在第一次海湾战争中，美国让爱国者导弹处于准备状态，以便在需要时立即发射，并保持准备状态好几天。
+他们击中目标的能力取决于使用以十分之一秒为单位来精确计算经过时间。
+大约 100 小时过去后（360
+万滴答），一枚爱国者发射升空以抵御飞毛腿导弹的攻击。
+制导系统将启动后的滴答乘以浮点值 0.1，即大约 360,000 秒。
+小数点左边那个大的整数，只留给小数点右边一位小数的空间；
+重要的位被挤出，将舍入误差放大到大约 0.34 秒。 飞毛腿导弹在0.34
+秒误差的飞行距离约为 570 米
+，因此爱国者导弹没有击中飞毛腿导弹，飞毛腿导弹击中了美国陆军军营，造成
+28 名士兵死亡。 爱国者已经被修改为使用更高精度的浮点数。
+该事件是有史以来由浮点舍入错误（在本例中是乘法舍入错误）引起的最严重灾难。
+早在有人按下红色按钮之前，unum 计算就会让不精确显露出来。</p>
+</div></blockquote>
+<div class="section" id="id2">
+<h2>10.1 乘法需要检查每个象限<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>通用间隔的乘法比传统间隔负责。对于闭区间，乘法的积就是所有端点积的最大最小值</p>
+<div class="math notranslate nohighlight" id="equation-10-mul-div-0">
+<span class="eqno">(35)<a class="headerlink" href="#equation-10-mul-div-0" title="Permalink to this equation">¶</a></span>\[[a, b]\times[c, d] = \text{Minimum}(a \times c, a \times d, b \times c, b \times d)
+\text{,  Maximum}(a \times c, a \times d, b \times c, b \times d)\]</div>
+<p>对于通用间隔，考虑一个奇怪的例子： [-1, 2) 和 （-0.5, 1]的乘法。
+四个端点的积是 0.5，-1，-1，2。 所以左端点是-1，
+右端点是2。但是两个-1的情况不一样。下面这个例子的图，跟以前一样使用圆-方表示端点。三维图上乘积是一个鞍形的表面。</p>
+<div class="figure align-default" id="id10">
+<img alt="_images/image-20230623191756777.png" src="_images/image-20230623191756777.png" />
+<p class="caption"><span class="caption-number">Fig. 148 </span><span class="caption-text">image-20230623191756777</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<p>x-y平面上方看，乘积的最大值（蓝色线）是开（圆形）端点，在<span class="math notranslate nohighlight">\(2 \times 1=2\)</span>那里。要想看清楚最小点（橙色线），下图是从鞍形表面的下方看：</p>
+<div class="figure align-default" id="id11">
+<img alt="_images/image-20230623194036899.png" src="_images/image-20230623194036899.png" />
+<p class="caption"><span class="caption-number">Fig. 149 </span><span class="caption-text">image-20230623194036899</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+<p>两个端点一个是闭的(-1x1),
+一个是开的（2x-0.5）。相反象限中的乘积将争夺极值，结果是闭的[-1, 2) 。</p>
+<p>我们还需要注意<span class="math notranslate nohighlight">\(0 \times \infty\)</span>,
+传统的间隔方法会处理成NaN。因为我们有端点的更多信息，我们有以下组合：</p>
+<ul class="simple">
+<li><p>如果你用一个无穷乘以非零但是符号相反的间隔，那么结果是<span class="math notranslate nohighlight">\([-\infty, +\infty]\)</span>,
+不是NaN</p></li>
+<li><p>一个非精确的0乘以任何有限数，任然是无限接近但不包含0</p></li>
+<li><p>0乘以一个非精确的无穷（即几乎无穷）是0</p></li>
+<li><p>非精确0(即几乎没有)乘以无穷还是无穷</p></li>
+<li><p>一个正的非精确0乘以非精确的无穷，结果是正的实数线</p></li>
+</ul>
+<p>下面分别是g-layer的左右端的表，不含负值。其中洋红色的情况是需要思考的</p>
+<div class="figure align-default" id="id12">
+<img alt="_images/image-20230623200226349.png" src="_images/image-20230623200226349.png" />
+<p class="caption"><span class="caption-number">Fig. 150 </span><span class="caption-text">image-20230623200226349</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+<p>如果两端点都负值，那么就如同我们用-x, -y去查表得到的结果。</p>
+<p>如果只有x或y是负值，那么我们将负的参数取反，同时改变表左和右。看上面的3d图，在第2，4象限，x,y越大，积离0越远。我们必须翻转极值的顺序。</p>
+<p>。。。。</p>
+<p>原型代码定义函数<strong>timesg</strong>(g-layer),
+对应的u-layer版本是<strong>timesu</strong>，用符号“<span class="math notranslate nohighlight">\(\otimes\)</span>”代表。见附录C.10。</p>
+<p>尝试一下上面的例子，使用环境{2，4}</p>
+<div class="figure align-default" id="id13">
+<img alt="_images/image-20230623202157159.png" src="_images/image-20230623202157159.png" />
+<p class="caption"><span class="caption-number">Fig. 151 </span><span class="caption-text">image-20230623202157159</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+<p>传统浮点0乘以无穷是NaN</p>
+<div class="figure align-default" id="id14">
+<img alt="_images/image-20230623202319915.png" src="_images/image-20230623202319915.png" />
+<p class="caption"><span class="caption-number">Fig. 152 </span><span class="caption-text">image-20230623202319915</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+<p>但是用unum，我们可以在有些情况下得到答案</p>
+<div class="figure align-default" id="id15">
+<img alt="_images/image-20230623202433317.png" src="_images/image-20230623202433317.png" />
+<p class="caption"><span class="caption-number">Fig. 153 </span><span class="caption-text">image-20230623202433317</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+<p>就像加减法，当计算从g-layer转到u-layer时候，有可能从精确值变成不精确值，从而从闭区间变成开区间。</p>
+<p>而乘法有可能使得计算落入了(0, smallsubnormal)或是(-smallsubnormal, 0)</p>
+</div>
+<div class="section" id="unum">
+<h2>10.2 unum乘法的硬件实现<a class="headerlink" href="#unum" title="Permalink to this heading">¶</a></h2>
+<div class="figure align-default" id="id16">
+<img alt="_images/image-20230623203738343.png" src="_images/image-20230623203738343.png" />
+<p class="caption"><span class="caption-number">Fig. 154 </span><span class="caption-text">image-20230623203738343</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+<blockquote>
+<div><p>每个好的工具系列都有各种尺寸的螺丝刀、钳子、锤子等。
+尽管扳手可以像上面的扳手一样进行调节，但拥有不止一种尺寸仍然是有意义的。
+unum 乘法器也是如此。</p>
+</div></blockquote>
+<div class="section" id="id3">
+<h3>10.2.1 标准硬件方式实现的乘法器<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<p>与加法和减法一样，快速访问解包 unum
+的异常位可以实现快速、最小的硬件逻辑，从而消除第 10.1
+节中所示的所有异常情况。 因此，这里主要的硬件讨论是，当所有
+NaN-零-无穷大情况都无法确定结果时，如何在暂存器（g 层）中执行
+<span class="math notranslate nohighlight">\(x \cdot y\)</span></p>
+<p>当然，如果结果在返回到
+u-layer时显然不会准确，则暂存器中的处理不需要准确。
+例如，乘法涉及将每个操作数的指数域位串作为整数相加； 如果总和小于 0
+或大于 <span class="math notranslate nohighlight">\(2^{esizesize}\)</span>，则表明结果落在 (0,smallsubnormal) 或
+(maxreal, <span class="math notranslate nohighlight">\(\infty\)</span>) （或它们的负版本）中，就无需计算实际小数乘积。</p>
+<p>两个比特串的乘积</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1…1 (m bits) 和
+1…1 (n bits) 将得到
+1…1 (m+n bits)
+</pre></div>
+</div>
+<p>如果m+n比最大的小数位数还要大（包括隐藏位），那么结果就设置ubit表明有u-layer不能表示的部分。
+这比试图找到舍入要求的距离最近的浮点数更简单。</p>
+<p>64b的解包unum格式有最多16b指数和33b的小数，包含revealed位。对于最高{4，5}的环境，g-layer要一个16位整数加减法的逻辑来处理指数，并有进位/借位表达上溢或是下溢（也就是幅度大于maxreal或是小于smallsubnormal）。还需要有66位的乘法平行四边形。</p>
+<p>乘法平行四边形是硬件高精度乘法器实现需要的面积为啥跟精度的平方成正比。到某个点需要更复杂的方法。对于一个unum对，只有一部分的平行四边形才会被使用，其他部分可以保持关闭状态来节省功耗。下图中橙红色部分是用来计算一个24x7的，蓝绿色的部分可以关闭不用。</p>
+<div class="figure align-default" id="id17">
+<img alt="_images/image-20230623211843624.png" src="_images/image-20230623211843624.png" />
+<p class="caption"><span class="caption-number">Fig. 155 </span><span class="caption-text">image-20230623211843624</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+<p>历史上，设计师也常常为了低精度的乘法器使用这个方法来分割乘法平行四边形，unum可以分割在任何地方，不一定在半中央。</p>
+<div class="figure align-default" id="id18">
+<img alt="_images/image-20230623212123085.png" src="_images/image-20230623212123085.png" />
+<p class="caption"><span class="caption-number">Fig. 156 </span><span class="caption-text">image-20230623212123085</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+</div>
+<p>这提供了一种方法可以同时计算ubound的两个端点，如果他们的小数位串和不超过最大长度的话。不过老实说现代的芯片并不缺乘法器。最新一代的Intel至强处理器有数百个乘法器，但是他们只占用芯片面积的百分之几。稍微修改加上识别上一节的左右乘法表，将用做支持一定环境大小的高速
+unum 乘法器，更大的数将需要扩展精度乘法。</p>
+<p>如果没有异常情况就必须计算 <span class="math notranslate nohighlight">\(x \cdot y\)</span>，则表示 x 和 y 的 ubit
+的位将进行“或”运算。 换句话说，只有两个输入都准确时，乘积才能准确。
+当完成部分积的平行四边形时，如果有任何位超出最大可表达分数，则结果的ubit也设置上。
+由于从右到左对所有部分积进行求和，因此将每个和位与 ubit
+进行“或”运算就足以处理正常情况和次正常情况</p>
+<p>如果乘积为 66 位或更少，则此处描述的 unum
+乘法应该与浮点乘法一样快或更快，并且消耗更少的功率。 事实上，解包 unum
+的小数长度最大为 33 位（几乎 10 位小数），这意味着乘法时间比 53 位 IEEE
+双精度小数（几乎 16 位小数）要少。 两个 unum
+乘法平行四边形（每个端点一个）有 2178
+个部分乘积项，每次通常只使用其中的一小部分。 相比之下，IEEE
+双精度乘法平行四边形有 2809 个条目，需要多出 29%
+的芯片面积，并且必须为每次乘法的每个条目供电。</p>
+</div>
+<div class="section" id="id4">
+<h3>10.2.2 扩展精度和“完整累加器”<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
+<p>扩展精度整数乘法需要将表示每个输入整数 x 和 y
+的位串划分为适合硬件乘法器的最大部分，并累加 x 部分乘以 y
+部分的所有可能组合的乘积，移位适当的位数，作为精确整数相加。“移位”实际上看起来更像是传统的内存地址操作；
+移位量除以每个字的位数，决定了整数的落地位置。</p>
+<p>这就是 Kulisch 的精确点积的作用。 Kulisch 将 EDP
+的累加器称为“完整累加器”。 扩展精度乘法是所有 x 部分乘以 一个y部分
+的点积，并用所有 x 部分乘以下一个 y 部分进行累加，依此类推，直到所有 y
+部分都被相乘并相加以获得扩展精度乘积。 第 11 章讨论了哪些融合的 unum
+操作应该出现在标准计算环境中，但由于多种原因，EDP 是稳操胜券的。
+原因之一是，它提供了适合解包 unum 数据的 66
+位平行四边形的产品的下一个“扳手尺寸”。</p>
+</div>
+<div class="section" id="id5">
+<h3>10.2.3 真正大的乘法器<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
+<p>冒着吓到读者的风险，可能真有理由存在需要能够计算数千位长的位串的暂存乘积的情况。
+如果工作量随着比特长度的平方而增加，那么这种特别要求的实用性就会迅速下降。
+即使并行执行可以使乘法变得更快，片上功耗也会随着精度的平方而增加。</p>
+<p>幸运的是，许多数学家几十年来一直在努力寻找方法，将 <span class="math notranslate nohighlight">\(n\)</span>
+位整数的乘法时间降低到几乎与 <span class="math notranslate nohighlight">\(n\)</span> 而不是<span class="math notranslate nohighlight">\(n^2\)</span>成正比.
+这取决于所使用的方法，有很多方法（参见Knuth的The Art of Computer
+Programming第二卷，4.3.3节，
+“乘法到底能做多快”）通过选取权衡点，可以使用更复杂的方法，相比简单地使用融合乘加单元，将花费更少的时间来实现扩展精度。
+贝利估计，权衡点是输入值具有一千位或更多位时。
+这意味着如果暂存器层中的位数暂时变得很大，加法和乘法将花费相当的时间。</p>
+<table border="2"><tr><td bgcolor="lightgray"><p>读者的练习对 Warlpiri unums 中的四个位使用逻辑运算 AND、OR 和
+NOT，找到第 10.1 节中所示的左右乘法表条目的表达式</p>
+</td></tr></table></div>
+</div>
+<div class="section" id="id6">
+<h2>10.3 除法在论证中引入了不对称性<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h2>
+<div class="figure align-default" id="id19">
+<img alt="_images/image-20230624105717630.png" src="_images/image-20230624105717630.png" />
+<p class="caption"><span class="caption-number">Fig. 157 </span><span class="caption-text">image-20230624105717630</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+</div>
+<blockquote>
+<div><center><p>despair.com网站上我最喜欢的一张</p>
+</center></div></blockquote>
+<div class="section" id="id7">
+<h3>10.3.1 算术“坏孩子”<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
+<p>除法长期以来一直是四则运算<span class="math notranslate nohighlight">\(+-\times\div\)</span>中的“坏孩子”。
+与其他三种运算相比，除法可能会出现更多问题；
+与之前的表相比，除法表中包含更多 NaN 情况。
+长除法是小学最难学的手算方法。 除法也是计算机四种运算中最难的一种；
+对于计算机硬件来说，执行除法所需的时间几乎是乘法的十倍的情况也不罕见！
+这是最不可能产生准确结果的操作； 第 2 章和第 3
+章中的闭合图证实了这一点。</p>
+<p>例如如果我们用Warlpiri arithmetic做2除以2，2的倒数变成了开区间(0,1),
+因为那个环境不能表达<span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>.
+倒数乘以2以后得到一个正确的但是很粗的近似答案：说2除以2的结果在开区间(0,2)中。信息都丢失了。
+构建除法的算法要求比乘法更谨慎些。</p>
+<p>一些要注意的情况是</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(0/0 = NaN\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\pm\infty / \pm\infty = NaN\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\infty / (y, \infty) = \infty\)</span> where <span class="math notranslate nohighlight">\(y &gt; 0\)</span></p></li>
+<li><div class="math notranslate nohighlight" id="equation-10-mul-div-1">
+<span class="eqno">(36)<a class="headerlink" href="#equation-10-mul-div-1" title="Permalink to this equation">¶</a></span>\[\begin{split}x/(0, y) = \left\{\begin{array}{l}\
+(x/y, \infty) &amp; \text{ if } x&gt;0 \\
+0 &amp; \text{ if } x=0 \text{ where } y&gt;0 \\
+(-\infty, x/y) &amp; \text{ if } x&lt;0
+\end{array}\right.\end{split}\]</div>
+</li>
+</ul>
+<p>有些数字系统试图给除0赋予意义，比如<span class="math notranslate nohighlight">\(\frac{1}{0}\)</span>是“<span class="math notranslate nohighlight">\(\pm\infty\)</span>”，或是整个实数线
+<span class="math notranslate nohighlight">\([-\infty, +\infty]\)</span>. 对于 unums，除以零会产生 NaN，就这样了。
+除以跨越零的 ubound 也是如此。
+这是不能容忍的，因为在实数领域内除以零只是一种无意义的行为，并且计算机要做的最好的事情就是在计算中发生除以零时通知程序员或用户某些事情已经完全错误
+。
+有一些传统的区间计算系统试图适应除以零的情况，这可能是屈服于某些数学家的本能愿望，即让运算对每个可能的输入都有效。
+即使 Mathematica 中的区间算术也会犯这个错误。例如</p>
+<div class="figure align-default" id="id20">
+<img alt="_images/image-20230624122646849.png" src="_images/image-20230624122646849.png" />
+<p class="caption"><span class="caption-number">Fig. 158 </span><span class="caption-text">image-20230624122646849</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
+<p>这个答案破坏了间隔在数学上的含义规则：即返回端点之间的所有实际值。
+区间数据类型无法与用户进行交流说：“我的意思是，这个情况下，<span class="math notranslate nohighlight">\(–\infty\)</span>
+和 <span class="math notranslate nohighlight">\(+\infty\)</span> 都是除以零的结果，但不，嗯，包含中间的实数。” 对于
+unum
+算术，我们强制要求：除以精确的零表示计算已失去所有意义，并且应该产生
+NaN。 除了 NaN 之外，ubound 结果始终是连通集。</p>
+<p>原型中使用符号“<span class="math notranslate nohighlight">\(\odot\)</span>”来表示unum除法（mathematica不支持产生圆圈一个中间是“/”的符号）。同样的我们分别创建了左右边的表，但是请注意当两个输入值的端点朝向不同方向的特殊性。就像取负反转了不等号
+(if <span class="math notranslate nohighlight">\(x&lt;y\)</span> then <span class="math notranslate nohighlight">\(-x &gt; -y\)</span>)，倒数也反转了不等号 （if
+<span class="math notranslate nohighlight">\(x &lt; y\)</span> then <span class="math notranslate nohighlight">\(\frac{1}{x}&gt;\frac{1}{y}\)</span> , x, y是正数）。</p>
+<p>下面是g-layer上计算左右边界的商的“<span class="math notranslate nohighlight">\(\odot\)</span> left”和“<span class="math notranslate nohighlight">\(\odot\)</span>
+right” 表</p>
+<div class="figure align-default" id="id21">
+<img alt="_images/image-20230624200846523.png" src="_images/image-20230624200846523.png" />
+<p class="caption"><span class="caption-number">Fig. 159 </span><span class="caption-text">image-20230624200846523</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id22">
+<img alt="_images/image-20230624200903184.png" src="_images/image-20230624200903184.png" />
+<p class="caption"><span class="caption-number">Fig. 160 </span><span class="caption-text">image-20230624200903184</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+</div>
+<p>与往常一样，需要小心思考的案例以洋红色表示。
+只要开或闭端点类型不是两个输入的打开状态的简单“OR”，它们就会是有色的 [ ]
+( )。 与前面的表一样，如果精确的 x 和精确的 y
+的算术运算结果不能表示为精确的 unum，则 g -layer结果到 u-layer
+的转换将会把 ubit 置位来表示是不精确范围。</p>
+<p>下例是一个<span class="math notranslate nohighlight">\([3,4)\div[2, 3)\)</span> 的除法。最大值是<span class="math notranslate nohighlight">\(4 \div 2\)</span>,
+最小值是<span class="math notranslate nohighlight">\(3\div 3\)</span>.
+由于两个计算都包含一个开端点，结果两端点都是开。</p>
+<div class="figure align-default" id="id23">
+<img alt="_images/image-20230624201946639.png" src="_images/image-20230624201946639.png" />
+<p class="caption"><span class="caption-number">Fig. 161 </span><span class="caption-text">image-20230624201946639</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+</div>
+<p>原型代码有divideg和divideu函数分别用于g-layer和u-layer，见附件C.11。</p>
+<table border="2"><tr><td bgcolor="lightgray"><p>读者的练习在[2, 0]环境里有63个精确的unum值。如果unum u 和 v
+是精确的，那u÷v大概有多少几率也是精确的呢？（提示：答案跟[3, 0]或[4,
+0]环境相似，2.2节的闭合图是部分的回答）</p>
+</td></tr></table></div>
+<div class="section" id="id8">
+<h3>10.3.2 除法的硬件实现<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h3>
+<p>小学的长除法方法一次只能算出一位数字，从左到右进行。
+使用二进制形式的长除法（重复减法和移位直到确定余数）的计算机在除法时总是比乘法慢得多，因为乘法中的大部分工作可以轻松地并行完成；
+平行四边形中的每个部分积可以同时创建，然后使用“超前进位”等电路技巧求和。</p>
+<p>有多种技巧可以使除法更快，如果有兴趣，我们鼓励读者查看有关这些技巧的文献。
+IEEE 浮点数如何计算除法和 unum
+硬件如何计算除法之间几乎没有什么区别，因为两者都需要知道结果是否准确。
+（IEEE 标准规定设置“不精确”处理器标志，而不是像 unum
+那样将信息合并到数字中。）与乘法一样，暂存器中需要额外的位，但该数字是可以根据
+两个输入的小数中最长的比特位数来决定。</p>
+<p>解包 unum
+中的预解码异常位，以及无需舍入（如果余数为零，则结果准确；否则设置
+ubit），都有助于降低 unum 除法与相同精度的IEEE浮点除法成本。 unum
+的精度通常会低于 float 的精度，因为它会根据需要动态地上下调整。
+只有实际的设计实验才能确定是否与浮点数相比减少了除法运算所需的功耗，因为大多数
+ubound 操作将需要一对除法而不是一个。</p>
+<p>人们很容易想到一种更强大的暂存器格式，它不存储用于缩放的 2
+的幂，而是存储无符号整数分子 p 和分母 q，两者都使用扩展精度存储</p>
+<div class="figure align-default" id="id24">
+<img alt="_images/image-20230624204217779.png" src="_images/image-20230624204217779.png" />
+<p class="caption"><span class="caption-number">Fig. 162 </span><span class="caption-text">image-20230624204217779</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+</div>
+<p>这是一个更昂贵的内部暂存器，但在处理除法运算方面更胜一筹，因为它支持精确的有理算术。
+由于上面的暂存器看起来对于能源效率来说是一个很大的倒退，因此我们将在 g
+层结构中坚持使用按 2 的幂缩放的有符号整数。 使用现场可编程门阵列 (FPGA)
+来试验这两种方法将会很有趣；
+在某些情况下，在更短的时间内完成一个除法可能会节省能量，使这个方法变得有意义。</p>
+<p>到这里我们完成了作为单独运算的加法、减法、乘法和除法的定义。
+然而，我们需要的不仅仅是四则计算器的运算。
+接下来的两章将展示您可以在科学计算器上找到的大多数函数的 unum 版本。</p>
+</div>
+</div>
+</div>
+
+
+        </div>
+        <div class="side-doc-outline">
+            <div class="side-doc-outline--content"> 
+<div class="localtoc">
+    <p class="caption">
+      <span class="caption-text">Table Of Contents</span>
+    </p>
+    <ul>
+<li><a class="reference internal" href="#">10 乘法和除法</a><ul>
+<li><a class="reference internal" href="#id2">10.1 乘法需要检查每个象限</a></li>
+<li><a class="reference internal" href="#unum">10.2 unum乘法的硬件实现</a><ul>
+<li><a class="reference internal" href="#id3">10.2.1 标准硬件方式实现的乘法器</a></li>
+<li><a class="reference internal" href="#id4">10.2.2 扩展精度和“完整累加器”</a></li>
+<li><a class="reference internal" href="#id5">10.2.3 真正大的乘法器</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id6">10.3 除法在论证中引入了不对称性</a><ul>
+<li><a class="reference internal" href="#id7">10.3.1 算术“坏孩子”</a></li>
+<li><a class="reference internal" href="#id8">10.3.2 除法的硬件实现</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+            </div>
+        </div>
+
+      <div class="clearer"></div>
+    </div><div class="pagenation">
+     <a id="button-prev" href="09_add_sub_unbias_round.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="P">
+         <i class="pagenation-arrow-L fas fa-arrow-left fa-lg"></i>
+         <div class="pagenation-text">
+            <span class="pagenation-direction">Previous</span>
+            <div>9 加减法和无偏差舍入的迷</div>
+         </div>
+     </a>
+     <a id="button-next" href="11_power.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
+         <i class="pagenation-arrow-R fas fa-arrow-right fa-lg"></i>
+        <div class="pagenation-text">
+            <span class="pagenation-direction">Next</span>
+            <div>11 求幂</div>
+        </div>
+     </a>
+  </div>
+        
+        </main>
+    </div>
+  </body>
+</html>

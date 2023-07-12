@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>18 准许猜测 &#8212; THE END of ERROR - Unum Computing 0.1 documentation</title>
+
+    <link rel="stylesheet" href="_static/material-design-lite-1.3.0/material.blue-deep_orange.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx_materialdesign_theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fontawesome/all.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/d2l.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/d2l.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="19 摆的正确计算" href="19_pendulums_done_correctly.html" />
+    <link rel="prev" title="17 “解”方程到底是什么意思？" href="17_meaning_of_solve_equ.html" /> 
+  </head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header mdl-layout__header--waterfall ">
+    <div class="mdl-layout__header-row">
+        
+        <nav class="mdl-navigation breadcrumb">
+            <a class="mdl-navigation__link is-active">18 准许猜测</a>
+        </nav>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+        
+<form class="form-inline pull-sm-right" action="search.html" method="get">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+        <label id="quick-search-icon" class="mdl-button mdl-js-button mdl-button--icon"  for="waterfall-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q"  id="waterfall-exp" placeholder="Search" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </div>
+      </div>
+      <div class="mdl-tooltip" data-mdl-for="quick-search-icon">
+      Quick search
+      </div>
+</form>
+        
+<a id="button-show-source"
+    class="mdl-button mdl-js-button mdl-button--icon"
+    href="_sources/18_permission_to_guess.rst.txt" rel="nofollow">
+  <i class="material-icons">code</i>
+</a>
+<div class="mdl-tooltip" data-mdl-for="button-show-source">
+Show Source
+</div>
+        </nav>
+    </div>
+    <div class="mdl-layout__header-row header-links">
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation">
+          
+              <a  class="mdl-navigation__link" href="https://github.com/jszheng/TheEndOfError">
+                  <i class="fab fa-github"></i>
+                  Github
+              </a>
+      </nav>
+    </div>
+</header><header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_TheOriginalSin.html">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_hidden_scratchpads_3_layers.html">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_info_per_bit.html">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_comparison_operations.html">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_mul_div.html">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_other_important_unary_ops.html">12 其他重要的一元运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_fused_operations.html">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_TheOtherKindOfError.html">15. 另外一种误差</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_avoid_interval_arith_pitfalls.html">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_meaning_of_solve_equ.html">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">18 准许猜测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_pendulums_done_correctly.html">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_calculus_evil.html">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_end_of_error.html">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+        <main class="mdl-layout__content" tabIndex="0">
+
+	<script type="text/javascript" src="_static/sphinx_materialdesign_theme.js "></script>
+    <header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_TheOriginalSin.html">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_hidden_scratchpads_3_layers.html">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_info_per_bit.html">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_comparison_operations.html">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_mul_div.html">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_other_important_unary_ops.html">12 其他重要的一元运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_fused_operations.html">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_TheOtherKindOfError.html">15. 另外一种误差</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_avoid_interval_arith_pitfalls.html">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_meaning_of_solve_equ.html">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">18 准许猜测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_pendulums_done_correctly.html">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_calculus_evil.html">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_end_of_error.html">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+
+    <div class="document">
+        <div class="page-content" role="main">
+        
+  <div class="section" id="id1">
+<h1>18 准许猜测<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<div class="figure align-default" id="id5">
+<img alt="_images/image-20230704212149407.png" src="_images/image-20230704212149407.png" />
+<p class="caption"><span class="caption-number">Fig. 333 </span><span class="caption-text">image-20230704212149407</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<blockquote>
+<div><p>如果幸运的话，浮点数有时比unums用严格方法来说，可以更快地猜出答案。在本章中，Unums还面临着来自Kahan教授的两个挑战问题。你觉得幸运吗？</p>
+</div></blockquote>
+<div class="section" id="unum">
+<h2>18.1 浮点能用的算法unum也可以用<a class="headerlink" href="#unum" title="Permalink to this heading">¶</a></h2>
+<p>Unums 不会丢弃关于如何使用浮点数计算的大量文献的积累。Unums
+是浮点数的超集。浮点数只是 ubit
+为零的unum数。到目前为止，我们忽略了这一点，因为显示出首次可以获得严格答案的示例非常重要，使用具有实数范围的集合计算而不是点猜测。</p>
+<p>猜测很像舍入，但在unum环境中，猜测必须明确指示才做。舍入是由浮点硬件自动产生的不可见错误，而猜测是必须在代码中请求的东西，使用类似“<strong>y
+= guess[x]</strong>”的命令。</p>
+<table border="2"><tr><td bgcolor="lightblue"><p>定义: guess是从某个范围的实数中（或是邻接边上）选择一个可表示的精确值</p>
+</td></tr></table><p>装备上guess函数（后面我们会更具体地定义它），那么就没有什么是浮点数环境能做而unum不能做到的。</p>
+<p>虽然严格的数学是一个强大的工具，但当严格的方法难以做到的时候，猜测也有一定的力量。
+关键是当你这样做的时候要承认是在猜。
+被宣称为猜测的计算在数学上并没有什么不诚实的地方。
+它没有犯数值计算的“原罪”。
+在设计良好的计算环境中，猜测的数字答案应始终在输出中进行标记，例如在其后放置一个星号上标：</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(\pi\)</span>估计程序的结果是：<span class="math notranslate nohighlight">\(3.125^*\)</span></p>
+</div></blockquote>
+<p>该符号可以添加到输入/输出语法中，以便将结果传达给人类，如“需求和让步”第
+5.4.2 节中所述。 请注意，这与编写不精确的结果有很大不同，例如</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(\pi\)</span>估计程序的结果是：<span class="math notranslate nohighlight">\(3.1\cdots\)</span></p>
+</div></blockquote>
+<p>因为“<span class="math notranslate nohighlight">\(\cdots\)</span>”符号意味着结果<em>可证明</em>在 3.1 和 3.2 之间。
+如果猜测是为了找到一个解方程的值，则可以根据第 17 章，通过严格的 unum
+算术评估方程来验证猜测，从而消除了只是猜测的耻辱。</p>
+<p>如果我们要猜测，我们最好小心行事。 当界限是最小 ULP
+的大小时，我们希望猜测类似于 IEEE 浮点舍入。
+在这里，我们将使用舍入到最近偶数模式，但可以根据您的喜好设计其他猜测方法。
+如果 unum 是一个 ULP 宽，但不是最小的可能
+ULP，则始终可以将ULP中点表示为精确的 unum。</p>
+<p><strong>读者的练习</strong>：对于一个小数部分 ubit 设置为 1 但长度小于最大长度
+<span class="math notranslate nohighlight">\(2^{fsizesize}\)</span> 的 unum u，用位运算描述如何为代表 u 中点的精确
+unum v 创建位串的过程</p>
+<p>当间隔边界a和b间隔很宽，会更希望用复杂一点的方法比如几何平均<span class="math notranslate nohighlight">\(\sqrt{ab}\)</span>来替代算术平均<span class="math notranslate nohighlight">\((a+b)/2\)</span>。比如范围<span class="math notranslate nohighlight">\((1, 10^{30})\)</span>的猜测值就是<span class="math notranslate nohighlight">\(10^{15}\)</span>而不是<span class="math notranslate nohighlight">\(0.5\times10^{30}\)</span>。但是这么做有时候会带来意外，也许还是遵循用户的常识比较好。所以我们后面都用算术平均做猜测值。</p>
+<p>以下是构建稳健猜测算法的一种方法，该算法可从 a 到 b
+的实数范围中创建单个精确值。 我们将忽略范围的端点是开放的还是封闭的。</p>
+<blockquote>
+<div><p><strong>特殊情况处理</strong>： 如果任一端点为 NaN，则返回 NaN。 如果 a =
+b，则返回 a。 （请注意，这意味着返回的值是准确的，而不是猜测。） 如果
+a = <span class="math notranslate nohighlight">\(-\infty\)</span> 且 b = <span class="math notranslate nohighlight">\(\infty\)</span>，则返回 0。</p>
+<p>对不同端点的猜测： 计算 a 和 b 的平均值 <span class="math notranslate nohighlight">\((a + b)/2\)</span>。
+（请注意，无限端点结果是无限。） 找到最接近该平均值的偶数 unum。
+如果最接近的偶数 unum 只有一位小数位，则返回； 否则压缩掉尾随零。</p>
+</div></blockquote>
+<p>请注意，猜测可能会违反包含原则。 如果输入实数范围是 (a, a + ULP) 并且
+ULP 尽可能小，则唯一可用的精确值是 a 或 a +
+ULP，它们都在界限之外。（根据舍入到最接近的偶数规则，具有较短小数位串的端点获胜。）与浮点数一样，碰到猜测不仅不准确而且完全错误的情况并不少见。</p>
+<p><strong>读者的练习</strong>：<strong>guessu</strong>函数对开区间
+<span class="math notranslate nohighlight">\((–\infty, –maxreal)\)</span>、<span class="math notranslate nohighlight">\((-smallsubnormal, 0)\)</span>、<span class="math notranslate nohighlight">\((0, smallsubnormal)\)</span>
+和 <span class="math notranslate nohighlight">\((maxreal, \infty)\)</span> 如何处理？ 这与 IEEE
+浮点数的做法相符还是不同？</p>
+<p>另请注意，猜测会迫使放弃前面描述的“知识”指标，至少在检查猜测的有效性之前是如此。
+可以猜测，然后使用严格的方法来验证或否认猜测，如果是正确的，则扩展形成
+c-solution 可能答案集，从而恢复出完整的最小的答案集的信息。</p>
+<p>原型中guessu函数接收一个unum,
+ubound或是通用的间隔，然后使用上面的算法产生一个精确的unum输出。代码在附录D.9.
+下面是些样例</p>
+<p>如果我们有足够的小数位来表示一个精确的中点，就会输出这个作为结果</p>
+<div class="figure align-default" id="id6">
+<img alt="_images/image-20230705103357686.png" src="_images/image-20230705103357686.png" />
+<p class="caption"><span class="caption-number">Fig. 334 </span><span class="caption-text">image-20230705103357686</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>请注意，这提高了表示精度。
+端点1和4只需要一位小数位来表示，但平均值2.5则需要两位小数位来表示。
+另一种猜测形式是四舍五入到与具有最低精度的端点相同的位数，在这种情况下将产生猜测
+2 而不是 2.5。</p>
+<p>任何有限数与正负无穷的平均都是那个无穷值。</p>
+<div class="figure align-default" id="id7">
+<img alt="_images/image-20230705103614990.png" src="_images/image-20230705103614990.png" />
+<p class="caption"><span class="caption-number">Fig. 335 </span><span class="caption-text">image-20230705103614990</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>guessu</strong> 函数还接受一般区间作为其输入参数。
+在下面的示例中，它是一个开区间，表示最小可能的 ULP 范围；
+因此，<strong>guessu</strong> 返回具有较短小数位串且与开区间相邻的最接近的 unum。
+我们称其为“最接近偶数”，因为如果它表示为没有压缩掉小数尾部零的话，则小数字符串将以零结尾，因此看起来像偶数整数的位字符串。
+当 unum
+边界用精确的小数表示时，通常你可以发现“最接近的偶数”端点就是最短的十进制表示的数：</p>
+<div class="figure align-default" id="id8">
+<img alt="_images/image-20230705104349549.png" src="_images/image-20230705104349549.png" />
+<p class="caption"><span class="caption-number">Fig. 336 </span><span class="caption-text">image-20230705104349549</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<p>当您确定有办法纠正猜测并推动其更接近真实答案时，猜测可能是最有效的方法。
+也就是说，当你可以证明用的数值算法是“稳定的”时。
+毕竟，这就是生物系统的工作方式。
+当你伸手去拿咖啡杯时，大脑发送到你手臂的信号是关于需要多少肌肉收缩的猜测，并通过视觉和触觉反馈快速纠正。
+当家蝇降落在墙上时，它肯定不会首先计算控制飞行动力学的纳维-斯托克斯方程的解。
+（这太糟糕了，因为如果他们这样做的话，他们会更容易被拍死。）</p>
+<p>作为一个证明猜测似乎效果很好的例子，我们来看看直接来自Kahan
+博士对本书早期草稿的另一个挑战：</p>
+<blockquote>
+<div><p>假设 <span class="math notranslate nohighlight">\(f(x)\)</span> 有一个定点 <span class="math notranslate nohighlight">\(L = f(L)\)</span>，并且对于给定范围
+<span class="math notranslate nohighlight">\(X\)</span> 内的 <span class="math notranslate nohighlight">\(x\)</span> 值，我们希望知道迭代 <span class="math notranslate nohighlight">\(x := f(x)\)</span>
+是否会收敛到 <span class="math notranslate nohighlight">\(L\)</span> 以及收敛速度有多快。
+对于将作为问题的一部分给出的两个表达式 <span class="math notranslate nohighlight">\(g\)</span> 和 <span class="math notranslate nohighlight">\(h\)</span>，函数
+<span class="math notranslate nohighlight">\(f (x)\)</span> 以 <span class="math notranslate nohighlight">\(f (x) := g(x) - h(x)\)</span> 的形式提供。
+一个简单的例子是 <span class="math notranslate nohighlight">\(g(x) := 2 x\)</span> 和
+<span class="math notranslate nohighlight">\(h (x) := x^2 /L\)</span>，其中 <span class="math notranslate nohighlight">\(L &gt; 0\)</span> 稍后将与
+<span class="math notranslate nohighlight">\(X := [(1 - d) L, (1 + d) L]\)</span> 一起提供，d是一些小的正数且
+<span class="math notranslate nohighlight">\(d &lt; 1\)</span>。</p>
+<p>用unum表示 <span class="math notranslate nohighlight">\(X\)</span>，并在 unum 算术中执行迭代
+<span class="math notranslate nohighlight">\(x := f(x)\)</span>，编程为将 g 和 h 作为单独的子程序进行求值。
+会发生什么？ 如果我们不使用 unums 也不使用区间算术，而是用从
+<span class="math notranslate nohighlight">\(X\)</span> 中提取的浮点数样本数组替换 <span class="math notranslate nohighlight">\(X\)</span>，会发生什么？</p>
+<p>我们不允许使用 <span class="math notranslate nohighlight">\(f(x) = (2 - x /L) x = L - (x - L)^2 / L\)</span>
+这一事实，因为一般来说，<span class="math notranslate nohighlight">\(f\)</span>
+可能比这复杂得多，但仍然表现出相同的行为。
+经过多次迭代的冗长计算后，unums 或区间算术的行为与平凡动力系统
+<span class="math notranslate nohighlight">\(f\)</span> 的真实行为之间的差异必须引起一些怀疑，即 unums
+可能无法很好地处理其他动力系统和冗长的计算</p>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>18.2 固定点问题<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>总体思路是这样的：一些带有浮点的迭代过程收敛到一个精确的浮点值作为固定点。
+他们被“拘束”到正确的答案里，就像轮盘赌中的球总是落在其整数数字隔间之一中一样。
+但是，如果您在过程中使用任何类型的间隔算术，就好像它是点值一样，依赖性问题可能会影响每次迭代并实际上导致发散。
+听起来卡汉将 unum
+与传统间隔算术等同起来，并假设它们必定有相同的缺陷，尤其是依赖性问题。</p>
+<p>下面演示了Kahan说的效应，函数变量遵循他的命名。既然我们从数学中离开进入了浮点的赌场，让我们选择一个幸运数字给<span class="math notranslate nohighlight">\(L\)</span>吧，比如77。而<span class="math notranslate nohighlight">\(X\)</span>间隔使用ubound
+[73,
+81]。而对<span class="math notranslate nohighlight">\(x^2/L\)</span>求值正是使用融合乘积比函数<strong>fprodratiou</strong>的好地方，可以减少信息丢失：</p>
+<div class="figure align-default" id="id9">
+<img alt="_images/image-20230705113643660.png" src="_images/image-20230705113643660.png" />
+<p class="caption"><span class="caption-number">Fig. 337 </span><span class="caption-text">image-20230705113643660</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<p>函数<span class="math notranslate nohighlight">\(f(x)=2x-x^2/77\)</span>显示了f有一个固定点在77。从区间 X
+中选择的精确值计算为更小的区间 [4.9875, 5]
+，然后从中选择的精确值计算为区间 [4.99996875, 5] ，而后快速收敛到固定点
+5。（这里显然错误了，应该是前一个版本的不同例子继承下来的，事实上应该是先到[76.792208,
+76.792208], 然后是[76.999439, 76.999439], 接着就到了固定点[77.000000,
+77.000000]）</p>
+<p>在下面的函数图中，右边淡蓝色的矩形是范围
+<span class="math notranslate nohighlight">\(X=[73, 81]\)</span>，而顶部的细小的淡蓝色矩形是范围[f(73), f(81)].
+多项式求解器<strong>polyu</strong>应用在整个X的区间内使用都没有信息丢失。</p>
+<div class="figure align-default" id="id10">
+<img alt="_images/image-20230705131058936.png" src="_images/image-20230705131058936.png" />
+<p class="caption"><span class="caption-number">Fig. 338 </span><span class="caption-text">image-20230705131058936</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<p>可是等一下; 规则不是说<strong>我们不可能正确计算出</strong>多项式
+<span class="math notranslate nohighlight">\(f(x) = 2 x - x^2 / 77\)</span>。 当问题提出时，计算机不允许检测
+<span class="math notranslate nohighlight">\(f\)</span> 是多项式这一事实，因为对于 g 和 h
+的不同定义，它可能不是多项式。 问题定义旨在通过将两个函数 g 和 h
+视为未知来使依赖性问题不可避免。 果然，如果您所做的只是使用 unums
+来模仿传统的区间算术，则绑定的 X 会扩展而不是收缩：</p>
+<div class="figure align-default" id="id11">
+<img alt="_images/image-20230705142125535.png" src="_images/image-20230705142125535.png" />
+<p class="caption"><span class="caption-number">Fig. 339 </span><span class="caption-text">image-20230705142125535</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+<p>另一方面，如果我们代入函数的是该范围内的任何浮点数，即使是 <span class="math notranslate nohighlight">\(X\)</span>
+的最小值和最大值，函数 <span class="math notranslate nohighlight">\(f\)</span> 的 unum
+版本结果是严格的区间，很好地落在在固定点<span class="math notranslate nohighlight">\(L\)</span>的值附近 。</p>
+<div class="figure align-default" id="id12">
+<img alt="_images/image-20230705142726023.png" src="_images/image-20230705142726023.png" />
+<p class="caption"><span class="caption-number">Fig. 340 </span><span class="caption-text">image-20230705142726023</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+<p>注意到unum的结果是不包含精确值77的，不是通常的间隔如(76.5,
+77]，<strong>因为那样会是个错误</strong>。这个数学函数经过有限次迭代的结果只能接近77而不可能到达77的。</p>
+<p>根据这个游戏规则，我们不允许融合g和h。 f
+的绘图将揭示松散评估多项式所显示的模式：精确 unum 输入的精确值与不精确
+unum 输入的宽范围交替。 任何编译器都会立即检测到两个表达式中 x
+的使用，并调用控制依赖性错误的技术。</p>
+<p>但我们来玩一下这个游戏，看看这个问题是否可以无脑地解决。 只需使用 ubox
+即可。 下面定义的函数 <strong>fub</strong> 接受输入 ubound ub 并生成 f 的界限。
+第一行中的“–5”通常由操作系统根据可并行运行的处理器数量提供；
+该例程根据间隔宽度自动调整 unum 宽度。</p>
+<div class="figure align-default" id="id13">
+<img alt="_images/image-20230705143646185.png" src="_images/image-20230705143646185.png" />
+<p class="caption"><span class="caption-number">Fig. 341 </span><span class="caption-text">image-20230705143646185</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+<p>从同样起始区间<span class="math notranslate nohighlight">\(X=[73, 81]\)</span>开始:</p>
+<div class="figure align-default" id="id14">
+<img alt="_images/image-20230705143746875.png" src="_images/image-20230705143746875.png" />
+<p class="caption"><span class="caption-number">Fig. 342 </span><span class="caption-text">image-20230705143746875</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+<p>这个迭代看上去是合理的，再做一次</p>
+<div class="figure align-default" id="id15">
+<img alt="_images/image-20230705143855948.png" src="_images/image-20230705143855948.png" />
+<p class="caption"><span class="caption-number">Fig. 343 </span><span class="caption-text">image-20230705143855948</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+<p>很小的依赖性错误还是使得结果包含了77并超越了一点点。这会带来问题吗？再迭代一次</p>
+<div class="figure align-default" id="id16">
+<img alt="_images/image-20230705144032625.png" src="_images/image-20230705144032625.png" />
+<p class="caption"><span class="caption-number">Fig. 344 </span><span class="caption-text">image-20230705144032625</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+<p>目前看来都好，固定点被定住在一个越来越小的区间中了。</p>
+<div class="figure align-default" id="id17">
+<img alt="_images/image-20230705144200712.png" src="_images/image-20230705144200712.png" />
+<p class="caption"><span class="caption-number">Fig. 345 </span><span class="caption-text">image-20230705144200712</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+<p>最后一次</p>
+<div class="figure align-default" id="id18">
+<img alt="_images/image-20230705144231847.png" src="_images/image-20230705144231847.png" />
+<p class="caption"><span class="caption-number">Fig. 346 </span><span class="caption-text">image-20230705144231847</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+</div>
+<p>好了好了。 看来迭代方法也同样适用于
+ubox，但产生的界限也无疑提醒我们问题的计算机版本与原始数学问题并不完全相同。
+在这种低精度下，ubox 方法捕获了精确的固定点。完美的答案是
+<span class="math notranslate nohighlight">\((77 - ULP，77]\)</span>，即最小可能的 ULP 宽范围，在右侧闭合。
+由于游戏规则的原因，存在少量信息丢失，并且范围
+<span class="math notranslate nohighlight">\((77, 77.001953125)\)</span> 也被不必要地包括在内。
+该计算并不像传统区间算术那样不稳定。
+即使使用旨在放大依赖性问题的规则，它也证明了有 5 个 ULP
+宽度的固定点的位置。</p>
+<p>现在我们使用16b的IEEE
+半精度浮点。从X区域中选择一个其实点。规则说<span class="math notranslate nohighlight">\(X := [(1 - d) L, (1 + d) L]\)</span>
+，其中<span class="math notranslate nohighlight">\(d \lt 1\)</span>，换句话说最大的X范围是（0， 2L）。
+但是等一下，为啥浮点需要帮助来选取起始点呢？</p>
+<p>规则规定起始猜测必须从开区间 <span class="math notranslate nohighlight">\((0, 2 L)\)</span> 中选取。
+该范围之外开始，浮点方法就会发散。 除非他们预先了解 g 和 h
+并使用微积分计算出 f 的斜率在 -1 和 1
+之间的位置，否则怎么可能有人提前知道这个神奇范围呢？如果问题允许你这样做，那么你当然有一个稳定的点，不妨使用猜测的方法；
+这就像将一颗弹珠扔进一个大漏斗中，规则规定，只要你从漏斗的正上方的任意地方开始扔。</p>
+<p>但是先忽略那些，我们用unum也用同样的<span class="math notranslate nohighlight">\(d \lt 1\)</span>的规则，比如选择x=81,
+准确的浮点位串是0 10101 0100010000.</p>
+<p><span class="math notranslate nohighlight">\(g(x)=2x=162\)</span>, 目前还好，数字加倍不产生舍入，尽管可能产生上溢出。</p>
+<p><span class="math notranslate nohighlight">\(h(x)=x^2/77\)</span>。这就要舍入了，当然。舍入成什么呢？<em>这就依赖于计算机了！</em>
+一些计算机要先做<span class="math notranslate nohighlight">\(x^2\)</span>,
+舍入，然后除以77，再舍入。而另外一些会用更高精度的数做两个操作后再舍入，产生一个不同的猜测。IEEE的标准说<strong>可以用任何方式做都可以，而无需通知用户</strong>。最近的平方结果
+<span class="math notranslate nohighlight">\(81^2=6561\)</span>是6560，然后除法
+<span class="math notranslate nohighlight">\(6560\div77\)</span>是85.1875。但是如果我们用单精度做完两个运算后再round的结果会是85.25。我们假设使用的是每一步都舍入。所以准确结果<span class="math notranslate nohighlight">\(\frac{6561}{77}\)</span>被替换成了<span class="math notranslate nohighlight">\(\frac{1363}{16}=85.1875\)</span>。</p>
+<p><span class="math notranslate nohighlight">\(f(x)=g(x)-h(x)\)</span>求值是162 - 85.1875 =
+76.8125。这已经比初始值81有20倍地靠近77了。继续这个过程得到新值。<span class="math notranslate nohighlight">\(x=76.8125\)</span>：<span class="math notranslate nohighlight">\(g(x)=2x=153.625\)</span>.
+<span class="math notranslate nohighlight">\(h(x)=x^2/77\)</span>,
+最近的<span class="math notranslate nohighlight">\(x^2\)</span>是5900，最接近<span class="math notranslate nohighlight">\(5900\div77\)</span>的数是76.625.
+<span class="math notranslate nohighlight">\(f(x)=g(x)-h(x)=153.625 - 76.625 = 77\)</span>。完全准确。这个方法得到了原本数学问题的固定点的完全精确值，显然看起来用浮点数猜测成了大赢家。</p>
+<p>但是…同样，等一下。得到<em>准确</em>的77是<strong>错误的答案</strong>。数学上有限次数的迭代是不能达到77的，只能更低。正确的数值表示的答案是<span class="math notranslate nohighlight">\(f(x)\)</span>的稳定点作为开区间边界，比如<span class="math notranslate nohighlight">\((76.9375, 77)\)</span>,
+其中边界是可表示的浮点数。很不幸的是IEEE浮点不能表示范围，不是正好用准确77作为起点的正确答案，用unum表示应该是</p>
+<div class="figure align-default" id="id19">
+<img alt="_images/image-20230705153750876.png" src="_images/image-20230705153750876.png" />
+<p class="caption"><span class="caption-number">Fig. 347 </span><span class="caption-text">image-20230705153750876</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+</div>
+<p>显然这个规则让我们知道这个开始的X区间是稳定范围，一个可以让猜测稳定的“漏斗”。所以我们来玩同样的游戏，用guessu函数来模仿浮点的鲁莽行为。同时我们也开启数据搬移追踪，来测量unum与浮点的代价差异。因为这个问题就是设计来奖励不精确和猜测，把环境降到{2,
+3}</p>
+<div class="figure align-default" id="id20">
+<img alt="_images/image-20230705154421608.png" src="_images/image-20230705154421608.png" />
+<p class="caption"><span class="caption-number">Fig. 348 </span><span class="caption-text">image-20230705154421608</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
+<p>定义好上述函数后试试迭代两次，从准确的unum数81开始</p>
+<div class="figure align-default" id="id21">
+<img alt="_images/image-20230705154529388.png" src="_images/image-20230705154529388.png" />
+<p class="caption"><span class="caption-number">Fig. 349 </span><span class="caption-text">image-20230705154529388</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+</div>
+<p>显然也不长，一次迭代就可以达到数学上的固定点。它每个数消耗了17.4比特，略略高于半精度的浮点。
+如果错误的收敛是你想要的，<strong>guessu</strong>也可以做得到。</p>
+<p>读者是否有觉得奇怪为啥不去找另外一个<span class="math notranslate nohighlight">\(f(x)=x\)</span>的固定点？下面是<span class="math notranslate nohighlight">\(f(x)\)</span>和<span class="math notranslate nohighlight">\(x\)</span>的函数图，其中淡蓝色的矩形包围在另外一个固定点。</p>
+<div class="figure align-default" id="id22">
+<img alt="_images/image-20230705155014768.png" src="_images/image-20230705155014768.png" />
+<p class="caption"><span class="caption-number">Fig. 350 </span><span class="caption-text">image-20230705155014768</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+</div>
+<p>挑选任何一个-4到4之间的实数开始迭代， 使用传统的浮点算术</p>
+<div class="figure align-default" id="id23">
+<img alt="_images/image-20230705155124462.png" src="_images/image-20230705155124462.png" />
+<p class="caption"><span class="caption-number">Fig. 351 </span><span class="caption-text">image-20230705155124462</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+</div>
+<p>哎呀糟糕了。
+浮点数的猜测方法在这个固定点上效果不太好，因为它恰巧是不稳定的。
+（实际上，迭代的方向是
+<span class="math notranslate nohighlight">\(–\infty\)</span>，如果你仔细想想，这算是一个稳定的固定点。并且由于
+f(NaN) 是 NaN，也许 NaN 也应该被视为一个固定点。）如果你从正数开始猜测
+值时，它会指向错误的固定点 77。如果 g(x) 和 h(x)
+函数使得函数在原点附更平缓些，那么它可能是稳定的，但在这种情况下并没有发生。</p>
+<p>因此，“求解”带有浮点数的固定点的唯一方法是<em>提前知道</em>函数在哪里保证具有属性
+-1 &lt; 斜率 &lt; 1。这似乎违反了将 g(x) 和 h(x) 作为未知输入的规则 问题。</p>
+<p>以这种方式查找不动点的迭代技术的另一个缺点：它是完全串行的。
+您无法使用并行硬件做任何事情，因为您当然需要知道 f(x)，然后才能找到
+f(f(x))，依此类推。
+该算法的结构将世界上最快的超级计算机的速度降低到台式个人计算机的速度。</p>
+<p>我们应该对这个精心挑选的浮点数的例子印象深刻吗？
+或者，恕我直言，卡汉博士，我们是否应该怀疑这个赌场游戏被操纵了？</p>
+<table border="2"><tr><td bgcolor="lightblue"><center><p>实际提出的问题是：固定点在哪里？</p>
+</center></td></tr></table><p>让我们在这个更大、更难的问题上尝试 unum 和 ubox，这次使用第 17
+章中描述的<strong>solvforub</strong> 方法。要问的条件问题是，“f(x) 在哪里与 x
+不同？” 然后取该集合的补集：</p>
+<div class="figure align-default" id="id24">
+<img alt="_images/image-20230705160744357.png" src="_images/image-20230705160744357.png" />
+<p class="caption"><span class="caption-number">Fig. 352 </span><span class="caption-text">image-20230705160744357</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+</div>
+<p>换句话说，从尝试间隔 [73, 81] 开始，求解器正确地将<em>除 77
+之外</em>的每个实数识别为非不动点。
+超级计算机可以使用尽可能多的并行处理器来非常快速地进行搜索。
+<strong>solvforub</strong>
+的美妙之处在于它不需要指导去哪里寻找，而且它可以像找到稳定固定点一样轻松地找到<em>不稳定</em>的固定点：</p>
+<div class="figure align-default" id="id25">
+<img alt="_images/image-20230705161019338.png" src="_images/image-20230705161019338.png" />
+<p class="caption"><span class="caption-number">Fig. 353 </span><span class="caption-text">image-20230705161019338</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+</div>
+<p>起始搜索区间中除 0 之外的所有内容都是非固定点，因此 0 是固定点。
+相反，迭代方法没有办法定位该固定点，除非它正好以 x = 0
+开始，这显然是作弊。 我们可以使用从 f 的整个域开始的 try-everything
+方法（即 <span class="math notranslate nohighlight">\([-\infty, \infty)\)</span>, 因为 <span class="math notranslate nohighlight">\(f(\infty)\)</span> 是
+NaN），结果会产生以下不动点：</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(-\infty,(-\infty, -maxreal), 0, 77\)</span></p>
+</div></blockquote>
+<p>包含<span class="math notranslate nohighlight">\((-\infty, -maxreal)\)</span>是正确计算机问题的解和正确数学解的唯一差别。</p>
+<p>总结一下我们目前在这场浮点数和unum的比赛中看到的</p>
+<ul class="simple">
+<li><p>浮点需要先被告知在哪里寻找已知道稳定的固定点。 Unums
+不需要这样的领先优势。</p></li>
+<li><p>通过偏离函数的数学求值，浮点数很幸运并准确地落在稳定点 L
+上，而不是正确地显示出渐近方法在任何有限次数的迭代后都不能准确地达到
+L 。 Unum 可以执行相同的技巧，但使用更低的精度收敛得更快。</p></li>
+<li><p>浮点猜测方法只能找到一个固定点，因为它在另一个固定点处不稳定。 Unum
+定位稳定和不稳定的不动点。</p></li>
+<li><p>使用 IEEE 浮点数的实际猜测值取决于您使用的计算机。 对 unum
+的猜测在不同的计算机系统中是按位相同的。</p></li>
+<li><p>浮点方法与算法一样具有串行性； 没有办法达到大规模并行计算机的速度。
+两种 unum 方法（ubox tiling 和
+try-everything）都是大规模并行的，能够使用与搜索范围内可表示值的数量一样多的处理器。</p></li>
+</ul>
+<p><strong>在上面列出的所有方面，浮点数都不如 unum。</strong></p>
+<p>现在，一场反挑战。
+物理学中的一个重要函数是“Sinc”函数，它是一个连续函数，定义为如果
+<span class="math notranslate nohighlight">\(x \ne 0\)</span>，则为 <span class="math notranslate nohighlight">\(\frac{sin(x)}{x}\)</span>；如果
+<span class="math notranslate nohighlight">\(x = 0\)</span>，则定义为
+1。它描述了诸如通过狭缝开口衍射的光的强度之类的东西。</p>
+<div class="figure align-default" id="id26">
+<img alt="_images/image-20230705162656112.png" src="_images/image-20230705162656112.png" />
+<p class="caption"><span class="caption-number">Fig. 354 </span><span class="caption-text">image-20230705162656112</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+</div>
+<p>假设我们对g函数做一点小的改动，在上面加一个小的扰动</p>
+<div class="math notranslate nohighlight" id="equation-18-permission-to-guess-0">
+<span class="eqno">(74)<a class="headerlink" href="#equation-18-permission-to-guess-0" title="Permalink to this equation">¶</a></span>\[g(x)=2x+\frac{sinc(16\pi(x-77))}{22}\]</div>
+<p>如果用同样的尺度画出函数图，这个扰动就太小了，所以下图放大了当x和f(x)都接近L的位置。</p>
+<div class="figure align-default" id="id27">
+<img alt="_images/image-20230705214022784.png" src="_images/image-20230705214022784.png" />
+<p class="caption"><span class="caption-number">Fig. 355 </span><span class="caption-text">image-20230705214022784</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+</div>
+<p>不动点是稳定的，位于 <span class="math notranslate nohighlight">\(77.028\cdots\)</span>。 橙色曲线的斜率在 –1 和 1
+之间，因此这是一个稳定点。 它符合有关输入函数的规则。
+当我们在这个微小的变化上尝试浮点运算的猜谜游戏时，会发生什么？</p>
+<p>再次从 x = 81 开始。 如果三角函数的浮点数学库非常准确，则 Sinc
+项将得到零：</p>
+<div class="figure align-default" id="id28">
+<img alt="_images/image-20230705214423878.png" src="_images/image-20230705214423878.png" />
+<p class="caption"><span class="caption-number">Fig. 356 </span><span class="caption-text">image-20230705214423878</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+</div>
+<p>这意味着 h(x) 的计算与以前没有什么不同。 同样，f(x) = g(x) - h(x)
+的计算结果为 162 - 85.1875 = 76.8125，距离 77 仅 3 个 ULP。那里的 Sinc
+函数是什么？ 正弦有一个参数
+<span class="math notranslate nohighlight">\(3\pi\)</span>，对于这个参数，一个好的数学库应该再次返回零作为最接近的浮点数。</p>
+<p>猜测从 84 到 76.8125 跨越了许多 ULP 的崎岖道路，幸运的是还没有意识到 f
+的振荡。 所以再一次迭代，f(x) = g(x) - h(x) = 153.625 - 76.625 = 77
+一个精确数。</p>
+<p>只有一个问题：77 <strong>不是</strong> f 的固定点；那里的 Sinc 函数值为
+<span class="math notranslate nohighlight">\(\frac{1}{25}\)</span>，因此 f 计算为最接近 77.04 的浮点数，即 77.0625。
+那么，在这个精度下，这就是固定点吗？</p>
+<div class="figure align-default" id="id29">
+<img alt="_images/image-20230705215517330.png" src="_images/image-20230705215517330.png" />
+<p class="caption"><span class="caption-number">Fig. 357 </span><span class="caption-text">image-20230705215517330</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+</div>
+<p>不是。浮点只能落在 ULP 大小的精确倍数上，即 77 附近的
+<span class="math notranslate nohighlight">\(\frac{1}{16}\)</span>。再乘以 <span class="math notranslate nohighlight">\(16\pi\)</span>，Sinc
+函数的正弦部分为零，这将下一次迭代回到了 77。</p>
+<p>浮点算法将永远在 77 和 77.0625 之间交替，永远不会收敛。
+此精度下的正确结果是开区间 (77, 77.0625)，它可以用 unum
+表示，但不能用浮点数表示。</p>
+<p>Kahan
+的示例旨在通过提供每次迭代都会减弱舍入的情况来掩盖浮点数的舍入误差。
+但浮点数有第 2 部分开头描述的“另一种错误”：采样错误。
+通过对正弦函数进行采样并仅命中正弦为零的值，浮点迭代无法解释 f
+的真实值实际上是浮点之间任何 ULP 范围内的值范围这一事实。
+忽略它，后果自负。</p>
+<p>sinc(x) 示例是猜测方法的一个软震荡，但它仍然搞砸了。
+它可能会更糟，比如更高振幅的振荡，使所有固定点在 77
+附近不稳定。或者它可能有像第 15.7 节的“平滑惊喜”那样的东西。 如果我们将
+<span class="math notranslate nohighlight">\(|log (x - 77) |/80\)</span> 的绝对值添加到 g(x) 中，迭代将快速向幸运数字
+77 前进，并发现它踩到了地雷，从而将下一次迭代发送到无穷大。</p>
+<p>关于不允许将 g(x) 和 h(x)
+的依赖性作为规则的一部分的最后一点评论：自吉米·卡特 (Jimmy Carter)
+政府以来，编译器已经能够检测常见的子表达式； 这并不是什么困难的技术。
+为什么要强迫计算机用故意施加的愚蠢来解决问题？</p>
+<p>即使 g 和 h
+动态地呈现给计算机，任何现代编译器（或解释器）都可以发现两者都依赖于 x
+的事实，并且依赖关系问题可以通过各种方法自动处理，比如 ubox或是像
+<strong>polyu</strong> 这样的数学库调用知道如何在存在数字范围依赖性时避免信息丢失。
+甚至有编译器会自动以符号方式求出函数的导数，以发现函数的最小值和最大值在哪里，这样就可以很容易地消除依赖问题。</p>
+<table border="2"><tr><td bgcolor="lightblue"><p>对两种计算环境进行任何科学比较的基本规则应该是允许使用自动化方法，但不允许使用需要人类智慧或有关特定输入的特殊知识的方法。</p>
+</td></tr></table><p>我们让读者来决定卡汉起诉书的有效性，这里重复一下：</p>
+<table border="2"><tr><td bgcolor="wheat"><p>经过多次迭代的冗长计算后，unum 或区间算术的行为与平凡动力系统 f
+的真实行为之间的差异必然会引起一些怀疑，即 unum
+可能无法很好地处理其他动力系统和冗长的计算。</p>
+</td></tr></table><p>如果你的生活依赖于计算机计算，你会更喜欢 unum 还是 float？</p>
+</div>
+<div class="section" id="id3">
+<h2>18.3 大型线性方程组<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<p>二十世纪中叶的数值分析师（特别是詹姆斯·H·威尔金森）最值得骄傲的成就之一是表明，使用浮点进行自动计算可以安全地求解线性方程组和许多其他重要运算。
+这是一种特殊问题，猜测确实能带来回报，因为在某些条件下，算法可以在进行过程中减少舍入误差。
+这是卡汉教授提出的另一个挑战：</p>
+<blockquote>
+<div><p>这是第二个例子，现在关于 unums 与舍入误差。 选择一个大整数 N
+并随机生成一个 N×N 矩阵
+H。随机数生成器的选择并不重要，只要它的分布大致围绕零对称即可；
+高斯分布或矩形分布都可以。 那么条件数(condition number):
+<span class="math notranslate nohighlight">\(norm(H) norm(H^{-1})\)</span> 很可能接近
+N，这对于该维度的矩阵来说非常小； 我们称 H“条件良好(Well
+Conditioned)”。 接下来随机生成一个 N 列
+b，并像往常一样使用高斯消元法和旋转来求解 x 的“<span class="math notranslate nohighlight">\(H x = b\)</span>”。
+如果计算以 8 字节浮点数进行，并再次以约 53 sig.bits 开始的 unum
+进行，那么两个结果的精度比较如何？</p>
+<p>当然，可以从精度更高的 unum 开始重复计算；
+需要高多少才能获得与普通浮点结果一样准确的结果？ 这有多准确？
+我更喜欢通过使用迭代细化来计算正确的
+x，而不是计算误差界限，这种迭代细化的成本只是使用普通浮点计算未知精度的第一个解
+x 的成本的一小部分（大约 20/N）。 参见</p>
+<p>​ www.eecs.berkeley.edu/~wkahan/p325-demmel.pdf</p>
+<p>由于 x 的计算没有任何病态，我们不得不怀疑 unum
+是否能够很好地处理所有高维计算。 有些还可以。</p>
+</div></blockquote>
+<p>在求解方程组 <span class="math notranslate nohighlight">\(H x = b\)</span> 时，unum 和 float
+之间不需要有任何区别，因为<strong>guessu</strong>
+函数可以应用于整个算法，以执行与任何使用 float 的经典方法相同的操作。
+第二个挑战再次源于一种错误印象，即 unum
+只是传统区间算术（或显着性算术）的一种形式。
+如果你必须使用区间，那么高斯消去法会造成依赖性问题的可怕情况；
+这个事实已经在前一章中提到过，即使是两个未知数中的两个方程也会产生一个非常松散的界限（答案太大），而
+uboxes 找到了一个完美的 c-solution ，而 float
+只是简单地选出了完整答案集中的一个 并忽略了其他（答案太不完整）。</p>
+<p>如果您仔细观察密集矩阵的高斯消除算法，您会发现它包含一组三重嵌套的循环；
+一个用于行，一个用于列，一个用于迭代次数，其中每次迭代都会消除非对角线条目。
+这就是为什么通过高斯消去法求解 N × N 稠密系统需要 <span class="math notranslate nohighlight">\(N^3\)</span> 阶运算。
+根据循环的嵌套方式，最里面的操作看起来像点积：</p>
+<div class="figure align-default" id="id30">
+<img alt="_images/image-20230706090204938.png" src="_images/image-20230706090204938.png" />
+<p class="caption"><span class="caption-number">Fig. 358 </span><span class="caption-text">image-20230706090204938</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+</div>
+<p>回想一下，unum 支持融合点积。 因此，如果 H
+中的每个条目都被视为精确值，则具有长度为 m 的向量的 unum 调用 <strong>fdotu</strong>
+将精确到单个
+ULP，这远远小于传统高斯消去法（在每次乘加之后进行舍入）的舍入误差的大约<span class="math notranslate nohighlight">\(\sqrt{m}\)</span>
+个
+ULP。（当条目是随机的并且以零为中心时，舍入在统计上是独立的想法是正确的，因此第
+9.2
+节的随机游走模型在这种情况下并不是一个神话。如果它们不是以零为中心，则错误可能会出现偏差而且很严重，正如那一节所示。）</p>
+<p>Kahan 倾向于使用“普通浮点”（大概是 IEEE 单精度）计算正确的
+x，然后执行迭代细化，这与“求解方程”的 unum 哲学非常一致：测试是否
+<span class="math notranslate nohighlight">\(H x = b\)</span> 为真。 计算 <span class="math notranslate nohighlight">\(H x\)</span> 仅需要 <span class="math notranslate nohighlight">\(N^2\)</span>
+次乘加，而且这些都是可以作为高精度融合运算完成的点积。 使用
+unums，初始求解的精度可能<strong>非常低</strong>，例如 {2, 3} 环境，其中 unums
+的长度范围为 9 到 19 位。 即使对于 N 大到 10,000
+的方程，我们也不需要很大的指数，因为从 [-1,1] 中随机选择的 N
+个数字的总和将是宽度约为 <span class="math notranslate nohighlight">\(\sqrt{10000} = 100\)</span>
+的钟形曲线，并且这些求和都是用 g-layer 中的融合点积做的。</p>
+<p>换句话说，unum
+在获得初始猜测方面可以比浮点数快得多，并且通过使用融合点积，在最终迭代中可以比浮点数在同等精度下更加准确。
+该原型太慢，无法进行像 N = 10000 这样的大矩阵的实验，但在某些时候，unum
+和 float 的硬件对硬件比较将是可能的。</p>
+</div>
+<div class="section" id="id4">
+<h2>18.4 最后一招<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<p>当浮点数看起来在每一个方面都在失败时，作为最后的抗拒手段是这样的：</p>
+<table border="2"><tr><td bgcolor="wheat"><p>是的，您的格式对于某些问题看起来更好，但不是全部；
+有时浮点的效果还是更好。
+由于每种格式都有其可以解决而另一种格式无法解决的问题，所以我们还是坚持使用浮点数。</p>
+</td></tr></table><p><strong>如果新格式包含浮点作为其功能的子集，则此论点不成立</strong>。 Unum
+数学可以按照浮点环境的方式进行猜测，并得到相同的答案（通常使用更少的位数和更少的能量）。
+Unums 还可以执行简单的闭区间算术。
+与反对其他替代型的数字格式的论点相比，反对<strong>超集</strong>数字格式的论点需要截然不同的形式，超集数字格式可以模仿您当前的计算方式，但也为那些厌倦了由浮点数提供的赌场赌博方式的风险，或是区间算术的产生的无用的宽松界限，提供了一个更好的手段。</p>
+<p>关于浮点数优点的技术争论掩盖了捍卫其继续使用的实际根本原因：与浮点数相关的大量遗产和投资。
+数十年的算法调整，花费无数时间争论应该有多少指数位以及负零的平方根的倒数是否应该为负无穷大，花费数万亿美元调整芯片硬件以适应
+IEEE 定义，并开发软件容忍不同系统之间出现不一致的计算错误。
+保留浮点数遗产的愿望很容易让人想起 20 世纪 90
+年代仍然坚持使用一个内存和一个处理器的串行计算的愿望，这是在并行计算让20
+世纪 40 年代的计算模型已经过时了多年之后。</p>
+<p>在某种程度上，每个使用实数进行计算的人都会认识到，使用计算机作为工具的有效性取决于其表示具有开放和封闭端点的数字集合的能力。
+这是值得拥抱并开始努力的事情，而不是因为“煮沸海洋”似乎令人畏惧而抵制它。</p>
+</div>
+</div>
+
+
+        </div>
+        <div class="side-doc-outline">
+            <div class="side-doc-outline--content"> 
+<div class="localtoc">
+    <p class="caption">
+      <span class="caption-text">Table Of Contents</span>
+    </p>
+    <ul>
+<li><a class="reference internal" href="#">18 准许猜测</a><ul>
+<li><a class="reference internal" href="#unum">18.1 浮点能用的算法unum也可以用</a></li>
+<li><a class="reference internal" href="#id2">18.2 固定点问题</a></li>
+<li><a class="reference internal" href="#id3">18.3 大型线性方程组</a></li>
+<li><a class="reference internal" href="#id4">18.4 最后一招</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+            </div>
+        </div>
+
+      <div class="clearer"></div>
+    </div><div class="pagenation">
+     <a id="button-prev" href="17_meaning_of_solve_equ.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="P">
+         <i class="pagenation-arrow-L fas fa-arrow-left fa-lg"></i>
+         <div class="pagenation-text">
+            <span class="pagenation-direction">Previous</span>
+            <div>17 “解”方程到底是什么意思？</div>
+         </div>
+     </a>
+     <a id="button-next" href="19_pendulums_done_correctly.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
+         <i class="pagenation-arrow-R fas fa-arrow-right fa-lg"></i>
+        <div class="pagenation-text">
+            <span class="pagenation-direction">Next</span>
+            <div>19 摆的正确计算</div>
+        </div>
+     </a>
+  </div>
+        
+        </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>8 比较操作 &#8212; THE END of ERROR - Unum Computing 0.1 documentation</title>
+
+    <link rel="stylesheet" href="_static/material-design-lite-1.3.0/material.blue-deep_orange.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx_materialdesign_theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fontawesome/all.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/d2l.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/d2l.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="9 加减法和无偏差舍入的迷" href="09_add_sub_unbias_round.html" />
+    <link rel="prev" title="7 定长的unum存储" href="07_fixed_size_unum_storage.html" /> 
+  </head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header mdl-layout__header--waterfall ">
+    <div class="mdl-layout__header-row">
+        
+        <nav class="mdl-navigation breadcrumb">
+            <a class="mdl-navigation__link is-active">8 比较操作</a>
+        </nav>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+        
+<form class="form-inline pull-sm-right" action="search.html" method="get">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+        <label id="quick-search-icon" class="mdl-button mdl-js-button mdl-button--icon"  for="waterfall-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q"  id="waterfall-exp" placeholder="Search" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </div>
+      </div>
+      <div class="mdl-tooltip" data-mdl-for="quick-search-icon">
+      Quick search
+      </div>
+</form>
+        
+<a id="button-show-source"
+    class="mdl-button mdl-js-button mdl-button--icon"
+    href="_sources/08_comparison_operations.rst.txt" rel="nofollow">
+  <i class="material-icons">code</i>
+</a>
+<div class="mdl-tooltip" data-mdl-for="button-show-source">
+Show Source
+</div>
+        </nav>
+    </div>
+    <div class="mdl-layout__header-row header-links">
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation">
+          
+              <a  class="mdl-navigation__link" href="https://github.com/jszheng/TheEndOfError">
+                  <i class="fab fa-github"></i>
+                  Github
+              </a>
+      </nav>
+    </div>
+</header><header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_TheOriginalSin.html">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_hidden_scratchpads_3_layers.html">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_info_per_bit.html">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_mul_div.html">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_other_important_unary_ops.html">12 其他重要的一元运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_fused_operations.html">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_TheOtherKindOfError.html">15. 另外一种误差</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_avoid_interval_arith_pitfalls.html">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_meaning_of_solve_equ.html">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_permission_to_guess.html">18 准许猜测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_pendulums_done_correctly.html">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_calculus_evil.html">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_end_of_error.html">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+        <main class="mdl-layout__content" tabIndex="0">
+
+	<script type="text/javascript" src="_static/sphinx_materialdesign_theme.js "></script>
+    <header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_TheOriginalSin.html">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_hidden_scratchpads_3_layers.html">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_info_per_bit.html">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_mul_div.html">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_other_important_unary_ops.html">12 其他重要的一元运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_fused_operations.html">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_TheOtherKindOfError.html">15. 另外一种误差</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_avoid_interval_arith_pitfalls.html">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_meaning_of_solve_equ.html">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_permission_to_guess.html">18 准许猜测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_pendulums_done_correctly.html">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_calculus_evil.html">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_end_of_error.html">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+
+    <div class="document">
+        <div class="page-content" role="main">
+        
+  <div class="section" id="id1">
+<h1>8 比较操作<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<div class="figure align-default" id="id9">
+<img alt="_images/image-20230619161604739.png" src="_images/image-20230619161604739.png" />
+<p class="caption"><span class="caption-number">Fig. 104 </span><span class="caption-text">image-20230619161604739</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<blockquote>
+<div><p>王朝年代的比较就像比较unums.
+有时它们明显在之前（小于）或之后（大于），有时它们时间是重叠的。
+如果被问到“罗马帝国是否严格地先于拜占庭帝国？”
+并且唯一允许的答案是“是”或“否”，那么我们必须回答“否”，因为有一段时间是重叠的。</p>
+</div></blockquote>
+<div class="section" id="id2">
+<h2>8.1 小于，大于<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="id3">
+<h3>8.1.1 一般区间排序的概念定义<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<p>为 unum 编写的最简单的操作是比较。 它们与浮点数的比较不同，因为 unums 和
+ubounds 可以表示数字范围，因此可以完全重叠、部分重叠或完全不重叠。</p>
+<p>对于大多数使用 unums 和 ubounds 的操作，硬件方法是从 u 层移动到 g
+层，在那里执行操作，然后将结果转换回 u 层。 第 7 章中讨论的 ubound
+的解包形式提供了此处描述的操作的硬件方法的具体示例。</p>
+<p>对于小于 ubound v 的 ubound u，u 的最大值必须小于 v
+的最小值。然而有些微妙的地方，因为端点可以是封闭的或开放的。
+如果任一端点打开，则 u 的最大值可能<strong>等于</strong> v 的最小值，但 u
+仍将严格小于 v。在编写 ubound 操作逻辑时，以下类型的构造经常出现：</p>
+<p><code class="docutils literal notranslate"><span class="pre">If</span> <span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">y</span> <span class="pre">or</span> <span class="pre">(x</span> <span class="pre">=</span> <span class="pre">y</span> <span class="pre">and</span> <span class="pre">(x</span> <span class="pre">is</span> <span class="pre">inexact</span> <span class="pre">or</span> <span class="pre">y</span> <span class="pre">is</span> <span class="pre">inexact))</span> <span class="pre">then</span> <span class="pre">…</span></code>
+在这个原型代码中，函数 <strong>ltuQ</strong> [u, v] (即 <strong>l</strong>ess-<strong>t</strong>hn,
+<strong>u</strong>-layer,
+<strong>Q</strong>uestion?的缩写)在u表示的数值范围严格小于v的范围返回布尔值True。其他情况，包括任何一个ubound表征了NaN，都返回False。同样的我们有大于函数<strong>gtuQ</strong>[u,
+v]. 代码的实现在附录
+C.8。主要这是严格小于和严格大于函数，任何交叠，哪怕只是端点也使得结果是False.</p>
+<p>例如，函数调用在[1,3], [3, 100]两个闭区间，结果是False。</p>
+<div class="figure align-default" id="id10">
+<img alt="_images/image-20230619163541874.png" src="_images/image-20230619163541874.png" />
+<p class="caption"><span class="caption-number">Fig. 105 </span><span class="caption-text">image-20230619163541874</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<p>这是因为两个闭区间都含有端点3. 但是如果测试是检查[1,3] &lt; (3,
+100]就会返回True.
+因为一个端点是开区间。浮点或是传统的区间数学不能做出这么精确的区分。</p>
+<div class="figure align-default" id="id11">
+<img alt="_images/image-20230619163602597.png" src="_images/image-20230619163602597.png" />
+<p class="caption"><span class="caption-number">Fig. 106 </span><span class="caption-text">image-20230619163602597</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+<p>比较是先把u-layer参数通过<strong>u2g</strong>转换成通用的间隔，再通过g-layer的函数<strong>ltgQ</strong>判断。这个基本上复制了硬件的做法。大于的测试跟小于测试是一样的，只是输入参数交换而已。对应函数是g-layer的<strong>gtgQ</strong>和u-layer的<strong>gtuQ</strong>。</p>
+<p>为了对unum,
+ubound用类似普通数比较的符号表达，定义用一个略弯曲的对等符号：“<span class="math notranslate nohighlight">\(\prec\)</span>”和“<span class="math notranslate nohighlight">\(\succ\)</span>”.
+比如u-layer的比较 “<span class="math notranslate nohighlight">\(-2&lt;-1\)</span>”是如下表达</p>
+<div class="figure align-default" id="id12">
+<img alt="_images/image-20230619164857902.png" src="_images/image-20230619164857902.png" />
+<p class="caption"><span class="caption-number">Fig. 107 </span><span class="caption-text">image-20230619164857902</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id13">
+<img alt="_images/image-20230619164937820.png" src="_images/image-20230619164937820.png" />
+<p class="caption"><span class="caption-number">Fig. 108 </span><span class="caption-text">image-20230619164937820</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>8.1.2 大于和小于的硬件实现<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
+<p>回忆一下gbound的样子，在scatch pad中的ubound和unum。假设我们有两个ubound
+u、v在scatch pad中需要比较u&lt;v。</p>
+<div class="figure align-default" id="id14">
+<img alt="_images/image-20230619165236584.png" src="_images/image-20230619165236584.png" />
+<p class="caption"><span class="caption-number">Fig. 109 </span><span class="caption-text">image-20230619165236584</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+<p>我们可以忽略灰色部分数据，因为只需要知道u的上边界和v的下边界点。比较是按一定重要性的顺序拿出gbound的相关bit，能得出结果就中断返回。顺序是</p>
+<ul class="simple">
+<li><p>NaN？任何数据是NaN,
+返回False。更好的结果是“未知”，但这不是比较操作的词汇。</p></li>
+<li><p>f negative? 两边是一样的吗？不是的话判断就很简单。</p></li>
+<li><p>infinite?
+相同符号下，一边是无穷也可以快速判断，都是无穷要看open，只有<span class="math notranslate nohighlight">\((x, \infty) &lt; \infty\)</span>,
+和<span class="math notranslate nohighlight">\(-\infty &lt; (-\infty, x)\)</span> 为真，其他都返回False。</p></li>
+<li><p>f 用 e scale</p></li>
+<li><p>open?</p></li>
+</ul>
+<p>当所有的特例都不是，下一步就是数学计算而不是比特测试了。e是整数，用两个数e的差值把一个f左移来减小它的e值，使得两个数的e值相等。换句话说就是让他们的小数点对齐，就像你做浮点的加减法一样。比较缩放后的f是很直接了当的，要看变长是如何实现的。如果有专门存储f长度的位置，长度表明两者是断开的，就可以立刻得出结果。长度如果相同，就需要从最高位开始比较，直到发现一个断开点，也可以停止。</p>
+<p>如果上面最后结果还是两个值是连接着的（也就是数相等），再检查open位。
+如果任一个是open，那么答案是True。否则两个都是闭区间，那么u,v两个共有一个相同的精确点，就这一个点破坏了严格的小于条件，答案是False。</p>
+<p>一个聪明的硬件设计师可以发现一条捷径，直接在u-layer数据上做比较，而不是转换u,
+v到gbounds.
+特别是如果两个unum有相同的esize和fsize，那么可以把这两个数包括ubit在内当成一个有符号整数来比较。这个技巧就是能把指数很小数的长度promot到他们能匹配，注意不要改变不精确位inexact的值，它代表了open的端点。原型代码中promote[{u,
+v}]做这个工作（见附录D.1）</p>
+<table border="2"><tr><td bgcolor="lightgray"><p>读者的练习找到一个比较两个Warlpiri
+unum大小的有效电路逻辑，范围是从0000到1110。（也就是除了signaling
+NaN的所有值）需要直接使用原始比特而不是转换到gbound来比较，从2.4节的值图来获得领悟</p>
+</td></tr></table></div>
+</div>
+<div class="section" id="id5">
+<h2>8.2 相等，没有一点相同，和不是所有都相同<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="id6">
+<h3>8.2.1 通用的间隔关于相等的概念<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
+<p>小于和大于关系对于范围来说还好理解，更为难办的是相同的定义。<strong>到底两个间隔“相等”是什么意思</strong>？</p>
+<p>ubound或是unum相等要求他们表示为同样的gbound.
+他们必须有同样的端点，和同样的端点开闭属性。原型函数<strong>sameuQ</strong>[u,
+v]这这个情况下返回True，当两个u-layer都表示NaN也返回True，
+因为有时候我们需要测试计算是否丢失了所有的validity.
+这时候检查结果是否是NaN需要返回True。sameuQ检测相同，不管是否是有效数值。使用符号<span class="math notranslate nohighlight">\(\equiv\)</span>作为简写,
+函数调用<strong>sameuQ</strong>[u, v]等同于<span class="math notranslate nohighlight">\(u\equiv v\)</span>.</p>
+<p>还有一种相等性定义在计算中更有用，需要一些时间来适应。这是发生在u-layer而不是g-layer。使用“<strong>ne</strong>”来表示的不是“not
+equal”的缩写，而是要想成“nowhere equal”:
+两个unums或是ubounds什么地方都不相等是其中一个是严格小于或是严格大于另外一个。根据前一节的规则，数值范围是不连接的。原型函数<strong>nequQ</strong>[u,
+v]在<span class="math notranslate nohighlight">\(u \prec v\)</span> 或是
+<span class="math notranslate nohighlight">\(u \succ v\)</span>的情况下返回True，其他情况返回False（包括输入是NaN）。还真有一个含糊的数学符号“<span class="math notranslate nohighlight">\(\lessgtr\)</span>”表达这个意思.
+但是我们还是使用<strong>nequQ</strong> (即 <strong>n</strong>ot <strong>eq</strong>ual <strong>u</strong>-layer
+<strong>Q</strong>uestion)，或是用符号“<span class="math notranslate nohighlight">\(\not\approx\)</span>”.
+它的g-layer版本是neqgQ. 注意<strong>nequQ</strong>并不是<strong>sameuQ</strong>的逻辑反。</p>
+<p>当两个间隔表示有交叠，我们说他们是“not nowhere equal”
+不是全部不相等。听上去像是山区乡巴佬会说的“Them ain’t nowhere
+equal！”。下面是一个测试两个ubound是否交叠的例子</p>
+<div class="figure align-default" id="id15">
+<img alt="_images/image-20230620092809780.png" src="_images/image-20230620092809780.png" />
+<p class="caption"><span class="caption-number">Fig. 110 </span><span class="caption-text">image-20230620092809780</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+<p>对于一个有overlap的情况，也就是不能排除所有点都不相同，“nowhere
+equal”测试正确地返回了False。</p>
+<div class="figure align-default" id="id16">
+<img alt="_images/image-20230620093514661.png" src="_images/image-20230620093514661.png" />
+<p class="caption"><span class="caption-number">Fig. 111 </span><span class="caption-text">image-20230620093514661</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+<p>“equal”表示相同的端点和相同的开闭属性，而“not nowhere
+equal”表明两个交叠的空间有可能代表了同一个数。我们用这个就像float中用的“在一个epsilon差距内相同”一样，在u-layer精度上做些让步的同时又保持了数学的严谨性。原型中提供一个函数nnequQ[u,
+v]。这个函数很有用所以值得定义一个操作符<span class="math notranslate nohighlight">\(\approx\)</span>来表达。不要跟这个符号通常的含义“近似相等”混淆了。</p>
+<p>更清晰的符号其实应该是<span class="math notranslate nohighlight">\(\not\lessgtr\)</span>, 表示“不是小于 也
+不是大于”。但是<span class="math notranslate nohighlight">\(\not\lessgtr\)</span>看上去跟通常的相等符号“<span class="math notranslate nohighlight">\(=\)</span>”或是程序语言中“<span class="math notranslate nohighlight">\(==\)</span>”符号差异很大。<span class="math notranslate nohighlight">\(\approx\)</span>
+表示的是在当前u-layer计算环境表达能力内是相同的。</p>
+<p>下面是一些用<span class="math notranslate nohighlight">\(\approx\)</span>的例子：一个精确值是不同于它相邻的ULP宽度的非精确值。</p>
+<div class="figure align-default" id="id17">
+<img alt="_images/image-20230620095825377.png" src="_images/image-20230620095825377.png" />
+<p class="caption"><span class="caption-number">Fig. 112 </span><span class="caption-text">image-20230620095825377</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+<p>有overlap，使用<span class="math notranslate nohighlight">\(\approx\)</span></p>
+<div class="figure align-default" id="id18">
+<img alt="_images/image-20230620095923341.png" src="_images/image-20230620095923341.png" />
+<p class="caption"><span class="caption-number">Fig. 113 </span><span class="caption-text">image-20230620095923341</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+</div>
+<p>浮点的算法通常需要测试答案是否收敛了。但是用浮点写一个迭代算法的停止条件是一个有风险的事情。比如一个这样的过程：“<span class="math notranslate nohighlight">\(x_{new}=f(x_{old})\)</span>
+until (stop condition)”.
+如果你用“当迭代不再变化”，也就是当<span class="math notranslate nohighlight">\(x_{new}=x_{old}\)</span>，作为停止条件，你有可能离正确答案还远。因为有可能计算陷入了实数舍入到浮点数的zigzag形状的台阶上，也就是迭代不能进行下去是因为答案的改变不超过一个ULP范围，导致舍入回到了原来的值。（而如果让它继续多次迭代后可能跨出这个台阶？）</p>
+<p>如果目标是迭代找出<span class="math notranslate nohighlight">\(F(x)=y\)</span>的解，你可以计算残值<span class="math notranslate nohighlight">\(F(x)-y\)</span>,
+一个显然的停止条件是当残值变成0.
+但是残值有可能永远不能变成0，原因仍然是舍入误差。这就是程序员通常设定一个“<span class="math notranslate nohighlight">\(\epsilon\)</span>”作为容错误差门限，就像“当残差小于0.001就停止”。但是为啥是0.001？epsilon到底设多少才是正确的？这个只应该是绝对误差还是相对误差？</p>
+<p>使用unum表达停止条件就不大会出现那样的错误或是难于做出选择。迭代在“不是完全没有等于”零，也就是包含零，的时候停止。你也不会被陷入阶梯而没有看到ubound太宽了，表明需要改变环境得到更多精度来收缩ubound。unum算法可以自动提升精度到fsizesize能表达的最大精度，所以算法可以从一个节省空间的短的近似猜想值开始迭代，计算机在需要的时候会提升精度。后面我们会显示计算机自动调整自己fsizesize的方法。</p>
+<p>“不是没有地方相等”告诉了我们两个间隔有交叠。有时候我们想知道具体的交叠是什么，因为可以用来收缩一个ubound。如果一个计算有多种方法，我们会得到不同的ubound答案，那么<strong>正确的答案在他们的交集中</strong>。这可以用来提升答案的精度。如果交集是空，那么数学上证明了这两种方法不是计算的同一个东西，这可以用来检测程序bug，或是数学物理理论上的缺陷，或是发现一个计算硬件的问题，比如宇宙射线把存储数据破坏了。</p>
+<p>传统的interval
+arithmetic对于交叠精度优化是部分成立的。它不能检测到1.0是跟(1,
+1.125)是断开的。一个例子是不停地按计算器的开根号键直到最终得到一个错误的答案1仍然在传统间隔算术会发生的。但是unum不会。如果你写一个程序：“替换<span class="math notranslate nohighlight">\(u\)</span>为<span class="math notranslate nohighlight">\(\sqrt{u}\)</span>直到<span class="math notranslate nohighlight">\(u\approx\hat{1}\)</span>”,
+程序会一直运行下去，这是正确的行为，因为这个函数永远不会产生准确的1，它只是会获得最小ulp表示的非精确数(1,
+1+ULP), 并永远停在那里。</p>
+<p><strong>读者的练习</strong>:
+假设u是精确的0，v是unum表示范围<span class="math notranslate nohighlight">\((-\infty, \infty)\)</span>.
+那么按照原型的比较函数表示，<span class="math notranslate nohighlight">\(u \prec v\)</span>, <span class="math notranslate nohighlight">\(u \equiv v\)</span>,
+和<span class="math notranslate nohighlight">\(u \not\approx v\)</span>返回的结果是什么？</p>
+</div>
+<div class="section" id="id7">
+<h3>8.2.2 硬件实现相等和“不是没有地方相等”的方法<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
+<p>不同的unum串能表达同一个数，但是gbound是唯一的。测试两个u-layer的数是否表示相同的值的最好方法是</p>
+<p>先检查两个是否都是NaN，如果不是就转换到g-layer,
+然后一个个比特比较，可以在发现不同停止，或是在速度优先于功耗情况下并行比较所有比特并把结果归并为单比特。如果功耗优先，串行比较顺序按照“小于”和“大于”操作的顺序：Negative?位，
+Infinite?位，不同扩展精度长度？
+不同精度比特？不同开闭比特？只有所有都相同的情况才会消耗最大时间和能量。中间检测到任何不同就可以省去后面的工作。这是两种极端的选择，硬件工程是可能会根据应用需求选择折中方式。</p>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>8.3 交集<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h2>
+<div class="figure align-default" id="id19">
+<img alt="_images/image-20230620112136556.png" src="_images/image-20230620112136556.png" />
+<p class="caption"><span class="caption-number">Fig. 114 </span><span class="caption-text">image-20230620112136556</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+</div>
+<p>当游戏从2D转换为3D的时候，游戏开发者挣扎着试图用浮点把交接处画正确。注意一些房子里面漏出了。那时候的低分辨率掩盖了这些错误产生的人为图案。这可以被看做是小于或是大于运算的错误，因为计算机对于哪组多边形更靠近观察者算错了。</p>
+<p>计算交集的代码看上去是练习写条件分支。我们必须考虑端点相对位置的各自可能性，包括开闭属性。附录C.8的代码对这样一个简单的操作是如此的繁琐，这正好说明了unum环境通过把这些需要仔细考虑的负担都从程序员转移到了它本属于的计算机系统上，他们的生活更轻松了。</p>
+<p>原型对于两个ubounds或是unums， u 和 v求交集的函数是<strong>intersectu</strong>[u,
+v].下面例子显示了<span class="math notranslate nohighlight">\([-1, 3]\)</span>和<span class="math notranslate nohighlight">\((2, \infty]\)</span>的交集</p>
+<div class="figure align-default" id="id20">
+<img alt="_images/image-20230620113624441.png" src="_images/image-20230620113624441.png" />
+<p class="caption"><span class="caption-number">Fig. 115 </span><span class="caption-text">image-20230620113624441</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
+<p>现在该做真正的unum算术了，先从加减法开始。 ```</p>
+</div>
+</div>
+
+
+        </div>
+        <div class="side-doc-outline">
+            <div class="side-doc-outline--content"> 
+<div class="localtoc">
+    <p class="caption">
+      <span class="caption-text">Table Of Contents</span>
+    </p>
+    <ul>
+<li><a class="reference internal" href="#">8 比较操作</a><ul>
+<li><a class="reference internal" href="#id2">8.1 小于，大于</a><ul>
+<li><a class="reference internal" href="#id3">8.1.1 一般区间排序的概念定义</a></li>
+<li><a class="reference internal" href="#id4">8.1.2 大于和小于的硬件实现</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id5">8.2 相等，没有一点相同，和不是所有都相同</a><ul>
+<li><a class="reference internal" href="#id6">8.2.1 通用的间隔关于相等的概念</a></li>
+<li><a class="reference internal" href="#id7">8.2.2 硬件实现相等和“不是没有地方相等”的方法</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id8">8.3 交集</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+            </div>
+        </div>
+
+      <div class="clearer"></div>
+    </div><div class="pagenation">
+     <a id="button-prev" href="07_fixed_size_unum_storage.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="P">
+         <i class="pagenation-arrow-L fas fa-arrow-left fa-lg"></i>
+         <div class="pagenation-text">
+            <span class="pagenation-direction">Previous</span>
+            <div>7 定长的unum存储</div>
+         </div>
+     </a>
+     <a id="button-next" href="09_add_sub_unbias_round.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
+         <i class="pagenation-arrow-R fas fa-arrow-right fa-lg"></i>
+        <div class="pagenation-text">
+            <span class="pagenation-direction">Next</span>
+            <div>9 加减法和无偏差舍入的迷</div>
+        </div>
+     </a>
+  </div>
+        
+        </main>
+    </div>
+  </body>
+</html>

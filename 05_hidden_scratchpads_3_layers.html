@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>5. 隐藏的草稿本和三个层次 &#8212; THE END of ERROR - Unum Computing 0.1 documentation</title>
+
+    <link rel="stylesheet" href="_static/material-design-lite-1.3.0/material.blue-deep_orange.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx_materialdesign_theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fontawesome/all.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/d2l.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/d2l.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="6 每个比特的信息" href="06_info_per_bit.html" />
+    <link rel="prev" title="4. 完整的unum格式定义" href="04_unum_format.html" /> 
+  </head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header mdl-layout__header--waterfall ">
+    <div class="mdl-layout__header-row">
+        
+        <nav class="mdl-navigation breadcrumb">
+            <a class="mdl-navigation__link is-active">5. 隐藏的草稿本和三个层次</a>
+        </nav>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+        
+<form class="form-inline pull-sm-right" action="search.html" method="get">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+        <label id="quick-search-icon" class="mdl-button mdl-js-button mdl-button--icon"  for="waterfall-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q"  id="waterfall-exp" placeholder="Search" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </div>
+      </div>
+      <div class="mdl-tooltip" data-mdl-for="quick-search-icon">
+      Quick search
+      </div>
+</form>
+        
+<a id="button-show-source"
+    class="mdl-button mdl-js-button mdl-button--icon"
+    href="_sources/05_hidden_scratchpads_3_layers.rst.txt" rel="nofollow">
+  <i class="material-icons">code</i>
+</a>
+<div class="mdl-tooltip" data-mdl-for="button-show-source">
+Show Source
+</div>
+        </nav>
+    </div>
+    <div class="mdl-layout__header-row header-links">
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation">
+          
+              <a  class="mdl-navigation__link" href="https://github.com/jszheng/TheEndOfError">
+                  <i class="fab fa-github"></i>
+                  Github
+              </a>
+      </nav>
+    </div>
+</header><header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_TheOriginalSin.html">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_info_per_bit.html">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_comparison_operations.html">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_mul_div.html">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_other_important_unary_ops.html">12 其他重要的一元运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_fused_operations.html">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_TheOtherKindOfError.html">15. 另外一种误差</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_avoid_interval_arith_pitfalls.html">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_meaning_of_solve_equ.html">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_permission_to_guess.html">18 准许猜测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_pendulums_done_correctly.html">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_calculus_evil.html">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_end_of_error.html">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+        <main class="mdl-layout__content" tabIndex="0">
+
+	<script type="text/javascript" src="_static/sphinx_materialdesign_theme.js "></script>
+    <header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_TheOriginalSin.html">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_info_per_bit.html">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_comparison_operations.html">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_mul_div.html">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_other_important_unary_ops.html">12 其他重要的一元运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_fused_operations.html">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_TheOtherKindOfError.html">15. 另外一种误差</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_avoid_interval_arith_pitfalls.html">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_meaning_of_solve_equ.html">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_permission_to_guess.html">18 准许猜测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_pendulums_done_correctly.html">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_calculus_evil.html">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_end_of_error.html">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+
+    <div class="document">
+        <div class="page-content" role="main">
+        
+  <div class="section" id="id1">
+<h1>5. 隐藏的草稿本和三个层次<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<div class="figure align-default" id="id13">
+<img alt="_images/image-20200728123218826.png" src="_images/image-20200728123218826.png" />
+<p class="caption"><span class="caption-number">Fig. 57 </span><span class="caption-text">image-20200728123218826</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+<blockquote>
+<div><center><p>在进行自动计算机之前，台式计算器的操作员可以在每次计算中跟踪有效数字，因为数字是手工输入的。
+通过实践，操作员可以记住对哪个结果进行了舍入以及舍入了多少，从而避免舍入错误的陷阱。
+这种情况在自动计算中消失了，中间的临时工作对程序员来说是隐藏的。</p>
+</center></div></blockquote>
+<div class="section" id="scratchpad">
+<h2>5.1 隐藏的scratchpad<a class="headerlink" href="#scratchpad" title="Permalink to this heading">¶</a></h2>
+<p>每台计算机都有一个隐藏的“草稿本”scratchpad以进行算术运算。也许最简单的例子是乘法。仔细检查上图的台式计算器，可以发现可以在机器左半部分有八位数的输入位置。在这些键的上方，您可以看到两行数字显示器，其中一行显示八位数字，而下一行显示十六位数字，足以容纳两个八位数定点数字的确切乘积。那就是是scratchpad，用于临时跟踪更多位的中间数字。在那些日子里，草稿本肯定不是隐藏的。</p>
+<p>当计算机设计人员构建用于浮点运算的硬件时，他们还分配空间来执行分数乘法，使其达到分数长度的两倍。要快速计算意味着能够同时算出“平行四边形”状的所有部分乘积，然后使用双倍长度累加器将总和垒起来。如下例产生8位舍入结果的简单8位乘8位乘法器的比特表示。这是人们用纸笔做计算的方式的二进制形式：</p>
+<div class="figure align-default" id="id14">
+<img alt="_images/image-20200728125311982.png" src="_images/image-20200728125311982.png" />
+<p class="caption"><span class="caption-number">Fig. 58 </span><span class="caption-text">image-20200728125311982</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+<p>淡蓝色位不会显示给用户，它们是隐藏的scratchpad的一部分（但是某些计算机上有指令可以得到低一半结果，是为了进行扩展精度的算术运算等操作）。还有类似的硬件可以进行浮点加减运算（由于它们的指数将二进制点放在不同的位置，因此通常必须首先做移位对齐），除法和平方根。如果四舍五入的规则定义正确，则所有计算机将返回相同的结果。没有兼容性问题，也没有任何意外。</p>
+<table border="2"><tr><td bgcolor="lightblue"><p>单层计算-是所有数字都以某种标准格式存储。还有一个内部层，即带有额外位的隐藏scratchpad，计算机可以在其上完美地执行数学运算，或者至少足够准确以保证标准格式能正确表示。</p>
+</td></tr></table><p>计算机历史上散布着混乱，这与不遵循标准规则的隐蔽scartchpad有关，或者因为与程序员或用户沟通不畅造成的非标准行为有关。一些历史上的例子为unum环境中避免此类混乱指明了道路。</p>
+<div class="section" id="cray-1">
+<h3>5.1.1 Cray-1 超级计算机<a class="headerlink" href="#cray-1" title="Permalink to this heading">¶</a></h3>
+<div class="figure align-default" id="id15">
+<img alt="_images/image-20200728131428170.png" src="_images/image-20200728131428170.png" />
+<p class="caption"><span class="caption-number">Fig. 59 </span><span class="caption-text">image-20200728131428170</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+<blockquote>
+<div><center><p>加州山景城的计算机历史博物馆展示的Cray-1计算机</p>
+</center></div></blockquote>
+<p>Cray-1（于1976年首次交付）相对于其时代的其他计算机而言如此先进，以至于引起了“超级计算机”一词的诞生。
+整个计算机只有大约200000门，但它消耗了150千瓦的功率。
+它是第一台具有64位浮点硬件单元的计算机。 它早于IEEE
+754标准，在那个时代实现快速64位算术是一个艰巨的过程，因此Cray浮点数采取了一些捷径。
+分数只有48位，并且乘法scartchpad不完整，如原始Cray-1用户手册中的乘法平行四边形图所示：</p>
+<div class="figure align-default" id="id16">
+<img alt="_images/image-20200728150621308.png" src="_images/image-20200728150621308.png" />
+<p class="caption"><span class="caption-number">Fig. 60 </span><span class="caption-text">image-20200728150621308</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+<p>他们真是做了偷工减料。
+乘法平行四边形的一角被切除，留下了一个参差不齐的“乘法金字塔”，以节省门并提高速度。
+用户没法抱怨没有得到警告，因为在用户手册中已经详细说明了四舍五入并不总是遵循标准规则。
+这是scartchpad小于需求从而导致令人惊奇的错误。
+最主要令人不快的意外错误是它<strong>违反了交换律</strong>：</p>
+<div class="math notranslate nohighlight" id="equation-05-hidden-scratchpads-3-layers-0">
+<span class="eqno">(21)<a class="headerlink" href="#equation-05-hidden-scratchpads-3-layers-0" title="Permalink to this equation">¶</a></span>\[\begin{split}a\times b \neq b \times a \\
+\text {(在 Cray-1 超级计算机上)}\end{split}\]</div>
+<p>数值分析的任何课程都会警告您，<em>浮点数不遵循所有的代数规则</em>，如关联定律和分配定律，但至少交换律是浮点通常可以正确实现的东西。
+<em>但这不包括Cray-1</em>。
+对程序的编译方式进行细微的更改可能会改变答案和行为，这种行为所有人看起来像编译器错误一样。
+该错误位于系统的隐藏scartchpad中。
+克雷最终找到了一种解决方法：他们对乘法器的输入进行了排序，因此a和b中的较小者总是输入相同的输入。
+这样虽然四舍五入仍然是错误的，但是至少乘法再次<em>看起来是</em>可交换的，并且<span class="math notranslate nohighlight">\(a \times b\)</span>令人欣慰地给出了与<span class="math notranslate nohighlight">\(b \times a\)</span>相同的错误答案。</p>
+</div>
+<div class="section" id="c">
+<h3>5.1.2 C语言的最初定义<a class="headerlink" href="#c" title="Permalink to this heading">¶</a></h3>
+<div class="figure align-default" id="id17">
+<img alt="_images/image-20200728152600668.png" src="_images/image-20200728152600668.png" />
+<p class="caption"><span class="caption-number">Fig. 61 </span><span class="caption-text">image-20200728152600668</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+<p>scartchpad中完成的操作有时由软件而不是硬件定义。
+由Kernighan和Ritchie撰写的《
+C编程语言》第一版于1978年出版，其中包含一些有关如何执行计算的规则，这些规则引起了极大的忧虑。</p>
+<p>有些规则<strong>仍在</strong>引起麻烦，其中之一与scartchpad相关，但是幸运的是已从该语言的ANSI标准定义中删除了这些规则。
+引用第一版的第41页，此处的float是C语言基本类型，指的是单精度浮点，而不是一般的浮点：</p>
+<table border="2"><tr><td bgcolor="lightyellow"><p>注意: 所有表达式中的float(单精度浮点)都会被转换为double(双精度浮点),
+C语言中所有的浮点运算都是双精度的。</p>
+</td></tr></table><p>该策略可能被看成一种出色的保护功能，一种在单精度例程中自动减少（但不能消除）累积舍入误差的方法。早期的C用户<em>迫不及待想要摆脱</em>这个规则。
+C语言编译器的供应商很快不得不抛出选项来禁用该规则，并将每个float保留为单精度，除非明确声明了转换为double。一方面，该策略是涉及浮点数的C软件比等效的Fortran程序运行慢得多的重要原因。双精度使用了更多的时间，内存和带宽，但是原始的C语言将其定义为强制性的，程序员无法关闭。这与Cray示例不同，这是scartchpad自做聪明帮用户做得太多了。</p>
+<p>实际上，最初将C定义为“尝试将float移入scartchpad，并使其尽可能长的停留在其中”。当然一旦结果存回float变量，已经在高精度四舍五入的数字就会离开隐藏的暂存器，然后必须四舍五入到较低的精度。因此，如果将一些通用例程（例如将一个数字列表求和）的加法写成一个独立的float类型的函数，其结果与将其写在一个函数中不一样（精度较差），因为后者是一个循环，中间值是留在隐藏的scartchpad中的。而且在float和double之间进行转换也需要额外的时间。</p>
+</div>
+<div class="section" id="dao">
+<h3>5.1.3 协处理器也来帮(dao)忙<a class="headerlink" href="#dao" title="Permalink to this heading">¶</a></h3>
+<div class="figure align-default" id="id18">
+<img alt="_images/image-20200728155027251.png" src="_images/image-20200728155027251.png" />
+<p class="caption"><span class="caption-number">Fig. 62 </span><span class="caption-text">image-20200728155027251</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+</div>
+<p>前面在在4.7节中的浮点类型的长栏中已经提到了Intel
+i8087协处理器，相当与unum带 <span class="math notranslate nohighlight">\(\lbrace 4，7 \rbrace\)</span> utag来表示。
+摩托罗拉大约在同一时间制造了一个数学协处理器，也有80位内部寄存器，以配合其68000系列处理器。
+IEEE
+754标准是与i8087架构同时创建的，由于英特尔参与IEEE委员会，因此都对标准有很大的影响。</p>
+<p>摩托罗拉和英特尔协处理器都在1980年代后期问世，并且在商业上都是非常成功的芯片。市场对可处理更高精度浮点芯片的需求，使英特尔市场部门的许多人感到惊讶。</p>
+<p>两位协处理器的设计者都倾向于暗地里“帮助”用户提高精度。一旦将计算放入协处理器寄存器中，它将具有更大的scartchpad，更大的指数和更精确的分数。实际上有两个级别的隐藏scartchpad，因为64位分数必须由协处理器芯片在内部进行计算，以达到128位的数学精度才能确保结果正确舍入，然后需要再次舍入以将常规浮点数返回给请求操作的程序。</p>
+<p>使用协处理器运行的程序与不使用协处理器运行的答案是不同的，这会用户感到奇怪：这是一个bug吗？为什么有区别？想象一下，如果要试图认证要广泛用于计算机系统的大型应用程序（例如电路模拟器或结构分析代码）运行是正确的；您将如何处理有不同硬件配置的，声称能获得更准确（但不同）结果的协处理器呢？一些应用程序对生命至关重要，例如桥梁或摩天大楼的安全性；您将如何跟客户解释，尽管使用了标准的IEEE存储格式，但该软件在不同的系统上得到了不同的答案呢？</p>
+<p>除非程序员用汇编语言编写程序，否则他们从来都看不见也不能控制一个数值何时被提升为“扩展的双精度”（80位或更高）格式。它只是自动地，偶然地，不可预测地发生。由不同结果导致的混乱，超过了减少舍入-上溢-下溢问题得到的好处，现在协处理器又不得不将结果简化来模拟那些没有这种额外scartchpad的系统。</p>
+</div>
+<div class="section" id="ibm">
+<h3>5.1.4 IBM几乎做对了: 融合的乘加操作<a class="headerlink" href="#ibm" title="Permalink to this heading">¶</a></h3>
+<p>除了在Cray示例中，scartchpad的效果不如用户期望的那样，设计师总是试图通过在不可见层中做比期望的更多，以为可以有所帮助，反而在可见层中造成了不兼容的破坏作用。
+IBM宣布“融合乘加器”是减少舍入误差的好方法：如果在乘法后做加法，则暂存器精确乘法的完整乘积将用作加法器的输入，因此仅在这对操作结束时才对结果做舍入。在scartchpad中执行两次而不是一次这种技巧通常可以减少舍入误差：y
+= a x + b变成精确到0.5 ULP的融合运算，就像单个的乘法和加法操作一样。</p>
+<p>要注意的是：编程环境<strong>不</strong>提供融合的乘加(FMA)的操作。这种方法更像是
+“当我们编译程序时，我们会在寻找您进行乘法后有加法运算的情况，并自动产生一条指令以使用我们的融合乘加法”。
+所以支持FMA的计算机系统与不支持FMA的计算机系统又有了不同的答案。</p>
+<p>如果标准委员会要求各种语言都支持明确使用FMA, 例如“ call fma
+[a，b，c]”，则至少一台缺少内置FMA硬件的计算机会知道使用软件来完美模拟结果。
+如果程序员表达了计算<span class="math notranslate nohighlight">\(a \times b+ c\)</span>的愿望，但却没有一种通信机制可以使计算机报告“我用的是融合的乘加器，然后四舍五入计算得出的值”与“我分别进行乘法和加法，每次都取四舍五入了”
+”
+。这种看不见和莫名其妙的帮助总是会引起程序员的问：“有没有一个编译器开关让我可以关掉这些该死的东西的”？</p>
+<p>至少IBM清楚地认识到并将“融合乘加”声明为不同于乘以加的乘积。
+他们开始清楚的区分定义出scartchpad层中发生的事情与要逼进的浮点层的不同,
+这值得称赞。</p>
+</div>
+<div class="section" id="kulisch-edp-the-exact-dot-porduct">
+<h3>5.1.5 Kulisch 总算做对了: EDP - the Exact Dot Porduct<a class="headerlink" href="#kulisch-edp-the-exact-dot-porduct" title="Permalink to this heading">¶</a></h3>
+<p>在1970年代后期，乌尔里希·库里奇（Ulrich
+Kulisch）注意到，用一个大的，但并非大到不可能数目比特就足以累积两个浮点矢量的点积，而没有舍入误差。如果
+a 和 b 是具有 n 个元素的浮点列表，则 a 和 b 的精确点积（EDP）为</p>
+<div class="math notranslate nohighlight" id="equation-05-hidden-scratchpads-3-layers-1">
+<span class="eqno">(22)<a class="headerlink" href="#equation-05-hidden-scratchpads-3-layers-1" title="Permalink to this equation">¶</a></span>\[a_1 b_1 + a_2 b_2 + \cdots + a_n b_n\]</div>
+<p>，在整个表达式完成之前不进行舍入。二进制浮点数是有理数，是整数乘以2的整数次幂。建立一个足够大的整数累加器，保留整个乘法平行四边形结果（双精度为106位）而不是将其舍入，并且点积可以在scartchpad层内用完美的整数操作精确完成。正如Kulisch指出的那样，计算EDP的历史可追溯到G.
+W. Leibniz（1673）。 Kulisch还设法让作为IEEE标准中的一个选项。就像</p>
+<div class="math notranslate nohighlight" id="equation-05-hidden-scratchpads-3-layers-2">
+<span class="eqno">(23)<a class="headerlink" href="#equation-05-hidden-scratchpads-3-layers-2" title="Permalink to this equation">¶</a></span>\[+ – \times \div\]</div>
+<p>一样，仅当结果从隐藏的scartchpad层移到浮点层时，EDP才做舍入。请注意，该功能还可以累积大量的浮点数，并且在结束时不会舍入错误。该想法已获得专利，并已授权给包括IBM在内的多家计算机公司使用。</p>
+<p>Kulisch的发明终于正确地宣布了EDP是一项<em>不同</em>的操作，该操作是在隐藏的scartchpad上完成，并返回舍入后的浮点。而且不会是在程序中寻找点积并暗中尝试使用长累加器来弥补精度损失，它必须被显式地调用并且没有歧义。</p>
+<p>另外一个好处是该定义允许EDP以硬件或扩展精度软件来完成，唯一的区别是速度。一些公司尝试在硬件或软件中构建精确点积的产品，并发现其实以精确的方式而不是通常的方式进行计算的代价低得惊人。
+1994年，Kulisch为x86计算机开发了做EDP的协处理器芯片，虽然用的工艺不如x86先进，但执行计算时间比x86要短得多，且x86结果还带着舍入错误。想想x86每个双精度乘积是106位，并需要移位数百位才能到累加器中的正确位置，怎么可能做得快？</p>
+<p>问题的关键是：内存墙。正如引言中指出的那样，从内存中取出操作数的时间至少是对其执行乘加操作的时间的六十倍。如果一个点积的两个向量输入来自主存储器，或者即使只有一个向量是，则有数十个时钟周期可以用于执行无损累加所需的指令。</p>
+<p>尽管这是一个绝妙的主意，但EDP在1980年获得专利后的20年里一直没有普及，这可能是因为它已获得专利，这给数学思想的使用增加了障碍。这种可能性是造成<strong>本书中没有任何思想受到专利保护</strong>的主要原因。即使没有经济代价要说服人们改变现有的范式(虽然是更好的)本来很困难了！</p>
+<p>Kulisch认为，更大的原因是1980年代IEEE浮点运算和PC微处理器的引入，已经使得用户满足于目前的舍入误差的解决方案。</p>
+<table border="2"><tr><td bgcolor="lightblue"><p>从所有这些巧妙隐藏scartchpad尝试的工作中得到的经验教训是，计算机用户需要一致的答案，并希望自己根据情况决定速度和准确性之间的权衡。任何计算机系统中都潜藏着微妙的傲慢，如同说：“您要求的是快速，廉价，近似的计算，但是我才知道怎么做更好，虽然这会花费更多的时间，更多的存储空间和能量，还能每次给您不同的答案，别客气不用谢。”</p>
+</td></tr></table></div>
+</div>
+<div class="section" id="unum">
+<h2>5.2 unum层<a class="headerlink" href="#unum" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="the-ubound">
+<h3>5.2.1 the ubound<a class="headerlink" href="#the-ubound" title="Permalink to this heading">¶</a></h3>
+<p>在讨论scartchpad层之前，我们仍然需要在该层中添加一些与有限精度表示形式（unums）一起使用的东西。
+Unums为我们提供了精确控制<em>实数集</em>而不仅仅是单点值所需的词汇。
+在第3.4节中，我们指出添加一个ubit仍然不会创建在四个基本算术运算下都闭包的表示形式。
+表示<span class="math notranslate nohighlight">\((0,1)\)</span>的unum乘以表示2的unum应该是<span class="math notranslate nohighlight">\((0,2)\)</span>，但是没有这样的unum表示。我们需要能够定义一定范围的实数，以便可以精细表示端点。
+这就是<strong>ubound</strong>。</p>
+<table border="4"><tr><td bgcolor="lightblue"><p>定义 ubound 是一个或一对unum，代表一个
+实数轴上的一个间隔。封闭的端点由精确的unum表示，开放的端点由不精确的unum表示。</p>
+</td></tr></table><p><strong>ubound集合在加法，减法，乘法和除法下是闭包</strong>。
+同样对平方根，幂，对数，指数以及许多其他科学计算所需的超越函数也是闭包。
+Ubounds是传统“间隔算术”的超集，但功能强大得多，原因将在下一部分中讨论。
+首先通过一些ubound的例子可以使读者了解它们的工作原理：</p>
+<p>假设一个unum <span class="math notranslate nohighlight">\(u\)</span> 代表精确值 <span class="math notranslate nohighlight">\(3\)</span>，另一个unum <span class="math notranslate nohighlight">\(v\)</span>
+代表开区间<span class="math notranslate nohighlight">\((4，4.25)\)</span>。数对<span class="math notranslate nohighlight">\(\lbrace u，v \rbrace\)</span>
+是一个ubound，代表数学区间
+<span class="math notranslate nohighlight">\([3，4.25)\)</span>。左端点<span class="math notranslate nohighlight">\((4，4.25)\)</span>中的4将被忽略。任何范围以
+“<span class="math notranslate nohighlight">\(4.25\)</span>”
+结尾的不精确的unum都可以，因此我们通常使用占用最少比特的那个。
+ubound是最外面的端点。</p>
+<p>如果我们只想表示<span class="math notranslate nohighlight">\((4,4.25)\)</span>，我们可以写成{<span class="math notranslate nohighlight">\(v\)</span>}，大括号将<strong>ubound</strong>
+{<span class="math notranslate nohighlight">\(v\)</span>}与<strong>unum</strong> <span class="math notranslate nohighlight">\(v\)</span> 区别开。ubound
+{<span class="math notranslate nohighlight">\(u\)</span>}代表确切的数字<span class="math notranslate nohighlight">\(3\)</span>。注意系统将需要一个额外的位，指示一个ubound是具有单个unum还是一对unums。</p>
+<p>在原型的词汇表中，ubound
+{<strong>neginfu</strong>，<strong>posinfu</strong>}表示所有实数包含无穷<span class="math notranslate nohighlight">\([-\infty, +\infty]\)</span>的集合。如果我们只想表示实数值，则由ubound
+{<strong>neginfu</strong>-<strong>ulpu</strong>，<strong>posinfu</strong>-<strong>ulpu</strong>}表示<span class="math notranslate nohighlight">\((-\infty, +\infty)\)</span>。也就是说，每个端点仅退回一个ULP即可回到表示所有有限数。<strong>？TODO
+不是应该用inexact的数来表示开区间吗？</strong></p>
+<p>作为可能的用ubounds类型进行数学运算的预览，ubound
+<span class="math notranslate nohighlight">\(\lbrace \text{maxrealu, posinfu} \rbrace\)</span>的余弦是表示闭区间<span class="math notranslate nohighlight">\([-1，1]\)</span>
+的unum对。正确，简洁且非常快速地进行评估。在以后的章节中将提供有关ubounds的详细操作。</p>
+<p>ubounds<strong>不能</strong>做的一件事就是表示不相交的实数值的集。（要做到这一点，需要一个独特的数据结构，该数据结构是一个ubound列表，因此仍可以将这些函数构造成输出ubound列表而不是单个ubound值。这将在第2部分中介绍。）Ubounds包括端点之间的<em>所有</em>值。如果计算结果是带间隙的实数轴的两个不同区域，则答案是NaN的ubound，表示“不是ubound”，由{<strong>qNaNu</strong>}
+&lt;（安静的NaN的unum表示）表示。</p>
+<p>有了ubounds，我们已经准备好定义用户和程序员在使用实数值时直接看到的unum等效层：</p>
+<table border="4"><tr><td bgcolor="lightblue"><p>定义 u-layer是计算机算数的层次，其中所有的操作数是unum
+(或是由unum数构成的数据结构，比如ubound)。</p>
+</td></tr></table></div>
+<div class="section" id="u-layers">
+<h3>5.2.2 为u-layers设计的处理器<a class="headerlink" href="#u-layers" title="Permalink to this heading">¶</a></h3>
+<div class="figure align-default" id="id19">
+<img alt="_images/image-20200729155256273.png" src="_images/image-20200729155256273.png" />
+<p class="caption"><span class="caption-number">Fig. 63 </span><span class="caption-text">image-20200729155256273</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+</div>
+<p>现在，微处理器芯片上的晶体管密度是如此之高，以至于在芯片上一次使用所有晶体管将远远超出功耗预算。将闲置的晶体管装在芯片上可能看起来很浪费，但是将它们想象成多人乘用车中空的座椅，或者如上图所示的伦敦机场的扫雪机。也许在任何一年中它们都没有使用多少小时，但是当您需要它们时，您会<em>确实</em>需要它们。不使用时，它们也不会增加太多额外成本。</p>
+<p>因此，用固定大小的寄存器构建一个unum处理器是明智的选择，该寄存器可以容纳unum直到某些规定的最大环境设置。芯片设计人员当然更喜欢固定大小的寄存器，除非每个位都在使用，长寄存器并不需要消耗全部功耗。</p>
+<p>假设我们构建了一个unum
+CPU，它可以处理所有现有的IEEE浮点类型，即第4.7节中的<span class="math notranslate nohighlight">\(\lbrace 4，7 \rbrace\)</span>环境。该环境中的最大unum大小为157位。最大的ubound将花费一对最大unum数的两倍，外加一个指示是一对而不是单个值的位：总共315位。即使只有少量的八个此类寄存器集，也可以进行无差错运算，而无需管理可变的存储大小。最小的ubound仅占用16位，并且由于工程师现在已经很聪明，可以做到除了在进行处理活动的地方外不消耗功率，所以除了可以降低<em>片外</em>数据传输所需的功率，采用简洁的unum格式可以节省<em>片上</em>功率。</p>
+<p>需要指令来打包和解压缩unum变长码而不浪费比特。一个数据块（例如包含打包的unum的高速缓存行）被串行解包，到机器支持的固定大小寄存器需要的比特位，而其他的位则保持“不关心don’t
+care”，因为数据格式不受其影响。同样的一条指令可以将寄存器拼接到一个数据块中，以传输到片外。</p>
+</div>
+</div>
+<div class="section" id="the-math-layer">
+<h2>5.3 算术层 The math layer<a class="headerlink" href="#the-math-layer" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="the-gerneral-bound-or-gbound">
+<h3>5.3.1 <em>通用边界</em> The gerneral bound or “gbound”<a class="headerlink" href="#the-gerneral-bound-or-gbound" title="Permalink to this heading">¶</a></h3>
+<p>要构建使用unums的真实计算机系统，必须有一个定义明确的scatchpad层。
+相当于ubound的scatchpad是<em>通用边界</em>general
+bound或gbound（发音为jee-bound）。</p>
+<table border="4"><tr><td bgcolor="lightblue"><p>定义
+gbound是一个用于unum的中间计算结果的数据结构，比unum环境的精度要高，也就是一个scartchpad。</p>
+</td></tr></table><p>建立gbound数据结构的一种方法是9比特和4个可变长度的整数值。
+第一位指示是值是数字（包括<span class="math notranslate nohighlight">\(\pm\infty\)</span>）还是NaN。
+如果将NaN位设置为1，则其他位就无关紧要，因为任何操作的结果都是NaN。
+其他值构成一个2x6大小的表，如下所示：</p>
+<div class="figure align-default" id="id20">
+<img alt="_images/image-20200729172748273.png" src="_images/image-20200729172748273.png" />
+<p class="caption"><span class="caption-number">Fig. 64 </span><span class="caption-text">image-20200729172748273</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
+<p>其中带问号的是1比特，0表示False，1表示True.
+f和e值带有L或R下标表明他们是左或是右端点的数。组合起来数字表示<span class="math notranslate nohighlight">\(f \times 2^{e}\)</span>就像是浮点数或是unum的表示法一样，指示f表示的而是无符号<strong>整数</strong>，而不是介于1和2之间的一个小数。而且数值一定满足<span class="math notranslate nohighlight">\(f_L \times 2^{e_L} \le f_R \times 2^{e_R}\)</span>,
+如果相等那么要求下面的open?都是False,
+区间<span class="math notranslate nohighlight">\([23, 23)\)</span>是没有意义的，因为满足<span class="math notranslate nohighlight">\(23\le x \lt -23\)</span>的集是空集。</p>
+<p>“open?” 位非常类似于ubits，指示端点是开（True）还是闭（False）。
+最下面的行表示无限值，其中True值表示忽略f和e值（但我们仍然需要知道无穷大是开端点还是闭端点，以及它是正还是负）。
+关于gbound的大多数操作都是从检查NaN位开始的，如果那是False，则检查每一列的无穷大位，并且只有在未设置任何位的情况下，才可以使用f和e整数进行任何算术运算。
+无符号整数存储为扩展精度数字, 设计人员可以使用喜欢的任何方案
+。简单方案是用一个固定大小的整数，描述整数的长度（以位，字节或字为单位），后跟整数的位字符串，位于内存的专门区域中。更复杂的方案可以管理每个操作的内存分配和回收，通过给每个整数存储以个指针来实现。</p>
+<p>另一种方法是对整数使用堆栈体系结构。
+<span class="math notranslate nohighlight">\(f_L\)</span>，<span class="math notranslate nohighlight">\(e_L\)</span>，<span class="math notranslate nohighlight">\(f_R\)</span>和<span class="math notranslate nohighlight">\(e_R\)</span>所需的位数取决于环境设置和所执行的操作，但这是可预测的且受限制的。前面我们曾说过，不同的计算机将对相同的问题产生相同的统一答案，但前提是它们有足够的内存来获得答案。有许多表示可变精度整数的方案，并且gbound中使用哪一个无关紧要，只要它可以利用可用的内存即可。</p>
+<p>即使是中等的计算硬件，也可以保证在某些unum环境设置下进行快速的片上计算。超过后，它还会“溢出”到片外存储器。但是使用的是2014年时代的芯片技术，要出现溢出情况的计算必须到非常吓人的大。当前一些微处理器具有超过十亿位的片上高速缓存。如果改用这些位来做scratchpad存储扩展的精度整数，则gbound的端点值可以达到有数亿个十进制数字，而不用到芯片外的存储器。换个角度看，若使用迄今为止讨论的最大的unum环境<span class="math notranslate nohighlight">\(\lbrace 4、7 \rbrace\)</span>
+（具有16位指数和128位分数）来支持EDP想法，所需的暂存空间不到200，000
+比特来用做general
+bound累加器。我们可以支持5,000个这样巨大的累加器，而且全放在芯片上。</p>
+<p>举个gbound的示例，间隔<span class="math notranslate nohighlight">\((-0.046875，4]\)</span>可以写为<span class="math notranslate nohighlight">\((-3\times2^{-6}，1\times2^2]\)</span>，因此scratchpad将按以下方式存储它，其中斜体字的数量为单比特0或1：</p>
+<div class="figure align-default" id="id21">
+<img alt="_images/image-20200729180925997.png" src="_images/image-20200729180925997.png" />
+<p class="caption"><span class="caption-number">Fig. 65 </span><span class="caption-text">image-20200729180925997</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+</div>
+<p>初看起来gbounds是打算用于精确整数计算，但是只要足够好就可以保证返回到<strong>u-layer</strong>的值与精确算术是相同的。
+由于unum环境中的scratchpad基于gbounds，因此称为<strong>g-layer</strong>。</p>
+<table border="4"><tr><td bgcolor="lightblue"><p>定义 g-layer是一个scatchpad,
+用于进行计算，当其结果返回u-layer时候，永远能正确地放到最小可表示的不确定区间。</p>
+</td></tr></table><p>g-layer知道环境设置的esizesize和fsizesize，所以它会做转换到u-layer所需的必要工作。</p>
+<p>例如，当询问<span class="math notranslate nohighlight">\((9,10]\)</span>的ubound的平方根时，g-layer会记录开闭情况，然后求平方根。
+平方根可以像长除法一样从左到右计算，并且该过程在平方根得到精确值或分数位数到了最大为<span class="math notranslate nohighlight">\(2^{fsizesize}\)</span>时停止。
+在后一种情况下，针对该端点设置“开区间”位，并且分数将增加一个ULP，以包括计算的最后一位之后的所有没有计算的未知位。即使原来请求端点10是闭区间，计算机可以算出的最好的结果是能尽可能精确的包含<span class="math notranslate nohighlight">\(\sqrt{10}\)</span>的开区间。9的平方根是精确的3，但输入的9就是开端点，因此将表示3的unum中的ubit置位，即标记为开区间。</p>
+<p>在Mathematica的原型程序中表示稍微有些不同，因为Mathematica支持无限和NaN.
+原型用来下面2x2的表</p>
+<div class="figure align-default" id="id22">
+<img alt="_images/image-20200729183611861.png" src="_images/image-20200729183611861.png" />
+<p class="caption"><span class="caption-number">Fig. 66 </span><span class="caption-text">image-20200729183611861</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+</div>
+<p>其中<strong>lo</strong>和<strong>hi</strong>分别是左和右的端点。而<strong>loQ</strong>和<strong>hiQ</strong>是<strong>True</strong>的时候表明端点是开区间，<strong>False</strong>表明是闭区间。如果<strong>gbound</strong>结果是<strong>NaN</strong>,
+那么表示为</p>
+<div class="figure align-default" id="id23">
+<img alt="_images/image-20200729183903483.png" src="_images/image-20200729183903483.png" />
+<p class="caption"><span class="caption-number">Fig. 67 </span><span class="caption-text">image-20200729183903483</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="nan-sun-microsystems">
+<h3>5.3.2 谁会用NaN, Sun Microsystems公司得到了讨厌的惊喜<a class="headerlink" href="#nan-sun-microsystems" title="Permalink to this heading">¶</a></h3>
+<div class="figure align-default" id="id24">
+<img alt="_images/image-20200729184128883.png" src="_images/image-20200729184128883.png" />
+<p class="caption"><span class="caption-number">Fig. 68 </span><span class="caption-text">image-20200729184128883</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+</div>
+<blockquote>
+<div><center><p>NaN在g-layer中的存储方式使其非常快速，轻松地处理NaN值。
+什么也不要做就返回NaN。一些芯片设计人员喜欢捕获NaN异常并将其发送到软件例程，而不是在硬件中处理它们。毕竟究竟谁真正使用了NaN呢？</p>
+</center></div></blockquote>
+<p>而一些Sun
+Microsystems芯片设计人员曾认为他们可以在其SPARC芯片版本中优化掉那一部分硬件。
+工程师没有咨询客户或应用专家。 他们只是做了他们认为合理的事情。</p>
+<p>捅马蜂窝了！许多运行使用浮点数的金融交易应用程序的客户尖叫着抗议，因为他们发现其应用程序在最新芯片上的运行速度要慢得多，并想知道原因。
+他们希望将其修复。 财务应用程序到底有何特别之处？</p>
+<p>想象一下，您有一个股票交易公式，该公式倚赖于描述股票的各种数字，例如价格和波动性等。如果缺少任何数字信息，财务软件将<strong>谨慎地使用NaN作为该值</strong>，以防止虚假数字计算错误可能导致的灾难性决定。NaN是一种向计算机表达“我不知道”的好方法，也允许计算机向用户报告“我不知道”。Sun去掉了NaN处理的硬件，迫使其使用软件非常缓慢地完成该操作。
+如果有一种应用程序是将速度直接转换直接转化为货币，那就是自动股票交易。</p>
+<p>计算机用户不喜欢被数字答案略有不一致而惊到，也不喜欢为不同计算机之间的性能差距大而感到惊讶。可能导致性能不一致的另一件事是，使用trap而不是使用硬件来处理subnormal。
+晶体管又快又便宜而软件缓慢且昂贵。
+将负担转移到软件上的唯一好处是使芯片设计人员的工作更轻松。</p>
+</div>
+<div class="section" id="id2">
+<h3>5.3.3 scratchpad需求空间爆炸？<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
+<p>您可能会认为，g-layer类似于符号代数程序的数字处理能力（如Mathematica，Maple或其他几十种其他程序，这么多年来提供了近乎完美的数值环境）。这意味着运行缓慢，硬件实现非常困难，并且可能得不到unum存储所承诺的节省能源和电力的预期。</p>
+<p>但是，g-layer与那些复杂的软件不同。与符号代数程序提供的功能集相比，它要简单得多，而且很小。主要区别在于：不允许将计算驻留在g-layer中，除非它们处于特定且有限的一组“融合”操作中，允许在scatchpad区域中进行链接操作，然后将最终结果返回给u-layer。
+g-layer不需要做任何像符号代数一样复杂的事情。</p>
+<p>例如：如果g-layer需要计算</p>
+<div class="figure align-default" id="id25">
+<img alt="_images/image-20200729190044122.png" src="_images/image-20200729190044122.png" />
+<p class="caption"><span class="caption-number">Fig. 69 </span><span class="caption-text">image-20200729190044122</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+</div>
+<p>这种表达永远不会进入g-layer，除非这是一种允许的我们称为“融合除法平方根”的融合操作，例如IBM的融合乘法FMA加法。
+提交给g-layer的一组标准化任务必须立即返回u-layer。
+它将每个操作所需的位数固定在处理器架构师可以计划的可管理范围内。
+我们将需要一些融合的操作，包括乘加和EDP，以及其他一些太有用而无法放弃的操作，但是当无法在g-layer数据结构中表达临时结果时就放弃。
+由于在后面的章节中定义了u-layer中的算术运算，因此还将讨论它们对g-layer的要求</p>
+<p>这个定义使得来自不同供应商的计算机结果都是完全相同的成为可能，包括用于计算各种超越函数的不同数学库。从一系列操作中返回的只有一个合法值，就像1
++ 1 =
+2可跨计算机系统移植一样。最终，实数可以像整数一样安全地计算。（也许还更安全，因为整数上溢和下溢以及它们的作用点在系统之间是不同的。C语言定义又犯了错，因为它允许整数在系统之间变化，但被称为相同名称，例如int或short）</p>
+<p>用unums首次实现的是一种数学上正确的数据结构，用于描述在实数轴的子集上的操作。这听起来似乎有点像传统的区间算术尝试做的事情，但是传统的区间表示法有不足之处，下面我们来解释ubounds和区间算术之间的差异。</p>
+</div>
+<div class="section" id="id3">
+<h3>5.3.4传统的区间算术，小心<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<p><img alt="image1" src="_images/image-20200730082854228.png" />&gt;</p>
+<center><p>熟悉的二维间隔：棒球中的“打击区”</p>
+</center><p>所谓的“区间算术”可以追溯到1950年代（公认是Ramon
+Moore引入该算法）。算是对于解决浮点数的舍入误差是部分成功的尝试。
+传统区间始终是一个闭区间，用<span class="math notranslate nohighlight">\([a，b]\)</span>表示，其中a和b是精确的浮点数，a小于或等于b，而<span class="math notranslate nohighlight">\([a，b]\)</span>表示所有实数x，使得<span class="math notranslate nohighlight">\(a \le x \le b\)</span>。
+传统间隔始终包含其端点，这很遗憾使它们与数学家所说的“间隔”大不相同。
+当数学家使用术语“间隔”时，表示以下任何一项：</p>
+<div class="math notranslate nohighlight" id="equation-05-hidden-scratchpads-3-layers-3">
+<span class="eqno">(24)<a class="headerlink" href="#equation-05-hidden-scratchpads-3-layers-3" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{eqnarray}
+(a, b) \text { The set of numbers such that a } \lt x \lt b \\
+[a, b) \text { The set of numbers such that a } \le x \lt b \\
+(a, b] \text { The set of numbers such that a } \lt x \le b \\
+[a, b] \text { The set of numbers such that a } \le x \le b
+\end{eqnarray}\end{split}\]</div>
+<p>传统的区间算术只能表示最后一种情况。
+不幸的是，这意味着我们必须使用短语“传统间隔算术”，因为它破坏了上面显示的“间隔”的更一般的数学定义。</p>
+<p>当传统间隔算术计算的结果不精确时，将a和b沿使间隔变大的方向四舍五入，以确保间隔包含正确的答案。
+但是四舍五入的端点被错误地表示为精确的浮点数，因此本应是开区间被表示为更宽松闭区间。</p>
+<p>间隔算术在几个重要方面达不到有效计算机算术的要求：</p>
+<ul class="simple">
+<li><p><strong>需要专业知识</strong>:
+传统的区间算术需要使用大量（且很少见）的专业知识，甚至比从浮点数中获得有效答案所需的数值分析专业知识还要少见。</p></li>
+<li><p><strong>过于悲观的界限</strong>:
+传统的区间算术通常会产生快速扩展的，过于悲观的边界。
+因此很容易获得边界是<span class="math notranslate nohighlight">\([-\infty, +\infty]\)</span>这样正确的但是完全没有用处的答案。</p></li>
+<li><p><strong>不可表达的集合</strong>: 传统间隔不能表达“所有小于3”之类的集合。
+他们应该返回<span class="math notranslate nohighlight">\([-\infty, 3]\)</span>吗？
+也就是说3小于自己，这是不可接受的数学运算。那是否应该使用小于3的ULP（即<span class="math notranslate nohighlight">\([-\infty, 3-ULP]\)</span>?）的可表示浮点数？
+错，因为该范围在排除了开区间<span class="math notranslate nohighlight">\((3-ULP, 3)\)</span>中所有实数。
+传统间隔不能表示小于3的数字集。换句话说，它们不能正确表示<strong>小于</strong>和<strong>大于</strong>关系。</p></li>
+<li><p><strong>浪费的存储空间</strong>: 传统间隔存储的位数是精度相同的float的两倍。
+如果边界很接近，那么它们的大多数位都是相同的，因此存储是多余的和浪费的。
+如果边界相距太远，那就失去了准确性，并且浪费了不必要的高精度存储不正确的数据。</p></li>
+<li><p><strong>失去相关性</strong>。
+因为它将数字视为独立的范围，而不是集合中的单个（未知）点，所以当答案是精确时，传统间隔算术任然会产生范围。
+例如，<span class="math notranslate nohighlight">\(x-x\)</span>应该等于零，但是区间数学将返回一个范围。
+如果说x是间隔<span class="math notranslate nohighlight">\([23，25]\)</span>，则传统的间隔算法说<span class="math notranslate nohighlight">\(x–x\)</span>是
+<span class="math notranslate nohighlight">\([–2，2]\)</span>而不是零。同样的表达式<span class="math notranslate nohighlight">\(\frac{x}{x}\)</span>会返回<span class="math notranslate nohighlight">\([\frac{23}{25}, \frac{25}{23}]\)</span>而不是1.</p></li>
+</ul>
+<p>那传统间隔算术是否至少提供操作闭包，即它们的算术结果总是产生另一个传统间隔？不完全是的。假设x是间隔<span class="math notranslate nohighlight">\([–1，2]\)</span>,
+<span class="math notranslate nohighlight">\(\frac{1}{x}\)</span>是多少？一些间隔算术环境说答案是<span class="math notranslate nohighlight">\([-\infty, +\infty]\)</span>，该间隔范围错误地包含了不在答案集中的大量实数。在其他支持传统间隔算术的计算环境（包括Mathematica）中，您得到的是两个闭合间隔<span class="math notranslate nohighlight">\([-\infty, -1]\)</span>和<span class="math notranslate nohighlight">\([\frac{1}{2},\infty]\)</span>，这是不同的数据结构。除以包含零的间隔会破坏“间隔”的定义，即表示实线区域的一对数字。由于需要两个浮点数来表示一个间隔，因此除法运算可能需要四个浮点数（两个间隔），因此数据结构就与表示单个间隔的数据结构不同。如果您说“好吧，让我们允许成对的间隔”，这很快也会被破坏掉，某些操作的结果是三个间隔，还有四个。这就是电影“巫师学徒”里的效果；我们尝试处理的每一个数都会跳出两个神奇的扫帚。结果所需的存储就是无限的。它不是闭包和有限精度的系统。</p>
+<p>使用封闭间隔还有另一个微妙的不诚实之处。假设您使用IEEE半精度浮点数和间隔算术求二的平方根。传统的间隔算法说：</p>
+<div class="math notranslate nohighlight" id="equation-05-hidden-scratchpads-3-layers-4">
+<span class="eqno">(25)<a class="headerlink" href="#equation-05-hidden-scratchpads-3-layers-4" title="Permalink to this equation">¶</a></span>\[\sqrt{2}=[1.4140625, 1.4150390625]\]</div>
+<p>该界限表示“两个的平方根可能等于<span class="math notranslate nohighlight">\(\frac{1448}{1024}，\frac{1449}{1024}\)</span>或两者之间的任何值”。
+但是我们知道<span class="math notranslate nohighlight">\(\sqrt{2}\)</span>不可能是有理数，就像我们知道<span class="math notranslate nohighlight">\(\pi\)</span>不能是有理数一样。
+我们可以做得比这样草率的约束更好。
+如果我们拥有一种本质上比较谨慎的数字格式，并且要求在没有可能的相等性的地方排除相等性，那么需要实数的计算机算法就不会那么麻烦。
+使用ubit，我们可以表示以下信息：“两个的平方根在<span class="math notranslate nohighlight">\(\frac{1448}{1024}\)</span>和<span class="math notranslate nohighlight">\(\frac{1449}{1024}\)</span>之间，但是不能等于任何一个端点。”
+回想一下前面的示例，一个数字多次求根得出的值被错误地声明为精确等于1。传统的间隔与浮点数一样容易出现此错误。
+使用ubound时不会发生该错误。</p>
+<p>区间算术有些将严格性恢复到计算机算术的好想法，并且花费了数十年的研究努力来避免它的众多陷阱。
+其中一些想法适用于ubounds，我们将寻求那些可以自动执行的，这样计算机用户就不必成为区间算术的专家。</p>
+</div>
+<div class="section" id="significance-arithmetic">
+<h3>5.3.5 Significance arithmetic<a class="headerlink" href="#significance-arithmetic" title="Permalink to this heading">¶</a></h3>
+<p>再说另外一个话题。 前面我们提到了有效位算术significance
+arithmetic，该算法试图跟踪计算中还剩下多少有效数字。
+这是对准确性的估计，而不是像ubound是保证。 例如，有效位算术说“
+<span class="math notranslate nohighlight">\(2 + 3.481 = 5\)</span>”，因为2仅具有一位有效数字，因此答案必须四舍五入到一位有效数字。
+有效位算术是数值误差分析的一种非常有损和不令人满意的形式。否则它会被当做一种通用的自动检查舍入误差并帮助程序员为其浮点数选择正确精度的方法。
+如果“ 2”的实际含义是“ 2±0.5”，“ 3.481”的实际含义是“
+3.481±0.0005”，则总和“ 2 + 3.481”实际上就是“
+5.481±0.5005”，这是累积不确定性的一个严格界限。
+而<strong>有效位算术无法表达这种范围</strong>, 它知道的唯一范围是数字位数。</p>
+<p>使用ubound，我们可以以更小的代价把的算法做得更好。
+Ubound算法在跟踪精度方面更强大，因为端点的精度可以不同，并且可以独立地为开或闭。Ubound有很逼近数字集大小的各种信息。
+假设我们要表示范围<span class="math notranslate nohighlight">\(2.5 \le x \lt 3.1\)</span>。
+数字2.5是精确的，上限值3.1用最小宽度ULP表示。
+而如果将该范围放入有效位算术中，则会将其简化为“ 3
+一个有效数字”，因为<span class="math notranslate nohighlight">\(2.5 \le x \lt 3.1\)</span>的范围包含在<span class="math notranslate nohighlight">\(3\pm0.5\)</span>中。</p>
+<p>重要性算法在每次操作时都会丢弃大量信息。
+结果是即使计算似乎进行得很好，它也通常会在经过几次连续操作后宣布完全失去有效数字。</p>
+</div>
+<div class="section" id="id4">
+<h3>5.3.6 为什么端点必须标记开或闭<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
+<p>必须将端点标记为开或闭的一个原因是，我们经常需要知道集合的补集。
+如果请求“大于8的数字集”，则传统间隔返回<span class="math notranslate nohighlight">\([8, \infty]\)</span>，它错误地包括8。如果现在要求该集合的补集，则所有不在<span class="math notranslate nohighlight">\([8, \infty]\)</span>的数字都将返回，您会得到<span class="math notranslate nohighlight">\([-\infty, 8]\)</span>，它也错误地包含8。这两个错误都是草率的数学运算，仅需一个比特存储就可以纠正它，以指示端点的开或关。</p>
+<p>有时，我们将数学区间显示为粗线，将开放的端点显示为圆角，将封闭的端点显示为方角，模仿括号“）”的曲线和方括号“]”的矩形。
+例如，实数行上的区间<span class="math notranslate nohighlight">\([–2，3)\)</span>在左侧关闭但在右侧打开可以像这样可视化：</p>
+<div class="figure align-default" id="id26">
+<img alt="_images/image-20200730130235246.png" src="_images/image-20200730130235246.png" />
+<p class="caption"><span class="caption-number">Fig. 70 </span><span class="caption-text">image-20200730130235246</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+</div>
+<p>假设x是<span class="math notranslate nohighlight">\((-1, \frac{3}{2})\)</span>, 那么<span class="math notranslate nohighlight">\(x^2\)</span>是什么？
+画出的<span class="math notranslate nohighlight">\(y=x^2\)</span>是抛物线在<span class="math notranslate nohighlight">\(-1 \lt x \lt \frac{3}{2}\)</span>的一部分，但如果我们用非常规的粗线绘制它，可以显示开（圆形）或闭（方形）端点，则有助于可视化进行算术时开或关属性的变化。
+输入范围以浅洋红色显示，输出范围以浅绿色显示：</p>
+<div class="figure align-default" id="id27">
+<img alt="_images/image-20200730131353632.png" src="_images/image-20200730131353632.png" />
+<p class="caption"><span class="caption-number">Fig. 71 </span><span class="caption-text">image-20200730131353632</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+</div>
+<p>结果范围的上限显示为四舍五入（空心），但下限钝化以指示它包括零（封闭）。
+<span class="math notranslate nohighlight">\((-1 1.5)\)</span>的平方是<span class="math notranslate nohighlight">\([0，2.25)\)</span>。
+这说明了为什么我们需要独立打开或关闭的端点表示。</p>
+<p>如果你认为关于端点开或闭的烦恼像是过于吹毛求疵，那就考虑一下这个编程错误，可能所有程序员都犯过：“偏移1”bug。
+该错误源于选择以下以抽象计算机语言表示的循环结构之一：</p>
+<div class="figure align-default" id="id28">
+<img alt="_images/image-20200730132052388.png" src="_images/image-20200730132052388.png" />
+<p class="caption"><span class="caption-number">Fig. 72 </span><span class="caption-text">image-20200730132052388</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+</div>
+<p>循环什么时候停止，是当您到达n或到之前？
+也即是确定是“小于”或“小于或等于”才停止？ 数组索引是从0开始还是从1开始？
+无论您使用哪种语言，都很容易在错误的地方意外地开始或结束，并且错误的后果通常也不好。
+如果您是曾经遇到此错误的程序员，那很好。你应该明白了。
+有时这种错误被称为“边界条件”或“极端情况”错误。</p>
+<p>用实数编程对应的偏移1的错误等是否包含间隔的端点（闭）或包含接近端点的所有内容而不包含端点本身（开）。浮点数和传统间隔甚至不允许这种区分。
+unum跟踪开闭端点质量的能力消除了涉及实数的计算中的许多错误。</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>5.4 用户层<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="id6">
+<h3>5.4.1 人眼中的数字<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
+<p>本章标题说，计算分为三层。 当然这里已经有一个<strong>scratchpad
+层</strong>和一个<strong>按照规定格式用比特串的层</strong>。
+第三层是<strong>用户层</strong>，其中数字以<em>用户用来发送到计算机并能解读结果</em>的形式存在。</p>
+<table border="4"><tr><td bgcolor="lightblue"><p>定义 h-layer是数字（和异常数）以人类可以理解的形式表示的地方。</p>
+</td></tr></table><p>术语“输入输出”不是h-layer的同义词，因为“输入输出”通常是指将数据从计算机系统的一部分移动到另一部分。
+h-layer 定义的是有一端是人的输入输出。</p>
+<p>您可能会想到数字0到9，小数点，“ +”，“ –”，“…”，“∞” 等等。 想更广一些。
+图形，声音，触觉反馈，通过恒温器命令启动的房屋中的炉子才是转换为人类感知的物理事件的常见示例。
+当您转动汽车的方向盘或演奏电子乐器时，您无需输入数字就将数字信息发送到计算机，这些都是。</p>
+<p>有人建议所有浮点数应使用以10为底的内部格式（并且为浮点数定义了IEEE十进制格式）。
+但这仅有助于文本输入和输出十进制字符串，这只是计算机接收和发送浮点值的许多方式的一小部分。
+十进制格式浮点数运行速度（最多）是二进制浮点数的一半，如果浮点数的目的是生成像素或将音乐发送到扬声器系统，则要付出很大的代价！</p>
+<p>目前我们只考虑将十进制字符串（h-layer）与u-layer之间的转换。
+这种转换是一种操作，就像除法，平方根或任何其他操作一样容易发生信息丢失；
+因此我们需要一些策略，以防止数字在各层之间传递时对准确性产生混淆。
+即使没有信息丢失并且数字在各层之间完美传递，我们也需要一种方法来传达实数的范围。
+在大多数计算机语言中，没有标准的方法可以传达输入或输出值是精确的还是近似的，如果近似则在什么范围内。
+常规的表达词汇已经有了，我们只需要应用它。</p>
+</div>
+<div class="section" id="id7">
+<h3>5.4.2 需求与让步<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
+<p>只有当用户能够传达需要什么和不需要什么的时候，或者简称为“需求和让步”时，计算机才是有能用的工具。如果计算系统不知道什么是无关紧要的，它就会做出保守的假设，并且往往会做更多的工作，花费比所需更多的时间。</p>
+<p>这种无意的浪费最壮观的例子之一是标准数学库计算正弦，余弦，正切，正割，割线和正切三角函数的方式。
+例如，余切以<span class="math notranslate nohighlight">\(\pi\)</span>的每个整数倍重复它在0到<span class="math notranslate nohighlight">\(\pi\)</span>之间执行的操作：</p>
+<div class="figure align-default" id="id29">
+<img alt="_images/image-20200730135904128.png" src="_images/image-20200730135904128.png" />
+<p class="caption"><span class="caption-number">Fig. 73 </span><span class="caption-text">image-20200730135904128</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+</div>
+<p>对于这样的周期函数的计算软件库例程，任何实值输入的首先使用参数约简来找到等效角度；
+然后，查表或多项式插值可以准确地找<em>约简参数</em>三角函数值。
+假设您正在用C或C
+++编写程序，并要求以单精度浮点数（大约7个小数精度）表示的弧度角的余切。
+由于浮点不包含精度信息，因此无法传达该角度是否是精确的。
+数学库必须保守地假设每个输入值都是精确的。
+库例程首先必须将该角度以<span class="math notranslate nohighlight">\(\pi\)</span>为取模。
+为了要结果在正确答案的ULP的一半以内，它必须首先保证7个十进制有效位的“精确”浮点数除以<span class="math notranslate nohighlight">\(\pi\)</span>的结果足够精确，以使余数（即<em>约简参数</em>）也具有超过7个小数位的精度。</p>
+<p>假设弧度是一百万幅度角。 一百万模<span class="math notranslate nohighlight">\(\pi\)</span>什么是？</p>
+<p>将值“展开”到足够准确的唯一方法是将<span class="math notranslate nohighlight">\(\pi\)</span>精确地存储到数比特百位，并执行需要多个扩展精度的操作，这正是标准数学库所做的。但是多数情况下，“一百万”的浮点数不是一个精确值，那么“一百万”实际上是介于999936和1
+000064之间的某个角度。该角度范围可以围绕单位圆旋转数十次了。因此，余切值应该是从<span class="math notranslate nohighlight">\(-\infty\)</span>到<span class="math notranslate nohighlight">\(\infty\)</span>，包括无穷。想象一下计算机为产生精确的七位小数答案所做的无用工作量，仅仅是因为计算机的h-layer无法表达输入参数是否正确。</p>
+<p>一些供应商提供的数学库使用的精度较低，计算速度更快，因此选择使用此类库的用户是在做出精度的让步，以换取更高的速度要求。较低精度的库的选择几乎是程序员目前可以将准确性让步传达给计算机的唯一方法。</p>
+<p>实数通常使用十进制输入值进行编程，十进制输入值通常不能精确转换为浮点数或是unum。简单地转换十进制会产生不精确的值。如果没有任何让步，“2.997”可以表示为精确的2.997，或者表示为<span class="math notranslate nohighlight">\(2.997\pm.0005\)</span>。那种方法最好？当前的做法是找到与十进制数字最接近的二进制近似值，然后悄悄地做替换。使用unum的h-layer，我们允许用户对输入的精度作出让步，更明确地表达对精度的需求，并在计算结果不精确时让计算机让步。</p>
+<p>如果不让步，则将“
+2.997”之类的十进制输入作为两个确切数字的比值：<span class="math notranslate nohighlight">\(\frac{2997}{1000}\)</span>。
+在计算中使用该值的任何地方，比率是<span class="math notranslate nohighlight">\(\frac{2997}{1000}\)</span>根据当前环境设置再计算得出的，但是该值永远不会汇总为单个unum，因为这可能会丢失信息。</p>
+<p>对于浮点数产生的不正确答案，您有时会听到一个合理化的解释是：“答案是<strong>准确</strong>的，但问题与您提出的问题略有不同。”
+合理化甚至有个专业术语：“后向错误分析”。
+它是其实是原罪的一种变体，搞笑的是，它居然把责任归咎于计算机用户：</p>
+<table border="2"><tr><td bgcolor="lightyellow"><p>“我无法给您您所要求的答案，这全都是您的错，因为您应该提出一个略有不同的问题。
+对于您应该提出的问题，我给了您一个完美的答案。”</p>
+</td></tr></table><p>仅当用户具有某种方式允许计算机将输入值视为近似值时，后向错误分析才有意义。</p>
+<p>我们还可以为用户提供符号，以选择性地传达精确和不精确的十进制输入，减少用户的“惊喜”。如果用户简单地将“
+6.6”指定为不带任何精度信息，并获得尽可能多的压缩unum，那么会发现值被转换为最经济（且最不精确）的unum值（范围在6.55至6.65之间），这可能会令人惊讶（烦恼）
+。
+但是，如果用户输入“<span class="math notranslate nohighlight">\(〜6.6\)</span>”，那么我们需要最紧密的ubound表示，<span class="math notranslate nohighlight">\([6.55，6.65)\)</span>。
+右开左闭由于四舍五入舍入到最近偶数的规则。</p>
+<p>在一个<span class="math notranslate nohighlight">\(\lbrace 3, 4 \rbrace\)</span>环境中，输入~6.6变成靠近<span class="math notranslate nohighlight">\(\lbrace 6.55, 6.65 \rbrace\)</span>
+ubound, 误差损失最小的是二进制数值实际上是</p>
+<div class="math notranslate nohighlight" id="equation-05-hidden-scratchpads-3-layers-5">
+<span class="eqno">(26)<a class="headerlink" href="#equation-05-hidden-scratchpads-3-layers-5" title="Permalink to this equation">¶</a></span>\[(6.54998779296875, 6.6500244140625)\]</div>
+<p>这个范围稍大于<span class="math notranslate nohighlight">\(\pm0.05\)</span>，但“～”的含义就是此环境下最接近的表示。</p>
+<p>以下是一些有关h-layer的建议“语法规则”：表达有关输入的需求和让步的方法，以及计算机表达其对输出结果的准确性的表达方法。</p>
+<div class="figure align-default" id="id30">
+<img alt="_images/image-20200730151604493.png" src="_images/image-20200730151604493.png" />
+<p class="caption"><span class="caption-number">Fig. 74 </span><span class="caption-text">image-20200730151604493</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+</div>
+<p>“…”代替“<span class="math notranslate nohighlight">\(\cdots\)</span>”很难阅读，因为省略号“…”中的点看起来像小数点，因此我们更倾向于将“<span class="math notranslate nohighlight">\(\cdots\)</span>”稍微升高一点，以表示“显示的最后一位数字后面有更多数字””。本书中使用该方法。原型程序不支持所有上面建议的格式。列在这里是为了说明已经有多种可读格式方式去表达的精确的和不精确的数。在包括unums的任何计算机语言中，语法都应支持表达输入要求和让步的方法，并且<strong>准确性信息必须始终包含在输出中</strong>。</p>
+<p>如果将计算出的数字发送到大容量存储中以备后用，那么保留二进制unum显然是避免丢失信息的最佳方法。如果必须将数字转换为代表h-layer十进制格式的字符，则上表提供了一些符号来帮助记录精度。如果我们忽略精度信息，那么就将数字错误地表示为精确的，这就是导致浮点算法如此之多问题的原因。</p>
+<p>虽然在u-layer上表达十进制小数通常会损失一些精度，可以换用unum或ubound来精确地表示。
+本书原型程序包含一个函数<strong>autoN
+[fraction]</strong>，当分数是一个整数除以2的幂时，显示正确的小数位数以表示精确分数值。例如：</p>
+<div class="figure align-default" id="id31">
+<img alt="_images/image-20200730160802357.png" src="_images/image-20200730160802357.png" />
+<p class="caption"><span class="caption-number">Fig. 75 </span><span class="caption-text">image-20200730160802357</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
+</div>
+<p>可以将autoN函数与开闭信息结合使用，以准确显示unum或ubound。
+尽管将unums块存储为二进制要经济得多，但是如果要让一个块易于阅读更重要时，可以将ubund的数学表示存储为如下以空格分隔的字符串：</p>
+<div class="figure align-default" id="id32">
+<img alt="_images/image-20200730161139983.png" src="_images/image-20200730161139983.png" />
+<p class="caption"><span class="caption-number">Fig. 76 </span><span class="caption-text">image-20200730161139983</span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
+</div>
+<p>所有这些字符串都可以完美地转换回其原始ubound（具有相同或更大的环境设置）。
+正如unum的长度可调有时反而可以节省空间一样，我们有时最好不要使用固定长度的格式。
+诸如C和Fortran中的格式规范在某些情况下会错误地截取小数，而另一方面输出“
+0.0000000000000000000”而其实一个0就可以了。
+输出的任何“舍入”应该是明确请求做的，并且使用类似于上表中的表示法将输出标记为是已经舍入结果。</p>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>5.5 在不同层之间移动<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="id9">
+<h3>5.5.1 定义转换函数<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h3>
+<p>第4.11节介绍了将unum转换为其数学值的公式。
+另一个方向更具挑战性：将任意实数或实数范围转换为unum或ubound。
+将unum字符串转换为实数要容易得多。
+棘手的部分是因为我们寻求完成任务的最小位字符串。
+如果碰巧在给定的环境中用unum字符串可以精确地表示一个实数，则我们会寻找能完成该工作的最小指数和分数，以便unum所需的位数最少。
+如果实数在可表示的精确值之间，则我们使用不精确的unum，且其具有的最小ULP间隔。</p>
+<p>魔鬼在细节上，因为存在大小大于<em>maxreal</em>或小于<em>smallsubnormal</em>的有限实数的例外情况。
+另外，需要处理无穷大和NaN的情况。</p>
+<p>将任意实数x转换为unum的原型函数称为<strong>x2u</strong>（“ x to
+unum”），其代码在附录C.5中，适用于对unums的实现细节感兴趣的人。
+为了使unum算术更易于阅读，我们只需在值上写一个帽子“
+^”以表示其unum等效项，例如<span class="math notranslate nohighlight">\(\hat{511}\)</span>
+表示数字511的unum形式。即<strong>x2u</strong>
+[511]与<span class="math notranslate nohighlight">\(\hat{511}\)</span>是相同的。
+在原型中，您可以在任何可表示的实数、正或负无穷大或NaN之上戴上帽子。</p>
+<p>在{2，3}环境中的一些unumview示例显示了分数和指数大小如何自动调整为所需的值。
+首先，将环境设置为最多<span class="math notranslate nohighlight">\(2^2\)</span>个指数位和最多<span class="math notranslate nohighlight">\(2^3\)</span>个小数位：</p>
+<div class="figure align-default" id="id33">
+<img alt="_images/image-20200730163158928.png" src="_images/image-20200730163158928.png" />
+<p class="caption"><span class="caption-number">Fig. 77 </span><span class="caption-text">image-20200730163158928</span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
+</div>
+<p>在这种环境下，下面显示是负无穷大的unum，除ubit之外，每个位都设置为1：</p>
+<div class="figure align-default" id="id34">
+<img alt="_images/image-20200730163313099.png" src="_images/image-20200730163313099.png" />
+<p class="caption"><span class="caption-number">Fig. 78 </span><span class="caption-text">image-20200730163313099</span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
+</div>
+<p>一个unum环境还需要一些常量，例如<span class="math notranslate nohighlight">\(\pi\)</span>
+。<strong>x2u</strong>转换仅需要有关值的信息就可以确保正确转换为最小的ULP：</p>
+<div class="figure align-default" id="id35">
+<img alt="_images/image-20200730163552088.png" src="_images/image-20200730163552088.png" />
+<p class="caption"><span class="caption-number">Fig. 79 </span><span class="caption-text">image-20200730163552088</span><a class="headerlink" href="#id35" title="Permalink to this image">¶</a></p>
+</div>
+<p>注意这里我们可以用utag左边10bit就表示<span class="math notranslate nohighlight">\(\pi\)</span>的3位有效数字。</p>
+<p>如果我们计算中有NaN,
+我们假设一定是安静的NaN，否则我们就要停止运算了。这就是为什么g-layer只有一种NaN的原因。</p>
+<div class="figure align-default" id="id36">
+<img alt="_images/image-20200730164559780.png" src="_images/image-20200730164559780.png" />
+<p class="caption"><span class="caption-number">Fig. 80 </span><span class="caption-text">image-20200730164559780</span><a class="headerlink" href="#id36" title="Permalink to this image">¶</a></p>
+</div>
+<p>当实数正好是2的幂次时候，转换函数会优先将比特放在指数里这可以减少总共的比特数。</p>
+<div class="figure align-default" id="id37">
+<img alt="_images/image-20200730164818329.png" src="_images/image-20200730164818329.png" />
+<p class="caption"><span class="caption-number">Fig. 81 </span><span class="caption-text">image-20200730164818329</span><a class="headerlink" href="#id37" title="Permalink to this image">¶</a></p>
+</div>
+<p>看上去好像挺浪费因为有那么多前导0在指数上，但是每减少指数位数，小数位数长度会指数增加。这已经是最小表示了。</p>
+<p>太小的数在(0, smallsubnormal)的unum数表示： (TODO:
+这是<span class="math notranslate nohighlight">\(2^{-14}\)</span>,
+最短的表示应该是5位指数，需要{3，#}的环境才能表达，这个环境中只能用sub-normal来做了)</p>
+<div class="figure align-default" id="id38">
+<img alt="_images/image-20200730165514581.png" src="_images/image-20200730165514581.png" />
+<p class="caption"><span class="caption-number">Fig. 82 </span><span class="caption-text">image-20200730165514581</span><a class="headerlink" href="#id38" title="Permalink to this image">¶</a></p>
+</div>
+<table border="2"><tr><td bgcolor="lightgray"><p>读者的练习：当一个数特别大不能被精确表示比如 100^100，
+如何在环境{2，3}中表示？ 包含100^100最小比特数的不精确unum数是什么？
+开区间表示的是什么？</p>
+</td></tr></table></div>
+<div class="section" id="id10">
+<h3>5.5.2 测试转换函数<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h3>
+<p>我们要求实数转换为unum并将unums转换回区间在数学上是完善的（原型函数<strong>x2u</strong>
+[x]和<strong>u2g</strong> [u]，均在附录C中详细介绍）。
+对于开发自己的unum环境的任何人，正确性的一个很好的测试方法是绘制一个如下图，其中使用一个低精度环境并对实数线进行采样，以查看是否将unum与unum进行实数转换会矩形边界包含直线y
+= x：</p>
+<div class="figure align-default" id="id39">
+<img alt="_images/image-20200730170803555.png" src="_images/image-20200730170803555.png" />
+<p class="caption"><span class="caption-number">Fig. 83 </span><span class="caption-text">image-20200730170803555</span><a class="headerlink" href="#id39" title="Permalink to this image">¶</a></p>
+</div>
+<p>全范围测试转换函数<strong>x2u</strong>和<strong>u2g</strong>看起来在精度极限内像是理想的互逆，但当然该图可能会错过某些尺度上的异常。右上方的图形检查从subnormal到normal的过渡，看起来仍然像连续线。但是如果将图放大到只有几个值的点，我们最终可以看到离散的unum矩形；它们包含理想的y
+=
+x线。左下图在左侧具有较小的矩形区域，在右侧具有较大的矩形区域，因为指数在图中的中间点右边大了。右下方的图显示了subnormal数的完美转换和逆转换。</p>
+<p>这与浮点相比如何？浮点转换的图形看起来像一个阶梯，而不是一系列矩形。阶跃曲线在y
+=
+x曲线上呈锯齿状，每一个台阶除了一个值，其他的都丢失了精度。而阶梯是处在正确值的下方、上方抑或是中心，则由“取整模式”确定。从数学上讲，浮点数转换“几乎在所有地方”都是错误的；无理数数要比有理数多得多，并且浮点转换会出错，除非正好在特定类型的有理数上。</p>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>5.6 在原型代码中不同层的转换函数总结<a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h2>
+<p>在原型环境中，<strong>u2g</strong> [u]将unum或ubound
+<span class="math notranslate nohighlight">\(u\)</span>转换为其等效的gbound。 <strong>g2u</strong>
+[g]函数将一般间隔g转换为其最经济的u-layer版本。
+两者的代码都在附录C.7中。</p>
+<p>将u-layer值移动到h-layer意味着以人类可以阅读的形式显示数字。
+通常我们只需要最简单的数学符号，例如“ <span class="math notranslate nohighlight">\([1，3.0625)\)</span>”。
+原型里使用<strong>view</strong> [x]函数。
+如果需要查看unum格式的所有细节，就使用函数为<strong>uview</strong>
+[x]，它以图形方式显示颜色编码的unum字段及其含义，包括unum，ubounds和gbound。
+<strong>gview</strong> [x]函数将unum，ubound或gbound显示为2x2表。
+下图总结了在各层之间移动的所有原型功能。</p>
+<div class="figure align-default" id="id40">
+<img alt="_images/image-20200730172257476.png" src="_images/image-20200730172257476.png" />
+<p class="caption"><span class="caption-number">Fig. 84 </span><span class="caption-text">image-20200730172257476</span><a class="headerlink" href="#id40" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>view</strong>函数很健壮，因为它们可以查看参数数据类型并根据需要自动进行转换。
+这就是为什么视图功能是指向左两条带箭头线的原因，因为值可以来自任一层。
+还要注意，可以直接向g-layer发送一个2x2的gbound，这通常是输入gbound而非精确数字的最清晰的方法。</p>
+<table border="2"><tr><td bgcolor="lightgray"><p>读者的练习从g-layer返回之前，通过将加，减，乘，除与另一个加，减，乘或除进行融合，可以进行十六种“融合”操作。
+如果计算必须在数学上精确，哪些融合对不适合第5.3.1节中所示的gbound的内部scratchpad结构？
+回到g-layer之前，如何修改gbound定义以使所有16个配对都可以精确地存储在g-layer中？</p>
+</td></tr></table></div>
+<div class="section" id="id12">
+<h2>5.7 浮点“对政府的工作就足够好”吗？<a class="headerlink" href="#id12" title="Permalink to this heading">¶</a></h2>
+<div class="figure align-default" id="id41">
+<img alt="_images/image-20200730174251692.png" src="_images/image-20200730174251692.png" />
+<p class="caption"><span class="caption-number">Fig. 85 </span><span class="caption-text">image-20200730174251692</span><a class="headerlink" href="#id41" title="Permalink to this image">¶</a></p>
+</div>
+<blockquote>
+<div><center><p>由于计算机程序试图将64位浮点数填充到16位制导系统中，导致1996年欧洲航天局“阿丽亚娜”
+5号火箭发射失败。 亏损：按2014年美元计算，约为7.5亿美元。
+应该是计算机而不是程序员来管理存储的大小。
+如果使用unum算法，将避免该错误</p>
+</center></div></blockquote>
+<table border="2"><tr><td bgcolor="lightblue"><p>如果您还认为舍入错误，上溢和下溢只是晦涩难解的学术问题，请再考虑一下。浮点造成的错误可能会杀死人，而且的确发生过。</p>
+</td></tr></table><p>他们还造成了数十亿美元的财产损失。计算机用户似乎已经对浮点数的错误产生了奇怪的听天由命的容忍性。许多人只有在发现不同的计算机系统获得不同的“正确”结果时才会感到不自在，因为IEEE标准允许（鼓励？）隐藏的scatchpad操作并容忍在不同的系统有不同数量的操作。</p>
+<p>定义计算的三个层次并对其进行标准化内部如何操作，与让数字格式跟踪其代表的实数范围一样重要。结合这些思想，最终有可能定义一个数学上是正确的标准，并确保在任何计算机系统上都具有相同的结果。即使在使用不同算法来解决同一问题且结果不相同的情况下，除非存在编程错误，否则u-layer结果将始终包含正确的结果且是相交的。交集是答案的细化。</p>
+<p>与其大声疾呼那些每秒可以执行更多浮点运算的计算机，不如我们应该要求能够<strong>正确</strong>执行数字运算的计算机。</p>
+</div>
+</div>
+
+
+        </div>
+        <div class="side-doc-outline">
+            <div class="side-doc-outline--content"> 
+<div class="localtoc">
+    <p class="caption">
+      <span class="caption-text">Table Of Contents</span>
+    </p>
+    <ul>
+<li><a class="reference internal" href="#">5. 隐藏的草稿本和三个层次</a><ul>
+<li><a class="reference internal" href="#scratchpad">5.1 隐藏的scratchpad</a><ul>
+<li><a class="reference internal" href="#cray-1">5.1.1 Cray-1 超级计算机</a></li>
+<li><a class="reference internal" href="#c">5.1.2 C语言的最初定义</a></li>
+<li><a class="reference internal" href="#dao">5.1.3 协处理器也来帮(dao)忙</a></li>
+<li><a class="reference internal" href="#ibm">5.1.4 IBM几乎做对了: 融合的乘加操作</a></li>
+<li><a class="reference internal" href="#kulisch-edp-the-exact-dot-porduct">5.1.5 Kulisch 总算做对了: EDP - the Exact Dot Porduct</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#unum">5.2 unum层</a><ul>
+<li><a class="reference internal" href="#the-ubound">5.2.1 the ubound</a></li>
+<li><a class="reference internal" href="#u-layers">5.2.2 为u-layers设计的处理器</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-math-layer">5.3 算术层 The math layer</a><ul>
+<li><a class="reference internal" href="#the-gerneral-bound-or-gbound">5.3.1 <em>通用边界</em> The gerneral bound or “gbound”</a></li>
+<li><a class="reference internal" href="#nan-sun-microsystems">5.3.2 谁会用NaN, Sun Microsystems公司得到了讨厌的惊喜</a></li>
+<li><a class="reference internal" href="#id2">5.3.3 scratchpad需求空间爆炸？</a></li>
+<li><a class="reference internal" href="#id3">5.3.4传统的区间算术，小心</a></li>
+<li><a class="reference internal" href="#significance-arithmetic">5.3.5 Significance arithmetic</a></li>
+<li><a class="reference internal" href="#id4">5.3.6 为什么端点必须标记开或闭</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id5">5.4 用户层</a><ul>
+<li><a class="reference internal" href="#id6">5.4.1 人眼中的数字</a></li>
+<li><a class="reference internal" href="#id7">5.4.2 需求与让步</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id8">5.5 在不同层之间移动</a><ul>
+<li><a class="reference internal" href="#id9">5.5.1 定义转换函数</a></li>
+<li><a class="reference internal" href="#id10">5.5.2 测试转换函数</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id11">5.6 在原型代码中不同层的转换函数总结</a></li>
+<li><a class="reference internal" href="#id12">5.7 浮点“对政府的工作就足够好”吗？</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+            </div>
+        </div>
+
+      <div class="clearer"></div>
+    </div><div class="pagenation">
+     <a id="button-prev" href="04_unum_format.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="P">
+         <i class="pagenation-arrow-L fas fa-arrow-left fa-lg"></i>
+         <div class="pagenation-text">
+            <span class="pagenation-direction">Previous</span>
+            <div>4. 完整的unum格式定义</div>
+         </div>
+     </a>
+     <a id="button-next" href="06_info_per_bit.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
+         <i class="pagenation-arrow-R fas fa-arrow-right fa-lg"></i>
+        <div class="pagenation-text">
+            <span class="pagenation-direction">Next</span>
+            <div>6 每个比特的信息</div>
+        </div>
+     </a>
+  </div>
+        
+        </main>
+    </div>
+  </body>
+</html>

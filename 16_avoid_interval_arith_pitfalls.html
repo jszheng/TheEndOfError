@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>16 避免区间算术陷阱 &#8212; THE END of ERROR - Unum Computing 0.1 documentation</title>
+
+    <link rel="stylesheet" href="_static/material-design-lite-1.3.0/material.blue-deep_orange.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx_materialdesign_theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fontawesome/all.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/d2l.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/d2l.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="17 “解”方程到底是什么意思？" href="17_meaning_of_solve_equ.html" />
+    <link rel="prev" title="15. 另外一种误差" href="15_TheOtherKindOfError.html" /> 
+  </head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header mdl-layout__header--waterfall ">
+    <div class="mdl-layout__header-row">
+        
+        <nav class="mdl-navigation breadcrumb">
+            <a class="mdl-navigation__link is-active">16 避免区间算术陷阱</a>
+        </nav>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+        
+<form class="form-inline pull-sm-right" action="search.html" method="get">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+        <label id="quick-search-icon" class="mdl-button mdl-js-button mdl-button--icon"  for="waterfall-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q"  id="waterfall-exp" placeholder="Search" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </div>
+      </div>
+      <div class="mdl-tooltip" data-mdl-for="quick-search-icon">
+      Quick search
+      </div>
+</form>
+        
+<a id="button-show-source"
+    class="mdl-button mdl-js-button mdl-button--icon"
+    href="_sources/16_avoid_interval_arith_pitfalls.rst.txt" rel="nofollow">
+  <i class="material-icons">code</i>
+</a>
+<div class="mdl-tooltip" data-mdl-for="button-show-source">
+Show Source
+</div>
+        </nav>
+    </div>
+    <div class="mdl-layout__header-row header-links">
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation">
+          
+              <a  class="mdl-navigation__link" href="https://github.com/jszheng/TheEndOfError">
+                  <i class="fab fa-github"></i>
+                  Github
+              </a>
+      </nav>
+    </div>
+</header><header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_TheOriginalSin.html">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_hidden_scratchpads_3_layers.html">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_info_per_bit.html">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_comparison_operations.html">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_mul_div.html">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_other_important_unary_ops.html">12 其他重要的一元运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_fused_operations.html">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_TheOtherKindOfError.html">15. 另外一种误差</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_meaning_of_solve_equ.html">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_permission_to_guess.html">18 准许猜测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_pendulums_done_correctly.html">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_calculus_evil.html">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_end_of_error.html">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+        <main class="mdl-layout__content" tabIndex="0">
+
+	<script type="text/javascript" src="_static/sphinx_materialdesign_theme.js "></script>
+    <header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_TheOriginalSin.html">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_hidden_scratchpads_3_layers.html">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_info_per_bit.html">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_comparison_operations.html">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_mul_div.html">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_other_important_unary_ops.html">12 其他重要的一元运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_fused_operations.html">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_TheOtherKindOfError.html">15. 另外一种误差</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_meaning_of_solve_equ.html">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_permission_to_guess.html">18 准许猜测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_pendulums_done_correctly.html">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_calculus_evil.html">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_end_of_error.html">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+
+    <div class="document">
+        <div class="page-content" role="main">
+        
+  <div class="section" id="id1">
+<h1>16 避免区间算术陷阱<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="id2">
+<h2>16.1 无用的错误界限<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>区间算术似乎是一个好主意，直到您真正尝试使用它来解决问题才知道问题。 第
+1 部分中的几个区间算术示例最终得出的答案范围为“<span class="math notranslate nohighlight">\(-\infty\)</span> 和
+<span class="math notranslate nohighlight">\(\infty\)</span> 之间”，这是一个正确但完全无用的结果。 获得的信息是
+<span class="math notranslate nohighlight">\(\frac{1}{\infty} = 0\)</span>。 Unums、ubounds 和 uboxes
+也处理间隔，这表明任何困扰间隔算术并阻止其广泛采用的因素也将影响unum算术，并使潜在的unum用户匆忙返回熟悉的未知舍入和采样误差的泥潭，尽管会产生看起来精确的结果。</p>
+<p>第 2 部分的大部分内容是关于为什么 ubox 不需要遭受区间运算的缺点。
+本章介绍传统区间算术的两个主要陷阱以及 ubox 如何避免它们。
+后面的章节给出了使用 ubox
+解决实际问题的示例，这些示例取自各种经典的科学和工程应用，而不是设计出来为适合unum来解决的问题。</p>
+<p>区间算术产生的界限增长如此之快而不是紧密包含答案有两个主要原因：“包装问题”和“依赖性问题”。</p>
+<p>## 16.2 包装问题</p>
+<p>区间运算有一个称为包装问题的缺点。 这是问题的最简单的说明之一。
+假设我们知道 x 和 y 是区间，并且想要计算</p>
+<div class="math notranslate nohighlight" id="equation-16-avoid-interval-arith-pitfalls-0">
+<span class="eqno">(65)<a class="headerlink" href="#equation-16-avoid-interval-arith-pitfalls-0" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{matrix}
+u=x+y \\
+v=2x-y
+\end{matrix}\end{split}\]</div>
+<p>只需一加一乘一减； 计算没有比这更简单的了。 假设 <span class="math notranslate nohighlight">\(2 \le x \le 5\)</span>
+和
+<span class="math notranslate nohighlight">\(1 \le y \le 2\)</span>。使用传统间隔，我们得到这个结果，其中“<strong>Interval</strong>[{a,b}]”表示法表示数字
+x 的集合，使得 <span class="math notranslate nohighlight">\(a \le x \le b\)</span>：</p>
+<div class="figure align-default" id="id7">
+<img alt="_images/image-20230629211426370.png" src="_images/image-20230629211426370.png" />
+<p class="caption"><span class="caption-number">Fig. 270 </span><span class="caption-text">image-20230629211426370</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p>使用上一章定义的“信息”，区间结果隐藏了大量信息丢失的事实。
+从图形上看，我们从下图中以紫色显示的矩形边界开始。</p>
+<div class="figure align-default" id="id8">
+<img alt="_images/image-20230629211703497.png" src="_images/image-20230629211703497.png" />
+<p class="caption"><span class="caption-number">Fig. 271 </span><span class="caption-text">image-20230629211703497</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<p>u 和 v 值的真实范围由下面倾斜的蓝色平行四边形显示</p>
+<div class="figure align-default" id="id9">
+<img alt="_images/image-20230629211751451.png" src="_images/image-20230629211751451.png" />
+<p class="caption"><span class="caption-number">Fig. 272 </span><span class="caption-text">image-20230629211751451</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<p>然而，区间算术给我们的是包含平行四边形的整个矩形，它是解集的“包装器”：<span class="math notranslate nohighlight">\(3 \le x \le 7\)</span>
+和 <span class="math notranslate nohighlight">\(2 \le y \le 9\)</span>。 蓝色平行四边形的面积为
+9，而灰色包裹矩形的面积为 28，这比实际解的信息丢失了三倍多。 如果随后将
+u 和 v
+边界的粗略描述作为输入传递给另一个简单例程，则有关解集形状的信息将再次丢失。
+如果没有足够的细心和专业知识，区间算术给出的界限太松而无用。</p>
+<table border="4"><tr><td bgcolor="lightblue"><p>定义:
+包装问题是由于用单个轴对齐框（即每个维度中的简单边界）限制多维结果集而导致区间计算中的边界过大。</p>
+</td></tr></table><p>一些区间算术支持者表示，解决这个问题的方法是使用更紧密地贴合形状的复杂数学曲线和曲面来跟踪复杂的形状，以期保持边界尽可能紧密。
+由此产生的复杂性爆炸无论是计算机还是程序员都无法控制。
+所有算术运算都必须不是为区间定义，而是为每个可能的封闭形状定义！
+每种形状都需要许多数值来描述，因此您很容易落到需要移动十倍或一百倍的数据的地步，而不是节省比特来节省带宽和能源。</p>
+<p>要了解为什么 unums 和 ubounds 可能不会遇到相同的问题，请将 x 和 y
+中的原始矩形想象为 ubox 的集合。 假设环境设置为非常低的精度，例如 {2,
+2}：</p>
+<div class="figure align-default" id="id10">
+<img alt="_images/image-20230629212733907.png" src="_images/image-20230629212733907.png" />
+<p class="caption"><span class="caption-number">Fig. 273 </span><span class="caption-text">image-20230629212733907</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<p>这任然有足够的精度使得紫色区域内ULP小到<span class="math notranslate nohighlight">\(2^{-4}=\frac{1}{16}\)</span>，在紫色矩形内，但我们故意使用更大的
+ULP，因此 ubox 足够大，可以以图形方式显示。是时候使用另一个 ubox
+工具了： <strong>uboxlist</strong>[ubound,minpower]创建一个unum的列表，首选最小 ULP
+尺寸 <span class="math notranslate nohighlight">\(2^{minpower}\)</span>，可完美平铺 ubound.
+比如：<strong>uboxlist</strong>[{<span class="math notranslate nohighlight">\(\hat{2}， \hat{5}\)</span>},
+-2]，创建了一个unum的列表表示如下间隔：2, (2, 2.25), 2.25, … …, (4.75,
+5), 5，其ULP尺度是<span class="math notranslate nohighlight">\(2^{-2}\)</span>。它覆盖了紫色矩形中的 x 值。</p>
+<p>相似地，<strong>uboxlist</strong>[{<span class="math notranslate nohighlight">\(\hat{1}, \hat{2}\)</span>}, -1] 创建一个 y
+方向的列表，我们在其中选择最小ULP 大小 <span class="math notranslate nohighlight">\(2^{-1} = \frac{1}{2}\)</span>; ULP
+大小在每个维度上可以不同。 然后通过取 x 和 y
+列表的元组来形成全套矩形集的 ubox：</p>
+<div class="figure align-default" id="id11">
+<img alt="_images/image-20230629224315266.png" src="_images/image-20230629224315266.png" />
+<p class="caption"><span class="caption-number">Fig. 274 </span><span class="caption-text">image-20230629224315266</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+<p>这是一个完美的平铺； 开放端点和封闭端点完美地结合在一起，没有重叠。
+矩形内或其边界上的每个实数 x 和 y 都只表示一次。
+传统的区间算术有时会使用一种有时被称为“切碎mincing”或“铺路paving”的技术，看起来非常类似于此处所示的
+ubox 方法。 然而，存在几个显着差异：</p>
+<ul class="simple">
+<li><p>子区间同时使用精确和非精确尺寸。</p></li>
+<li><p>“切碎”程度是 ULP 宽度，处于可选择的小数精度水平。</p></li>
+<li><p>每个维度中的间隔均用单个 unum 数字表示。</p></li>
+<li><p>结果是“自切碎”的，因为它们总是分解成 ULP 尺度的数量。</p></li>
+</ul>
+<p>以下是矩形闭界内所有点的计算：&lt;补图，Mathematica&gt;</p>
+<p>这几乎符合我们对 c-solution 的定义，因为它包含每个触及答案集的
+ubox，但它确实包含无法触及真实答案集的 ubox（最小 ULP 大小为
+<span class="math notranslate nohighlight">\(2^{-2}\)</span>）。答案集的面积 是 11，由于边缘参差不齐，大于理想体积
+9。与区间运算的信息损失 68% 相比，信息损失仅为
+18%。如果您想要更少的信息损失，只需减小 ULP。
+由于几乎所有的工作都是数据并行，因此使用大量的ubox不需要花费很多时间；它可以根据计算系统的并行度进行调整。</p>
+<p><strong>读者的练习</strong>：找到前面结果中位于 c 解之外的 6 个 ubox。 x-y
+平面中的哪些 ubox 导致它们出现在 u-v 平面的结果中？</p>
+<div class="figure align-default" id="id12">
+<img alt="_images/image-20230630114952059.png" src="_images/image-20230630114952059.png" />
+<p class="caption"><span class="caption-number">Fig. 275 </span><span class="caption-text">image-20230630114952059</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+<p>但如果这确实是要发送回主存储器的最终结果，则可以将其合并以节省位而不会丢失信息。</p>
+<p>上面所示的解集有 613 个 ubox，占用 15069 位。
+下图是在上述解决方案集上使用合并后的样子。 合并集只有 107 个
+ubox，总大小为 2281 位。</p>
+<div class="figure align-default" id="id13">
+<img alt="_images/image-20230630125112695.png" src="_images/image-20230630125112695.png" />
+<p class="caption"><span class="caption-number">Fig. 276 </span><span class="caption-text">image-20230630125112695</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+<p>根据集合最终使用的目的，您通常可以删除所有没有面积的
+ubox，以节省更多空间（“留下所有瓷砖，不留灌浆”）。</p>
+<p>最后的解集只有 36 个 ubox，总存储需求为 803 位。
+例如，想象一下，计算上述形状的目的是倾斜的蓝色平行四边形的图形显示，其中像素比例与用于计算的最小
+ULP 尺寸相同。 下面的形状占用176个这样的像素，每个像素可能需要一对 16
+位整数来指定其在显示器上的位置。 这意味着图形处理器必须移动 176 (16+16)
+= 5632 位，而不是 803 位。</p>
+<div class="figure align-default" id="id14">
+<img alt="_images/image-20230630132828441.png" src="_images/image-20230630132828441.png" />
+<p class="caption"><span class="caption-number">Fig. 277 </span><span class="caption-text">image-20230630132828441</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+<p>用作帧缓冲器的存储芯片中的少量逻辑就足以解释 ubox
+格式并扩展芯片内的位含义，而不是昂贵得多的芯片到芯片传输。 ubox
+方法的速度大约是原来的七倍，并且消耗的能量大约是七分之一，因为它在昂贵的路径上传输的数据量大约是七分之一。</p>
+<table border="2"><tr><td bgcolor="lightblue"><p>这就是 ubox 方法的本质：使用
+ULP宽为单位的的多维元素，来无脑暴力地应用大规模并行计算来跟踪答案
+浮点数试图掩盖答案是从ULP宽度的集合中选择出来的事实，将它们误认为是准确的。
+相比之下ubox
+接受这样一个事实：使用实数计算意味着使用集合进行计算，并跟踪每个ULP宽度的实数集合发生了什么。</p>
+</td></tr></table></div>
+<div class="section" id="id3">
+<h2>16.3 依赖问题<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<p>考虑计算类似下面的简单的表达式</p>
+<div class="math notranslate nohighlight" id="equation-16-avoid-interval-arith-pitfalls-1">
+<span class="eqno">(66)<a class="headerlink" href="#equation-16-avoid-interval-arith-pitfalls-1" title="Permalink to this equation">¶</a></span>\[y=\frac{x+1}{x+3}\]</div>
+<p>对于正 x它看起来像下页上的曲线</p>
+<div class="figure align-default" id="id15">
+<img alt="_images/image-20230630134915221.png" src="_images/image-20230630134915221.png" />
+<p class="caption"><span class="caption-number">Fig. 278 </span><span class="caption-text">image-20230630134915221</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+<p>假设x是区间，比如<span class="math notranslate nohighlight">\(x=[1,2]\)</span>。分子的范围是[2,
+3]而分母的范围是[4,
+5]。上面的图很明显表示结果的范围应该是<span class="math notranslate nohighlight">\([\frac{1+1}{1+3}, \frac{2+1}{2+3}]=[0.5, 0.6]\)</span>。但是这里传统的间隔数学给出的边界是</p>
+<div class="figure align-default" id="id16">
+<img alt="_images/image-20230630135334562.png" src="_images/image-20230630135334562.png" />
+<p class="caption"><span class="caption-number">Fig. 279 </span><span class="caption-text">image-20230630135334562</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+<p>为什么区间变得不必要的放大了？
+因为计算机没有利用分子和分母的值相互依赖的事实。计算机算两个间隔的比例的方法是使用独立边界点的组合。比如<span class="math notranslate nohighlight">\(\frac{[2, 3]}{[4, 5]}\)</span>的边界点计算是<span class="math notranslate nohighlight">\(\frac{2}{4}, \frac{2}{5}, \frac{3}{4}, \frac{3}{5}\)</span>，选择出的最大边界点是<span class="math notranslate nohighlight">\([\frac{2}{5}, \frac{3}{4}]=[0.4, 0.75]\)</span>。这个边界范围是比真实的大3.5倍，所以71%的信息丢失了。</p>
+<table border="4"><tr><td bgcolor="lightblue"><p>定义:
+依赖性问题是由于将同一变量的多次出现视为独立的而导致的区间计算范围过大，而实际上它们并非独立。。</p>
+</td></tr></table><p>不精确的 ubox 的尺寸是间隔； 那么ubox 计算也会遇到依赖问题吗？</p>
+<p>假设我们使用{2,3}环境，而且由于某种原因我们可以接受低精度的结果，愿意选择最小的ULP尺寸是<span class="math notranslate nohighlight">\(2^{-4}=\frac{1}{16}\)</span>。下面代码产生一个ubox的列表，代表了区间<span class="math notranslate nohighlight">\(x=[1, 2]\)</span>中间选择的ULP宽度的unum：<span class="math notranslate nohighlight">\(1, (1, 1.0625), 1.0625, … … , 1.9375, (1.9375, 2), 2\)</span>:</p>
+<div class="figure align-default" id="id17">
+<img alt="_images/image-20230630140659751.png" src="_images/image-20230630140659751.png" />
+<p class="caption"><span class="caption-number">Fig. 280 </span><span class="caption-text">image-20230630140659751</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+<p>如果我们对它们进行 unum
+计算并存储整个结果形状（为了清楚起见，还合并结果），我们会得到这组
+ubox：</p>
+<div class="figure align-default" id="id18">
+<img alt="_images/image-20230630140851159.png" src="_images/image-20230630140851159.png" />
+<p class="caption"><span class="caption-number">Fig. 281 </span><span class="caption-text">image-20230630140851159</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+</div>
+<p>当然，如果我们想要的只是 ubound 的范围，则无需像这样计算函数的整个形状；
+计算机将简单地跟踪使用 <strong>xub</strong> 元素计算的最小和最大结果。
+的最小计算值为开区间 (0.4921875，0.5)，最大计算值为
+(0.59375，0.609375)，因此最终结果（内部存储为 ubound）为 (0.4921875，
+0.609375)。 该边界的宽度（即一维“体积”）为 0.1171875，仅略大于理想体积
+0.1。</p>
+<p>因此，ubox 不能免受精度损失的影响，<strong>但精度损失通常仅限于您在选择 ULP
+大小时注册的任何尺寸</strong>（或者可能是相对宽度，通过设置计算环境，然后计算机自动决定正确的
+ULP 的尺度）。 与传统的间隔边界相比，使用 ULP
+宽度集为计算机创造了工作量，但几乎都是可并行的工作，不需要花费特别多的时间（或者消耗特别多的电力，因为工作是在芯片上进行的）。</p>
+<p>程序员不需要费脑思考。
+最多程序员可能必须声明结果是最终答案还是中间值，这样计算机就不会浪费时间合并答案（或将其汇总为
+ubound），而只是为后续步骤将其分解回ULP大小集合。</p>
+</div>
+<div class="section" id="id4">
+<h2>16.4 智能标准库例程<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<p>前面两节表明，ubox 可以将包装问题和依赖性问题减少到我们正在使用的任何
+ULP 大小的限制。 代价是较小的 ULP
+会创建更多（并行）工作并占用更多存储空间。
+还有另一种方法对于常用例程更有意义：每当我们开始依赖于实数的特定运算并经常使用它时，我们可能希望为其添加足够的逻辑，以便它变得与基本算术运算一样完美。</p>
+<p>第 1 部分中的一个简单示例是对数字求平方的例程。 为什么不简单地将
+<span class="math notranslate nohighlight">\(x^2\)</span> 写为 x 乘以 x？ 因为它会带来依赖性问题； x
+的两次出现被乘法例程视为独立的。 区间 (–1, 1) 的平方为 [0, 1)。 但 (-1,
+1)x(-1, 1) 就是 (-1,
+1)，这是对边界的笨拙扩展，会丢失一半有关答案的信息。 将间隔分解为小的
+ubox 会有所帮助，如前两节所示； 相乘的结果将是 (-ULP, 1)。
+但是，它仍然包含对实值进行平方无法产生的负值，如果程序需要保证平方为非负，则可能会导致灾难性错误。
+因此，通过一些额外的逻辑行，<strong>squareg</strong> 和 <strong>squareu</strong>
+的例程会产生尽可能严格的边界。</p>
+<p>通常的方法是使用最小点和最大点的知识。 如果函数 <span class="math notranslate nohighlight">\(\frac{x+1}{x+3}\)</span>
+实际上在程序中被重复调用，那么值得去利用该函数在 x 大于 –3
+时单调递增的事实。 这意味着，如果 x 的范围从 <span class="math notranslate nohighlight">\(x_{low}\)</span> 到
+<span class="math notranslate nohighlight">\(x_{high}\)</span>，则 <span class="math notranslate nohighlight">\(\frac{x+1}{x+3}\)</span> 上的界限就是
+<span class="math notranslate nohighlight">\(\frac{x_{low}+1}{x_{low}+3}\)</span> 到
+<span class="math notranslate nohighlight">\(\frac{x_{high}+1}{x_{hight}+3}\)</span> ，每个端点自己的开闭。
+如果函数是单调递增或单调递减，则该函数只需要求值两次，有时很容易找出除了端点之外没有最小或最大点，从而摆脱依赖问题。
+如果这并不容易，并且没有用于该任务的库函数，那么让计算机通过 ubox
+来完成工作。</p>
+<p>程序员已经依赖于软件库。
+几乎每种编程语言都使用库进行输入/输出和数学运算。
+编写库函数使得边界越紧越好是我们应该付出努力的地方。 虽然 unum/ubox
+方法的大部分目的是使编程变得更加容易，但它增加了硬件设计人员的工作量，也给创建标准软件库的工程师带来了更多工作量。
+因为他们的努力让数百万计算机用户的生活变得更加轻松，这种负担的转移具有经济意义，并确保了净生产率的提高。
+但是，当被要求支持这里描述的新范例时，不要指望硬件和软件库设计者会很容易做到的！</p>
+</div>
+<div class="section" id="id5">
+<h2>16.5 无依赖性问题的多项式求值<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
+<p>依赖性问题最简单的情况之一是评估二次方程 <span class="math notranslate nohighlight">\(a + b x + c x^2\)</span>。由于
+x
+出现两次，因此在某些情况下直接应用该公式会给出松散界限，即导致不必要的信息丢失。
+当方程写成
+<span class="math notranslate nohighlight">\(a + x(b + x c)\)</span>（霍纳法则）时也是如此，但这至少节省了乘法。
+拥有一个评估 <span class="math notranslate nohighlight">\(x^2\)</span>
+的无损例程并不能拯救我们，简单地在g-layer中计算所有内容也不能拯救我们。</p>
+<p>用一个简单例子来说明这个问题，看看下面这个函数图： <span class="math notranslate nohighlight">\(y=1+2x+x^2\)</span></p>
+<div class="figure align-default" id="id19">
+<img alt="_images/image-20230630155608373.png" src="_images/image-20230630155608373.png" />
+<p class="caption"><span class="caption-number">Fig. 282 </span><span class="caption-text">image-20230630155608373</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+</div>
+<p>如果我们用一个宽度正好是<span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>的ubox集合，下图就是我们看到的一个近似（环境是{1，2}或更高，这样端点就是准确数值）</p>
+<div class="figure align-default" id="id20">
+<img alt="_images/image-20230630155832752.png" src="_images/image-20230630155832752.png" />
+<p class="caption"><span class="caption-number">Fig. 283 </span><span class="caption-text">image-20230630155832752</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
+<p>相反，其中两个 ubounds 将产生不必要的宽松结果，如下面的琥珀色所示：</p>
+<div class="figure align-default" id="id21">
+<img alt="_images/image-20230630155951304.png" src="_images/image-20230630155951304.png" />
+<p class="caption"><span class="caption-number">Fig. 284 </span><span class="caption-text">image-20230630155951304</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+</div>
+<p>这在求根时特别烦人，即 <span class="math notranslate nohighlight">\(x^2 + 2 x + 1 = 0\)</span> 的解。答案应该是精确的
+–1，但根据上图，它将是代表 (-1.5、-1] 的 ubound。
+使用更精细的细节（更多的
+ubox）和更高的精度可以减少信息丢失量，并使草率计算更接近 –1
+处的根，但并<strong>不能消除</strong>它。
+该问题出现在所有二次及更高次多项式中，因为 x 在表达式中出现多次。
+一般来说，多项式的次数越高，信息损失越严重。</p>
+<p>对于试图解决控制问题的工程师来说，这不仅令人烦恼，而且简直令人恼火。
+控制理论认为，如果某个多项式的所有根都严格位于复平面的左半部分，则线性系统是稳定的。
+也就是说，它们的实部都严格小于零。 然而，在现实世界的系统中，x
+的值永远不会被<strong>精确地</strong>知道，但是使用 x
+的区间而不是点值会严重抹黑结果，以至于你无法判断“我刚刚设计的系统是否稳定”这个问题的答案是否正确。
+方程系数通常也不是精确的数字，但它们在多项式的每次评估中只出现一次，因此它们不会导致比预期更多的边界扩展。
+最大的问题是所有 x 出现都被视为独立范围，而它们根本不独立。</p>
+<table border="2"><tr><td bgcolor="lightblue"><p>多项式对于我们来说太有用了，不能容忍这种信息丢失。 unum 环境应包括在
+g-layer
+中执行的融合多项式例程，并提供尽可能严格的求值，并且用户只需提交系数，而不必弄清楚例程如何或为何工作。</p>
+</td></tr></table><p>作者惊讶地发现，理想多项式求值问题已经存在了多久而没有得到解决：自从拉蒙·摩尔引入传统区间算术以来，至少已有六十年了。
+IBM 尝试使用名为 ACRITH 的迭代包来处理该问题，该包使用 Kulisch
+的完全累加器来减轻错误，但并不能消除错误。
+时不时会出现一篇文章或博士论文，展示一种通过操作重新排序的各种组合将误差减少
+25% 左右的方法。
+与许多有关数值分析的文献一样，这是一种“我们的方法是糟透了，但是比以前的好些”的方法，它是在削弱而不是解决问题。
+也许这个问题之前没有被解决的原因是人们使用的是浮点数或传统的区间，而不是像
+unums
+这样的表示形式，这种表示形式对开闭端点很谨慎，并正确地表示实数范围而不是样本点。</p>
+<p>无论如何，<strong>这里首次提出了一种在不丢失任何信息的情况下评估具有区间参数的多项式的通用方法</strong>。
+<strong>polyg</strong>[coeffsg, xg] 函数的代码位于附录 D.7 中。 从常数到
+<span class="math notranslate nohighlight">\(x^n\)</span> 的系数列表是一般区间 coeffsg 的集合。 输入参数是一个一般区间
+xg。 ubox 方法可以自动避免依赖性问题。</p>
+<p>从一般的二次开始，这样代数式更容易阅读。 对于实数 x0 ，方程
+<span class="math notranslate nohighlight">\(a + b x + c x^2\)</span>
+始终可以重新排列如下，其中参数的幂以蓝色显示，以便更容易看出右侧也是一个二次方程：</p>
+<div class="figure align-default" id="id22">
+<img alt="_images/image-20230630163752785.png" src="_images/image-20230630163752785.png" />
+<p class="caption"><span class="caption-number">Fig. 285 </span><span class="caption-text">image-20230630163752785</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+</div>
+<p>换句话说，x 中的二次方程始终可以写成 x - x0 的二次方程。
+这对任意次数的多项式都成立。 一种方法是将左侧的 x 替换为 ((x - x0 ) + x0
+) 并展开结果，然后收集 (x - x0) 的相似幂。
+（我们正在努力避开微积分并坚持使用高中代数，但微积分提供了一种不同的方式来思考这个问题：关于
+x0 的有限项数泰勒级数）这里没有什么新内容；
+数百年前，霍纳就使用了这种方法。
+为了帮助理解这个模式，以下是如何将五次多项式
+<span class="math notranslate nohighlight">\(a + bx + c x^2 + d x^3 + e x^4 + f x^5\)</span> 表示为 (x - x0)
+中的多项式，为了便于阅读, 使用了一些英文单词如“times”和“plus”。</p>
+<div class="figure align-default" id="id23">
+<img alt="_images/image-20230630164306374.png" src="_images/image-20230630164306374.png" />
+<p class="caption"><span class="caption-number">Fig. 286 </span><span class="caption-text">image-20230630164306374</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+</div>
+<p>也许读者熟悉帕斯卡三角形，其中每个数字都是其上面两个数字的总和。
+蓝色对角线显示重写多项式中的系数来自何处。</p>
+<div class="figure align-default" id="id24">
+<img alt="_images/image-20230630165017634.png" src="_images/image-20230630165017634.png" />
+<p class="caption"><span class="caption-number">Fig. 287 </span><span class="caption-text">image-20230630165017634</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+</div>
+<p>请注意，每个新系数最多使用 a、b、c 一次。
+这意味着它们可以在不丢失信息的情况下进行计算。 新系数可以在计算机的
+g-layer 中精确计算。 那么这种转变有什么用呢？
+该变换使我们能够移动多项式的“原点”。 关于原点，以下是当 x
+的系数为正数时，x 的每个幂的表现：</p>
+<div class="figure align-default" id="id25">
+<img alt="_images/image-20230630165514987.png" src="_images/image-20230630165514987.png" />
+<p class="caption"><span class="caption-number">Fig. 288 </span><span class="caption-text">image-20230630165514987</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+</div>
+<p>如果系数是负数，上图就上下颠倒</p>
+<div class="figure align-default" id="id26">
+<img alt="_images/image-20230630165621709.png" src="_images/image-20230630165621709.png" />
+<p class="caption"><span class="caption-number">Fig. 289 </span><span class="caption-text">image-20230630165621709</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+</div>
+<p>如果多项式中的所有项都以相同的方式斜率，那么评估区间只需评估其端点即可。
+当它们的斜率不同时，依赖性问题可能会因将斜率上升项与斜率下降项相加而出现。
+远离原点，较高的幂决定了多项式的斜率，而区间评估又只是端点处的评估。
+原点附近高次幂的影响较小，这意味着函数越接近原点，其行为越受最低阶项的支配。</p>
+<p><strong>读者的练习</strong>：对于本节开头所示的二次方程
+<span class="math notranslate nohighlight">\(y = 1 + 2 x + x^2\)</span>，找到产生琥珀色的开区间 x = (-2, -1.5) 和
+(-1.5, -1) 的每一项的斜率 彩色边界。 然后说明为什么依赖问题不影响区间 x
+= (-2.5, -2)</p>
+<p>根据 (x - x0)
+的幂重写多项式的技巧让我们可以使用任何区间的左端点或右端点作为原点。
+然后，通过细分 g-layer
+中的区间，区间总是可以足够小以使得线性项决定多项式的斜率，或者足够小以使得依赖性问题小于最小
+ULP。
+最一种可能性至关重要：多项式的最大值或最小值可能出现在无理数处，这将导致试图追踪它会进入无限循环。
+当确定有限精度 u-layer 结果时，算法就会停止。 以下是评估多项式 p(x)
+的过程的一般方案，其中 x 是一般区间。</p>
+<div class="figure align-default" id="id27">
+<img alt="_images/image-20230701102400684.png" src="_images/image-20230701102400684.png" />
+<p class="caption"><span class="caption-number">Fig. 290 </span><span class="caption-text">image-20230701102400684</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+</div>
+<p>也许这种方法似乎没有出现在区间算术文献中的一个原因是它大量使用 ubound
+能力来表达端点是开放还是封闭。
+即使在理想情况下，传统的闭区间也会从多项式的严重错误表示开始。
+如果可以在没有依赖性问题的情况下评估它，则本节开头的二次方程将如下所示。
+下一页图中的琥珀色区域不应该出现，但由于间隔闭合，所以别无选择。</p>
+<div class="figure align-default" id="id28">
+<img alt="_images/image-20230701102553452.png" src="_images/image-20230701102553452.png" />
+<p class="caption"><span class="caption-number">Fig. 291 </span><span class="caption-text">image-20230701102553452</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+</div>
+<table border="2"><tr><td bgcolor="lightyellow"><p>传统区间算术忽略了“大于”和“大于或等于”之间的区别，因此从 –1.5 到 –0.5
+的整个范围看起来像一个根。</p>
+</td></tr></table><p>当然，传统的间隔使用单精度或双精度 IEEE
+浮点数作为端点，但这意味例如这样一个双精度的问题：</p>
+<blockquote>
+<div><p>函数<span class="math notranslate nohighlight">\(100^{-300}x^2\)</span>在哪里值为0</p>
+</div></blockquote>
+<p>得到一个完全无用范围很大，从 <span class="math notranslate nohighlight">\(-10^{138}\)</span> 到
+<span class="math notranslate nohighlight">\(10^{138}\)</span>的答案说会算出零。 <strong>完全不是那么回事</strong>。 在 unum
+环境中，无论精度有多低，都会很快返回正确答案“在点 x = 0
+处”，因为算术知道严格正数乘以严格正数就是严格正数，即使用低精度到瓦尔皮里来算也是这样。</p>
+<p>再来一个测试例子，三次多项式 <span class="math notranslate nohighlight">\(-\frac{1}{2}-x+x^2-\frac{1}{8}x^3\)</span>
+具有无理根和无理局部最小值和最大值。 将精度设置低到夸大依赖性问题，并以
+<span class="math notranslate nohighlight">\(2^{-1}\)</span>步长创建涵盖 [-2, 7] 的 ubox 列表：</p>
+<div class="figure align-default" id="id29">
+<img alt="_images/image-20230701113517146.png" src="_images/image-20230701113517146.png" />
+<p class="caption"><span class="caption-number">Fig. 292 </span><span class="caption-text">image-20230701113517146</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+</div>
+<p>这是最草率的方法：霍纳规则应用于未融合的 unum 算术。</p>
+<div class="figure align-default" id="id30">
+<img alt="_images/image-20230701113607540.png" src="_images/image-20230701113607540.png" />
+<p class="caption"><span class="caption-number">Fig. 293 </span><span class="caption-text">image-20230701113607540</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+</div>
+<p>在左侧，三次项占主导地位，因此不存在依赖性问题。
+对于所示图的其余部分，不精确区间的多项式中的斜率上升和斜率下降项存在冲突，从而产生相当多的信息丢失。
+宽松的bound与精确点上更紧的求值交替出现，精确点上求值唯一的信息损失是以低精度表达精确值。
+在这个例子里面，宽松的bound在如此低的精度下，已经算是尽可能好地定位了三次方的根。
+然而，它在寻找函数的局部最小值和局部最大值方面做得很糟糕，我们想要的是一个
+ULP 宽度（以尽可能小的 ULP 宽度）的值。 下面是使用 <strong>polyg</strong>
+对同一个立方函数求值的样子：</p>
+<div class="figure align-default" id="id31">
+<img alt="_images/image-20230703105722760.png" src="_images/image-20230703105722760.png" />
+<p class="caption"><span class="caption-number">Fig. 294 </span><span class="caption-text">image-20230703105722760</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
+</div>
+<p>这才是更像样的结果。用{2，2}环境求多项式不可能表示得更精确了。</p>
+<p>其他的多项式间隔算法最头痛的是在根的附近，特别是有多重根。比如<span class="math notranslate nohighlight">\(8(x-1)^3\)</span>在<span class="math notranslate nohighlight">\(x=1\)</span>点有三重根。函数在这里的是如此平坦（沿x轴），以至于传统的方式都很难找到正确的跨越点。展开这个函数为</p>
+<div class="math notranslate nohighlight" id="equation-16-avoid-interval-arith-pitfalls-2">
+<span class="eqno">(67)<a class="headerlink" href="#equation-16-avoid-interval-arith-pitfalls-2" title="Permalink to this equation">¶</a></span>\[8(x-1)^3=-8+24x-24x^2+8x^3\]</div>
+<p>按展开式表示，那么三重根就不是那么明显看出来了。用Horner规则计算机求解，实际上是当成<span class="math notranslate nohighlight">\(-8+x(24+x(-24+x(8)))\)</span>来计算。简单地用unum数，遵循Horner规则求解区间-1到3得到下面的图</p>
+<div class="figure align-default" id="id32">
+<img alt="_images/image-20230703110837695.png" src="_images/image-20230703110837695.png" />
+<p class="caption"><span class="caption-number">Fig. 295 </span><span class="caption-text">image-20230703110837695</span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
+</div>
+<p>现在试试用<strong>polyg</strong>：</p>
+<div class="figure align-default" id="id33">
+<img alt="_images/image-20230703110921466.png" src="_images/image-20230703110921466.png" />
+<p class="caption"><span class="caption-number">Fig. 296 </span><span class="caption-text">image-20230703110921466</span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
+</div>
+<p>这显然在根的附近更精确。下面是放大多项式根x=1附近的求值的ubox图</p>
+<div class="figure align-default" id="id34">
+<img alt="_images/image-20230703111056446.png" src="_images/image-20230703111056446.png" />
+<p class="caption"><span class="caption-number">Fig. 297 </span><span class="caption-text">image-20230703111056446</span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>polyg</strong>函数是unum环境中找到可精确表示的根的最可靠的函数了。这也是unum算术解决其他方法都不能解决问题的一个实例。工程师现在总算可以回答“系统是否稳定”这一个问题了。答案依赖于对多项式的最紧密的求值。</p>
+</div>
+<div class="section" id="id6">
+<h2>16.6 其他融合的多次使用表示<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h2>
+<p>还有其他一下常用的情况，其中输入参数会出现多次的。决定如何在标准的unum环境中做是标准委员会应该考虑的。积累足够多的例子后可以总结出“十大最需要”的列表。下面是一些扩展前面提出的多项式求值器的一些事项</p>
+<ul class="simple">
+<li><p>多个变量的多项式，比如<span class="math notranslate nohighlight">\(x^3+3xy^2+y-9\)</span></p></li>
+<li><p>有理函数（两个多项式的比），比如 <span class="math notranslate nohighlight">\(\frac{1+x^3+x^7}{2-x+5x^6}\)</span></p></li>
+<li><p>有负幂次项的多项式，比如<span class="math notranslate nohighlight">\(\frac{3}{x^2}+\frac{1}{x}+2+x^4\)</span></p></li>
+</ul>
+<p>每一个都是不仅是给读者的练习，事实上更像一个课程的学期项目。基本的思想方法是一样的：在g-layer中精确地求端点的值，然后评估端点间开区间的值。如果后者的结果在端点结果中间，那么就完成了。否则就可能是依赖问题导致了更宽松的bound，
+或是函数在这个区间有局部最大和最小值的迹象。需要将这个区间按照最粗粒度的ULP做子分割，并添加在trials列表后。在中分点的值需要，在当前精度的u-layer中，并入已知的最大最小值范围。</p>
+<p>这个过程反复递归执行，知道所有的子区间都到了边界，（bounded）只要函数是连续的（或是有有限数量的非连续点，比如有理函数点或有负幂次项的多项式），这个过程就会在得到最紧边界结果的时候结束。</p>
+</div>
+</div>
+
+
+        </div>
+        <div class="side-doc-outline">
+            <div class="side-doc-outline--content"> 
+<div class="localtoc">
+    <p class="caption">
+      <span class="caption-text">Table Of Contents</span>
+    </p>
+    <ul>
+<li><a class="reference internal" href="#">16 避免区间算术陷阱</a><ul>
+<li><a class="reference internal" href="#id2">16.1 无用的错误界限</a></li>
+<li><a class="reference internal" href="#id3">16.3 依赖问题</a></li>
+<li><a class="reference internal" href="#id4">16.4 智能标准库例程</a></li>
+<li><a class="reference internal" href="#id5">16.5 无依赖性问题的多项式求值</a></li>
+<li><a class="reference internal" href="#id6">16.6 其他融合的多次使用表示</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+            </div>
+        </div>
+
+      <div class="clearer"></div>
+    </div><div class="pagenation">
+     <a id="button-prev" href="15_TheOtherKindOfError.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="P">
+         <i class="pagenation-arrow-L fas fa-arrow-left fa-lg"></i>
+         <div class="pagenation-text">
+            <span class="pagenation-direction">Previous</span>
+            <div>15. 另外一种误差</div>
+         </div>
+     </a>
+     <a id="button-next" href="17_meaning_of_solve_equ.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
+         <i class="pagenation-arrow-R fas fa-arrow-right fa-lg"></i>
+        <div class="pagenation-text">
+            <span class="pagenation-direction">Next</span>
+            <div>17 “解”方程到底是什么意思？</div>
+        </div>
+     </a>
+  </div>
+        
+        </main>
+    </div>
+  </body>
+</html>

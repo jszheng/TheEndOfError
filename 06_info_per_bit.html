@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>6 每个比特的信息 &#8212; THE END of ERROR - Unum Computing 0.1 documentation</title>
+
+    <link rel="stylesheet" href="_static/material-design-lite-1.3.0/material.blue-deep_orange.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx_materialdesign_theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fontawesome/all.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/d2l.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/d2l.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="7 定长的unum存储" href="07_fixed_size_unum_storage.html" />
+    <link rel="prev" title="5. 隐藏的草稿本和三个层次" href="05_hidden_scratchpads_3_layers.html" /> 
+  </head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header mdl-layout__header--waterfall ">
+    <div class="mdl-layout__header-row">
+        
+        <nav class="mdl-navigation breadcrumb">
+            <a class="mdl-navigation__link is-active">6 每个比特的信息</a>
+        </nav>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+        
+<form class="form-inline pull-sm-right" action="search.html" method="get">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+        <label id="quick-search-icon" class="mdl-button mdl-js-button mdl-button--icon"  for="waterfall-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q"  id="waterfall-exp" placeholder="Search" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </div>
+      </div>
+      <div class="mdl-tooltip" data-mdl-for="quick-search-icon">
+      Quick search
+      </div>
+</form>
+        
+<a id="button-show-source"
+    class="mdl-button mdl-js-button mdl-button--icon"
+    href="_sources/06_info_per_bit.rst.txt" rel="nofollow">
+  <i class="material-icons">code</i>
+</a>
+<div class="mdl-tooltip" data-mdl-for="button-show-source">
+Show Source
+</div>
+        </nav>
+    </div>
+    <div class="mdl-layout__header-row header-links">
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation">
+          
+              <a  class="mdl-navigation__link" href="https://github.com/jszheng/TheEndOfError">
+                  <i class="fab fa-github"></i>
+                  Github
+              </a>
+      </nav>
+    </div>
+</header><header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_TheOriginalSin.html">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_hidden_scratchpads_3_layers.html">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_comparison_operations.html">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_mul_div.html">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_other_important_unary_ops.html">12 其他重要的一元运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_fused_operations.html">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_TheOtherKindOfError.html">15. 另外一种误差</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_avoid_interval_arith_pitfalls.html">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_meaning_of_solve_equ.html">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_permission_to_guess.html">18 准许猜测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_pendulums_done_correctly.html">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_calculus_evil.html">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_end_of_error.html">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+        <main class="mdl-layout__content" tabIndex="0">
+
+	<script type="text/javascript" src="_static/sphinx_materialdesign_theme.js "></script>
+    <header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_TheOriginalSin.html">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_hidden_scratchpads_3_layers.html">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_comparison_operations.html">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_mul_div.html">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_other_important_unary_ops.html">12 其他重要的一元运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_fused_operations.html">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_TheOtherKindOfError.html">15. 另外一种误差</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_avoid_interval_arith_pitfalls.html">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_meaning_of_solve_equ.html">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_permission_to_guess.html">18 准许猜测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_pendulums_done_correctly.html">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_calculus_evil.html">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_end_of_error.html">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+
+    <div class="document">
+        <div class="page-content" role="main">
+        
+  <div class="section" id="id1">
+<h1>6 每个比特的信息<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><img alt="image-20200730175908923" src="_images/image-20200730175908923.png" /></p></th>
+<th class="head"><p><img alt="image-20200730175929594" src="_images/image-20200730175929594.png" /></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>亚伯拉罕
+林肯，低准确度但是高精度，149,47
+2个像素。多数人不知道这是在画谁。</p></td>
+<td><p>林肯头像高准确度，但
+是低精度。只有432个像素，但是马上
+就知道是谁。做对比做精细更重要。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id2">
+<h2>6.1 信息是不确定性的倒数<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>还记得关于传统区间算术浪费位的抱怨吗?
+两个固定大小的浮点数来表示边界，那么要么你有一个紧边界（这表示两个数字中的大部分位相同，因此是冗余的），或者边界是松散的（这意味着两个浮点的精度都超过了合理需要的范围）。Unums和ubound不仅比传统的间隔更有效，而且还提供了一种自动或者根据程序员的要求来管理信息与存储比率的方法</p>
+<table border="2"><tr><td bgcolor="lightblue"><p>信息或答案质量与边界的宽度成反比。如果您对答案没有任何边界，则您的信息为零，因为答案的边界为[-∞,
++∞] ，</p>
+</td></tr></table><p>我们使用计算机为我们提供有关某些东西的信息，无论是从现在开始三天下雨的机会还是投资组合的估计价值，或者是在附近可以找到好的咖啡的地方。</p>
+<p>对于只需要处理整数（或定点）问题的计算机人员来说，用实数来衡量信息的想法似乎是奇怪的，他们的问题的结果要么获得答案，要么就没有答案。
+大多数计算机科学学位是通过解决整数世界问题的作业，例如“找到在棋盘上安排八位国际象棋皇后的方式，使他们彼此之间不能互相攻击。”</p>
+<p>涉及实数的程序需要跟踪并最大化有关答案的信息。
+他们还需要优化获得的信息与计算时间比。
+这通常意味着优化信息与比特数的比率，因为移动比特占了大部分时间。
+熟悉克劳德·香农（Claude
+Shannon）对“信息”的定义的读者可能会注意到概念上的相似之处。</p>
+<p>我们需要在军械库补充更多工具，以使得计算机自动或让用户来选择运行速度与精度的权衡。</p>
+</div>
+<div class="section" id="ubound-unification-ulp">
+<h2>6.2 把ubound归一化(unification)到一个ULP<a class="headerlink" href="#ubound-unification-ulp" title="Permalink to this heading">¶</a></h2>
+<p>假设我们使用的是{4，6}环境（能够支持IEEE双精度），并且unum计算的结果是间隔(12.03，13.98)，表示为ubound。
+由于ubound是一对unum，因此需要122位存储空间。
+这比传统的区间算术更紧凑，但是对于表达一个“大约在十二到十四之间”的值它仍然占用了太多位了。
+答案信息量是边界宽度的倒数，约为：</p>
+<div class="math notranslate nohighlight" id="equation-06-info-per-bit-0">
+<span class="eqno">(27)<a class="headerlink" href="#equation-06-info-per-bit-0" title="Permalink to this equation">¶</a></span>\[\frac{1}{14-12}=\frac{1}{2}\]</div>
+<p>所以我们可以优化这个ubound来只使用一个unum去表示(12,
+14)区间，并接受这个答案信息的损失。这共使用了17比特。从122比特到17比特意味着每比特信息量提升了7倍。</p>
+<p>对于中间计算结果放松ubound可能不是个太好的主意，但是当我们把最后答案放进主存储器或者呈现给用户作为最后答案的时候，
+提升每比特信息比是有意义的。但是跟浮点舍入不同的是放松ubound边界应该永远是<strong>显式</strong>的，<strong>可选</strong>的命令</p>
+<p>在一个理想的unum计算环境中，归一化的功能应该全部硬件实现使得它足够快。这里的原型是转换为等效电路的逻辑描述。</p>
+</div>
+<div class="section" id="unification">
+<h2>6.3 原型中的Unification<a class="headerlink" href="#unification" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="id3">
+<h3>6.3.1 有损压缩的可选项<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<p>在原型中<strong>unify</strong>[ub]函数试图找出一个unum能够包含ubound
+<strong>ub</strong>表示的区间，如果能的话，否则ub不做任何更改就返回。结果要么是精确的，要么就是一ULP宽。如果不精确，本方法是找到找到一个ULP用来描述分离的两个边界，将每个边界表示为ULP值的倍数，如果它们的差别不恰好是一个ULP，将ULP大小翻倍。最终我们可以找到一个单独的ULP间隔，可以用一个不精确的unum表示。我们不能unify一个跨越0、±1、或±2或±3的范围，因为最粗的unum数不包括这些点，有特殊代码来处理这个情况。<strong>unify</strong>代码见附录C.6。</p>
+<p>在构造unum算术运算时，通常对左边界和右边界是分开计算的。
+unify例程可以是最后一步，它可以发现是否有可能将答案无损压缩成单个unum。
+例如，在计算开区间(1，4)的平方根时，该算法会找到左右端点的平方根，用ubit将它们标记为开放，并最初将其存储为一个ubound对<span class="math notranslate nohighlight">\(\lbrace \hat{1}+ ubitmask， \hat{2}-ubitmask \rbrace\)</span>。
+但是，该ubound对代表与<span class="math notranslate nohighlight">\(\lbrace \hat{1} + ubitmask \rbrace\)</span>
+相同的常规间隔，因为ULP宽度为1。无损压缩无需用户允许，unum算术应尽可能自动执行此操作。</p>
+<p>作为原型的一个示例，我们可以unify一个间隔(23.1 23.9)的ubound。
+在{3，4}环境中，需要57位来表示两部分的ubound：</p>
+<div class="figure align-default" id="id6">
+<img alt="_images/image-20200804161609983.png" src="_images/image-20200804161609983.png" />
+<p class="caption"><span class="caption-number">Fig. 86 </span><span class="caption-text">image-20200804161609983</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>函数<strong>nbits</strong>[u]计算ubound u的位数,
+包含一个或两个unum数的总比特数，和额外一比特指示是单个或是一对unum表示的。(
+57 = 2*28+1 )</p>
+<div class="figure align-default" id="id7">
+<img alt="_images/image-20200804162316853.png" src="_images/image-20200804162316853.png" />
+<p class="caption"><span class="caption-number">Fig. 87 </span><span class="caption-text">image-20200804162316853</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p>现在我们计算<span class="math notranslate nohighlight">\(\textbf{unify} \left [ \lbrace \hat{23.1}, \hat{23.9} \rbrace \right ]\)</span>,
+结果是一个数的ubound，需要的比特数少好多</p>
+<div class="figure align-default" id="id8">
+<img alt="_images/image-20230615143639753.png" src="_images/image-20230615143639753.png" />
+<p class="caption"><span class="caption-number">Fig. 88 </span><span class="caption-text">image-20230615143639753</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<p>看上去像一个16比特的数，多出一比特是表征只有一个数表示的范围</p>
+<div class="figure align-default" id="id9">
+<img alt="_images/image-20230615143826644.png" src="_images/image-20230615143826644.png" />
+<p class="caption"><span class="caption-number">Fig. 89 </span><span class="caption-text">image-20230615143826644</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<p>这个答案的信息量掉了些，因为表征的边界范围宽了些。范围扩大的比例是<span class="math notranslate nohighlight">\(\frac{24-23}{23.9-23.1}=1.25\)</span>,
+所以信息量减小比例是倒数<span class="math notranslate nohighlight">\(\frac{23.9-23.1}{24-23}=0.8\)</span>，约有20%的减少。但是表示的比特数目提高了<span class="math notranslate nohighlight">\(\frac{57}{17}=3.35\cdots\)</span>。所以每一比特表征的信息量提升比是<span class="math notranslate nohighlight">\(0.8 \times 3.35 \cdots = 2.68 \cdots\)</span></p>
+<p>尽管unum的哲学是尽量自动地做误差控制，但是总是有个选项是切换的人工选择，因为有关精度和代价(包括存储容量，能耗，执行时间)的折中可能只能人来判断，而且不同应用也不一样。有一个简单的方法给计算机一个指导原则而不是用户在每一个点都要人工做决定。</p>
+</div>
+<div class="section" id="id4">
+<h3>6.3.2 智能归一化<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
+<p>unum的环境中可以定义一个policy决定什么时候可以把一个准确的bound换成一个更粗一点的bound来达到省存储或带宽的目的。比如policy可以是每比特信息量提升比例超过<span class="math notranslate nohighlight">\(r\)</span>（可以是自动或者程序员手动设置这个门限）才值得去做。这种智能其实也是人手工计算判断时候用的一种方法。
+这个函数原型是<span class="math notranslate nohighlight">\(\textbf{smartunify}[u,r]\)</span>,
+其中<span class="math notranslate nohighlight">\(u\)</span>是ubound，<span class="math notranslate nohighlight">\(r\)</span>是提升比例门限值。</p>
+<p>如果比例设为1.0表示我们要得到同样或是更好的每比特信息。设为0.25表明我们接受下降到四分之一的信息量。使用1.5则是要求必须提升到1.5倍的信息量。</p>
+<p>也可以定义其他更复杂的policy。</p>
+<p>下面样例要求每比特信息量提升3倍才转换，结果是不改变原来的ubound,
+因为找不到提升那么多的简化方法。</p>
+<div class="figure align-default" id="id10">
+<img alt="_images/image-20230615150914021.png" src="_images/image-20230615150914021.png" />
+<p class="caption"><span class="caption-number">Fig. 90 </span><span class="caption-text">image-20230615150914021</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<p>而如果放低要求到2.5就能找到，如下</p>
+<div class="figure align-default" id="id11">
+<img alt="_images/image-20230615150940207.png" src="_images/image-20230615150940207.png" />
+<p class="caption"><span class="caption-number">Fig. 91 </span><span class="caption-text">image-20230615150940207</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+<p>原型定义的<strong>smartunify</strong>函数源代码可以在附录C.6找到。读者可以想想有没有其他的policy来管理误差和最大化每比特信息量。比如可以还是保留两个端点的bound，但是端点数用更少的比特来表示。比如在{3,
+5}环境中，一个表示(23.1, 23.9)的ubound要求每个端点用完整的32bit
+fraction。但是端点间相差的距离远大过于这么精细的小数位表示，以至于可以考虑放松这个bound为(23.0625,
+23.9375),
+其端点的小数仅仅需要用8bit表示。这样使得总存储从91bit变成了43bit，提升比为2.1但是信息量只放松了9%，所以总的每比特信息量提升了1.9倍。</p>
+<p>你可以想象把提升门限r定义为环境，跟esizesize和fsizesize一样。就像压缩音乐是视频，有时候你需要小的存储容量，有时候又需要高保真度。程序员还是需要做一些初始的决定，然后计算机根据指导原则做最艰苦的工作来管理如何计算。</p>
+<p>有时候非常激进的要每一步操作后都做unification看上去很像significance
+arithmetic，只是不像significance
+arithmetic那么有局限(不能表示左右端点为非精确数)。这么做对于有限的一些场景，比如需要输入数据而且输出前只执行一小段计算，通常来讲，最好是等到最好计算结束后再来看看有没有机会来提升每比特的信息。</p>
+</div>
+<div class="section" id="id5">
+<h3>6.3.3 特别处理“几乎没有”和“几乎无穷大”<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
+<p>尽管任何一个环境中只有一种方式表达精确的<span class="math notranslate nohighlight">\(-\infty\)</span>和<span class="math notranslate nohighlight">\(+\infty\)</span>,
+但是有无穷种方法表达一个下界为<span class="math notranslate nohighlight">\(-\infty\)</span>或是上界<span class="math notranslate nohighlight">\(+\infty\)</span>的开区间。这个原型代码中，为了节省我们使用了最紧凑的表达方式，定义为常量<strong>negopeninfu</strong>和<strong>posopeninfu</strong>。比浮点数处理无穷代价更少。</p>
+<p>相对应的有一个表示几乎是0的开区间，使用最小的unum表达。负数的上限是unum
+= (-1, 0)，定义为<strong>negopenzerou</strong>。相对的正数下限是unum = (0, 1),
+也就是<strong>ubitmask</strong>表示的数。</p>
+<p>对于一个环境，上面的常数对应的unum就是，可以在setup时候就产生出来：</p>
+<div class="figure align-default" id="id12">
+<img alt="_images/image-20230615160607032.png" src="_images/image-20230615160607032.png" />
+<p class="caption"><span class="caption-number">Fig. 92 </span><span class="caption-text">image-20230615160607032</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+<p>这些值只需要在utag左边添加三比特 （utag= 1 0s 0s）</p>
+<p>例外是如果环境是{0, 0}, 那么<strong>negopeninfu</strong> = (<span class="math notranslate nohighlight">\(-\infty\)</span>,
+<span class="math notranslate nohighlight">\(-2\)</span>), 而<strong>posopeninfu</strong> = (<span class="math notranslate nohighlight">\(2\)</span>, <span class="math notranslate nohighlight">\(+\infty\)</span>)</p>
+<table border="2"><tr><td bgcolor="lightgray"><p>读者的练习: 上面表中utag左边三比特是什么？</p>
+</td></tr></table><p>假设我们想表达一个范围(-0.3, <span class="math notranslate nohighlight">\(\infty\)</span>), 在一个中等精度的环境{3,
+4}中.
+一个比较昂贵的方式表达右侧开无限空间的方式是使用<strong>maxreal</strong>，加上<strong>ubitmask</strong>，
+表示的unum是</p>
+<div class="math notranslate nohighlight" id="equation-06-info-per-bit-1">
+<span class="eqno">(28)<a class="headerlink" href="#equation-06-info-per-bit-1" title="Permalink to this equation">¶</a></span>\[（680554349248159857271492153870877982720， \infty）\]</div>
+<p>这个unum消耗33比特附加8比特utag.
+我们最终丢弃了左端点的很大的数，只用了右端点做ubound的右端点。如果我们改用<strong>posopeninfu</strong>，
+那么只需要utag加三比特。</p>
+<p>所以最后的压缩表示方法表示ubound :
+{<span class="math notranslate nohighlight">\(-\hat{0.3}, \textbf{posopeninfu}\)</span>}是</p>
+<div class="figure align-default" id="id13">
+<img alt="_images/image-20230615162105888.png" src="_images/image-20230615162105888.png" />
+<p class="caption"><span class="caption-number">Fig. 93 </span><span class="caption-text">image-20230615162105888</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+<p>整个ubound只需要39比特来表示。</p>
+</div>
+</div>
+<div class="section" id="ubound">
+<h2>6.4 ubound能比浮点更省空间吗？<a class="headerlink" href="#ubound" title="Permalink to this heading">¶</a></h2>
+<p>前面我们提到unum通常比浮点更省存储空间。那么ubound呢，有很大可能是需要两个unum而不是一个unum，那么是否有希望比一个定长浮点更省呢？而且假设不常去做unification。我们先来看unum对比float的存储需求对比。</p>
+<p>你也许会猜想实际应用中大多数都是不精确数，所以常常需要用最长的比特数表示值和utag，结果会占用比float更多空间。其实不然，原因有以下5个。</p>
+<p><strong>原因1：指数位浪费</strong>。浮点数中的指数在实际计算中常常是过度使用了，unum通常会用更少的指数位。
+即使是单精度IEEE浮点有85个数量级的跨度，而你在什么样的程序中会看到有这样的动态范围的使用呢？如果一个单精度的计算值范围持续在-500到+500中，你只需要4bit指数。保持在这个范围的数可以节省4bit，如果是双精度浮点节省7bit，四精度浮点节省11比特。</p>
+<p><strong>原因2：准确值没有去掉尾部的0</strong>。对于完全随机的准确数，最低比特有50%可能性为0，
+25%可能性最低两比特为0，
+以此推演平均去掉尾部0就可以节省<span class="math notranslate nohighlight">\(\frac{1}{2^1}+\frac{2}{2^2}+\frac{3}{2^3}+\cdots=2\)</span>bits</p>
+<p>就上面两条就可以挣回添加utag的开销。</p>
+<p><strong>原因3：常用的数长度短</strong>。时间使用中的计算中常使用小的整数和简单的分数。翻翻任何一本物理或是数学课本，你能看到很多像<span class="math notranslate nohighlight">\(-1, 3, \frac{1}{2}, 4\)</span>这样的数据。在公式中，比如计算动量<span class="math notranslate nohighlight">\(\frac{1}{2}mv^2\)</span>中的<span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>.
+传统的浮点计算使用64比特表示1.0就有相当多的浪费：</p>
+<div class="figure align-default" id="id14">
+<img alt="_images/image-20230615164623489.png" src="_images/image-20230615164623489.png" />
+<p class="caption"><span class="caption-number">Fig. 94 </span><span class="caption-text">image-20230615164623489</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+<p>而unum中存储1.0只需要占用3bit 0，0，1。在一个支持到双精度的{4,
+6}的环境中，1.0只需要15比特表示:</p>
+<div class="figure align-default" id="id15">
+<img alt="_images/image-20230615164813866.png" src="_images/image-20230615164813866.png" />
+<p class="caption"><span class="caption-number">Fig. 95 </span><span class="caption-text">image-20230615164813866</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+<p>unum在表达小整数乘2的幂次的数是很简洁的，这种数在计算中比你想象的要常见得多。</p>
+<p><strong>原因4：左边数消去节省</strong>。加减数通常导致小数左右两边的有效数消去。unum可以聪明地发现并压缩消去的比特。这依赖于计算，需要大量实验来了解能节省的量。</p>
+<p><strong>原因5：不做超额保险</strong>。计算有了bound保证，可以让用户能声明需要多少十进制位数，而不是为了保险要尽量多的数位。即便是半精度的浮点也在很多重要的应用都绰绰有余，比如勘探石油的地质数据，或是医学扫描图像。</p>
+<p>很多情况下，即使是一对unum总比特数也比用单精度浮点少。所以ubound在严格的算术中最终还是经济的方法。这个比较不是太公平，因为float通常产生错误的结果而unum给出正确的答案。许多情况下这已经不是需要折中了，我们可以用更少的比特得到更精确的结果。而且不要忘了到结果最终输出到外部存储器，通常我们会做unification到一个单一的unum，需要两个unum的ubound主要发生在芯片内部的计算。</p>
+<p>有些人认为解决舍入误差的方法是推进四精度的硬件实现。那是一个错误的方向，会双倍增加每个操作的能量，功耗，带宽和存储占用。而且还是不能给出计算最终结果的信息丢失的度量。更有意思的是走另外一个方向，问：</p>
+<p>到底多小的unum字串还能用于实数的计算上。</p>
+</div>
+</div>
+
+
+        </div>
+        <div class="side-doc-outline">
+            <div class="side-doc-outline--content"> 
+<div class="localtoc">
+    <p class="caption">
+      <span class="caption-text">Table Of Contents</span>
+    </p>
+    <ul>
+<li><a class="reference internal" href="#">6 每个比特的信息</a><ul>
+<li><a class="reference internal" href="#id2">6.1 信息是不确定性的倒数</a></li>
+<li><a class="reference internal" href="#ubound-unification-ulp">6.2 把ubound归一化(unification)到一个ULP</a></li>
+<li><a class="reference internal" href="#unification">6.3 原型中的Unification</a><ul>
+<li><a class="reference internal" href="#id3">6.3.1 有损压缩的可选项</a></li>
+<li><a class="reference internal" href="#id4">6.3.2 智能归一化</a></li>
+<li><a class="reference internal" href="#id5">6.3.3 特别处理“几乎没有”和“几乎无穷大”</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ubound">6.4 ubound能比浮点更省空间吗？</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+            </div>
+        </div>
+
+      <div class="clearer"></div>
+    </div><div class="pagenation">
+     <a id="button-prev" href="05_hidden_scratchpads_3_layers.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="P">
+         <i class="pagenation-arrow-L fas fa-arrow-left fa-lg"></i>
+         <div class="pagenation-text">
+            <span class="pagenation-direction">Previous</span>
+            <div>5. 隐藏的草稿本和三个层次</div>
+         </div>
+     </a>
+     <a id="button-next" href="07_fixed_size_unum_storage.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
+         <i class="pagenation-arrow-R fas fa-arrow-right fa-lg"></i>
+        <div class="pagenation-text">
+            <span class="pagenation-direction">Next</span>
+            <div>7 定长的unum存储</div>
+        </div>
+     </a>
+  </div>
+        
+        </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>15. 另外一种误差 &#8212; THE END of ERROR - Unum Computing 0.1 documentation</title>
+
+    <link rel="stylesheet" href="_static/material-design-lite-1.3.0/material.blue-deep_orange.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx_materialdesign_theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fontawesome/all.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/d2l.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/d2l.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="16 避免区间算术陷阱" href="16_avoid_interval_arith_pitfalls.html" />
+    <link rel="prev" title="Part 2 - 一种新的解决方法 Ubox" href="Part2.html" /> 
+  </head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header mdl-layout__header--waterfall ">
+    <div class="mdl-layout__header-row">
+        
+        <nav class="mdl-navigation breadcrumb">
+            <a class="mdl-navigation__link is-active">15. 另外一种误差</a>
+        </nav>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+        
+<form class="form-inline pull-sm-right" action="search.html" method="get">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+        <label id="quick-search-icon" class="mdl-button mdl-js-button mdl-button--icon"  for="waterfall-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q"  id="waterfall-exp" placeholder="Search" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </div>
+      </div>
+      <div class="mdl-tooltip" data-mdl-for="quick-search-icon">
+      Quick search
+      </div>
+</form>
+        
+<a id="button-show-source"
+    class="mdl-button mdl-js-button mdl-button--icon"
+    href="_sources/15_TheOtherKindOfError.rst.txt" rel="nofollow">
+  <i class="material-icons">code</i>
+</a>
+<div class="mdl-tooltip" data-mdl-for="button-show-source">
+Show Source
+</div>
+        </nav>
+    </div>
+    <div class="mdl-layout__header-row header-links">
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation">
+          
+              <a  class="mdl-navigation__link" href="https://github.com/jszheng/TheEndOfError">
+                  <i class="fab fa-github"></i>
+                  Github
+              </a>
+      </nav>
+    </div>
+</header><header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_TheOriginalSin.html">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_hidden_scratchpads_3_layers.html">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_info_per_bit.html">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_comparison_operations.html">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_mul_div.html">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_other_important_unary_ops.html">12 其他重要的一元运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_fused_operations.html">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">15. 另外一种误差</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_avoid_interval_arith_pitfalls.html">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_meaning_of_solve_equ.html">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_permission_to_guess.html">18 准许猜测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_pendulums_done_correctly.html">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_calculus_evil.html">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_end_of_error.html">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+        <main class="mdl-layout__content" tabIndex="0">
+
+	<script type="text/javascript" src="_static/sphinx_materialdesign_theme.js "></script>
+    <header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_TheOriginalSin.html">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_hidden_scratchpads_3_layers.html">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_info_per_bit.html">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_comparison_operations.html">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_mul_div.html">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_other_important_unary_ops.html">12 其他重要的一元运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_fused_operations.html">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">15. 另外一种误差</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_avoid_interval_arith_pitfalls.html">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_meaning_of_solve_equ.html">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_permission_to_guess.html">18 准许猜测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_pendulums_done_correctly.html">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_calculus_evil.html">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_end_of_error.html">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+
+    <div class="document">
+        <div class="page-content" role="main">
+        
+  <div class="section" id="id1">
+<h1>15. 另外一种误差<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="id2">
+<h2>15.1 采样误差<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>第 1 部分展示了如何避免舍入误差，只需让数字跟踪并表达其准确性。
+然而，这只解决了计算机处理实数相关问题的一半。
+另一种误差被称为离散误差、截断误差或采样误差。
+“采样误差”似乎是最具描述性的，因为它是对变化的事物进行采样而引起的误差，把它当做没有变化或是一个常数，只用一个值表示的问题。
+舍入误差是用不同的值替换正确的值，而采样误差是用单个值替换一系列值。
+统计学家使用“抽样误差”一词来描述观察样本而不是整个总体的问题。
+这也是我们在这里的意思，其中“总体”是某个数量可能变化的所有实数。</p>
+<p>举个例子，从一个非常古老的问题开始，古希腊人对此也感到好奇。
+如果我们现在所说的 <span class="math notranslate nohighlight">\(\pi\)</span> 的数是半径为 1 的圆盘的面积，那么
+<span class="math notranslate nohighlight">\(\pi\)</span> 的数值是多少？
+希腊人在微积分发明之前一千多年前就研究了这个问题，他们所使用的工具只是整数和分数以及加减乘除算术运算和初等几何。</p>
+<div class="figure align-default" id="id8">
+<img alt="_images/image-20230628123704043.png" src="_images/image-20230628123704043.png" />
+<p class="caption"><span class="caption-number">Fig. 240 </span><span class="caption-text">image-20230628123704043</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<p>例如，他们可以通过使用内界（蓝色菱形）和外界（红色正方形）轻松证明单位圆盘的面积大于
+2 且小于 4，该边界的相对宽度为 <span class="math notranslate nohighlight">\(\frac{4-2}{4+2}= 0.33\cdots\)</span>
+虽然精度较低，但至少它是一个可证明的界限，而不仅仅是一个估计。</p>
+<p>一位希腊数学家阿基米德使用边数较多的正多边形作为内边界和外边界。
+这确实产生了更严格的界限，但这确实是完成这项工作的困难方法，因为它需要评估平方根，而平方根本身又只能用有理数区间表示。</p>
+<p>跳到关于数值方法的现代教科书上说的我们求面积应该用的方式，并注意两种潜入的误差。由于单位圆上的
+<span class="math notranslate nohighlight">\(x^2 + y^2 =1\)</span>，描述四分之一圆的函数是</p>
+<div class="math notranslate nohighlight" id="equation-15-theotherkindoferror-0">
+<span class="eqno">(60)<a class="headerlink" href="#equation-15-theotherkindoferror-0" title="Permalink to this equation">¶</a></span>\[y = \sqrt{1-x^2}\]</div>
+<p>其中x处于[0, 1]范围。圆的面积是它面积的四倍</p>
+<div class="figure align-default" id="id9">
+<img alt="_images/image-20230628124800109.png" src="_images/image-20230628124800109.png" />
+<p class="caption"><span class="caption-number">Fig. 241 </span><span class="caption-text">image-20230628124800109</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<p>当您使用浮点数计算<span class="math notranslate nohighlight">\(\sqrt{1 - x^2}\)</span>
+时，会出现舍入错误，并且必须将答案向上或向下舍入到可表示的最接近的数字（作为浮点数）。</p>
+<p>水平洋红色线显示了四分之一圆的样子，具有夸大的浮点舍入误差（小数只有四位），但在
+x 轴上采样了大量点。 这表明舍入误差较高；
+四分之一圆（蓝色）的正确值被错误的浮点数（洋红色）替换。
+但抽样误差较小； 下图沿 x 轴采样了数百个点</p>
+<div class="figure align-default" id="id10">
+<img alt="_images/image-20230628125226648.png" src="_images/image-20230628125226648.png" />
+<p class="caption"><span class="caption-number">Fig. 242 </span><span class="caption-text">image-20230628125226648</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<p>正是舍入误差造成了半圆顶部附近非常锯齿状的近似值。
+我们可以使用洋红色边界通过将每个水平线段下方的面积相加来获得 <span class="math notranslate nohighlight">\(\pi\)</span>
+的近似值，但顶部的锯齿状部分并不能让我们对结果的正确性有太多信心。</p>
+<p>假设我们仅在 16 个等距点处对 x 轴进行采样，但以双精度精度计算函数。</p>
+<p>现在圆的计算看起来就像这组水平的橙色线。 每个橙色线段表示的 y
+值是一个常数，计算精度非常高，但错误地用作蓝色曲线上一系列值的替代值。
+这就是<em>抽样误差</em>。 现在，当 y 作为 x
+的函数（位于四分之一圆的右侧）快速变化时，误差最为明显。</p>
+<div class="figure align-default" id="id11">
+<img alt="_images/image-20230628125553996.png" src="_images/image-20230628125553996.png" />
+<p class="caption"><span class="caption-number">Fig. 243 </span><span class="caption-text">image-20230628125553996</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+<p>这两种方法显然都是荒谬的。 第一个在 x
+中使用了数千个样本点，但忽略了数值精度，只能以大约 6% 的精度找到 y。
+第二个使用过度的高精度来评估函数，但仅在 16
+个离散点对函数进行采样，这严重歪曲了附近点的函数值。
+在预算内平衡两个误差源–存储量和计算量–不是更有意义吗？</p>
+</div>
+<div class="section" id="id3">
+<h2>15.2 经典误差界限的本质令人非常不满意<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<p>估计函数 f(x)
+描述的曲线下面积的经典数值分析方法是用矩形近似形状并将其面积相加。</p>
+<p>“矩形规则”是将水平范围分成多个子区间，然后在每个子区间的样本点处计算 f
+以获得矩形的高度。
+将矩形面积相加即可估计总面积。一般来说，中点看起来是最好的猜测。
+中点猜测有多接近？ 下图显示了四分之一圆区域，用中点采样的矩形近似。</p>
+<div class="figure align-default" id="id12">
+<img alt="_images/image-20230628130320682.png" src="_images/image-20230628130320682.png" />
+<p class="caption"><span class="caption-number">Fig. 244 </span><span class="caption-text">image-20230628130320682</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+<p>面积之和乘以 4 为 3.14695…，它看起来接近我们已知的 <span class="math notranslate nohighlight">\(\pi\)</span> 值
+3.14159…，至少精确到三位小数。 但在不知道 <span class="math notranslate nohighlight">\(\pi\)</span>
+值的情况下，我们能否对误差得到数值边界？
+拿起任何数值分析文本，它会告诉您，使用矩形来估计函数 f(x) 下的面积（从 a
+到 b , 间隔为 h）的误差严格受以下公式限制：</p>
+<div class="math notranslate nohighlight" id="equation-15-theotherkindoferror-1">
+<span class="eqno">(61)<a class="headerlink" href="#equation-15-theotherkindoferror-1" title="Permalink to this equation">¶</a></span>\[error \le \frac{(b-a)h^2}{24} \left | f''(\xi ) \right |\]</div>
+<p>看看这个公式。
+假想您要将其实际输入计算器并找出数字误差有多大，<strong>给个数</strong>。
+我们知道a是0，我们知道b是1，我们知道h是1/16。 等等… 这个
+<span class="math notranslate nohighlight">\(f''(\xi)\)</span>是什么东西？ 你完全有权利问：“那玩意到底是什么？”
+它是函数(在本例中为 <span class="math notranslate nohighlight">\(\sqrt{1 - x^2}\)</span>
+)的二阶导数，而<span class="math notranslate nohighlight">\(\xi\)</span>是在a和b之间某个未指定点。为了计算二阶导数，我们首先必须了解微积分以找出函数
+<span class="math notranslate nohighlight">\(f''\)</span> 是什么，然后我们必须以某种方式找到该导数在 a 到 b
+范围内的最大可能绝对值。</p>
+<p>公式所提出的严格界限实际上并非如此，因为对于许多函数，包括四分之一圆示例，
+<span class="math notranslate nohighlight">\(|f '' (\xi)|\)</span> 可以大到无穷大。 无限大的界限根本就是… …没有界限。
+这就是为什么至今仍在教授的经典误差界限非常非常不令人满意。</p>
+<p>然而，有些人对表达式的其余部分感到安慰，他们推断“无论误差是什么，如果我使用两倍的样本点，它将使
+h 减半，并且因为误差与 <span class="math notranslate nohighlight">\(h^2\)</span> 成正比，这将使误差减小到四分之一大。”
+当然，只有当误差是有限的时，这才是令人欣慰的，因为无穷大的四分之一仍然是无限量的误差。
+如果答案随着样本点数量的增加而变化，那么如何知道样本点数量何时“足够”？
+<em>你不会知道</em>。</p>
+<table border="2"><tr><td bgcolor="lightyellow"><p>细化样本点做法是导致要求更快的超级计算机的一个缺乏依据的原因。
+计算科学家需要更多的采样点，试图减少采样误差，但不知道采样误差有多大。</p>
+</td></tr></table><p>粗采样的样本点的值通常计算到非常高的精度（单精度或双精度），来指望
+<span class="math notranslate nohighlight">\(h^2\)</span> 更小，从而减少（未知的）误差量。
+也可以采过多的样本点，这是另一种代价高昂的过度保险形式。</p>
+<p>当然，除了矩形法则之外，还有其他方法：梯形法则、辛普森法则、高斯求积法等等。
+每种方法都有一个“误差界”公式，该公式依赖于在感兴趣区域中的某个未知点处对函数求某阶导数，而该导数也可能是无限的，就像四分之一圆这个简单例子一样。
+许多常见的函数，比如那些有尖锐扭结的函数，甚至没有导数。</p>
+<p><em>我们可以做得比这更好，完全无需了解任何微积分</em></p>
+</div>
+<div class="section" id="ubox">
+<h2>15.3 Ubox方法<a class="headerlink" href="#ubox" title="Permalink to this heading">¶</a></h2>
+<table border="4"><tr><td bgcolor="lightblue"><p>定义: ubox 是 n 维空间中的一种形状，由 n 个 unum 的列表表示。</p>
+</td></tr></table><p>由于 unum 可以是精确的，也可以是不精确的，因此任何 ubox
+维度的宽度都可以为零（精确）或 1 ULP（不精确）。
+例如，在三维空间中，ubox
+可能看起来像一个点、一条不包括其端点的线段、一个不包括其周长的矩形或一个不包括其表面的矩形框，具体取决于有多少个
+尺寸准确。 Ubox 提供了 n 维空间的完美“平铺”，就像 unum
+完美地平铺实数轴一样。 unum 列表写在大括号 { } 内，例如
+{xu,yu}，在原型中它可能看起来像我们表达 ubound 的方式，如果我们使用二维
+ubox，则为 {xlowu,xhighu}。
+我们依靠上下文来显示哪个是哪个，但在理想的计算环境中，这两个概念会有不同的表示法。</p>
+<p>计算涉及实数问题的解意味着什么？
+与数学解不同，因此我们给它起了一个稍微不同的名称，即 <strong>c 解</strong>。</p>
+<table border="4"><tr><td bgcolor="lightblue"><p>定义: 在计算中，涉及实数的问题的 c 解是满足问题陈述的 ubox
+的最小完整集合。</p>
+</td></tr></table><p>乍一看这像是一个空洞的陈述，但<em>最小</em>和<em>完整</em>使其不同于计算上下文中“解决方案”一词的常见用法。
+接下来各节中的示例将清楚地表明大多数浮点计算与上述解决方案（c
+解决方案）的定义有何不同。可以将 <strong>c-solution</strong>
+中的“c”视为“计算的”或“完整的”。</p>
+<p>对于 ubox，有多种方法可以找到满足问题的完整但最小的 ubox 集。
+我们经常从试验 ubox 开始，并使用 unum 算术来确定它们是解决方案还是失败。
+当问题是一维或二维时，我们可以描绘反映开区间的圆边，如下页表所示：</p>
+<div class="figure align-default" id="id13">
+<img alt="_images/image-20230628135300936.png" src="_images/image-20230628135300936.png" />
+<p class="caption"><span class="caption-number">Fig. 245 </span><span class="caption-text">image-20230628135300936</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+<p>当已知答案集是连续的时候，一种策略是找到一个作为解的
+ubox，检查其所有邻居，并将它们分类为解或非解类别。
+如果使用四个算术运算计算问题并且不存在除以零的情况，则连接的输入集在计算过程中保持连接，并且通过检查邻居，我们最终找到给定精度的每个可能的解。
+另一种策略是尝试所有可能的 ubox，并开始修剪掉那些失败的。
+两种方法都致力于同一目标：查找属于解集的所有
+ubox，但排除所有不属于解集的 ubox。</p>
+<p>如果 ubox
+的数量太大而无法在特定计算机系统上进行计算，则意味着对于可用的计算能力而言，精度设置得太高。
+ULP 非常小，以至于遍历解集所需的时间比我们愿意等待的时间要长。
+因此，ubox
+方法在答案质量和计算能力之间提供了非常灵活的权衡，其中计算机能力就是并行度。
+因为 unums
+可以一次一位地调整精度，所以我们可以从非常低的精度开始，然后用越来越小的
+ULP 大小对其进行细化；
+这意味着该方法还提供了答案质量和我们愿意等待的时间之间的权衡</p>
+<table border="4"><tr><td bgcolor="lightblue"><center><p>Ubox对于计算就像原子对于物理学一样</p>
+</center></td></tr></table></div>
+<div class="section" id="id4">
+<h2>15.4 在线上步进<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<p>正如参考实现提供了一组用于使用 unum
+的工具（例如查看、执行算术和比较它们）一样，它还提供了一组用于操作 ubox
+的工具。 这里根据需要逐步介绍它们，但也将它们收集起来以便在附录 D
+中更容易参考。其中第一个是查找 ubox 邻居的工具。
+首先，将环境设置为低精度，以便 ULP 足够大以显示在图表上。 {1, 3} 环境的
+unum 最多包含 <span class="math notranslate nohighlight">\(2^1 = 2\)</span> 位指数和 <span class="math notranslate nohighlight">\(2^3 = 8\)</span>
+位小数，总大小范围为 8 到 16 位</p>
+<div class="figure align-default" id="id14">
+<img alt="_images/image-20230628142430604.png" src="_images/image-20230628142430604.png" />
+<p class="caption"><span class="caption-number">Fig. 246 </span><span class="caption-text">image-20230628142430604</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+<p>我们需要的第一个 ubox 例程是一种查找 unum 最近邻居的方法。
+在原型中，<strong>nborlo</strong> 和 <strong>nborhi</strong> 函数将 unum
+作为参数，并查找相邻的较低（接近负无穷大）和较高（接近无穷大）的 unum。
+这两个函数的代码在附录 D.2 中。 有时探索的范围包括零，当 ULP
+缩小到接近最小的subnormal
+unum然后再返回时，ULP变得非常小会,整个遍历过程变得很繁琐。
+因此，这些函数不仅采用 unum 作为参数，还采用 <strong>minpower</strong>
+值作为参数，该值将 ULP 的最小首选大小设置为 <span class="math notranslate nohighlight">\(2^{minpower}\)</span>。
+以下是精确数字零的 <strong>nborhi</strong> 的几个示例。 第一个要求最小 ULP 大小为
+<span class="math notranslate nohighlight">\(2^{-1} = 0.5\)</span>，第二个要求最小 ULP 大小为
+<span class="math notranslate nohighlight">\(2^{-3} = 0.125\)</span>。 第三个要求最小 ULP 大小为
+<span class="math notranslate nohighlight">\(2^{-10}\)</span>，但 ULP 在 {1, 2}
+环境中不会那么小，因此我们得到的可用的最小 ULP，即是
+<span class="math notranslate nohighlight">\(2^{-4} = 0.0625\)</span>：</p>
+<p><strong>这里错了？对不上代码，:math:`2^{-8}=1/256=0.00390625` 应该是说{1,
+3}环境</strong></p>
+<div class="figure align-default" id="id15">
+<img alt="_images/image-20230628143822966.png" src="_images/image-20230628143822966.png" />
+<p class="caption"><span class="caption-number">Fig. 247 </span><span class="caption-text">image-20230628143822966</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+<p>精确 unum 的邻居是不精确 unum，反之亦然； (0, 0.125) 的 unum 的
+<strong>nborhi</strong> 将是精确的unum 0.125 ，并且其 <strong>nborlo</strong> 为精确的
+0，无论首选的最小 ULP 大小是多少。 但是，如果起始值不是首选的 ULP
+大小的偶数倍，则优先考虑最小 ULP 大小。</p>
+<p>比如我们要求<span class="math notranslate nohighlight">\(\frac{5}{8}=0.625\)</span>的<strong>nborlo</strong>,
+设定首选ULP大小是<span class="math notranslate nohighlight">\(2^{-1}=\frac{1}{2}\)</span>，例程返回更细粒度的ULP到正好是<span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>的整数倍。这之后才可能到达<span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>。下面显示的是这个步进过程</p>
+<div class="figure align-default" id="id16">
+<img alt="_images/image-20230628145840810.png" src="_images/image-20230628145840810.png" />
+<p class="caption"><span class="caption-number">Fig. 248 </span><span class="caption-text">image-20230628145840810</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+<p>将 <strong>nborhi</strong> 和 <strong>nborlo</strong>
+视为在实数轴上来回走动的基本方法，不会跳过任何可能的值，也不会混淆精确数字与不精确数字。
+<strong>nborhi</strong> 和 <strong>nborlo</strong> 例程也适用于“几乎无限”和无限数。
+在{1,2}环境中，最大的正精确数是7.5，因此它的上邻居是<span class="math notranslate nohighlight">\((7.5，\infty)\)</span>，其上邻居是精确无穷大。
+当然，如果我们试图“达到无穷大之外”，我们就会得到无意义的结果，或者说是
+NaN。 在这种情况下，“首选 ULP 大小”并不重要，因此我们只使用 0：</p>
+<div class="figure align-default" id="id17">
+<img alt="_images/image-20230628152251157.png" src="_images/image-20230628152251157.png" />
+<p class="caption"><span class="caption-number">Fig. 249 </span><span class="caption-text">image-20230628152251157</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+<p>NaN 的唯一邻居是 NaN。 NaN 就像黑洞； 一旦陷入其中，就无法脱身。
+我们使用安静的 NaN 而不是发信号 NaN，因为我们通常希望继续计算。</p>
+</div>
+<div class="section" id="id5">
+<h2>15.5 ubox连接的区域：单位圆面积<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
+<p>使用 ubox 的一种方法是“油漆桶”方法，以三十多年前发明的绘图工具命名。
+下面是 Andy Hertzfeld 出色的 MacPaint 程序，该程序随 1984 年第一代
+Macintosh 一起提供：</p>
+<div class="figure align-default" id="id18">
+<img alt="_images/image-20230628152525241.png" src="_images/image-20230628152525241.png" />
+<p class="caption"><span class="caption-number">Fig. 250 </span><span class="caption-text">image-20230628152525241</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+</div>
+<p>即使在 Photoshop
+等更现代的程序中，该工具仍然执行相同的操作：它用颜色或图案填充不规则形状，从“种子”点开始并自动查找形状的边缘。
+唯一的条件是不规则形状是具有定义边缘的连接区域。
+通常，在解决计算问题时，我们至少知道解集中的一个点，并且经常遇到已知该区域是连通的情况。
+该区域的“边缘”是由所解决问题的条件陈述决定的。</p>
+<p>这当然适用于求四分之一圆面积的问题。
+四分之一圆内的点满足条件：距原点的距离小于 1，且 x 和 y 都大于或等于 0。
+简单地说，x = 0 和 y = 0 是一个解，因此 <span class="math notranslate nohighlight">\(\{\hat{0} ,\hat{0}\}\)</span>
+可以是“种子”ubox，即解集中的第一个集合，解集我们通常称为 <strong>sols</strong>：</p>
+<div class="figure align-default" id="id19">
+<img alt="_images/image-20230628153124176.png" src="_images/image-20230628153124176.png" />
+<p class="caption"><span class="caption-number">Fig. 251 </span><span class="caption-text">image-20230628153124176</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+</div>
+<p>原型函数 <strong>findnbors</strong>[set, {<span class="math notranslate nohighlight">\(minpower_1, …, minpower_n\)</span>}] 使用
+<strong>nborhi</strong> 和 <strong>nborlo</strong> 函数查找 set 中所有 ubox 的邻居 ubox，首选最小
+ULP 大小由每个维度的不同 minpower 给出。 该例程排除原始设定值。</p>
+<p>在二维空间中，ubox 有八个邻居。 我们将初始种子 ubox
+<span class="math notranslate nohighlight">\(\{\hat{0},\hat{0}\}\)</span>
+的邻居分配给试验列表，其中出于说明目的，我们使用 <span class="math notranslate nohighlight">\(2^{-4}\)</span> 和
+<span class="math notranslate nohighlight">\(2^{-4}\)</span> 作为首选最小 ULP 大小。 如果两个尺寸不精确，这将使 ubox
+成为正方形，但通常它们是矩形。 例如我们可能要解决的问题是 x 从 1.0 到
+1.01，而 y 的范围从 <span class="math notranslate nohighlight">\(10^{10}\)</span> 到
+<span class="math notranslate nohighlight">\(10^{12}\)</span>，因此每个维度的最小 ULP 大小必须是独立的。</p>
+<div class="figure align-default" id="id20">
+<img alt="_images/image-20230628154223551.png" src="_images/image-20230628154223551.png" />
+<p class="caption"><span class="caption-number">Fig. 252 </span><span class="caption-text">image-20230628154223551</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
+<p>这是被试验 ubox 包围的初始种子解的特写视图。
+其中四个邻居是种子解点的右、左、上、下各 1 个 ULP 宽的线段；
+它们不包括端点，因为 ULP 范围的 unum 是开区间。
+圆形端点有助于提醒我们这一点。 其他四个邻居是每边一个 ULP
+的方块，这些方块不包括它们的边界。 x 和 y 中起始点的一个 ULP
+范围内的每个实值位置都只被计数一次。</p>
+<div class="figure align-default" id="id21">
+<img alt="_images/image-20230628154654260.png" src="_images/image-20230628154654260.png" />
+<p class="caption"><span class="caption-number">Fig. 253 </span><span class="caption-text">image-20230628154654260</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>读者的练习</strong>：对于n维的ubox有几个邻居</p>
+<p><span class="math notranslate nohighlight">\(3^n-1\)</span></p>
+<p>测试每个试验元素，看它是否在单位圆内并且在右上象限内。
+也就是说，问题陈述是找到满足三个条件的所有计算机可表示的 x 和 y：</p>
+<div class="math notranslate nohighlight" id="equation-15-theotherkindoferror-2">
+<span class="eqno">(62)<a class="headerlink" href="#equation-15-theotherkindoferror-2" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{matrix}
+x \ge 0 \\
+y \ge 0 \\
+x^2+y^2 \lt 1
+\end{matrix}\end{split}\]</div>
+<p>如果满足这些条件，则 <strong>touchQ</strong>[{xu, yu}] 函数返回 True，否则返回
+False，对于 ubox {xu, yu}. 下页中的 <strong>touchQ</strong>
+函数的代码与问题陈述相符。 每个问题陈述都有不同的 <strong>touchQ</strong> 测试。
+在原型中，我们可以通过在“小于”测试前面放置逻辑非符号 “<span class="math notranslate nohighlight">\(\neg\)</span>”
+来创建 “大于或等于” 测试，因此 “<span class="math notranslate nohighlight">\(x \ge 0\)</span>” 翻译为
+“<span class="math notranslate nohighlight">\(\neg (xu \prec 0)\)</span>” 。</p>
+<div class="figure align-default" id="id22">
+<img alt="_images/image-20230628155656229.png" src="_images/image-20230628155656229.png" />
+<p class="caption"><span class="caption-number">Fig. 254 </span><span class="caption-text">image-20230628155656229</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+</div>
+<p>请注意，(x, y) 的融合点积用于计算 <span class="math notranslate nohighlight">\(x^2 + y^2\)</span>。 这确保了在将值与
+1 进行比较时的完美判决，因为两次乘法和加法中的每一个的结果并不总是可以在
+u-layer 中表示而不丢失一些信息。 例如，如果 <span class="math notranslate nohighlight">\(x = \frac{9}{16}\)</span> 且
+<span class="math notranslate nohighlight">\(y = \frac{13}{16}\)</span> ，则 (1, 2) 环境将 <span class="math notranslate nohighlight">\(x^2\)</span> 表示为 (0.3125,
+0.375)，<span class="math notranslate nohighlight">\(y^2\)</span> 表示为 (0.625, 0.6875)，然后总和为 (0.9375,
+1.0625)。 范围溢出到单位圆之外。 但 g-layer计算将 <span class="math notranslate nohighlight">\(x^2 + y^2\)</span>
+精确计算为<span class="math notranslate nohighlight">\(\frac{125}{128}\)</span> ，然后变为
+(0.9375，1)在u-layer的值，并被正确分类为位于单位圆内。</p>
+<p>在适当的 unum 硬件环境中，像 <strong>touchQ</strong> 这样的测试在计算上非常便宜。
+在g-layer中，它执行两次乘法、一次加法、两次与 0
+的比较（这实际上只是测试单个比特位）以及一次与数字 1
+的比较。而且这些是非常小的 unum 位字符串，因此时间 使用 2014
+年芯片技术进行乘法运算可能用皮秒来衡量比用纳秒更好。</p>
+<p><strong>fails</strong>集包含在<strong>trials</strong>中启动的任何 ubox，但在使用 touchQ
+进行测试时，证明不是解。 记录失败ubox可以让我们避免多次测试 。 失败的
+ubox 将显示为红色。 最初，<strong>fails</strong> 是空的，但它会增长到包含解的 ubox
+集合。</p>
+<p>用 touchQ 测试每个试验 ubox看它是否满足 <span class="math notranslate nohighlight">\(x \ge 0、y \ge 0\)</span> 和
+<span class="math notranslate nohighlight">\(x^2 + y^2 &lt; 1\)</span>？
+注意每个试验都可以独立完成，这意味着很好利用多个处理器的并行性。
+新的解将添加到<strong>new</strong>集合中，同时也加到已知解集 <strong>sol</strong> 中。
+跟踪新的解的原因是因为这些解是唯一可以生成尚未被查看的邻居的ubox。
+检查完所有试验 ubox 后，<strong>trials</strong>集将重置为空。</p>
+<p>下面是循环分类trials集的代码，每个都用<strong>touchQ</strong>测试</p>
+<div class="figure align-default" id="id23">
+<img alt="_images/image-20230629143147782.png" src="_images/image-20230629143147782.png" />
+<p class="caption"><span class="caption-number">Fig. 255 </span><span class="caption-text">image-20230629143147782</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+</div>
+<p>下面是用这段代码测试的结果。种子box在距离边界很远的地方。所以失败的都是不在右上象限中的。有三个新的解被找到，被记录在<strong>sols</strong>和<strong>new</strong>集合中。</p>
+<p>下一步是产生所有新解的邻居，并看邻居是否是需要trial的ubox。</p>
+<div class="figure align-default" id="id24">
+<img alt="_images/image-20230629143805474.png" src="_images/image-20230629143805474.png" />
+<p class="caption"><span class="caption-number">Fig. 256 </span><span class="caption-text">image-20230629143805474</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+</div>
+<p>以下情况就不需要放入trial集合中</p>
+<ul class="simple">
+<li><p>已经在sols集合中，且不在new中。</p></li>
+<li><p>在fails中</p></li>
+</ul>
+<p>这可以通过查找具有failes 和sols 的邻居集的补集来简洁地表达。 Ubox
+方法通常看起来更像集合论而不是算术。</p>
+<div class="figure align-default" id="id25">
+<img alt="_images/image-20230629145617276.png" src="_images/image-20230629145617276.png" />
+<p class="caption"><span class="caption-number">Fig. 257 </span><span class="caption-text">image-20230629145617276</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+</div>
+<p>用这行代码找新的trials集合，除了满足<span class="math notranslate nohighlight">\(x \ge 0、y \ge 0\)</span> 都fail的</p>
+<div class="figure align-default" id="id26">
+<img alt="_images/image-20230629145925033.png" src="_images/image-20230629145925033.png" />
+<p class="caption"><span class="caption-number">Fig. 258 </span><span class="caption-text">image-20230629145925033</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>读者的练习</strong>: 下一轮有多少trial盒子？多少会被加入到解集中？</p>
+<p>我们已经拥有构成自动循环所需的一切了，除了一个表示何时停止的条件。
+当没有“新”解 ubox 时，我们就会停止。 这意味着每个可行的 ubox
+都已经过测试并被分类为成功或失败，并且最后一次没有产生任何成功的ubox。</p>
+<p>下面是完整的油漆桶算法的完整循环，也就十来行代码</p>
+<div class="figure align-default" id="id27">
+<img alt="_images/image-20230629150925203.png" src="_images/image-20230629150925203.png" />
+<p class="caption"><span class="caption-number">Fig. 259 </span><span class="caption-text">image-20230629150925203</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+</div>
+<p>上面的简短代码为每个 ubox
+使用非常小的比特位，为四分之一圆的位置生成严格的界限，没有舍入误差或采样误差。
+解集还可以变得更加简洁。 通过重复查找与 ULP
+对齐且少一位小数的<strong>连续的不精确-精确-不精确三ubox组</strong>，并用单个不精确
+ubox 替换它们，可以合并解ubox，以创建答案集的无损压缩。</p>
+<div class="figure align-default" id="id28">
+<img alt="_images/image-20230704194819756.png" src="_images/image-20230704194819756.png" />
+<p class="caption"><span class="caption-number">Fig. 260 </span><span class="caption-text">image-20230704194819756</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+</div>
+<p>这是压缩的解集（我们也压缩了失败集）：</p>
+<div class="figure align-default" id="id29">
+<img alt="_images/image-20230704194849357.png" src="_images/image-20230704194849357.png" />
+<p class="caption"><span class="caption-number">Fig. 261 </span><span class="caption-text">image-20230704194849357</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>coalesce</strong>[set] 的代码如附录 D.4
+所示。压缩的答案集赋值给<strong>areasols</strong>。</p>
+<p>在原型中，<strong>volume</strong>[set] 函数查找一组 ubox 的总 n
+维体积（在本例中为面积）。
+如果我们在这个解集上使用它并乘以四，我们就得到了 <span class="math notranslate nohighlight">\(\pi\)</span> 值的下界。
+请注意，对体积的唯一贡献来自两个维度都不精确的 ubox。 4x体积[面积] 为
+2.890625。</p>
+<p>下一步是找到上限。 应用相同的过程，但 touchQ 测试略有不同，该测试要求
+<span class="math notranslate nohighlight">\(x^2 + y^2 = 1\)</span> 而不是 <span class="math notranslate nohighlight">\(x^2 + y^2 &lt; 1\)</span>：</p>
+<div class="figure align-default" id="id30">
+<img alt="_images/image-20230629153108913.png" src="_images/image-20230629153108913.png" />
+<p class="caption"><span class="caption-number">Fig. 262 </span><span class="caption-text">image-20230629153108913</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+</div>
+<p>作为种子值，我们可以从一个明显的解点开始，例如 x=0，y=1。
+这将找到边缘集。
+该算法的动画看起来就像左边的保险丝被点燃，它绕着圆弧燃烧，直到到达右下角的x
+= 1，y = 0，并由于没有元素而自动停止 在新的集合中进行测试。</p>
+<div class="figure align-default" id="id31">
+<img alt="_images/image-20230629153255704.png" src="_images/image-20230629153255704.png" />
+<p class="caption"><span class="caption-number">Fig. 263 </span><span class="caption-text">image-20230629153255704</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
+</div>
+<p>解集的体积是</p>
+<div class="figure align-default" id="id32">
+<img alt="_images/image-20230629153342899.png" src="_images/image-20230629153342899.png" />
+<p class="caption"><span class="caption-number">Fig. 264 </span><span class="caption-text">image-20230629153342899</span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
+</div>
+<p>该值乘以四就是下限和上限之间的差。 这证明</p>
+<div class="math notranslate nohighlight" id="equation-15-theotherkindoferror-3">
+<span class="eqno">(63)<a class="headerlink" href="#equation-15-theotherkindoferror-3" title="Permalink to this equation">¶</a></span>\[2.859375 \lt \pi \lt 3.34375\]</div>
+<p>如果我们关心的只是面积，或者如果我们只想知道形状（比如说用于图形显示），我们可以忽略面积为零的
+ubox。 面积解集中只有 20 个这样的 ubox，边缘集中有 18 个。
+不同寻常的是存储这两个集合所需的总位数：788。这大约与十几个 IEEE
+双精度浮点数的位数相同。 这组比特位是在计算结束时作为 c
+解需要存储在内存中的全部内容。</p>
+<p><strong>读者的练习</strong>:
+这里计算所需要存储<span class="math notranslate nohighlight">\(\pi\)</span>的bound是多少比特？bound的相对宽度是多少？</p>
+<p>以下是删除精确点和线段后内部和边缘集的外观，其中我们仍然使用圆形外观来提醒矩形不包括其边框：</p>
+<div class="figure align-default" id="id33">
+<img alt="_images/image-20230629154806219.png" src="_images/image-20230629154806219.png" />
+<p class="caption"><span class="caption-number">Fig. 265 </span><span class="caption-text">image-20230629154806219</span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
+</div>
+<p>我们只是使用 7 到 11 位的数字计算了 <span class="math notranslate nohighlight">\(\pi\)</span> 并证明了误差的界限。
+更令人惊讶的是我们没有使用三角学、微积分或无穷级数。
+事实上，我们甚至没有使用平方根或除法运算。</p>
+<p>也无需担心平衡采样误差和舍入误差。 两种类型的误差都被消除并被有界 ULP
+值取代，这些值在水平和垂直方向上同样很好地跟踪区域的形状。
+计算机用户所要做的就是指定 <strong>touchQ</strong>
+函数来描述什么被认为是解、一个起点，以及结果中可能的首选准确度，然后计算机敲定出一个完整但尽可能小的，适合当前计算环境的
+c 解决方案 。 计算机的强力取代了用户的聪明才智。</p>
+<p>当然，更复杂版本的油漆桶方法也是可能的。
+ubox解搜索的持续部分可以合，以节省临时存储的使用。
+ULP可以从尽可能大的尺度开始，对于ubox
+部分位于解区域内部和部分位于解区域外部的地方进行细化。
+这可能会让一些读者想起一个非常古老的想法：网格细化。
+每当检测到需要更多细节时，将正方形分成更小的正方形。</p>
+<p>但是使用浮点执行的网格细化在检测哪里需要更多细节方面的能力非常有限，因为浮点计算仅对可能是高度可变的函数进行采样。
+它们还占用大量空间，远远超过 ubox。 使用最小的 IEEE
+浮点（半精度）存储上面所示的四分之一圆形状和边界需要 2432 位，这是 ubox
+解决方案所需位数的三倍多。
+在性能受带宽限制（通常情况）的计算机系统中，ubox
+解决方案比使用半精度浮点的网格细化方法快三倍，比使用单精度浮点的网格细化方法快六倍。</p>
+</div>
+<div class="section" id="id6">
+<h2>15.6 信息和计算“速度”的定义<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h2>
+<p>边集的体积是答案质量的衡量标准； 它告诉我们关于答案有多少信息。 在第 1
+部分中，我们讨论了在决定是否压缩 unum 时的每比特信息。
+在涉及实数的计算问题的背景下，我们可以更普遍地定义“信息”的含义：</p>
+<table border="4"><tr><td bgcolor="lightblue"><p>定义: 在特定计算问题的上下文中，信息是限制答案的集合总体积的倒数。</p>
+</td></tr></table><p>对于 ubound 或 unum，“体积”就是宽度：它所代表的区间的上限减去下限。
+信息是宽度的倒数，即“体积”的一维形式。 在二维空间中，“体积”就是面积。
+无论维度有多少，如果边界的所有维度都不精确，则边界就有体积。</p>
+<p>该定义有许多缺点，例如没有处理无限界限。
+更严格的定义可能会使用尽可能最细 ULP 大小的可能 ubox 数量；
+信息是是问题陈述的解除以非解的部分。 问题从每个 ubox 作为试验 ubox（信息
+= 0）开始，并以尽可能最小的 ULP 大小（信息 = 1）的 c 解决方案结束。
+这个定义通常难以计算，因此本书使用上面基于体积的定义。</p>
+<p><span class="math notranslate nohighlight">\(\pi\)</span> 的希腊边界（第 15.1 节中的菱形下界和方形上限）显示圆面积在 2
+和 4 之间，因此其有关答案的信息为 1/(4-2)=1/2。
+传统数值方法（如中点法则（第 15.2
+节））产生的信息为零，因为误差“界限”是无限的；
+他们提供了猜测，但没有提供任何信息。
+对于圆面积的低精度ubox计算，描述边缘的ubox的体积为<span class="math notranslate nohighlight">\(\frac{31}{64}\)</span>，因此信息为<span class="math notranslate nohighlight">\(\frac{64}{31} = 2.06\cdots\)</span>。</p>
+<p>将 ULP 尺寸减半将使四分之一圆 c 解的信息大约增加一倍。
+如果我们确实想通过油漆桶方法确定 <span class="math notranslate nohighlight">\(\pi\)</span> 的值，请将环境设置为 {1, 5}
+之类的值，其中我们最多有 <span class="math notranslate nohighlight">\(2^5 = 32\)</span> 个小数位，并应用前面的过程。
+边缘 ubox 的体积比仅 <span class="math notranslate nohighlight">\(2^2 = 4\)</span> 个小数位的情况小约 2.7
+亿倍，因此信息约大 2.7 亿倍。 这可以证明将 <span class="math notranslate nohighlight">\(\pi\)</span>
+的值精度算到小数点后八位。 在该精度下，边缘集中只有几十亿个
+ubox，因此具有 unum 算术（和 2014
+时代芯片技术）硬件支持的单个处理器核心应该需要不到一秒的时间来使用油漆盒法方法计算边缘
+ubox 及其体积：。</p>
+<p>这带来了我们通过 ubox
+获得的另一个功能：在谈论涉及实数的计算时，对“速度”的定义。</p>
+<table border="4"><tr><td bgcolor="lightblue"><p>定义: 在特定计算任务的背景下，计算速度是每秒获得的信息。</p>
+</td></tr></table><p>对于那些习惯于整数计算的人来说，这个定义可能听起来很奇怪，在计算完成之前，我们对答案一无所知，然后一切就都知道了。
+有关答案的信息在算法结束之前为零，结束那时就立刻变得完美，因为答案是准确已知的。
+而像“2 到 1000
+之间的质数有哪些？”这样的问题，结果是一组精确的整数值，因此计算性能只是找到整个集合所需时间的倒数。
+涉及实数的计算通常会产生不精确的结果，因此计算速度的任何定义都需要首先定义计算所完成的内容的度量。</p>
+<p>通过上述定义，可以严格比较不同计算机的每秒信息或每比特信息，无论它们在架构上有多么不同，或者它们使用什么算法或语言来限制不确定性。</p>
+<p>如果我们对误差没有限制，则必须假设误差无限大，因此有关答案的信息为零。
+大多数浮点计算都是这种情况，因为它们仅估计答案并且通常不会产生严格的界限。</p>
+<table border="2"><tr><td bgcolor="lightyellow"><p>使用浮点数衡量计算速度的传统方法是 FLOPS，即每秒浮点数运算。 FLOPS
+度量仅描述计算机浮点单元的活动，而不描述计算正在完成的内容。</p>
+</td></tr></table><p>当您尝试将 FLOPS
+度量用于除了乘法、加法和减法以外的任何操作时，它看起来更加荒谬，因为每个人对于如何对平方根或余弦甚至简单的除法运算中完成的
+FLOPS 进行评分都有不同的想法。 不同精度的FLOPS应该如何比较？ FLOPS
+衡量标准是 20 世纪 70
+年代遗留下来的，当时浮点运算比内存操作花费的时间要长得多；
+现在情况发生了逆转。</p>
+<p>有些人试图通过创建详细的规则手册为计算机做浮点运算进行评分，来挽救 FLOPS
+的不健全，但 FLOPS 本质无法作为衡量或比较计算性能的严格方法。
+要了解原因，请考虑这一点：很容易创建两种不同算法的示例，它们会得出相同的答案，但需要更长的时间的算法有更高的
+FLOPS 评级。 而通过将信息定义为计算的目的，我们可以避免混淆目的和手段。
+使用 FLOPS
+就像根据跑步者每秒走了多少步来判断竞走比赛，而不是根据跑步者何时到达终点线来判断。</p>
+<p>回想一下，我们还可以测量计算中移动的位数，作为计算工作量的一阶近似值。
+目前，移动数据的成本（时间、金钱、能量和功耗）使操作逻辑门的成本相形见绌，并且随着每一代新计算机的出现，该比率越来越大，因此移动的位数是比操作计数更好的工作衡量标准。
+因此，“最佳”算法是那些能够为最小比特运动产生最高质量答案的算法。
+我们可以根据应用的优先级，使用<em>每瓦信息</em>和<em>每焦耳信息</em>或任何其他成本衡量标准来比较不同的方法。</p>
+<p>当然，每个问题的信息定义都是不同的，因此试图将一个计算机硬件描述为具有“每秒峰值信息”评级，就像人们多年来对
+FLOPS 所做的那样，这是行不通的。
+用每秒信息测量速度的想法是允许对解决同一特定问题的任何两种方法进行公平和逻辑比较。</p>
+</div>
+<div class="section" id="id7">
+<h2>15.7 另一个卡汉的傻人陷阱：“顺利的惊喜”<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h2>
+<p>由于计算科学家的答案没有严格的数学界限，因此他们经常使用可视化来查看答案是否“看起来正确”（有时称为“眼球度量”）。
+卡汉教授用下面的例子展示了这会让我们误入歧途：假设我们需要知道下式的最小值</p>
+<div class="math notranslate nohighlight" id="equation-15-theotherkindoferror-4">
+<span class="eqno">(64)<a class="headerlink" href="#equation-15-theotherkindoferror-4" title="Permalink to this equation">¶</a></span>\[\frac{1}{80}log(|3(1-x)+1|)+x^2+1\]</div>
+<p>x的范围是<span class="math notranslate nohighlight">\(0.8 \le x \le 2.0\)</span>; 所以我们画出这个函数图然后看着它</p>
+<div class="figure align-default" id="id34">
+<img alt="_images/image-20230629195534082.png" src="_images/image-20230629195534082.png" />
+<p class="caption"><span class="caption-number">Fig. 266 </span><span class="caption-text">image-20230629195534082</span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
+</div>
+<p>看起来最小值确实是 x 为 0.8 的地方，在左边，但是在 1.33
+附近有一个有趣的小亮点。 大多数人都会忽略它。
+勤奋的计算机用户可能会要求更高的分辨率来弄清楚那东西是什么。</p>
+<p>因此再次绘制它，但使用 500000 个点，以尝试减少采样误差：</p>
+<div class="figure align-default" id="id35">
+<img alt="_images/image-20230629195912831.png" src="_images/image-20230629195912831.png" />
+<p class="caption"><span class="caption-number">Fig. 267 </span><span class="caption-text">image-20230629195912831</span><a class="headerlink" href="#id35" title="Permalink to this image">¶</a></p>
+</div>
+<p>这个小现象看起来仍然没什么好担心的。</p>
+<p><strong>读者的练习</strong>: 找到最接近 <span class="math notranslate nohighlight">\(\frac{4}{3}\)</span> 的两个 IEEE
+双精度数（向上舍入和向下舍入）。对于这些值，上述函数的值是多少？</p>
+<p>如果我们使用 unum 算术绘制它，即使用低精度 ubox 将 x 值的范围完全平铺在
+0.8 到 2.0 之间，会怎么样？ 首先，以unum形式定义函数；
+称之为<strong>spike</strong>[u]：</p>
+<div class="figure align-default" id="id36">
+<img alt="_images/image-20230629200341001.png" src="_images/image-20230629200341001.png" />
+<p class="caption"><span class="caption-number">Fig. 268 </span><span class="caption-text">image-20230629200341001</span><a class="headerlink" href="#id36" title="Permalink to this image">¶</a></p>
+</div>
+<p>不要要求大量样本点，而是尝试使用 ubox 平铺范围（ULP 大小为
+1/32）来绘制函数 因此只需要几十次函数求值。
+下页上的图以橙色显示使用双精度浮点数的图，以青色显示使用 ubox 的图：</p>
+<div class="figure align-default" id="id37">
+<img alt="_images/image-20230629201843735.png" src="_images/image-20230629201843735.png" />
+<p class="caption"><span class="caption-number">Fig. 269 </span><span class="caption-text">image-20230629201843735</span><a class="headerlink" href="#id37" title="Permalink to this image">¶</a></p>
+</div>
+<p>当 <span class="math notranslate nohighlight">\(x = \frac{4}{3}\)</span> 时，低精度 ubox
+立即显示垂直于负无穷大，这是即使具有 IEEE
+双精度浮点数的数万亿个样本点也无法做到的。 由此可见，ubox
+方法与使用浮动的“网格细化”有多么不同；
+网格细化方法甚至无法检测到奇点附近是否需要更多点，但会很高兴地忽略它。
+Unum 算术使用精确值或一个 ULP 范围内的实数集，并捕获该 ULP
+内可能发生的整个范围，而不会忽略任何内容。 对于跨越值
+<span class="math notranslate nohighlight">\(\frac{4}{3}\)</span>的 ubox，尖峰函数计算为
+<span class="math notranslate nohighlight">\([-\infty, \frac{175}{64})\)</span>，并注意区间在左侧闭合。
+函数求值不仅仅“接近”<span class="math notranslate nohighlight">\(-\infty\)</span>，而是正确地将 <span class="math notranslate nohighlight">\(-\infty\)</span>
+作为值包含在内。 任何数量的采样都不会产生精确落在 4/3
+上的二进制浮点数，从而导致计算零的对数。 但 unum/ubox
+计算考虑了整个范围而不进行采样，尽管只使用了少量的最多占用 19比特的 unum
+值。</p>
+<p>在关于 unum
+算术相对优点的初步讨论中，浮点数用“这一切都取决于性价比”来辩护。确实如此，但在这里，浮点数可是差了一英里外。
+这张使用浮点数的绘图测试了52位小数精度的 500000
+个样本点，但完全错过了那个点。 而只用了几十个 ubox，其中边界最多有 8
+位小数精度，确可以轻松地识别奇点，并且用户不必小心选择要使用的样本点数量。
+在这种情况下，无论是编程工作还是计算机性能，ubox
+都比浮点数更具成本效益。 比较性价比实际上没有意义，因为 unum
+得到了答案，而 float 却没有。
+如果您不关心获得正确答案，那么确实可以计算得非常快！</p>
+<table border="2"><tr><td bgcolor="lightblue"><center><p>Unum 不会产生舍入错误，因为它们不进行舍入。</p>
+</center><center><p>Ubox 不会出现采样错误，因为它们不采样。</p>
+</center></td></tr></table></div>
+</div>
+
+
+        </div>
+        <div class="side-doc-outline">
+            <div class="side-doc-outline--content"> 
+<div class="localtoc">
+    <p class="caption">
+      <span class="caption-text">Table Of Contents</span>
+    </p>
+    <ul>
+<li><a class="reference internal" href="#">15. 另外一种误差</a><ul>
+<li><a class="reference internal" href="#id2">15.1 采样误差</a></li>
+<li><a class="reference internal" href="#id3">15.2 经典误差界限的本质令人非常不满意</a></li>
+<li><a class="reference internal" href="#ubox">15.3 Ubox方法</a></li>
+<li><a class="reference internal" href="#id4">15.4 在线上步进</a></li>
+<li><a class="reference internal" href="#id5">15.5 ubox连接的区域：单位圆面积</a></li>
+<li><a class="reference internal" href="#id6">15.6 信息和计算“速度”的定义</a></li>
+<li><a class="reference internal" href="#id7">15.7 另一个卡汉的傻人陷阱：“顺利的惊喜”</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+            </div>
+        </div>
+
+      <div class="clearer"></div>
+    </div><div class="pagenation">
+     <a id="button-prev" href="Part2.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="P">
+         <i class="pagenation-arrow-L fas fa-arrow-left fa-lg"></i>
+         <div class="pagenation-text">
+            <span class="pagenation-direction">Previous</span>
+            <div>Part 2 - 一种新的解决方法 Ubox</div>
+         </div>
+     </a>
+     <a id="button-next" href="16_avoid_interval_arith_pitfalls.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
+         <i class="pagenation-arrow-R fas fa-arrow-right fa-lg"></i>
+        <div class="pagenation-text">
+            <span class="pagenation-direction">Next</span>
+            <div>16 避免区间算术陷阱</div>
+        </div>
+     </a>
+  </div>
+        
+        </main>
+    </div>
+  </body>
+</html>

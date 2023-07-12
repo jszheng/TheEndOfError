@@ -1,0 +1,52 @@
+
+THE END of ERROR - Unum Computing
+=================================
+
+Written By John L. Gustafson
+
+错误的终结 - unum计算方法
+=========================
+
+中文翻译 by jszheng
+
+如果你觉得翻得太烂，那是我故意的 :) 。
+
+请购买\ `原版书籍 <https://www.routledge.com/The-End-of-Error-Unum-Computing/Gustafson/p/book/9781482239867>`__\ ，获得原滋原味的阅读体验。（还有\ `亚马逊 <https://www.amazon.com/End-Error-Computing-Chapman-Computational/dp/1482239868/ref=sr_1_1?crid=3K6655SIKHRYT&keywords=the+end+of+error&qid=1689124112&sprefix=the+end+of+err%2Caps%2C430&sr=8-1>`__
+kindle版本）
+
+注意unum系统自从2015年本书出版，到今天已经进化到第三版。最新版本现在被称为
+Posit（ https://posithub.org/
+），这是一种更像IEEE浮点数的定义，也有不同长度的标准定义。而本书关于完全消除计算错误的想法在Posit中被称为valid，目前还在发展过程中。等待John的下一本书吧。
+按照本书的说法，最终目的是让用户无需思考，都会被包装成完美的数学库供大家使用。
+
+.. toctree::
+   :maxdepth: 3
+
+   Preface
+   00_how_to_read
+   Part1
+   01_Overview
+   02_BuildUpUnumFormat
+   03_TheOriginalSin
+   04_unum_format
+   05_hidden_scratchpads_3_layers
+   06_info_per_bit
+   07_fixed_size_unum_storage
+   08_comparison_operations
+   09_add_sub_unbias_round
+   10_mul_div
+   11_power
+   12_other_important_unary_ops
+   13_fused_operations
+   14_trial_runs
+   part1_summary
+   Part2
+   15_TheOtherKindOfError
+   16_avoid_interval_arith_pitfalls
+   17_meaning_of_solve_equ
+   18_permission_to_guess
+   19_pendulums_done_correctly
+   20_two_body_problem
+   21_calculus_evil
+   22_end_of_error
+   Glossary

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>22 错误的终结 &#8212; THE END of ERROR - Unum Computing 0.1 documentation</title>
+
+    <link rel="stylesheet" href="_static/material-design-lite-1.3.0/material.blue-deep_orange.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx_materialdesign_theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fontawesome/all.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/d2l.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/d2l.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="词汇表" href="Glossary.html" />
+    <link rel="prev" title="21 微积分被认为是邪恶的：离散物理" href="21_calculus_evil.html" /> 
+  </head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header mdl-layout__header--waterfall ">
+    <div class="mdl-layout__header-row">
+        
+        <nav class="mdl-navigation breadcrumb">
+            <a class="mdl-navigation__link is-active">22 错误的终结</a>
+        </nav>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+        
+<form class="form-inline pull-sm-right" action="search.html" method="get">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+        <label id="quick-search-icon" class="mdl-button mdl-js-button mdl-button--icon"  for="waterfall-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q"  id="waterfall-exp" placeholder="Search" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </div>
+      </div>
+      <div class="mdl-tooltip" data-mdl-for="quick-search-icon">
+      Quick search
+      </div>
+</form>
+        
+<a id="button-show-source"
+    class="mdl-button mdl-js-button mdl-button--icon"
+    href="_sources/22_end_of_error.rst.txt" rel="nofollow">
+  <i class="material-icons">code</i>
+</a>
+<div class="mdl-tooltip" data-mdl-for="button-show-source">
+Show Source
+</div>
+        </nav>
+    </div>
+    <div class="mdl-layout__header-row header-links">
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation">
+          
+              <a  class="mdl-navigation__link" href="https://github.com/jszheng/TheEndOfError">
+                  <i class="fab fa-github"></i>
+                  Github
+              </a>
+      </nav>
+    </div>
+</header><header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_TheOriginalSin.html">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_hidden_scratchpads_3_layers.html">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_info_per_bit.html">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_comparison_operations.html">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_mul_div.html">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_other_important_unary_ops.html">12 其他重要的一元运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_fused_operations.html">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_TheOtherKindOfError.html">15. 另外一种误差</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_avoid_interval_arith_pitfalls.html">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_meaning_of_solve_equ.html">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_permission_to_guess.html">18 准许猜测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_pendulums_done_correctly.html">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_calculus_evil.html">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+        <main class="mdl-layout__content" tabIndex="0">
+
+	<script type="text/javascript" src="_static/sphinx_materialdesign_theme.js "></script>
+    <header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_TheOriginalSin.html">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_hidden_scratchpads_3_layers.html">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_info_per_bit.html">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_comparison_operations.html">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_mul_div.html">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_other_important_unary_ops.html">12 其他重要的一元运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_fused_operations.html">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_TheOtherKindOfError.html">15. 另外一种误差</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_avoid_interval_arith_pitfalls.html">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_meaning_of_solve_equ.html">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_permission_to_guess.html">18 准许猜测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_pendulums_done_correctly.html">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_calculus_evil.html">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+
+    <div class="document">
+        <div class="page-content" role="main">
+        
+  <div class="section" id="id1">
+<h1>22 错误的终结<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>这篇文章的标题对一些人来说具有挑衅性，他们急于指出“错误的终结”仍然遥不可及。
+这取决于<em>错误</em>的含义。
+这里使用的术语与宇宙射线撞击存储芯片并翻转其位引起的“软错误”无关。
+它不是指不正确的数据输入或编程错误的人为错误。
+它并不意味着实验误差，即测量结果不可避免的变异性。
+在这里，“错误”意味着数学上的错误，即被表达为正确数值计算的东西事实上不正确。
+不幸的是，我们已经学会容忍这种错误，但现在有能力通过计算机技术的进步来<strong>结束</strong>这种错误。</p>
+<p>早期的计算机设计者很清楚，他们的设计在数学正确性上做出了妥协，但成本阻碍了构建正确的数字。
+当第一台电子自动计算机于 1940
+年左右开始制造时，逻辑门的成本为数十美元，单个存储位的成本超过 1
+美元（按 2014 年美元计算）。
+只要程序员是像约翰·冯·诺依曼那样聪明的人，错误就可以控制。
+早期的计算机是由“神职人员”使用的，从未设想过有一天数十亿人会依赖自动计算机，而其中超过
+99.99% 的用户完全不了解高速数字错误的危害。
+他们也从未想到，人类一小时的才华最终到今天会比一台非常强大的计算机上一小时的时间花费贵数百倍，因此要求人类承担创建正确的计算方法的所有负担是合理的。</p>
+<p>随着硬件变得更便宜、速度更快，工作范围不断扩大，以满足可用的预算和时间。
+计算机打印输出的情况就是一个例子。 1970
+年，打印机可能会打印出如下所示的东西，并且需要大约 30 秒才能完成：</p>
+<div class="figure align-default" id="id2">
+<img alt="_images/image-20230711162031940.png" src="_images/image-20230711162031940.png" />
+<p class="caption"><span class="caption-number">Fig. 432 </span><span class="caption-text">image-20230711162031940</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>四十多年后，激光打印机可能仍需要 30
+秒才能打印出一页，但技术已经改进，可以实现全彩、高分辨率输出。</p>
+<div class="figure align-default" id="id3">
+<img alt="_images/image-20230711162104786.png" src="_images/image-20230711162104786.png" />
+<p class="caption"><span class="caption-number">Fig. 433 </span><span class="caption-text">image-20230711162104786</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>最初，IBM 使用激光打印每秒生成许多页，每页均由等宽、全大写字母组成。
+最终，每页完成的工作量达到了可用的速度。
+人们一再错误地认为需要<em>减少时间</em>，而实际上是为了<em>提高质量</em>，这是一个如此普遍且反复出现的谬论，令人惊讶的是，它没有得到更广泛的了解。
+仍然有人断言，并行处理应该用于在<em>更短的时间</em>内完成现有的顺序工作负载，但并行计算几乎总是用于<em>增加人们愿意等待的时间内能完成的工作量</em>。</p>
+<p><em>为什么技术速度的提高没有转化为数值计算质量的提高</em>？
+虽然处理速度提高了万亿倍，但浮点数的<em>质量</em>却只提高了两倍，重点是每秒处理更多的浮点数。
+一种可能的解释是，智力惯性随技术的不同而变化。
+例如，如果硬件能够运行相同的软件，那么让人们更换硬件就很容易。
+改变软件是很困难的。 更困难的是改变比特位的最低级别含义，例如从 EBCDIC
+到 ASCII 标准字符再到 Unicode。
+最终，显而易见的是，改变是必要的，以至于痛苦的转变最终发生了。
+对于数值计算来说，这种转变早就该发生了，因为我们一直在使用古老的工具。</p>
+<p>一旦我们做出转变，就有可能解决困扰我们数十年的问题。
+支持这一主张的证据就在本书中，其中包含相当多看似新的结果。 许多都是通过
+unum-ubox 方法实现的，它能够正确表达实数。
+考虑一下这里首次展示的部分突破：</p>
+<ul class="simple">
+<li><p>即使只涉及一个变量，时间步进动力学方程的求解也可以大规模并行</p></li>
+<li><p>加法运算完全遵循结合律，即使求和是由不同的计算机以任意顺序并行完成的</p></li>
+<li><p>n 体模拟的可证明边界仅在线性时间步完成。</p></li>
+<li><p>一种以最大精度计算 <span class="math notranslate nohighlight">\(x^y\)</span> 的固定大小、固定时间方法，其中 x 和 y
+都是浮点数，并且可以识别结果何时准确</p></li>
+<li><p>一种用开放或封闭端点表示区间的紧凑方式，消除“边缘条件”错误。</p></li>
+<li><p>通过融合运算定义解决复数算术的计算慢的悖论</p></li>
+<li><p>一个保证跨计算系统按位相同答案的系统，不是通过简化算术，而是通过精确定义的标准暂存器来提高其质量</p></li>
+<li><p>一种在不丢失信息的情况下评估区间多项式的方法</p></li>
+<li><p>“制表者困境”的实用解决方案</p></li>
+<li><p>使用 8 位 unum 进行计算，在 128 位浮点数失败的情况下获得正确答案</p></li>
+<li><p>一种仅使用四位来表示整个实数轴以及异常值的方法</p></li>
+<li><p>根查找器适用于任何连续函数，包括根没有封闭式表达式的高阶多项式</p></li>
+<li><p>当输入为特殊角度时，三角函数可产生精确答案</p></li>
+<li><p>快速傅立叶变换，可产生严格限制的结果，但每个数字使用的位数少于单精度浮点数</p></li>
+<li><p>基于信息、与精度无关的计算速度定义</p></li>
+<li><p>求连续函数极值的多项式复杂度方法</p></li>
+<li><p>一种通过维护可使用单个逻辑门测试的预解码单位异常状态来消除检查 n
+位异常值所浪费时间的方法</p></li>
+<li><p>线性或非线性方程组的求解器，可找到所有可表达的解，并在答案对输入值的微小变化敏感时自动变得明显</p></li>
+<li><p>非线性常微分方程的任意精确求解方法，不使用微积分，仅使用初等代数、几何和牛顿物理学</p></li>
+<li><p>使用弹道物理学推导气体压力和压力梯度，但绝对没有统计力学</p></li>
+<li><p>一种寻找函数不动点的技术，适用于稳定点和不稳定点</p></li>
+</ul>
+<p>几乎肯定会有许多攻击者认为 unum
+就像区间算术，并试图基于这种错误描述来诋毁这种方法。
+区间算术与浮点的争论和医学检测问题之间有一个有趣的类比。</p>
+<p>在医学检测中，“假阳性”是指在不存在问题的情况下报告问题。
+“假阴性”是指存在问题但测试未能检测到问题。 两者都是错误的形式。
+浮点数支持者和区间算术支持者之间的争论实际上是关于<em>哪种类型的错误更严重</em>的争论。
+浮点数通过默默地产生不正确的结果来犯下假阴性错误，但传统的间隔通过声明许多合法计算非常不稳定并且具有巨大的界限来犯下假阳性错误。
+哪一边是正确的？</p>
+<p><strong>都不正确</strong>啊。
+我们终于达到了可以消除数值计算中误报和漏报的技术水平。
+信息作为不确定性大小的倒数的概念清楚地表明了浮点和区间算术方法的错误所在。
+浮点数无法传达其误差范围，因此其信息为零。
+扩展到无限宽度的区间也具有零信息，因为该信息是无穷大的倒数。
+Unums、ubounds 和 uboxes
+旨在监视和最大化计算产生的信息，这就是计算的真正目的。</p>
+<p>因为 unum 是浮点数的超集，所以 unum
+算术可以完成浮点数可以做的所有事情，但它首次开启了向计算机系统传达数字让步和要求的能力。
+Unums 最终可以区分精确值和不精确值，就像我们目前区分正数和负数一样。
+当实数没有精确表示时，诚实地将结果标记为不精确并为其值提供严格界限。
+负担落在了浮点数的捍卫者身上：当 unum
+算术可以模仿浮点数并且具有如此多的优点时，为什么还要继续使用浮点数呢？
+当像 ubox
+集这样的有界方法可以产生具有最大可表达精度的完整解的结果时，为什么我们要容忍难以编写且使用起来很危险的数值方法呢？</p>
+<p>如果将计算结果标记为猜测，那么产生不严格的计算结果也是诚实的，不诚实的是像浮点数那样做舍入时候，就是悄悄猜测每个结果而不告知用户。
+当为 unum
+重写数值运算的秘诀时，可以首先对“猜测”函数进行大量调用，使它们复制浮点数的功能，然后逐渐减少这些调用的使用，直到没有调用，计算就可以声称是“非猜测”的。
+由于 unum
+也是传统区间算术的超集，因此它们可以提供该技术提供的严格界限，但它们控制不必要的范围扩展（信息丢失）的能力远远超出了传统区间算术所能提供的能力。
+Unum 提供了丰富的词汇来描述实数<em>集</em>，而不仅仅是精确点或闭集。</p>
+<p>假设情况相反：想象一下，在过去的一百年里，所有计算都被标记为精确或不精确，数字存储总是允许自动增长和收缩以优化内存和能源的使用，物理模拟也遵循相同的标准
+科学有效性在于其所依据的方程的正确性。
+想象一下，现在有人建议我们让每个数字看起来精确，即使它不是，总是使用固定的、超大的存储，独立于任何特定数据的精度和动态范围，我们让暂存器计算因计算机而异
+，并且我们用近似值取代了严格的计算物理，这些近似值创建了具有可疑有效性的有吸引力的可视化效果。</p>
+<p>技术界会如何反应？ 也许会讽刺地说，比如这样：“真是好主意。
+它浪费内存，通过使用更多带宽来减慢一切，在不同的系统上产生不同的答案，阻止使用并行处理，使小位串的算术与大位串的算术占用一样长，并且可以在没有特殊情况下产生巨大的计算错误而不给出警告。
+你是疯了吗？ 滚出去”。</p>
+<p>还记得前言中的这张图吗？</p>
+<div class="figure align-default" id="id4">
+<img alt="_images/image-20230711201026496.png" src="_images/image-20230711201026496.png" />
+<p class="caption"><span class="caption-number">Fig. 434 </span><span class="caption-text">image-20230711201026496</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>当肯尼思·威尔逊提出将计算科学提升到与其他两个椭圆相同的水平时，他最近获得了诺贝尔物理学奖，这是有史以来第一个授予计算成就而不是理论或实验结果的奖项。
+他使用浮点系统的一些阵列处理器，利用一种称为晶格规范理论来模拟夸克的行为（“量子色动力学”或
+QCD）。 这没有办法手工求解方程，当然也没有办法用亚核粒子进行类似的实验。
+但通过基于该理论的计算，威尔逊能够获得物理学家从实验装置中获得的相同指导，显示计算结果与测量到的中子质量之间大致一致。
+他的诺贝尔奖的授予引起了争议。
+有些人认为使用计算机完全违反了科学规则，因为计算机可以提供指导，但无法<em>证明</em>正确性。</p>
+<p>自 20 世纪 80
+年代以来，我们已经取得了长足的进步，无论是在我们对计算科学价值的尊重程度方面，还是在我们可用于执行计算科学的技术方面。
+通过基于 unum
+的模拟可证明限制物理系统的行为，我们终于可以开始将示例放入上面的蓝色计算科学椭圆形中，这些示例确实<em>是</em>科学，而不仅仅是指导。</p>
+</div>
+
+
+        </div>
+        <div class="side-doc-outline">
+            <div class="side-doc-outline--content"> 
+            </div>
+        </div>
+
+      <div class="clearer"></div>
+    </div><div class="pagenation">
+     <a id="button-prev" href="21_calculus_evil.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="P">
+         <i class="pagenation-arrow-L fas fa-arrow-left fa-lg"></i>
+         <div class="pagenation-text">
+            <span class="pagenation-direction">Previous</span>
+            <div>21 微积分被认为是邪恶的：离散物理</div>
+         </div>
+     </a>
+     <a id="button-next" href="Glossary.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
+         <i class="pagenation-arrow-R fas fa-arrow-right fa-lg"></i>
+        <div class="pagenation-text">
+            <span class="pagenation-direction">Next</span>
+            <div>词汇表</div>
+        </div>
+     </a>
+  </div>
+        
+        </main>
+    </div>
+  </body>
+</html>

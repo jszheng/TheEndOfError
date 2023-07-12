@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>3. 计算机算术的原罪 &#8212; THE END of ERROR - Unum Computing 0.1 documentation</title>
+
+    <link rel="stylesheet" href="_static/material-design-lite-1.3.0/material.blue-deep_orange.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx_materialdesign_theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fontawesome/all.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/d2l.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/d2l.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="4. 完整的unum格式定义" href="04_unum_format.html" />
+    <link rel="prev" title="2. 构造unum的格式" href="02_BuildUpUnumFormat.html" /> 
+  </head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header mdl-layout__header--waterfall ">
+    <div class="mdl-layout__header-row">
+        
+        <nav class="mdl-navigation breadcrumb">
+            <a class="mdl-navigation__link is-active">3. 计算机算术的原罪</a>
+        </nav>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+        
+<form class="form-inline pull-sm-right" action="search.html" method="get">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+        <label id="quick-search-icon" class="mdl-button mdl-js-button mdl-button--icon"  for="waterfall-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q"  id="waterfall-exp" placeholder="Search" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </div>
+      </div>
+      <div class="mdl-tooltip" data-mdl-for="quick-search-icon">
+      Quick search
+      </div>
+</form>
+        
+<a id="button-show-source"
+    class="mdl-button mdl-js-button mdl-button--icon"
+    href="_sources/03_TheOriginalSin.rst.txt" rel="nofollow">
+  <i class="material-icons">code</i>
+</a>
+<div class="mdl-tooltip" data-mdl-for="button-show-source">
+Show Source
+</div>
+        </nav>
+    </div>
+    <div class="mdl-layout__header-row header-links">
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation">
+          
+              <a  class="mdl-navigation__link" href="https://github.com/jszheng/TheEndOfError">
+                  <i class="fab fa-github"></i>
+                  Github
+              </a>
+      </nav>
+    </div>
+</header><header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_hidden_scratchpads_3_layers.html">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_info_per_bit.html">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_comparison_operations.html">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_mul_div.html">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_other_important_unary_ops.html">12 其他重要的一元运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_fused_operations.html">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_TheOtherKindOfError.html">15. 另外一种误差</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_avoid_interval_arith_pitfalls.html">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_meaning_of_solve_equ.html">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_permission_to_guess.html">18 准许猜测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_pendulums_done_correctly.html">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_calculus_evil.html">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_end_of_error.html">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+        <main class="mdl-layout__content" tabIndex="0">
+
+	<script type="text/javascript" src="_static/sphinx_materialdesign_theme.js "></script>
+    <header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <span class="title-text">
+                  THE END of ERROR - Unum Computing
+              </span>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_how_to_read.html">如何读这本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part1.html">Part 1 一种新的数字格式Unum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Overview.html">1 概论</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_BuildUpUnumFormat.html">2. 构造unum的格式</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. 计算机算术的原罪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_unum_format.html">4. 完整的unum格式定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_hidden_scratchpads_3_layers.html">5. 隐藏的草稿本和三个层次</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_info_per_bit.html">6 每个比特的信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixed_size_unum_storage.html">7 定长的unum存储</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_comparison_operations.html">8 比较操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_add_sub_unbias_round.html">9 加减法和无偏差舍入的迷</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_mul_div.html">10 乘法和除法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_power.html">11 求幂</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_other_important_unary_ops.html">12 其他重要的一元运算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_fused_operations.html">13 融合操作（一次性表达式）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_trial_runs.html">14 试运行：Unums 面临计算挑战</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part1_summary.html">小结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Part2.html">Part 2 - 一种新的解决方法 Ubox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_TheOtherKindOfError.html">15. 另外一种误差</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_avoid_interval_arith_pitfalls.html">16 避免区间算术陷阱</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17_meaning_of_solve_equ.html">17 “解”方程到底是什么意思？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_permission_to_guess.html">18 准许猜测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_pendulums_done_correctly.html">19 摆的正确计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_two_body_problem.html">20 二体问题(以及多体问题)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_calculus_evil.html">21 微积分被认为是邪恶的：离散物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_end_of_error.html">22 错误的终结</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Glossary.html">词汇表</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+
+    <div class="document">
+        <div class="page-content" role="main">
+        
+  <div class="section" id="id1">
+<h1>3. 计算机算术的原罪<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="id2">
+<h2>3.1 接受不准确的答案<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>二进制浮点数可以表示很大和非常小的数字，并且精度范围很广。但是它们不能表示所有实数。它们只能表示分母为2的幂的有理数。有些读者可能会对此声明感到吃惊，因为他们很早以前就习惯了使用浮点数代表平方根，<span class="math notranslate nohighlight">\(\pi\)</span>，小数等等，甚至被教导浮点数旨在表示实数。那问题出在哪里？</p>
+<p>计算机算术的“原罪”就出在当用户接受以下命题时：</p>
+<table border="2"><tr><td bgcolor="lightyellow"><p>抱歉，计算机无法给您确切的值。请改用此值，那跟真实值很近。</p>
+</td></tr></table><p>如果有人抗议，通常会告诉他们：“表示每个实数的唯一方法是使用无限的比特位。由于计算机具有有限的内存，因此它们仅具有有限的精度。接受它吧。”</p>
+<p><strong>我们完全没有理由接受，这个推理是有缺陷的。</strong>
+数百年来，人类一直以一种简单而有限的方式来表达大量实数。如果被问到“<span class="math notranslate nohighlight">\(\pi\)</span>的值是什么？”聪明且正确的答案是“
+3.14…”，其中“…”表示最后一位之后还有很多有效位数。而如果问“七除以二是多少？”那么答案可以表示为“
+3.5”，最后一位之后空格表示数是完全精确的。有时我们需要比空格更明确的内容来显示准确性。</p>
+<table border="4"><tr><td bgcolor="lightblue"><p>定义:
+＂↓＂符号放在一组显示的小数位数的末尾时，强调右侧的所有数字均为零；
+显示的小数是准确的。</p>
+</td></tr></table><p>正如有符号数表示的正号（空白）或负号＇–＇被写在数字的左侧一样，精确性是一种二态指示符，右侧空白表示精确或“…””表示不精确。
+当我们想表达得更清楚时，我们在正数之前明确地加上“ +”，而不是空白。
+同样，我们可以在一个精确的的数字序列后面加上符号“<span class="math notranslate nohighlight">\(\downarrow\)</span>”，以强调“这些数字在“<span class="math notranslate nohighlight">\(\downarrow\)</span>”处停止。”
+或者说最后一个之后的所有位都是0。这只需要多一位存储，我们称为<strong>ubit</strong>。</p>
+<table border="4"><tr><td bgcolor="lightblue"><p>定义:
+ubit（不确定性位）是小数的末尾一位，如果小数精确，则为0；如果小数中有更多非零位，但没有空间将其存储在unum的特定格式设置中，则为1。</p>
+</td></tr></table><p>如果所显示的最后一位右边的小数中的位全为0，则它是精确值。
+如果有一个无限长的1位字符串，它也是精确的，并且值等于小数最后一位加1，同样5.999999…如果9的数目是无限的，则与6相同。
+如果设置了ubit，则表示的数量是介于全0的精确值和全1精确值之间的所有实数。最接近Ubit的历史先例的是Pat
+Sterbenz在他的绝版书中＂浮点计算Floating-Point
+Computation（1974）＂描述的“舍入为粘性位”。
+他用该位指示“可以计算更多的位”。 他也将其放在分数的末尾。</p>
+<p>数值分析师使用一个术语来表示数字和下一个较大的分数值所表示的数字之间的差：<span class="math notranslate nohighlight">\(ULP\)</span>。</p>
+<table border="4"><tr><td bgcolor="lightblue"><p>定义:
+ULP（读做gulp）是由位串表示数与的精确值之间的差，与该位串最后一位（小数的最后一位）相差一个单位。</p>
+</td></tr></table><p>（某些文章使用“Unit of Least
+Precision最低精度单位”作为缩写短语。）例如，如果我们有定点二进制数<span class="math notranslate nohighlight">\(1.0010\)</span>，<span class="math notranslate nohighlight">\(ULP\)</span>是最后一个0的位置，而大一个<span class="math notranslate nohighlight">\(ULP\)</span>的数字就是<span class="math notranslate nohighlight">\(1.0011\)</span>。</p>
+<p>所以如果数值是精确的我们用“<span class="math notranslate nohighlight">\(1.0010\downarrow\)</span>”表示，而用“<span class="math notranslate nohighlight">\(1.0010\ldots\)</span>”表示介于<span class="math notranslate nohighlight">\(1.0010\)</span>和<span class="math notranslate nohighlight">\(1.0011\)</span>所有数（开区间,
+不含两端的精确数）．通常我们用括号括起来的两个数来表示开区间<span class="math notranslate nohighlight">\((1.0010，1.0011)\)</span>．方括号用来表示闭区间<span class="math notranslate nohighlight">\([1.0010，1.0011]\)</span>,但我们这里不是闭区间．当ubit设置上后表示的是一个ulp宽度的开区间．下面是数的格式，其中洋红色表示ubit.</p>
+<div class="figure align-default" id="id5">
+<img alt="_images/image-20200713093400770.png" src="_images/image-20200713093400770.png" />
+<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">image-20200713093400770</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>其中h代表隐藏位(hidden bit). 当指数为全０时候是０，其他情况是１．</p>
+<p>假设我们还是用5ｂ的浮点表示，一位符号，２位指数，１位小数，最后一位ubit．我们可以表示的数有哪些呢？一些例子：</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\color{red}{0}\,\color{blue}{00}\,\color{black}{1}\,\color{magenta}{0}\)</span>
+表示精确的<span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>, (隐藏位为０)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\color{red}{0}\,\color{blue}{00}\,\color{black}{1}\,\color{magenta}{1}\)</span>
+表示开区间<span class="math notranslate nohighlight">\((\frac{1}{2}, 1)\)</span>,
+所有满足的<span class="math notranslate nohighlight">\(\frac{1}{2}\lt x \lt 1\)</span>实数</p></li>
+<li><p><span class="math notranslate nohighlight">\(\color{red}{0}\,\color{blue}{01}\,\color{black}{0}\,\color{magenta}{0}\)</span>
+表示精确的1</p></li>
+</ul>
+<p>通过在<strong>精确数字</strong>和<strong>区间数字</strong>的交替，含义单调增加并整洁地“平铺”满了完整的实数线。
+我们不再需要犯下“原罪”，即用不正确的确切数字代替正确的数字。
+如果计算2÷3，则此五位格式的答案是开区间<span class="math notranslate nohighlight">\((\frac{1}{2}, 1)\)</span>，其格式为<span class="math notranslate nohighlight">\(\color{red}{0}\,\color{blue}{00}\,\color{black}{1}\,\color{magenta}{1}\)</span>
+。这可能是关于值<span class="math notranslate nohighlight">\(\frac{2}{3}\)</span>的非常低精度的表达，但至少是事实。
+如果改用浮点数，则必须在两个谎言之间进行选择:
+<span class="math notranslate nohighlight">\(\frac{2}{3}=\frac{1}{2}\)</span>或是<span class="math notranslate nohighlight">\(\frac{2}{3}=1\)</span></p>
+<p>浮点数的硬件设计人员及其数学库必须跨过障碍才能进行所谓“正确的舍入”(correct
+rounding)，意思是舍入误差不得超过0.5 ULP。
+想象一下，您必须计算多少个额外的位，才能弄清楚哪种取整方法。
+对于许多常见函数（例如<span class="math notranslate nohighlight">\(e^x\)</span>），无法预先预测要计算多少位数才能正确舍入它！
+至少ubit消除了舍入所需的额外计算。
+一旦计算机确定分数中最右边的位之外还有非零位，它只需将ubit设置为1即可完成。</p>
+<p>下节会显示ubit的意外收益：它提供了一种优雅的方式来表示两种NaN。</p>
+</div>
+<div class="section" id="id3">
+<h2>3.2 ＂几乎无限＂和＂超过无限＂<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<div class="figure align-default" id="id6">
+<img alt="_images/image-20200713113017297.png" src="_images/image-20200713113017297.png" />
+<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text">image-20200713113017297</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<blockquote>
+<div><center><p>这幅图是来源与2001年电影《太空漫游》的最后一辑“JUPITER AND BEYOND THE
+INFINITE木星及无限苍穹”。
+这辑的标题可能是皮克斯（Pixar）动画人物巴斯光年Buzz
+Lightyear角色的口号“To Infinity…and Beyond！”的灵感来源。
+“超越无限”正是unums表达NaN数量的方式。</p>
+</center></div></blockquote>
+<p>回想一下，我们使用了最大幅度的位串（指数和分数中的所有位都设置为1）以及符号位来表示正负无穷大。最大的有限数的分数只比它小一个ULP，因此它们的最右边分数位是0。在这种情况下添加ubit意味着什么？</p>
+<p>可能看起来很奇怪，但我们把<span class="math notranslate nohighlight">\(+\infty\)</span>和<span class="math notranslate nohighlight">\(–\infty\)</span>看做是“精确”数字。有时人们会说一些数目(例如天空中的恒星数量)是“几乎无限”，但是语法学家会指出“几乎－无限”是矛盾的，因为它意味着“有限”。实际上，“几乎无限”是一个有用的计算概念，因为它表示一个太大的有限数字，无法表达。</p>
+<table border="4"><tr><td bgcolor="lightblue"><p>定义: 值　maxreal　是可以表达的最大有限值。比无穷大表示少一个ULP</p>
+</td></tr></table><p>使用ubit表示法，可以表示开区间<span class="math notranslate nohighlight">\((maxreal，+\infty)\)</span><span class="math notranslate nohighlight">\(和\)</span><span class="math notranslate nohighlight">\((–\infty, -maxreal)\)</span>，这表示“几乎是无限的”。这表示的是有限的实数，但是太大而无法精确的用这么少的比特数区分开来表示。</p>
+<p>这是与扩展精度算术完全不同的方法，后者使用软件例程通过使用超大数字来表达和执行算术运算，增加附加位直到存储空间用完。</p>
+<p>按照2.5节的5位浮点例子，我们用非IEEE方式表达正负无穷</p>
+<p><span class="math notranslate nohighlight">\(\color{red}{0}\,\color{blue}{11}\,\color{black}{1}\,\color{magenta}{0}\)</span>
+是 <span class="math notranslate nohighlight">\(+\infty\)</span> (符号位=0，值是正，所有指数与分数都是１)</p>
+<p><span class="math notranslate nohighlight">\(\color{red}{1}\,\color{blue}{11}\,\color{black}{1}\,\color{magenta}{0}\)</span>
+是 <span class="math notranslate nohighlight">\(+\infty\)</span> (符号位=1，值是负，所有指数与分数都是１)</p>
+<p>ubit为0表示无穷大这个数是精确的表示．最大的有限数是分数小1位,
+比正负无穷小一个ulp</p>
+<p><span class="math notranslate nohighlight">\(\color{red}{0}\,\color{blue}{11}\,\color{black}{0}\,\color{magenta}{0}\)</span>
+是 <span class="math notranslate nohighlight">\(+4\)</span> , 按照浮点格式有隐藏位=1</p>
+<p><span class="math notranslate nohighlight">\(\color{red}{1}\,\color{blue}{11}\,\color{black}{0}\,\color{magenta}{0}\)</span>
+是 <span class="math notranslate nohighlight">\(-4\)</span> ,</p>
+<p>当我们设置了ubit后，表示接近无限．这能表示的最大数还要大，但是还是属于<strong>有限</strong>的</p>
+<p><span class="math notranslate nohighlight">\(\color{red}{0}\,\color{blue}{11}\,\color{black}{0}\,\color{magenta}{１}\)</span>
+是开区间<span class="math notranslate nohighlight">\((4, \infty)\)</span></p>
+<p><span class="math notranslate nohighlight">\(\color{red}{1}\,\color{blue}{11}\,\color{black}{0}\,\color{magenta}{１}\)</span>
+是开区间 <span class="math notranslate nohighlight">\((-\infty, -4)\)</span></p>
+<p>如果设置了ubit表示“比当前表达的精确数大一个ulp”,
+那么无限这个精确数置位ubit又是什么意思呢？
+这里你应该微笑了，因为“超越无限”是没有意义的。
+但是我们正需要一种方式来无意义的数，那就是NaN！
+因此，我们可以将“超出正无穷大”定义为安静的NaN，将“超过负无穷大”定义为发信号NaN，这里用红色表示，因为它表示“停止计算！”</p>
+<p><span class="math notranslate nohighlight">\(\color{red}{0}\,\color{blue}{11}\,\color{black}{1}\,\color{magenta}{1}\)</span>
+是 quiet <span class="math notranslate nohighlight">\(NaN\)</span></p>
+<p><span class="math notranslate nohighlight">\(\color{red}{1}\,\color{blue}{11}\,\color{black}{1}\,\color{magenta}{1}\)</span>
+是 signaling <span class="math notranslate nohighlight">\(\color{red}{NaN}\)</span></p>
+<p>在最大数的另一端有对应的我们称为“小的亚归一化数” small subnormal</p>
+<table border="4"><tr><td bgcolor="lightblue"><p>定义: 值　small subnormal　是可以表达的最小有限值。比０表示大一个ULP</p>
+</td></tr></table><p>有时人们会使用“几乎没有”这个词，同样的，语法学家也可能会再次说：“这意味着是’有东西’，因此’几乎没有’是矛盾的，就像’巨大的小虾’Jumbo
+Shrimp”。 但是，“几乎没有”和“几乎无限”一样有用。
+它的意思是“不是零，而是比我们可以表达的数字少”。</p>
+<p>ubit让我们优雅地代表这个概念：超越零。
+并且它赋予可以有“负零”的含义，因为它告诉跟0之间的ULP间隔指向哪个端点方向。</p>
+<p><span class="math notranslate nohighlight">\(\color{red}{0}\,\color{blue}{00}\,\color{black}{0}\,\color{magenta}{0}\)</span>
+表示精确的<span class="math notranslate nohighlight">\(0\)</span></p>
+<p><span class="math notranslate nohighlight">\(\color{red}{1}\,\color{blue}{00}\,\color{black}{0}\,\color{magenta}{0}\)</span>
+也表示精确的<span class="math notranslate nohighlight">\(0\)</span>, 零无需看符号</p>
+<p>但是</p>
+<p><span class="math notranslate nohighlight">\(\color{red}{0}\,\color{blue}{00}\,\color{black}{0}\,\color{magenta}{1}\)</span>
+表示开区间<span class="math notranslate nohighlight">\((0, smallsubnormal)\)</span></p>
+<p><span class="math notranslate nohighlight">\(\color{red}{1}\,\color{blue}{00}\,\color{black}{0}\,\color{magenta}{1}\)</span>
+表示开区间<span class="math notranslate nohighlight">\((-smallsubnormal, 0)\)</span></p>
+<p>顺便说一句，气象学家在写道温度为负零，即-0°时就已经使用了这个想法。
+这意味着温度在–0.5°至0°之间，而写入0°则意味着温度在0°至0.5°之间。
+对于气象人员来说，传达温度是高于还是低于水的冰点（0摄氏度）显然很关键。</p>
+<p>最小的可表示非零数字在分数的最后一位为1，所有其他位均为0。由于指数中具有所有0的位使其成为亚归一化数subnormal，因此无论有多少位指数和分数，我们都将其称为smallsubnormal。
+我们正在使用的只有五位的这种低精度情况下，最小的非零数是<span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>
+，但是一旦我们开始使用较大的位串，它当然通常会小得多。</p>
+</div>
+<div class="section" id="id4">
+<h2>3.3 没有上溢，没有下溢，也没有舍入<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<p>如果数字太大而无法用特定的浮点精度表示（溢出），我们该怎么办？
+IEEE标准规定，当计算溢出时，应使用值<span class="math notranslate nohighlight">\(\infty\)</span>进行进一步的计算。但是，将“有限溢出结果”设置为精确值<span class="math notranslate nohighlight">\(\infty\)</span>无限是超级<em>无限</em>的错误。同样，当一个数字变得太小而无法表达时，标准会说改用0。某些结果的使用方式，两种替代都可能会对计算造成灾难性的影响。该标准还指出，应在处理器寄存器中设置一个标志位，以指示是否发生过溢出。下溢甚至是“四舍五入”也有一个不同的标志。</p>
+<p>问题是<strong>没人</strong>去看过这些标志。</p>
+<p>计算机语言无法查看这些标志，即使计算环境开始报告中间下溢或上溢警告，只要计算结果看起来还不错，大多数用户也会找到如何禁用该报告的方法，而这通常会提高计算速度。尽管计算机用户发现这些标志好的情况下基本没有用处，坏的情况是很烦人的，但芯片设计人员仍然被要求将标志放入浮点运算单元中。</p>
+<table border="2"><tr><td bgcolor="lightblue"><p>IEEE设计中的一个基本错误是将“
+inexact”描述放在三个处理器标记中，这对于计算机用户来说是非常难于访问的。正确的位置应该在数字本身中，分数末尾有的ubit上。只需在数字中放置该位，就无需上溢，下溢和舍入标志。</p>
+</td></tr></table><p>我们不需要上溢，因为我们有“几乎无限”的值：<span class="math notranslate nohighlight">\((maxreal，\infty)\)</span>和<span class="math notranslate nohighlight">\((-\infty，-maxreal)\)</span>。</p>
+<p>我们不需要下溢，因为我们有“几乎没有”的值：<span class="math notranslate nohighlight">\((-smallsubnormal，0)\)</span>和：<span class="math notranslate nohighlight">\((0，smallsubnormal)\)</span>。计算永远都不会错误地告诉您，例如<span class="math notranslate nohighlight">\(10^{-100 000}\)</span>等于零，并带有一个隐藏（或有意禁用）的下溢错误标志位。而是将结果标记为-严格大于零，但严格小于最小可表示数字。同样，如果您尝试计算约十亿的十亿的幂，则无需错误地替换无穷大，也无需发出溢出警报。</p>
+<p>如果您要求<span class="math notranslate nohighlight">\(\pi\)</span>的值（具有五位小数和一个ubit），您将获得值位于开放时间间隔（3.125，3.25）中，这是一个正确的陈述。无需在处理器中设置“四舍五入”标志，标志位是一个“粘性”位，因为它会一直保持置位状态，直到操作系统中的某些内容对其进行重置为止。例如，可能会发生（3.125，3.25）乘以零并再次变为精确的结果情况。
+“四舍五入”标志就像一辆常亮“ CHECK ENGINE”灯的汽车，但仍然似乎运转良好.</p>
+<div class="figure align-default" id="id7">
+<img alt="_images/image-20200713140246175.png" src="_images/image-20200713140246175.png" />
+<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text">image-20200713140246175</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p>关于在数字格式本身中记录是否精确描述的最后一条评论。
+如果您在计算器上输入一个大正数，然后一遍又一遍地按平方根按钮，最终显示屏将精确显示1.0000000。
+当然，这是不正确的。
+该错误非常类似于将溢出数设置为无穷大或将下溢数设置为零。
+对于小数点后的ubit，答案可以是“ 1.00000…”，并带有永不消失的“…”。
+该数字始终标记为“大于1，但超过的数量太小而无法表达”。
+传统的区间算法无法做到这一点，并且会产生与float相同的错误，接受精确1作为答案（区间两端都无限逼进１最后结果是精确的1)。</p>
+<p>下面代码用unum反复做平方根，数学上是无限loop,</p>
+<div class="figure align-default" id="id8">
+<img alt="_images/image-20200713140933757.png" src="_images/image-20200713140933757.png" />
+<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">image-20200713140933757</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<p>这里停止了迭代．双精度浮点数错误地声明了最后一个结果-恰好等于1。</p>
+<p>许多科学计算都涉及迭代和测试收敛性，使用浮点表示法时，“停止标准”是错误和额外编程工作的来源。
+Ubit保护我们避免错误地将一个精确数误以为是渐近逼近该值的数。</p>
+</div>
+<div class="section" id="ubit">
+<h2>3.4 可视化带ubit的数<a class="headerlink" href="#ubit" title="Permalink to this heading">¶</a></h2>
+<p>浮点数旨在允许使用（近似）实数进行计算。
+对于到目前为止讨论的所有格式，位字符串只能表示离散的精确值，因此，值图由一系列点组成。
+通过ubit扩展，我们现在可以覆盖整个实数线以及<span class="math notranslate nohighlight">\(–\infty\)</span>和<span class="math notranslate nohighlight">\(\infty\)</span>以及两种NaN类型。</p>
+<p>对于先前使用的五位情况，见下面的值图，其中包含精确数字的点和带有圆角的矩形，以提醒我们它们是精确数字之间的开区间：</p>
+<div class="figure align-default" id="id9">
+<img alt="_images/image-20200713141911626.png" src="_images/image-20200713141911626.png" />
+<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">image-20200713141911626</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<p>与以前的图形相比，有两个细微的变化，除了包含开放的区域而不包含点值之外，您可能误把–5和5作为<span class="math notranslate nohighlight">\(+\infty\)</span>和<span class="math notranslate nohighlight">\(–\infty\)</span>的值，但事实上在
+y轴箭头指向两个方向，整个实数线现在由位字符串表示。
+所以我们将y轴的标签从“十进制值”更改为“代表的值”。</p>
+<p>下一个问题是，在进行加减乘除运算时，闭包方面是否更好。
+是好但是仍然不完美。
+原因是我们只能表示一个ULP宽的范围，而许多运算所产生的结果都比一个ULP宽。
+例如<span class="math notranslate nohighlight">\((0, \frac{1}{2})+(0, \frac{1}{2})=(0, 1)\)</span>，但是无法用这种格式表示间隔（0，1）。</p>
+<p>下图是5bit带ubit的浮点计算闭环图</p>
+<div class="figure align-default" id="id10">
+<img alt="_images/image-20200713154703906.png" src="_images/image-20200713154703906.png" />
+<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">image-20200713154703906</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<p>上溢和下溢的情况没有了。
+我们迫切希望拥有一个封闭的系统，在该系统中，算术结果始终可以表示，而不会四舍五入或以其他方式损害正确性。
+每当我们添加一些东西来适应一种新的数值类型时，我们就有可能创建更多不符合格式的例子。
+这会是一个无休止的过程，抑或是有能创建一个封闭，有限比特数来对实数进行真实算术运算的系统？</p>
+<table border="2"><tr><td bgcolor="lightgray"><p>给读者的练习:
+有没有可能用一个没有小数位，但仍然使用ubit的数，能覆盖实数轴。
+按照前面定义的指数偏移，隐藏位等描述的格式定义，用一个符号位，两个指数位，无小数位和ubit能表示的不同值是什么？
+如果将IEEE规则用于无穷大和NaN值而不是此处描述的方法，又可以表示多少个不同的值？?</p>
+</td></tr></table></div>
+</div>
+
+
+        </div>
+        <div class="side-doc-outline">
+            <div class="side-doc-outline--content"> 
+<div class="localtoc">
+    <p class="caption">
+      <span class="caption-text">Table Of Contents</span>
+    </p>
+    <ul>
+<li><a class="reference internal" href="#">3. 计算机算术的原罪</a><ul>
+<li><a class="reference internal" href="#id2">3.1 接受不准确的答案</a></li>
+<li><a class="reference internal" href="#id3">3.2 ＂几乎无限＂和＂超过无限＂</a></li>
+<li><a class="reference internal" href="#id4">3.3 没有上溢，没有下溢，也没有舍入</a></li>
+<li><a class="reference internal" href="#ubit">3.4 可视化带ubit的数</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+            </div>
+        </div>
+
+      <div class="clearer"></div>
+    </div><div class="pagenation">
+     <a id="button-prev" href="02_BuildUpUnumFormat.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="P">
+         <i class="pagenation-arrow-L fas fa-arrow-left fa-lg"></i>
+         <div class="pagenation-text">
+            <span class="pagenation-direction">Previous</span>
+            <div>2. 构造unum的格式</div>
+         </div>
+     </a>
+     <a id="button-next" href="04_unum_format.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
+         <i class="pagenation-arrow-R fas fa-arrow-right fa-lg"></i>
+        <div class="pagenation-text">
+            <span class="pagenation-direction">Next</span>
+            <div>4. 完整的unum格式定义</div>
+        </div>
+     </a>
+  </div>
+        
+        </main>
+    </div>
+  </body>
+</html>
