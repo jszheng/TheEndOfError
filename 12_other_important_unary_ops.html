@@ -216,7 +216,7 @@ unums 和 ubounds，绝对值有一些需要注意的事项。
 <span class="math notranslate nohighlight">\([-3, -2)\)</span> 的 ubound 的绝对值应该是 <span class="math notranslate nohighlight">\((2, 3]\)</span> ：</p>
 <div class="figure align-default" id="id6">
 <img alt="_images/image-20230627083036422.png" src="_images/image-20230627083036422.png" />
-<p class="caption"><span class="caption-number">Fig. 187 </span><span class="caption-text">image-20230627083036422</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 188 </span><span class="caption-text">image-20230627083036422</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>尽管该操作看起来微不足道，<strong>absu</strong> 仍会更新 <strong>ubitsmoved</strong> 和
 <strong>numbermoved</strong> 计数。
@@ -233,7 +233,7 @@ NaN，因为那里的对数是复值。 <strong>logg</strong> 和 <strong>logu</
 下面是求范围 [0, 1] 的对数的示例，结果具有特别精确的界限：</p>
 <div class="figure align-default" id="id7">
 <img alt="_images/image-20230627085144237.png" src="_images/image-20230627085144237.png" />
-<p class="caption"><span class="caption-number">Fig. 188 </span><span class="caption-text">image-20230627085144237</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 189 </span><span class="caption-text">image-20230627085144237</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>与指数函数一样，如果我们使用 2 而不是 e
 作为基数，我们可以从对数函数得到更精确的结果。
@@ -267,7 +267,7 @@ unum表示的数字来达到这样一个特殊角度值的希望。
 <p>该原型包含几个三角函数，但不是完整的集合：</p>
 <div class="figure align-default" id="id8">
 <img alt="_images/image-20230627092840256.png" src="_images/image-20230627092840256.png" />
-<p class="caption"><span class="caption-number">Fig. 189 </span><span class="caption-text">image-20230627092840256</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 190 </span><span class="caption-text">image-20230627092840256</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>区间界限的方法是将下界参数减少到接近零的可管理范围，然后将上限参数减少到比下界大不超过两个周期的值。
 这可以捕获函数在输入区间内某处具有最小值或最大值的情况。
@@ -275,19 +275,19 @@ unum表示的数字来达到这样一个特殊角度值的希望。
 300°，两端的角度间隔都开放的情况如下图：</p>
 <div class="figure align-default" id="id9">
 <img alt="_images/image-20230627093333316.png" src="_images/image-20230627093333316.png" />
-<p class="caption"><span class="caption-number">Fig. 190 </span><span class="caption-text">image-20230627093333316</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 191 </span><span class="caption-text">image-20230627093333316</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <p>余弦是该角度区间的水平投影，其范围从 –1 到 cos(60°) =
 1/2，但函数值在右侧打开（蓝色条在右侧圆角化，以显示这一点） 。</p>
 <div class="figure align-default" id="id10">
 <img alt="_images/image-20230627093531906.png" src="_images/image-20230627093531906.png" />
-<p class="caption"><span class="caption-number">Fig. 191 </span><span class="caption-text">image-20230627093531906</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 192 </span><span class="caption-text">image-20230627093531906</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <p>正弦是该角度间隔的垂直投影，虽然 sin(60°) 和 sin(300°) 不能表示为精确的
 unum 值，但这并不重要，因为总体界限是单位圆的整个范围， 闭区间：</p>
 <div class="figure align-default" id="id11">
 <img alt="_images/image-20230627093629473.png" src="_images/image-20230627093629473.png" />
-<p class="caption"><span class="caption-number">Fig. 192 </span><span class="caption-text">image-20230627093629473</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 193 </span><span class="caption-text">image-20230627093629473</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <p>定义了基本操作后，我们准备开始尝试测试问题来比较 unum 和 float。
 然而，还有一点未完成的事情：可以融合的操作的定义，即在

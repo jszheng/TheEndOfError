@@ -202,7 +202,7 @@ Sutherland）谈到过“时钟的暴政”，他指的是传统的计算机设�
 <p>假设英语使用的是如现在我们使用固定大小的数字，然后要求每个单词都适合分配给16个字母的空间。</p>
 <div class="figure align-default" id="id11">
 <img alt="_images/image-20200714151036975.png" src="_images/image-20200714151036975.png" />
-<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">image-20200714151036975</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text">image-20200714151036975</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <p>也许设计文字处理程序的人会认为，如果每个单词总是16个字母长，那么排版非常容易和快捷。
 由于平均单词长度远小于16个字母，因此浪费了大量空间。
@@ -222,7 +222,7 @@ IEEE标准为二进制浮点数定义了四个标准大小：16、32、64和128�
 它还定义了每种大小的指数和小数位数：</p>
 <div class="figure align-default" id="id12">
 <img alt="_images/image-20200714161936713.png" src="_images/image-20200714161936713.png" />
-<p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text">image-20200714161936713</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 36 </span><span class="caption-text">image-20200714161936713</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <p>您可能想知道的第一件事是，什么是那些指数和分数的“<strong>正确</strong>”比特数？
 指数位数是否有数学依据？ 其实<strong>没有</strong>。 他们是由委员会选出的。
@@ -260,7 +260,7 @@ IEEE标准为二进制浮点数定义了四个标准大小：16、32、64和128�
 它们位于ubit的右侧，为清晰起见，我们将它们涂成绿色和灰色。</p>
 <div class="figure align-default" id="id13">
 <img alt="_images/image-20200714214032378.png" src="_images/image-20200714214032378.png" />
-<p class="caption"><span class="caption-number">Fig. 36 </span><span class="caption-text">image-20200714214032378</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 37 </span><span class="caption-text">image-20200714214032378</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 <p>有时，此类字段称为“元数据”，即描述数据的数据。 新的字段应该有多大？
 也就是说，需要多少位来指定指数大小和分数大小？</p>
@@ -360,7 +360,7 @@ H.Bailey)</a>
 它们中的大多数都是简短的，例如以下用于设置计算环境的命令：</p>
 <div class="figure align-default" id="id14">
 <img alt="_images/image-20200715125506280.png" src="_images/image-20200715125506280.png" />
-<p class="caption"><span class="caption-number">Fig. 37 </span><span class="caption-text">image-20200715125506280</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 38 </span><span class="caption-text">image-20200715125506280</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 <p>setenv函数为esizesize和fsizesize的指定设置设置环境。它用<span class="math notranslate nohighlight">\(\lbrace esizesize，fsizesize \rbrace\)</span>对作为其参数。它计算所有有用的指针和比特位组合，用于解开任何给定的unum并解释其对应值。
 setenv的功能的完整说明在附录C.1的代码清单中。上面显示的代码行将unum环境设置为最大指数大小为<span class="math notranslate nohighlight">\(2^3\)</span>位，最大分数大小为<span class="math notranslate nohighlight">\(2^4\)</span>位，并且还创建了与环境一起使用的所有有用的常量，如<em>maxreal</em>和<em>utagsize</em>。以<strong>setenv</strong>这样显示的函数也表明原型中存在一个函数。当诸如<em>maxreal</em>的值实际上必须参与计算时，它将变为<strong>maxreal</strong>。词汇表中列出了已定义的概念（例如maxreal），而附录中列出了对该详细程度感兴趣的已定义计算机变量和函数。</p>
@@ -372,7 +372,7 @@ setenv的功能的完整说明在附录C.1的代码清单中。上面显示的�
 <p>为了清楚起见，我们显示了utag的三个位字段，每个字段下方都有注释，以提醒每个字段内容代表什么。如果最后一个小数位后面还有更多位，则第一个字段ubit用“…”注释，如果小数是精确的，则用“<span class="math notranslate nohighlight">\(\downarrow\)</span>”注释。第二和第三字段保存的是减过１的分数和指数大小es和fs。</p>
 <div class="figure align-default" id="id15">
 <img alt="_images/image-20200715132517867.png" src="_images/image-20200715132517867.png" />
-<p class="caption"><span class="caption-number">Fig. 38 </span><span class="caption-text">image-20200715132517867</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 39 </span><span class="caption-text">image-20200715132517867</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 <p>对于浮点数，ULP位是数字的最右边。对于unum，ULP位是utag左侧的位。一个unum值可以具有一定范围的ULP大小，因为允许分数中的位数变化。可以很容易地计算unum中的ULP位掩码，就是通过将1左移utagsize位得到。
 ULP位表示的值取决于utag位。表示的实际值是一个ULP，对应的的unum掩码我们称为<strong>ulpu</strong>。这里命名规则是unum的变量和产生unum的函数的名称将以字母<strong>u</strong>结尾。由于我们当前处于<span class="math notranslate nohighlight">\(\lbrace 3，5 \rbrace\)</span>环境中，因此utag的长度为9位，而<strong>ulpu</strong>是1后跟9个空比特位，即<span class="math notranslate nohighlight">\(1 \color{magenta}0 \color{green}000 \color{gray}00000\)</span>（二进制）。除了为清楚起见对utag位进行颜色编码外，我们还约定符号，指数和分数位均以粗体显示，而utag位则没有。</p>
@@ -470,7 +470,7 @@ u”结尾，因此我们不会跟实数值混淆。例如，<strong>maxreal</st
 时的特殊unum数，以及maxreal的和subsubnormal近似实数值。像maxreal一样，smallsubnormal的unum在es和fs达到最大值时发生：</p>
 <div class="figure align-default" id="id16">
 <img alt="_images/image-20200720140642044.png" src="_images/image-20200720140642044.png" />
-<p class="caption"><span class="caption-number">Fig. 39 </span><span class="caption-text">image-20200720140642044</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 40 </span><span class="caption-text">image-20200720140642044</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 <p>较大的指数在两个方向上都扩展了表示幅度，因此最大的指数宽度表示的才是最小的幅度数。
 smallsubnormal的表示形式仅将ULP位设置为1，左边的所有其他位均为0。只有你想要使用unum编写底层程序，才需要关注上述表中的值以及setenv计算的其他常数。
@@ -478,7 +478,7 @@ smallsubnormal的表示形式仅将ULP位设置为1，左边的所有其他位�
 <p>在Ｍathematica 程序原型中，这是显示这些值的一种方法：</p>
 <div class="figure align-default" id="id17">
 <img alt="_images/image-20200722153103529.png" src="_images/image-20200722153103529.png" />
-<p class="caption"><span class="caption-number">Fig. 40 </span><span class="caption-text">image-20200722153103529</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 41 </span><span class="caption-text">image-20200722153103529</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="id8">
@@ -489,7 +489,7 @@ smallsubnormal的表示形式仅将ULP位设置为1，左边的所有其他位�
 根据这些值，我们构建了一个函数，该函数使用IEEE二进制浮点规则将utag剩余的unum数部分转换为实数。</p>
 <div class="figure align-default" id="id18">
 <img alt="_images/image-20200722153405165.png" src="_images/image-20200722153405165.png" />
-<p class="caption"><span class="caption-number">Fig. 41 </span><span class="caption-text">image-20200722153405165</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 42 </span><span class="caption-text">image-20200722153405165</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
 <p>该公式看起来非常类似于浮点数的公式（不是严格的IEEE浮点数，而是经过改进的，不会浪费NaN上的大量位模式）。</p>
 <div class="math notranslate nohighlight" id="equation-04-unum-format-1">
@@ -503,13 +503,13 @@ smallsubnormal的表示形式仅将ULP位设置为1，左边的所有其他位�
 环境中的IEEE单精度（8位指数，23位分数）的utag：</p>
 <div class="figure align-default" id="id19">
 <img alt="_images/image-20200722155109933.png" src="_images/image-20200722155109933.png" />
-<p class="caption"><span class="caption-number">Fig. 42 </span><span class="caption-text">image-20200722155109933</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 43 </span><span class="caption-text">image-20200722155109933</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
 <p>如果在该utag的左侧放置32位，则它将表示与IEEE单精度浮点数相同的值，除了它避免了将最大指数的数截断为NaN。</p>
 <p>同样，这是在<span class="math notranslate nohighlight">\(\lbrace3，4\rbrace\)</span>环境中用于IEEE半精度的utag：</p>
 <div class="figure align-default" id="id20">
 <img alt="_images/image-20200722155439631.png" src="_images/image-20200722155439631.png" />
-<p class="caption"><span class="caption-number">Fig. 43 </span><span class="caption-text">image-20200722155439631</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 44 </span><span class="caption-text">image-20200722155439631</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
 <table border="2"><tr><td bgcolor="lightgray"><p>读者的练习：能够存储Intel
 x87格式的最小环境是什么，其utag的二进制字符串是什么？</p>
@@ -521,14 +521,14 @@ x87格式的最小环境是什么，其utag的二进制字符串是什么？</p>
 utag中剩下的唯一东西是ubit：</p>
 <div class="figure align-default" id="id21">
 <img alt="_images/image-20200726120514450.png" src="_images/image-20200726120514450.png" />
-<p class="caption"><span class="caption-number">Fig. 44 </span><span class="caption-text">image-20200726120514450</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 45 </span><span class="caption-text">image-20200726120514450</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
 <p>将一个准确的unum值转换为IEEE标准的浮点数是很简单的，你只需要找到一个最小尺寸的IEEE浮点数能满足指数和小数都足够容纳对应的unum数(要求unum数的指数和小数部分的长度不得大于最大的IEEE浮点类型，即quad精度)，并且将unum的数添加额外比特补齐到IEEE浮点最坏情况下的配额．如果指数都是1且表达的是有限的数，你只需要丢弃所有的小数部分，代之以全0变成IEEE浮点的无穷.</p>
 <p>没有办法做NaN的转换，因为在unum中这是不精确的数，ubit设置为１．当然最后就可以丢弃utag位了．</p>
 <p>例如IEEE半精度．</p>
 <div class="figure align-default" id="id22">
 <img alt="_images/image-20200727141115611.png" src="_images/image-20200727141115611.png" />
-<p class="caption"><span class="caption-number">Fig. 45 </span><span class="caption-text">image-20200727141115611</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 46 </span><span class="caption-text">image-20200727141115611</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
 </div>
 <p>最大表示的实数是131,008, （我们可以写成二进制unum:
 0_11111_1111111111_0_100_1001，对应整数为0x1FFC0,
@@ -552,7 +552,7 @@ utag中剩下的唯一东西是ubit：</p>
 能表示的精确数的量是如此小以至于我们可以把它们完全列出来．下面列出正数部分</p>
 <div class="figure align-default" id="id23">
 <img alt="_images/image-20200727145252948.png" src="_images/image-20200727145252948.png" />
-<p class="caption"><span class="caption-number">Fig. 46 </span><span class="caption-text">image-20200727145252948</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 47 </span><span class="caption-text">image-20200727145252948</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
 </div>
 <p>其unum比特串共需要8到14比特．<strong>unum可以有不同方式表达同一个精确值，我们取长度最短的一个</strong>．</p>
 <table border="2"><tr><td bgcolor="lightgray"><p>读者的练习:在一个{2,2}的环境中，unum位串0_00_1_0_01_00代表的是什么数，你能找到另外一个长度一样的位串表示同一个数值吗？</p>
@@ -561,14 +561,14 @@ utag中剩下的唯一东西是ubit：</p>
 <p>对于一个2到5位的的数（不含5位utag和1位符号位）总共可以表示的有66个非负准确数。</p>
 <div class="figure align-default" id="id24">
 <img alt="_images/image-20200727153909467.png" src="_images/image-20200727153909467.png" />
-<p class="caption"><span class="caption-number">Fig. 47 </span><span class="caption-text">image-20200727153909467</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 48 </span><span class="caption-text">image-20200727153909467</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
 </div>
 <p>其中一些数有不止一种unum表示。这些就像没有化简的分数一样，比如<span class="math notranslate nohighlight">\(\frac{12}{8}\)</span>和<span class="math notranslate nohighlight">\(\frac{6}{4}\)</span>本质上表示的就是<span class="math notranslate nohighlight">\(\frac{3}{2}\)</span>.
 但是需要的存储更少。 这就是unum比浮点更简洁的原因。
 上面的数中有34个是有多种表示的</p>
 <div class="figure align-default" id="id25">
 <img alt="_images/image-20200727154352463.png" src="_images/image-20200727154352463.png" />
-<p class="caption"><span class="caption-number">Fig. 48 </span><span class="caption-text">image-20200727154352463</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 49 </span><span class="caption-text">image-20200727154352463</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
 </div>
 <p>可能数字的对数的分布表明，对于给定的位长预算，数字在大小上越接近1，则精度越高。
 (变长码选择短的表示同样数字，数轴上unum的分布是集中在1附近）这似乎是节省存储空间的实际选择。
@@ -577,7 +577,7 @@ utag中剩下的唯一东西是ubit：</p>
 这使我们仅用少量比特位就可以覆盖几乎五个数量级，但对于接近于1个单位的数，其精度约为一个十进制。</p>
 <div class="figure align-default" id="id26">
 <img alt="_images/image-20200727155819668.png" src="_images/image-20200727155819668.png" />
-<p class="caption"><span class="caption-number">Fig. 49 </span><span class="caption-text">image-20200727155819668</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 50 </span><span class="caption-text">image-20200727155819668</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
 </div>
 <p>人们编写应用程序时，他们选择的度量单位
 使数字易于掌握，这意味着偏离最小计数单位数量级不要太多。
@@ -606,13 +606,13 @@ float）是转换unum到浮点数表示的实数的函数。而<strong>ulpu</str
 对于正unum：</p>
 <div class="figure align-default" id="id27">
 <img alt="_images/image-20200727173723395.png" src="_images/image-20200727173723395.png" />
-<p class="caption"><span class="caption-number">Fig. 50 </span><span class="caption-text">image-20200727173723395</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 51 </span><span class="caption-text">image-20200727173723395</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
 </div>
 <p>测试原型中unum是正数还是负数的方法是<strong>sign [u]</strong>，正返回0，负返回1。
 添加ULP总是使数字<strong>远离</strong>零，因此对于负数添加ULP会使表示的值更加负：</p>
 <div class="figure align-default" id="id28">
 <img alt="_images/image-20200727174152745.png" src="_images/image-20200727174152745.png" />
-<p class="caption"><span class="caption-number">Fig. 51 </span><span class="caption-text">image-20200727174152745</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 52 </span><span class="caption-text">image-20200727174152745</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
 </div>
 <p>因此，<strong>u2f [u]</strong>
 处理精确unum的情况，上面的图显示了如何处理不精确的情况。
@@ -645,7 +645,7 @@ NaN &amp; \text { if } u=sNaNu  \text { or } u=qNaNu\text { , else } \\
 函数查看utag，如下所示（它描述了一个IEEE四精度浮点数）：</p>
 <div class="figure align-default" id="id29">
 <img alt="_images/image-20200727185547096.png" src="_images/image-20200727185547096.png" />
-<p class="caption"><span class="caption-number">Fig. 52 </span><span class="caption-text">quad precision</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 53 </span><span class="caption-text">quad precision</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
 </div>
 <p>类似地当需要查看操作使用的机器表示时，<strong>unumview[u]</strong>
 函数注释了unum数<em>u</em>的用于缩放比例（计算了偏移）指数字段和隐藏位的值。
@@ -654,13 +654,13 @@ NaN &amp; \text { if } u=sNaNu  \text { or } u=qNaNu\text { , else } \\
 <p>例如下面是一个<span class="math notranslate nohighlight">\(\lbrace1,4\rbrace\)</span>环境unum格式表示的<span class="math notranslate nohighlight">\(\pi\)</span></p>
 <div class="figure align-default" id="id30">
 <img alt="_images/image-20200727222031562.png" src="_images/image-20200727222031562.png" />
-<p class="caption"><span class="caption-number">Fig. 53 </span><span class="caption-text">image-20200727222031562</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 54 </span><span class="caption-text">image-20200727222031562</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
 </div>
 <p>您可以想到像<span class="math notranslate nohighlight">\(\pi\)</span>这样的无理数必然使用最大分数位数，并且它们始终设置ubit来显示该值在ULP范围内。
 表达<span class="math notranslate nohighlight">\(\pi\)</span>需要utag的左边18位。而表达–1不需要在utag的左边超过三位</p>
 <div class="figure align-default" id="id31">
 <img alt="_images/image-20200727222454702.png" src="_images/image-20200727222454702.png" />
-<p class="caption"><span class="caption-number">Fig. 54 </span><span class="caption-text">image-20200727222454702</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 55 </span><span class="caption-text">image-20200727222454702</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
 </div>
 <p>注意这种情况下由于指数为零，所以隐藏位为0 (显示在两个框间隙中的是数字)。
 只要想想–1和2这样的某些浮点数在计算机程序中的使用频率,
@@ -676,12 +676,12 @@ NaN &amp; \text { if } u=sNaNu  \text { or } u=qNaNu\text { , else } \\
 <p>以下是unum算术使用的两个位字符串，而不是下溢为零：</p>
 <div class="figure align-default" id="id32">
 <img alt="_images/image-20200727223936064.png" src="_images/image-20200727223936064.png" />
-<p class="caption"><span class="caption-number">Fig. 55 </span><span class="caption-text">image-20200727223936064</span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 56 </span><span class="caption-text">image-20200727223936064</span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
 </div>
 <p>零旁边最大的ULP是最小尺寸的指数和分数，各1比特</p>
 <div class="figure align-default" id="id33">
 <img alt="_images/image-20200727224111461.png" src="_images/image-20200727224111461.png" />
-<p class="caption"><span class="caption-number">Fig. 56 </span><span class="caption-text">image-20200727224111461</span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 57 </span><span class="caption-text">image-20200727224111461</span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
 </div>
 <p>Unums提供丰富的‘词汇’表述数字是“小”的概念，即使数字不能表达为精确数字。</p>
 </div>

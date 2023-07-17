@@ -227,7 +227,7 @@ Precision最低精度单位”作为缩写短语。）例如，如果我们有�
 不含两端的精确数）．通常我们用括号括起来的两个数来表示开区间<span class="math notranslate nohighlight">\((1.0010，1.0011)\)</span>．方括号用来表示闭区间<span class="math notranslate nohighlight">\([1.0010，1.0011]\)</span>,但我们这里不是闭区间．当ubit设置上后表示的是一个ulp宽度的开区间．下面是数的格式，其中洋红色表示ubit.</p>
 <div class="figure align-default" id="id5">
 <img alt="_images/image-20200713093400770.png" src="_images/image-20200713093400770.png" />
-<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">image-20200713093400770</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text">image-20200713093400770</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>其中h代表隐藏位(hidden bit). 当指数为全０时候是０，其他情况是１．</p>
 <p>假设我们还是用5ｂ的浮点表示，一位符号，２位指数，１位小数，最后一位ubit．我们可以表示的数有哪些呢？一些例子：</p>
@@ -258,7 +258,7 @@ rounding)，意思是舍入误差不得超过0.5 ULP。
 <h2>3.2 ＂几乎无限＂和＂超过无限＂<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
 <div class="figure align-default" id="id6">
 <img alt="_images/image-20200713113017297.png" src="_images/image-20200713113017297.png" />
-<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text">image-20200713113017297</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text">image-20200713113017297</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <blockquote>
 <div><center><p>这幅图是来源与2001年电影《太空漫游》的最后一辑“JUPITER AND BEYOND THE
@@ -334,7 +334,7 @@ inexact”描述放在三个处理器标记中，这对于计算机用户来说�
 “四舍五入”标志就像一辆常亮“ CHECK ENGINE”灯的汽车，但仍然似乎运转良好.</p>
 <div class="figure align-default" id="id7">
 <img alt="_images/image-20200713140246175.png" src="_images/image-20200713140246175.png" />
-<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text">image-20200713140246175</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">image-20200713140246175</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>关于在数字格式本身中记录是否精确描述的最后一条评论。
 如果您在计算器上输入一个大正数，然后一遍又一遍地按平方根按钮，最终显示屏将精确显示1.0000000。
@@ -346,7 +346,7 @@ inexact”描述放在三个处理器标记中，这对于计算机用户来说�
 <p>下面代码用unum反复做平方根，数学上是无限loop,</p>
 <div class="figure align-default" id="id8">
 <img alt="_images/image-20200713140933757.png" src="_images/image-20200713140933757.png" />
-<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">image-20200713140933757</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">image-20200713140933757</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>这里停止了迭代．双精度浮点数错误地声明了最后一个结果-恰好等于1。</p>
 <p>许多科学计算都涉及迭代和测试收敛性，使用浮点表示法时，“停止标准”是错误和额外编程工作的来源。
@@ -360,7 +360,7 @@ Ubit保护我们避免错误地将一个精确数误以为是渐近逼近该值�
 <p>对于先前使用的五位情况，见下面的值图，其中包含精确数字的点和带有圆角的矩形，以提醒我们它们是精确数字之间的开区间：</p>
 <div class="figure align-default" id="id9">
 <img alt="_images/image-20200713141911626.png" src="_images/image-20200713141911626.png" />
-<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">image-20200713141911626</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">image-20200713141911626</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <p>与以前的图形相比，有两个细微的变化，除了包含开放的区域而不包含点值之外，您可能误把–5和5作为<span class="math notranslate nohighlight">\(+\infty\)</span>和<span class="math notranslate nohighlight">\(–\infty\)</span>的值，但事实上在
 y轴箭头指向两个方向，整个实数线现在由位字符串表示。
@@ -372,7 +372,7 @@ y轴箭头指向两个方向，整个实数线现在由位字符串表示。
 <p>下图是5bit带ubit的浮点计算闭环图</p>
 <div class="figure align-default" id="id10">
 <img alt="_images/image-20200713154703906.png" src="_images/image-20200713154703906.png" />
-<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">image-20200713154703906</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">image-20200713154703906</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <p>上溢和下溢的情况没有了。
 我们迫切希望拥有一个封闭的系统，在该系统中，算术结果始终可以表示，而不会四舍五入或以其他方式损害正确性。

@@ -195,7 +195,7 @@ Show Source
 <h1>14 试运行：Unums 面临计算挑战<a class="headerlink" href="#unums" title="Permalink to this heading">¶</a></h1>
 <div class="figure align-default" id="id3">
 <img alt="_images/image-20230627165205705.png" src="_images/image-20230627165205705.png" />
-<p class="caption"><span class="caption-number">Fig. 206 </span><span class="caption-text">image-20230627165205705</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 207 </span><span class="caption-text">image-20230627165205705</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <blockquote>
 <div><center><p>伯克利教授 William Kahan（威廉.卡汗），IEEE 754 标准的主要架构师。</p>
@@ -220,7 +220,7 @@ unums能承受Kahan的愤怒吗？ 这是卡汉的例子之一：迭代</p>
 100。下一页的循环使用双精度浮点数显示了这一点：</p>
 <div class="figure align-default" id="id4">
 <img alt="_images/image-20230627170312618.png" src="_images/image-20230627170312618.png" />
-<p class="caption"><span class="caption-number">Fig. 207 </span><span class="caption-text">image-20230627170312618</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 208 </span><span class="caption-text">image-20230627170312618</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">18.5</span>
 <span class="mf">9.37838</span>
@@ -246,11 +246,11 @@ unums能承受Kahan的愤怒吗？ 这是卡汉的例子之一：迭代</p>
 128 位而不是 64 位。它们最好物有所值：</p>
 <div class="figure align-default" id="id5">
 <img alt="_images/image-20230627170446017.png" src="_images/image-20230627170446017.png" />
-<p class="caption"><span class="caption-number">Fig. 208 </span><span class="caption-text">image-20230627170446017</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 209 </span><span class="caption-text">image-20230627170446017</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="id6">
 <img alt="_images/image-20230627170532750.png" src="_images/image-20230627170532750.png" />
-<p class="caption"><span class="caption-number">Fig. 209 </span><span class="caption-text">image-20230627170532750</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 210 </span><span class="caption-text">image-20230627170532750</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>他们<strong>不</strong>值得。
 这个答案是典型的区间算术：一个正确但无用的结果，表明答案是：<strong>实数线上的某个位置</strong>。
@@ -260,7 +260,7 @@ unums，调高精度（但不是指数，因为这些数字不是特别大或特
 请原谅分数的长小数。 循环后的reportdatamotion 调用报告数据移动成本。</p>
 <div class="figure align-default" id="id7">
 <img alt="_images/image-20230627181152756.png" src="_images/image-20230627181152756.png" />
-<p class="caption"><span class="caption-number">Fig. 210 </span><span class="caption-text">image-20230627181152756</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 211 </span><span class="caption-text">image-20230627181152756</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>因此 unums 前往正确的数字 6。如果继续前进，左端点将降至 6
 以下，然后向<span class="math notranslate nohighlight">\(-\infty\)</span>发散，但请记住，unum 环境可以使用
@@ -287,7 +287,7 @@ unums，调高精度（但不是指数，因为这些数字不是特别大或特
 x 的所有四个建议值得到的错误答案：</p>
 <div class="figure align-default" id="id8">
 <img alt="_images/image-20230627195316582.png" src="_images/image-20230627195316582.png" />
-<p class="caption"><span class="caption-number">Fig. 211 </span><span class="caption-text">image-20230627195316582</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 212 </span><span class="caption-text">image-20230627195316582</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>即使精度更高，例如 IEEE 四精度或 BigDecimal
 扩展精度，它几乎每次仍然会出现错误。 x 的一些分散值给出了正确答案：{1,
@@ -301,7 +301,7 @@ e、q 和 h 函数以使用区间算术。 区间为零的测试与我们使用 
 <strong>IntervalMemberQ</strong>[z,<strong>Interval</strong>[{0,0}]] 为 True，否则为 False：</p>
 <div class="figure align-default" id="id9">
 <img alt="_images/image-20230627195919811.png" src="_images/image-20230627195919811.png" />
-<p class="caption"><span class="caption-number">Fig. 212 </span><span class="caption-text">image-20230627195919811</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 213 </span><span class="caption-text">image-20230627195919811</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <p>又一个史诗般的失败。
 传统的区间算术再次为您提供整个实数轴作为可能的答案，然后迫使您分析出了什么问题并调试计算丢失所有信息的位置。
@@ -312,7 +312,7 @@ e、q 和 h 函数以使用区间算术。 区间为零的测试与我们使用 
 </td></tr></table><p>这是函数定义的 unum 版本：</p>
 <div class="figure align-default" id="id10">
 <img alt="_images/image-20230627200307793.png" src="_images/image-20230627200307793.png" />
-<p class="caption"><span class="caption-number">Fig. 213 </span><span class="caption-text">image-20230627200307793</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 214 </span><span class="caption-text">image-20230627200307793</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <p>只是为了好玩，我们展示了其中最小、最朴素的 unum，即四位 Warlpiri
 number集。 在这场战斗中抱有成功希望的唯一原因是，所有
@@ -321,13 +321,13 @@ unum，都正在包装一个强大的武器，这是其他计算数字系统所�
 他们对某个值做了什么和不知道什么。下面就是了</p>
 <div class="figure align-default" id="id11">
 <img alt="_images/image-20230627200445542.png" src="_images/image-20230627200445542.png" />
-<p class="caption"><span class="caption-number">Fig. 214 </span><span class="caption-text">image-20230627200445542</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 215 </span><span class="caption-text">image-20230627200445542</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <p>Warlpiri 的数学是正确的，尽管它不能数到超过二！ Unums
 用每个数字不到七位的存储空间计算出正确的答案。</p>
 <div class="figure align-default" id="id12">
 <img alt="_images/image-20230627200608612.png" src="_images/image-20230627200608612.png" />
-<p class="caption"><span class="caption-number">Fig. 215 </span><span class="caption-text">image-20230627200608612</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 216 </span><span class="caption-text">image-20230627200608612</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="rump">
@@ -341,7 +341,7 @@ Siegfried Rump
 <p>以下是 Rump 的公式和输入参数，以及现代 IEEE 双精度浮点数告诉我们的内容</p>
 <div class="figure align-default" id="id13">
 <img alt="_images/image-20230627201112787.png" src="_images/image-20230627201112787.png" />
-<p class="caption"><span class="caption-number">Fig. 216 </span><span class="caption-text">image-20230627201112787</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 217 </span><span class="caption-text">image-20230627201112787</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 <p>对于 IEEE 风格的浮点数，Rump
 的公式对于单精度、双精度甚至四精度给出了相同的答案，约为
@@ -364,7 +364,7 @@ IBM“扩展”（我们现在称为四元）精度中的 。</p>
 位浮点数），至少您会得到答案的界限：</p>
 <div class="figure align-default" id="id14">
 <img alt="_images/image-20230627202131622.png" src="_images/image-20230627202131622.png" />
-<p class="caption"><span class="caption-number">Fig. 217 </span><span class="caption-text">image-20230627202131622</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 218 </span><span class="caption-text">image-20230627202131622</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 <p>一个巨大的间隔，但也是一个界限。
 至少传统的间隔表明rump问题可能容易出现严重错误。
@@ -382,7 +382,7 @@ unum 版本的以下代码的一些解释。
 ubounds 计算 Rump 的公式：</p>
 <div class="figure align-default" id="id15">
 <img alt="_images/image-20230627202926314.png" src="_images/image-20230627202926314.png" />
-<p class="caption"><span class="caption-number">Fig. 218 </span><span class="caption-text">image-20230627202926314</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 219 </span><span class="caption-text">image-20230627202926314</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 <p>假设我们希望答案的精度至少达到两位小数，因此我们设置 relwidthtolerance =
 0.005。 从 Warlpiri 环境 {0, 0}
@@ -391,7 +391,7 @@ ubounds 计算 Rump 的公式：</p>
 是获得可接受精度的环境，并且它确实比两位小数要好得多：</p>
 <div class="figure align-default" id="id16">
 <img alt="_images/image-20230627203053385.png" src="_images/image-20230627203053385.png" />
-<p class="caption"><span class="caption-number">Fig. 219 </span><span class="caption-text">image-20230627203053385</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 220 </span><span class="caption-text">image-20230627203053385</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 <p>unum 方法将答案的精确度限制在 39 位小数，并且每个数字平均使用 70 位。
 unums 在这里表现出色的主要原因是它们可以根据需要动态调整精度。
@@ -422,32 +422,32 @@ unum，无论是为了准确性还是为了存储效率：</p>
 <p>对于 a = 3、b = 100 和 c = 2，请注意有一个根与零有多接近：</p>
 <div class="figure align-default" id="id17">
 <img alt="_images/image-20230627205308483.png" src="_images/image-20230627205308483.png" />
-<p class="caption"><span class="caption-number">Fig. 220 </span><span class="caption-text">image-20230627205308483</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 221 </span><span class="caption-text">image-20230627205308483</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 <p>以下是两个根的精确表达式，其值精确到小数点后 7 位，供参考：</p>
 <div class="figure align-default" id="id18">
 <img alt="_images/image-20230627205515718.png" src="_images/image-20230627205515718.png" />
-<p class="caption"><span class="caption-number">Fig. 221 </span><span class="caption-text">image-20230627205515718</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 222 </span><span class="caption-text">image-20230627205515718</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
 <p>在IEEE单精度中，b2=100可以精确表示； 4 a c = 24 和 b2 - 4 a c = 9976
 也是如此。到目前为止，一切都很好。 9976 的平方根是： 99.8799279…</p>
 <p>但是单精度浮点数要求我们接受以下不正确的数字，我们在正确的数字之外使用橙色数字，并在末尾使用“<span class="math notranslate nohighlight">\(\downarrow\)</span>”符号来强调显示的小数扩展正是该浮点数所表达的精确值：</p>
 <div class="figure align-default" id="id19">
 <img alt="_images/image-20230627205811300.png" src="_images/image-20230627205811300.png" />
-<p class="caption"><span class="caption-number">Fig. 222 </span><span class="caption-text">image-20230627205811300</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 223 </span><span class="caption-text">image-20230627205811300</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
 <p>这肯定在正确平方根的 1 个 ULP 范围内。 问题出现在下一步的计算中，将-b =
 -100 添加到上面的数字中。
 这样做会消除左边的两个数字，并且错误的橙色数字会放大相对误差：</p>
 <div class="figure align-default" id="id20">
 <img alt="_images/image-20230627210153376.png" src="_images/image-20230627210153376.png" />
-<p class="caption"><span class="caption-number">Fig. 223 </span><span class="caption-text">image-20230627210153376</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 224 </span><span class="caption-text">image-20230627210153376</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
 <p>在最后一步中，除以 2a，我们最终与参考答案只有四位小数一致，结果错误超过
 100 个 ULP：</p>
 <div class="figure align-default" id="id21">
 <img alt="_images/image-20230627210353400.png" src="_images/image-20230627210353400.png" />
-<p class="caption"><span class="caption-number">Fig. 224 </span><span class="caption-text">image-20230627210353400</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 225 </span><span class="caption-text">image-20230627210353400</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
 <p>如果计算机跟踪了 ULP
 误差是如何放大的，它就会知道将答案表示为“~-0.02001”或只有四位小数的数字。
@@ -464,7 +464,7 @@ unum，无论是为了准确性还是为了存储效率：</p>
 位进行比较：</p>
 <div class="figure align-default" id="id22">
 <img alt="_images/image-20230627211047288.png" src="_images/image-20230627211047288.png" />
-<p class="caption"><span class="caption-number">Fig. 225 </span><span class="caption-text">image-20230627211047288</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 226 </span><span class="caption-text">image-20230627211047288</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
 </div>
 <p>界限精确到小数点后七位：–0.02001201… {3, 5} unum
 环境计算答案中的七个有效小数并严格限制错误，但每个数字使用的平均位数少于
@@ -475,11 +475,11 @@ unum，无论是为了准确性还是为了存储效率：</p>
 最终的 87 位 ubound 答案统一为 41 位，即一个 unum：</p>
 <div class="figure align-default" id="id23">
 <img alt="_images/image-20230627211428316.png" src="_images/image-20230627211428316.png" />
-<p class="caption"><span class="caption-number">Fig. 226 </span><span class="caption-text">image-20230627211428316</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 227 </span><span class="caption-text">image-20230627211428316</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="id24">
 <img alt="_images/image-20230627211507319.png" src="_images/image-20230627211507319.png" />
-<p class="caption"><span class="caption-number">Fig. 227 </span><span class="caption-text">image-20230627211507319</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 228 </span><span class="caption-text">image-20230627211507319</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>unify</strong> 操作仅将边界宽度扩展了约 1.5 倍，同时减少了约 2.1
 倍的存储空间，因此在这种情况下，<strong>unify</strong> 增加了每比特的信息量。
@@ -512,7 +512,7 @@ unum 大小为 33 位，而双精度则为 64 位 。
 <p>从几何角度来说，求解两个未知数的两个方程意味着找到两条线的交点：</p>
 <div class="figure align-default" id="id25">
 <img alt="_images/image-20230628082834650.png" src="_images/image-20230628082834650.png" />
-<p class="caption"><span class="caption-number">Fig. 228 </span><span class="caption-text">image-20230628082834650</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 229 </span><span class="caption-text">image-20230628082834650</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
 </div>
 <p>行列式D越小，直线越接近平行。 如果 D
 恰好为零，则这些线要么是分开的并且从不相交，要么它们可能是同一条线并且到处相交。
@@ -557,7 +557,7 @@ x 和 y 的计算结果均为 <span class="math notranslate nohighlight">\([-\in
 所以，砥砺前行：</p>
 <div class="figure align-default" id="id26">
 <img alt="_images/image-20230628085625387.png" src="_images/image-20230628085625387.png" />
-<p class="caption"><span class="caption-number">Fig. 229 </span><span class="caption-text">image-20230628085625387</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 230 </span><span class="caption-text">image-20230628085625387</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
 </div>
 <p>x 仍然是错的，但至少 y 是对的。 x
 中的误差是由于第二个缺点，即中间结果的精度不够。 问题是浮点仅表达精确到
@@ -583,7 +583,7 @@ ULP 变为宽度 2 而不是宽度 1 的大小的整数。第一个乘法
 通过在原型中使用融合点积，程序员不必担心中间计算占用更多空间。</p>
 <div class="figure align-default" id="id27">
 <img alt="_images/image-20230628090316194.png" src="_images/image-20230628090316194.png" />
-<p class="caption"><span class="caption-number">Fig. 230 </span><span class="caption-text">image-20230628090316194</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 231 </span><span class="caption-text">image-20230628090316194</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
 </div>
 <p>这就可以了，用了不到不准确的双精度解决方案所使用的一半的位数，就得到了计算准确的答案。
 讽刺的是，现在可以使用最原始的 unum 环境来存储 Bailey
@@ -598,7 +598,7 @@ g-layer可以处理临时更精确的临时计算的需要。 在第 2
 <h2>14.5 使用unum做快速傅里叶变换<a class="headerlink" href="#unum" title="Permalink to this heading">¶</a></h2>
 <div class="figure align-default" id="id28">
 <img alt="_images/image-20230628092444476.png" src="_images/image-20230628092444476.png" />
-<p class="caption"><span class="caption-number">Fig. 231 </span><span class="caption-text">image-20230628092444476</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 232 </span><span class="caption-text">image-20230628092444476</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
 </div>
 <blockquote>
 <div><p>石油和天然气矿床的勘探是通过巨大的地震探测器阵列来完成的，这些探测器记录强声脉冲的回声。
@@ -626,21 +626,21 @@ unum，我们可以按比例运行得更快，而且我们还可以得到正确�
 它们连续实时计算从最低（低音）到最高（高音）的频率强度：</p>
 <div class="figure align-default" id="id29">
 <img alt="_images/image-20230628093502627.png" src="_images/image-20230628093502627.png" />
-<p class="caption"><span class="caption-number">Fig. 232 </span><span class="caption-text">image-20230628093502627</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 233 </span><span class="caption-text">image-20230628093502627</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
 </div>
 <p>假设信号范围从 –8 到 8，并且只有 12 或 16 位小数。
 在这种情况下，我们需要的只是一个小的 unum
 标签来表示模数转换器可以提供的所有内容：</p>
 <div class="figure align-default" id="id30">
 <img alt="_images/image-20230628093543465.png" src="_images/image-20230628093543465.png" />
-<p class="caption"><span class="caption-number">Fig. 233 </span><span class="caption-text">image-20230628093543465</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 234 </span><span class="caption-text">image-20230628093543465</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
 </div>
 <p>信号处理的标准基准测试长期以来一直是“1K CFFT”，即 1024
 点复快速傅里叶变换。 下一页是该算法的简单通用长度版本，用于比较浮点数与
 unum。 像 gg 和 ww 这样的双字母变量是 <span class="math notranslate nohighlight">\(a + bi\)</span> 形式的复数。</p>
 <div class="figure align-default" id="id31">
 <img alt="_images/image-20230628093724725.png" src="_images/image-20230628093724725.png" />
-<p class="caption"><span class="caption-number">Fig. 234 </span><span class="caption-text">image-20230628093724725</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 235 </span><span class="caption-text">image-20230628093724725</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
 </div>
 <p>如果输入数据只有 12 到 16 个有效位，为什么不简单地使用 IEEE
 半精度浮点数来节省存储空间呢？ 原因之一是 IEEE 半精度有 10
@@ -659,13 +659,13 @@ unum。 像 gg 和 ww 这样的双字母变量是 <span class="math notranslate 
 这是相同变换的图，但使用 unum 算术并跟踪位和个数的搬运量。</p>
 <div class="figure align-default" id="id32">
 <img alt="_images/image-20230628102943094.png" src="_images/image-20230628102943094.png" />
-<p class="caption"><span class="caption-number">Fig. 235 </span><span class="caption-text">image-20230628102943094</span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 236 </span><span class="caption-text">image-20230628102943094</span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
 </div>
 <p>两个结果之间的差异远低于图表的分辨率； unum
 版本中的边界宽度太小，在图中也看不到。 检查数据移动成本：</p>
 <div class="figure align-default" id="id33">
 <img alt="_images/image-20230628103711078.png" src="_images/image-20230628103711078.png" />
-<p class="caption"><span class="caption-number">Fig. 236 </span><span class="caption-text">image-20230628103711078</span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 237 </span><span class="caption-text">image-20230628103711078</span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
 </div>
 <p>utag 只有 6 位长，最大 unum 大小为 25 位。 由于 FFT
 中算术的许多或大部分结果都是
@@ -676,7 +676,7 @@ ubound 有两个元素，即 51 位。 为什么每 ubound 使用的比特数少
 内核运算中找到，由于其数据流图的形状，有时被称为“蝶形运算”：</p>
 <div class="figure align-default" id="id34">
 <img alt="_images/image-20230628105422834.png" src="_images/image-20230628105422834.png" />
-<p class="caption"><span class="caption-number">Fig. 237 </span><span class="caption-text">image-20230628105422834</span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 238 </span><span class="caption-text">image-20230628105422834</span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
 </div>
 <blockquote>
 <div><center><p>“w”是“旋转因子”，对应于上述算法中的旋转</p>

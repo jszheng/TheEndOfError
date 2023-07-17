@@ -195,7 +195,7 @@ Show Source
 <h1>2. 构造unum的格式<a class="headerlink" href="#unum" title="Permalink to this heading">¶</a></h1>
 <div class="figure align-default" id="id5">
 <img alt="_images/image-20200708091351476.png" src="_images/image-20200708091351476.png" />
-<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">image-20200708091351476</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">image-20200708091351476</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <blockquote>
 <div><p>位值制记数法(positional notion)和零的概念至少与算盘一样古老。
@@ -224,7 +224,7 @@ binary digits”的缩写，就像“ unum”是“ universal number”的缩写
 <p>二进制数字比十进制数更“稀薄”，需要更多的符号来表示同一个数字。通常用二进制写计数数字需要花费十进制的3.3倍。例如十进制值999999将变成11110100001000111111。要能一眼就能识别三位二进制数值会很有帮助，就像识别常见的三个字母的单词一样．</p>
 <div class="figure align-default" id="id6">
 <img alt="_images/image-20200708140910073.png" src="_images/image-20200708140910073.png" />
-<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">image-20200708140910073</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">image-20200708140910073</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>如果考虑如何在基本算术中使用固定大小的表示形式，则会出现一个缺点：一个运算的结果通常不能用这种格式表示！为了能直观显示，<strong>闭合图</strong>显示了对五位字符串进行加，减，乘和除的情况</p>
 <p><img alt="closure plot" src="_images/fig_2.1_2.png" />较大的<strong>绿点</strong>表示可以表示答案的情况；
@@ -244,7 +244,7 @@ binary digits”的缩写，就像“ unum”是“ universal number”的缩写
 <h2>2.2 负数<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
 <div class="figure align-default" id="id7">
 <img alt="_images/image-20200708162908410.png" src="_images/image-20200708162908410.png" />
-<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">image-20200708162908410</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">image-20200708162908410</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <blockquote>
 <div><center><p>1952年推出的IBM
@@ -270,7 +270,7 @@ Watson）说：“我认为全球计算机市场容量可能是五台。
 <p><strong>TODO</strong>: write script to generate the diagram</p>
 <div class="figure align-default" id="id8">
 <img alt="_images/image-20200709170709410.png" src="_images/image-20200709170709410.png" />
-<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">image-20200709170709410</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">image-20200709170709410</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>这里有提高了，加减法的75%结果都是可表示的（前面只有50%）</p>
 <p><strong>符号幅度格式</strong></p>
@@ -280,7 +280,7 @@ Watson）说：“我认为全球计算机市场容量可能是五台。
 <p>在计算的早期，IBM在其第一台使用真空管作为逻辑元件的科学计算机中偏爱符号幅度格式。可以通过以下方式设想六位符号幅度数，其中我们区分符号位s和双幅度位，其含义与简单计数数相同：</p>
 <div class="figure align-default" id="id9">
 <img alt="_images/image-20200708185347129.png" src="_images/image-20200708185347129.png" />
-<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">image-20200708185347129</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">image-20200708185347129</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <p>用６bit符号－幅度格式我们可以表示从-31到+31的整数，一般地讲<span class="math notranslate nohighlight">\(sb_{n-2}... b_2 b_1 b_0\)</span>表示的数是</p>
 <div class="math notranslate nohighlight" id="equation-02-buildupunumformat-2">
@@ -290,7 +290,7 @@ Watson）说：“我认为全球计算机市场容量可能是五台。
 <p>下面的闭环图显示出符号幅度格式跟对应的偏置格式的表示能力差不多．但是象限的方向不同．而且我们对于上溢与下溢不再区分，本质是幅度溢出．除法可以产生下溢因为1/4的结果在范围内但是最小的非零幅度是1.</p>
 <div class="figure align-default" id="id10">
 <img alt="_images/image-20200710100105341.png" src="_images/image-20200710100105341.png" />
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">image-20200710100105341</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">image-20200710100105341</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <p>现在看来这些表示最弱的是对于乘除法不够闭环．所以我们需要引入东西使得其结果更加鲁棒．除了像加减法一样平衡正负数，也需要要平衡大和小的数．乘法趋向于是数值变大从而上溢，而除法趋向是数据变小从而下溢．如果我们能够改变数的尺度，使得一半时间的幅度小于１，那么乘除法就会同样的均衡了，即大小数基本对半．</p>
 </div>
@@ -298,7 +298,7 @@ Watson）说：“我认为全球计算机市场容量可能是五台。
 <h2>2.3 定点数<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
 <div class="figure align-default" id="id11">
 <img alt="_images/image-20200710102205350.png" src="_images/image-20200710102205350.png" />
-<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">image-20200710102205350</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">image-20200710102205350</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <blockquote>
 <div><center><p>这是一个应该用定点数而没有用的例子</p>
@@ -316,12 +316,12 @@ Watson）说：“我认为全球计算机市场容量可能是五台。
 <p>下面是两位小数的值图</p>
 <div class="figure align-default" id="id12">
 <img alt="_images/image-20200710104459121.png" src="_images/image-20200710104459121.png" />
-<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">image-20200710104459121</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">image-20200710104459121</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <p>下面是一个9位数的有符号小数，小数点离左边一位，符号幅度表示</p>
 <div class="figure align-default" id="id13">
 <img alt="_images/image-20200710104616539.png" src="_images/image-20200710104616539.png" />
-<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">image-20200710104616539</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">image-20200710104616539</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 <p>举例，如果比特串是<span class="math notranslate nohighlight">\(1 00000001\)</span>,
 那么表示的是<span class="math notranslate nohighlight">\(-2^{-7}=-\frac{1}{128}=-0.0078125\)</span>.
@@ -337,7 +337,7 @@ Watson）说：“我认为全球计算机市场容量可能是五台。
 <p>下面闭合图是用于五位符号幅度定点数，在小数点左右分别有两个位：</p>
 <div class="figure align-default" id="id14">
 <img alt="_images/image-20200710105820572.png" src="_images/image-20200710105820572.png" />
-<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">image-20200710105820572</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">image-20200710105820572</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 <p>缩放后的加法和减法不变，但是乘法和除法开始出现类似于织布花纹的模式。
 乘法运算有效数字的范围现在下溢和上溢区域开始有些平衡了，但这是有代价的，即x和y的乘积结果大都需要多于四位连续二进制数字，因此L形区域现在渗透有无法表示的值。
@@ -378,20 +378,20 @@ bit)。如果我们使用一些位来显示比例因子，那么这些比例位�
 为了清楚起见，在此处和整本书中，指数位用蓝色表示：</p>
 <div class="figure align-default" id="id15">
 <img alt="_images/image-20200710162647495.png" src="_images/image-20200710162647495.png" />
-<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">image-20200710162647495</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">image-20200710162647495</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 <p>这是一个五位表示形式的值图，它带有一个符号位，两位指数（偏置为1，因此代表–1、0、1或2）和两位分数。
 这还不是IEEE浮点版本，但是很接近了：</p>
 <div class="figure align-default" id="id16">
 <img alt="_images/image-20200710162912560.png" src="_images/image-20200710162912560.png" />
-<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">image-20200710162912560</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">image-20200710162912560</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 <p>当指数增加一时，斜率加倍。 但是请注意，没有办法表示零。
 在浮点运算的早期，硬件设计人员决定使用以下“例外”：“<em>如果指数位全为0，则数字为零</em>。”
 这类似于下一页中图所示的内容，其中几个位字符串重新表示为零（标有空心圆）：</p>
 <div class="figure align-default" id="id17">
 <img alt="_images/image-20200710164004622.png" src="_images/image-20200710164004622.png" />
-<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">image-20200710164004622</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">image-20200710164004622</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 <p>忽略小数位会浪费很多可能具有独特和有用含义的位串。
 更好的解决方案是将第一个斜坡的斜率加倍，然后从零开始倾斜。
@@ -399,7 +399,7 @@ bit)。如果我们使用一些位来显示比例因子，那么这些比例位�
 <p>这样做的好处不是很明显，基本上是它使零点附近的点完全类似于定点表示：</p>
 <div class="figure align-default" id="id18">
 <img alt="_images/image-20200710164330789.png" src="_images/image-20200710164330789.png" />
-<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">image-20200710164330789</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">image-20200710164330789</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
 <p>这是“渐进式下溢”的二进制版本，一些硬件设计人员仍然对此表示反对，声称它较难设计，或者需要更多的晶体管，或者运行速度较慢。
 但是因为指数的所有位都为0时削零和逐渐下溢都需要做一些额外的事情，无论哪种方式，晶体管的数量和执行时间都非常相似。</p>
@@ -408,7 +408,7 @@ bit)。如果我们使用一些位来显示比例因子，那么这些比例位�
 例如下图，分数字段3bit，指数1bit，它看起来就像4bit定点：</p>
 <div class="figure align-default" id="id19">
 <img alt="_images/image-20200710164845362.png" src="_images/image-20200710164845362.png" />
-<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">image-20200710164845362</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">image-20200710164845362</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
 <p>在最后两个值图中，每个斜坡的前半部分由subnormal组成（以空心圆显示）。
 如果我们寻求的是一种统一的表示数字的方法，那么我们显然需要“subnormal值，这是IEEE标准的最佳想法之一，因为它统一了定点和浮点表示形式。
@@ -441,11 +441,11 @@ e和f可以是{0，1，2，3}中的任何一个，表示的值为</p>
 生成的模式引人注目</p>
 <div class="figure align-default" id="id20">
 <img alt="_images/image-20200710175032871.png" src="_images/image-20200710175032871.png" />
-<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">image-20200710175032871</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">image-20200710175032871</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="id21">
 <img alt="_images/image-20200710175053069.png" src="_images/image-20200710175053069.png" />
-<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">image-20200710175053069</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">image-20200710175053069</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
 <p>除了溢出情况外，加法和减法闭合图现在还显示了无法表示结果的混杂情况。
 例如，如果我们将1/4和5相加，则结果21/4不能仅用这种格式的五位表示。
@@ -469,7 +469,7 @@ sign”位）。 如果小数位还有其他内容，则该字符串表示非数
 NaN”。所以对于我们的5比特浮点，IEEE的规则看上去像这样的</p>
 <div class="figure align-default" id="id22">
 <img alt="_images/image-20200710190627329.png" src="_images/image-20200710190627329.png" />
-<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">image-20200710190627329</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 27 </span><span class="caption-text">image-20200710190627329</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
 </div>
 <p>我们真的需要六种不同的方式来表达NaN吗？ IEEE标准规定，“安静”的NaN(quiet
 NaN)可以继续进行计算（使用NaN输入进行的任何操作当然还是都会产生NaN输出）和“发出信号”的NaN(Signaling
@@ -485,7 +485,7 @@ overflow（对那些指数全１的数）．他们只是把这些数扔到了无
 <p>下图显示我们的改进的格式在5比特浮点数的值表示</p>
 <div class="figure align-default" id="id23">
 <img alt="_images/image-20200711120038809.png" src="_images/image-20200711120038809.png" />
-<p class="caption"><span class="caption-number">Fig. 27 </span><span class="caption-text">image-20200711120038809</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">image-20200711120038809</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
 </div>
 <p>对应的公式表示为（其中<span class="math notranslate nohighlight">\(es\)</span>是指数的位数，<span class="math notranslate nohighlight">\(fs\)</span>是小数的位数）</p>
 <div class="math notranslate nohighlight" id="equation-02-buildupunumformat-10">

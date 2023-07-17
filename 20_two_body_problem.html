@@ -195,7 +195,7 @@ Show Source
 <h1>20 二体问题(以及多体问题)<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
 <div class="figure align-default" id="id11">
 <img alt="_images/image-20230707145046785.png" src="_images/image-20230707145046785.png" />
-<p class="caption"><span class="caption-number">Fig. 374 </span><span class="caption-text">image-20230707145046785</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 375 </span><span class="caption-text">image-20230707145046785</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <blockquote>
 <div><p>2013 年 2 月，在可能发生碰撞十一个月前, 观星者发现了一颗 60
@@ -245,7 +245,7 @@ Show Source
 最终都是相同的数字，这只是巧合，<span class="math notranslate nohighlight">\(2.25 = \frac{9}{4}\)</span>。）用计算机术语来说：</p>
 <div class="figure align-default" id="id12">
 <img alt="_images/image-20230709103942136.png" src="_images/image-20230709103942136.png" />
-<p class="caption"><span class="caption-number">Fig. 375 </span><span class="caption-text">image-20230709103942136</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 376 </span><span class="caption-text">image-20230709103942136</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <p>质点 M 的位置和速度就是 m 的位置和速度按 <span class="math notranslate nohighlight">\(-\frac{m}{M}\)</span>
 缩放，因此质心位于原点，总动量为零。
@@ -253,7 +253,7 @@ Show Source
 的行为关于原点点对称，按比例缩放：</p>
 <div class="figure align-default" id="id13">
 <img alt="_images/image-20230709104312284.png" src="_images/image-20230709104312284.png" />
-<p class="caption"><span class="caption-number">Fig. 376 </span><span class="caption-text">image-20230709104312284</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 377 </span><span class="caption-text">image-20230709104312284</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 <p>模拟中变化的量是位置、速度和加速度。
 通常的方法采用时间步长：使用位置来查找加速力，计算出时间步长后质量的位置，更新新时间的位置和速度，然后重复。
@@ -270,13 +270,13 @@ Show Source
 <strong>acc[{x,y}]</strong> 函数计算：</p>
 <div class="figure align-default" id="id14">
 <img alt="_images/image-20230709105137114.png" src="_images/image-20230709105137114.png" />
-<p class="caption"><span class="caption-number">Fig. 377 </span><span class="caption-text">image-20230709105137114</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 378 </span><span class="caption-text">image-20230709105137114</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 <p>例如，初始加速度在 x 方向上向左（负），并且在 y
 方向上没有初始加速度，因为质点都是从相同的 y 位置开始：</p>
 <div class="figure align-default" id="id15">
 <img alt="_images/image-20230709105308345.png" src="_images/image-20230709105308345.png" />
-<p class="caption"><span class="caption-number">Fig. 378 </span><span class="caption-text">image-20230709105308345</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 379 </span><span class="caption-text">image-20230709105308345</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 <p>在瞬时加速度的数值计算中已经出现了小的舍入误差。 <strong>acc</strong>
 计算不太可能精确浮点数。</p>
@@ -286,7 +286,7 @@ Show Source
 之后更新速度非常简单：</p>
 <div class="figure align-default" id="id16">
 <img alt="_images/image-20230709105617477.png" src="_images/image-20230709105617477.png" />
-<p class="caption"><span class="caption-number">Fig. 379 </span><span class="caption-text">image-20230709105617477</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 380 </span><span class="caption-text">image-20230709105617477</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 <p>显然，是的，但请想一想：时间步内 x 和 y 的加速度是多少？ 加速度与根据
 <span class="math notranslate nohighlight">\(x_0\)</span> 和 <span class="math notranslate nohighlight">\(y_0\)</span> 计算的 a 和 b
@@ -296,14 +296,14 @@ Show Source
 <p>同样，更新位置计算如下</p>
 <div class="figure align-default" id="id17">
 <img alt="_images/image-20230709105908053.png" src="_images/image-20230709105908053.png" />
-<p class="caption"><span class="caption-number">Fig. 380 </span><span class="caption-text">image-20230709105908053</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 381 </span><span class="caption-text">image-20230709105908053</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 <p>这些是恒定加速度轨迹的精确方程，因此我们可以使用计算机拼凑出轨迹的良好近似值来对下一个时间步进行更新，这似乎是完全合理的。
 尝试计算机可以表示而没有舍入误差的时间步长，例如 t =
 0.5，并使用上面的公式计算新的位置和速度：</p>
 <div class="figure align-default" id="id18">
 <img alt="_images/image-20230709110041012.png" src="_images/image-20230709110041012.png" />
-<p class="caption"><span class="caption-number">Fig. 381 </span><span class="caption-text">image-20230709110041012</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 382 </span><span class="caption-text">image-20230709110041012</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
 <p>动能仅取决于速度。 势能仅取决于位置。 由于每个质点的动能为
 <span class="math notranslate nohighlight">\(\frac{1}{2} mass \times velocity^2\)</span>，整个系统的势能为
@@ -312,32 +312,32 @@ Show Source
 <span class="math notranslate nohighlight">\(\frac{1}{\sqrt{x^2+y^2}}\)</span>之和。（势能部分）：</p>
 <div class="figure align-default" id="id19">
 <img alt="_images/image-20230709110530554.png" src="_images/image-20230709110530554.png" />
-<p class="caption"><span class="caption-number">Fig. 382 </span><span class="caption-text">image-20230709110530554</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 383 </span><span class="caption-text">image-20230709110530554</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
 <p>该公式的计算机版本将允许我们监控模拟中任意点的系统状态能量 e：</p>
 <div class="figure align-default" id="id20">
 <img alt="_images/image-20230709110617878.png" src="_images/image-20230709110617878.png" />
-<p class="caption"><span class="caption-number">Fig. 383 </span><span class="caption-text">image-20230709110617878</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 384 </span><span class="caption-text">image-20230709110617878</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
 <p>物理学告诉我们系统中的总能量应该是恒定的。
 应该是这样，但对于浮点算术和传统的数值方法来说，就不会了。
 对于这些初始条件，它从以下值开始：</p>
 <div class="figure align-default" id="id21">
 <img alt="_images/image-20230709110709946.png" src="_images/image-20230709110709946.png" />
-<p class="caption"><span class="caption-number">Fig. 384 </span><span class="caption-text">image-20230709110709946</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 385 </span><span class="caption-text">image-20230709110709946</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
 <p>总能量的负值告诉我们轨迹是束缚轨道（椭圆）；
 正总能量表示无束缚轨迹（双曲线）。 检查一个时间步后的总能量：</p>
 <div class="figure align-default" id="id22">
 <img alt="_images/image-20230709110813734.png" src="_images/image-20230709110813734.png" />
-<p class="caption"><span class="caption-number">Fig. 385 </span><span class="caption-text">image-20230709110813734</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 386 </span><span class="caption-text">image-20230709110813734</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
 </div>
 <p>这甚至不是恒定到小数点后一位。 另一个应该守恒的量是角动量，它与叉积
 <span class="math notranslate nohighlight">\(x v - y u\)</span> 成正比。 它一开始等于 9，我们将其保存在 cross0 中。
 检查时间步之后它与保持恒定的接近程度：</p>
 <div class="figure align-default" id="id23">
 <img alt="_images/image-20230709110933998.png" src="_images/image-20230709110933998.png" />
-<p class="caption"><span class="caption-number">Fig. 386 </span><span class="caption-text">image-20230709110933998</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 387 </span><span class="caption-text">image-20230709110933998</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
 </div>
 <p>浮点运算可能精确到小数点后十五位，但仅仅过了这一小步，我们就可以看到能量和角动量的重大误差。
 采样误差的原因很明显，因为我们使用初始时间来预测质量在整个时间步长中将做什么。
@@ -352,13 +352,13 @@ Show Source
 以下程序尝试执行此操作，将每个 (x、y) 和 (u、v) 时间步结果存储在步骤中。</p>
 <div class="figure align-default" id="id24">
 <img alt="_images/image-20230709113153132.png" src="_images/image-20230709113153132.png" />
-<p class="caption"><span class="caption-number">Fig. 387 </span><span class="caption-text">image-20230709113153132</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 388 </span><span class="caption-text">image-20230709113153132</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
 </div>
 <p>计算出的轨迹如下所示，使用蓝点表示质点 m，使用红点表示质点 M；
 我们还以纯绿色显示 m 的正确椭圆轨道形状：</p>
 <div class="figure align-default" id="id25">
 <img alt="_images/image-20230709113244446.png" src="_images/image-20230709113244446.png" />
-<p class="caption"><span class="caption-number">Fig. 388 </span><span class="caption-text">image-20230709113244446</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 389 </span><span class="caption-text">image-20230709113244446</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
 </div>
 <p>“失控的螺旋”这句话在这里确实是正确字面意义了。
 模拟未能达到正确性的“眼球度量”：它看起来就是错误的，但这只是因为我们有理论上正确的答案来进行比较。
@@ -366,7 +366,7 @@ Show Source
 -1.15234 的值进行比较。（下标[-1]选择列表的最后一项）：</p>
 <div class="figure align-default" id="id26">
 <img alt="_images/image-20230709113329014.png" src="_images/image-20230709113329014.png" />
-<p class="caption"><span class="caption-number">Fig. 389 </span><span class="caption-text">image-20230709113329014</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 390 </span><span class="caption-text">image-20230709113329014</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
 </div>
 <p>即使没有将结果绘制成图表供人检查，计算机也可以检测并报告能量与正确值相差甚远。
 此外，叉积 <span class="math notranslate nohighlight">\(x v - y u\)</span> 从 9 上升到
@@ -395,7 +395,7 @@ Show Source
 它仍然产生了远离完整轨道的东西，这使得人们对这种计算出的猜测在物理上是否准确缺乏信心。</p>
 <div class="figure align-default" id="id27">
 <img alt="_images/image-20230709115541702.png" src="_images/image-20230709115541702.png" />
-<p class="caption"><span class="caption-number">Fig. 390 </span><span class="caption-text">image-20230709115541702</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 391 </span><span class="caption-text">image-20230709115541702</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
 </div>
 <p>正如计算领域中限制误差的表达式非常不令人满意一样，没有一种教科书时间步进方法可以用可计算数来说明误差的界限；
 他们只能说“误差随着时间步长的减小而减小，所以请使用你有耐心等待的最小的时间步长”。
@@ -450,7 +450,7 @@ ubox 轨道动力学方法一开始与时间步进完全不同。 与其他 ubox
 ubounds。</p>
 <div class="figure align-default" id="id28">
 <img alt="_images/image-20230709170417342.png" src="_images/image-20230709170417342.png" />
-<p class="caption"><span class="caption-number">Fig. 391 </span><span class="caption-text">image-20230709170417342</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 392 </span><span class="caption-text">image-20230709170417342</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
 </div>
 <p>最初轨迹集合<strong>trojectory</strong>只有一个 ubox，存储初始时间、位置和速度。
 我们还将这一点标记为<strong>new</strong>集合中的一个元素，这意味着它可以用于查找解集中的更多其他成员。
@@ -462,7 +462,7 @@ ubounds。</p>
 元素跟踪形状而不是产生包装问题非常重要。</p>
 <div class="figure align-default" id="id29">
 <img alt="_images/image-20230709171458689.png" src="_images/image-20230709171458689.png" />
-<p class="caption"><span class="caption-number">Fig. 392 </span><span class="caption-text">image-20230709171458689</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 393 </span><span class="caption-text">image-20230709171458689</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
 </div>
 <p>对于引力动力学，在任何时间步长中，两个物体都有可能接触，因为当它们的间隔接近零时，它们的速度接近无穷大。
 对于无限速度，这种奇点对于任何大于零的时间步长都是可能的，因此没有明显的方法来限制行为。
@@ -481,7 +481,7 @@ ubounds。</p>
 最近角到原点的距离的八分之一（最初为 0.5）分配给 r。</p>
 <div class="figure align-default" id="id30">
 <img alt="_images/image-20230709173009714.png" src="_images/image-20230709173009714.png" />
-<p class="caption"><span class="caption-number">Fig. 393 </span><span class="caption-text">image-20230709173009714</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 394 </span><span class="caption-text">image-20230709173009714</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
 </div>
 <p>下图是展示质点1的最后一张图；
 此后，我们只关注质点2的轨迹。该图提醒我们，质点 2
@@ -489,7 +489,7 @@ ubounds。</p>
 <span class="math notranslate nohighlight">\(\frac{m}{M}\)</span> 比例缩放</p>
 <div class="figure align-default" id="id31">
 <img alt="_images/image-20230709173331147.png" src="_images/image-20230709173331147.png" />
-<p class="caption"><span class="caption-number">Fig. 394 </span><span class="caption-text">image-20230709173331147</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 395 </span><span class="caption-text">image-20230709173331147</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
 </div>
 <p>给定任何有限 ubox（具有大于零的任意维数）和半径 r，参考实现中的
 <strong>spacestepbounds</strong>[ ubox, r ] 函数返回一个 ubound
@@ -498,13 +498,13 @@ ubounds。</p>
 <strong>trials</strong>集最初只是这个单一的方块。</p>
 <div class="figure align-default" id="id32">
 <img alt="_images/image-20230709173502488.png" src="_images/image-20230709173502488.png" />
-<p class="caption"><span class="caption-number">Fig. 395 </span><span class="caption-text">image-20230709173502488</span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 396 </span><span class="caption-text">image-20230709173502488</span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
 </div>
 <p>下一页的图显示了由空间台阶边界包围的琥珀色试验区域。
 为了强调算法对轨迹一无所知，我们显示了几个尖端带有问号的箭头</p>
 <div class="figure align-default" id="id33">
 <img alt="_images/image-20230709173554110.png" src="_images/image-20230709173554110.png" />
-<p class="caption"><span class="caption-number">Fig. 396 </span><span class="caption-text">image-20230709173554110</span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 397 </span><span class="caption-text">image-20230709173554110</span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
 </div>
 <p>大的空间步长将清楚地表明加速度在质量块的运动范围内可以变化多少。
 我们所需要的只是加速度的有限界限，以开始迭代细化。
@@ -516,7 +516,7 @@ ubounds。</p>
 有两种方法可以完成创建此类边界的任务。 这是一个快速有效的方法：</p>
 <div class="figure align-default" id="id34">
 <img alt="_images/image-20230709173736224.png" src="_images/image-20230709173736224.png" />
-<p class="caption"><span class="caption-number">Fig. 397 </span><span class="caption-text">image-20230709173736224</span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 398 </span><span class="caption-text">image-20230709173736224</span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
 </div>
 <p>这对于 ULP 大小的矩形效果很好，但由于加速度公式的分子和分母都有 x 或
 y，因此依赖问题会导致一些精度损失。 这可以通过附录 D.7
@@ -533,12 +533,12 @@ ULP 大小的信息丢失的人， 这个选项就在那里。</p>
 中每个x-y ubound 对的加速度，并以一对ubounds 返回最小值和最大值。</p>
 <div class="figure align-default" id="id35">
 <img alt="_images/image-20230709215222156.png" src="_images/image-20230709215222156.png" />
-<p class="caption"><span class="caption-number">Fig. 398 </span><span class="caption-text">image-20230709215222156</span><a class="headerlink" href="#id35" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 399 </span><span class="caption-text">image-20230709215222156</span><a class="headerlink" href="#id35" title="Permalink to this image">¶</a></p>
 </div>
 <p>这是 x 和 y 方向上的初始加速度界限：</p>
 <div class="figure align-default" id="id36">
 <img alt="_images/image-20230709215306053.png" src="_images/image-20230709215306053.png" />
-<p class="caption"><span class="caption-number">Fig. 399 </span><span class="caption-text">image-20230709215306053</span><a class="headerlink" href="#id36" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 400 </span><span class="caption-text">image-20230709215306053</span><a class="headerlink" href="#id36" title="Permalink to this image">¶</a></p>
 </div>
 <p>这些加速度的界限是宽松的，因为空间步长相对于两个质点的距离来说是如此之大。
 但它们是还是有界的，这足以开始细化过程。 下一步是计算试验轨迹的 x-y
@@ -546,7 +546,7 @@ ULP 大小的信息丢失的人， 这个选项就在那里。</p>
 章的无损多项式例程，我们可以避免任何不必要的信息丢失。）</p>
 <div class="figure align-default" id="id37">
 <img alt="_images/image-20230710081849083.png" src="_images/image-20230710081849083.png" />
-<p class="caption"><span class="caption-number">Fig. 400 </span><span class="caption-text">image-20230710081849083</span><a class="headerlink" href="#id37" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 401 </span><span class="caption-text">image-20230710081849083</span><a class="headerlink" href="#id37" title="Permalink to this image">¶</a></p>
 </div>
 <p>应用此方法来增加 t 的值，直到计算出的 x 和 y 完全超出空间界限。 由于 a
 和 b
@@ -560,14 +560,14 @@ ubox，并将其存储在trials中。
 它还分配了一些适合稍后的其他轨迹值的minpower。</p>
 <div class="figure align-default" id="id38">
 <img alt="_images/image-20230710082629005.png" src="_images/image-20230710082629005.png" />
-<p class="caption"><span class="caption-number">Fig. 401 </span><span class="caption-text">image-20230710082629005</span><a class="headerlink" href="#id38" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 402 </span><span class="caption-text">image-20230710082629005</span><a class="headerlink" href="#id38" title="Permalink to this image">¶</a></p>
 </div>
 <p>轨道（用蓝色箭头显示）保证位于重叠的琥珀色矩形（左侧）内。 这组可能的 x
 和 y 位置构成了比原始空间步长小得多的集合。
 事实上，它看起来已经像是轨道计算了。</p>
 <div class="figure align-default" id="id39">
 <img alt="_images/image-20230710083732553.png" src="_images/image-20230710083732553.png" />
-<p class="caption"><span class="caption-number">Fig. 402 </span><span class="caption-text">image-20230710083732553</span><a class="headerlink" href="#id39" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 403 </span><span class="caption-text">image-20230710083732553</span><a class="headerlink" href="#id39" title="Permalink to this image">¶</a></p>
 </div>
 <p>这意味着我们可以评估这个更有限的空间范围内的加速度并获得改进的加速度界限。
 界限永远不可能一直收紧到精确值，因为加速度并不精确；
@@ -576,7 +576,7 @@ ubox，并将其存储在trials中。
 <p>这是新的加速度范围：</p>
 <div class="figure align-default" id="id40">
 <img alt="_images/image-20230710083314597.png" src="_images/image-20230710083314597.png" />
-<p class="caption"><span class="caption-number">Fig. 403 </span><span class="caption-text">image-20230710083314597</span><a class="headerlink" href="#id40" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 404 </span><span class="caption-text">image-20230710083314597</span><a class="headerlink" href="#id40" title="Permalink to this image">¶</a></p>
 </div>
 <p>对加速度的限制要严格得多。 有了这些改进的信息，我们就可以重复位置计算。
 重复此交替过程的自动循环很快就会收敛。
@@ -595,7 +595,7 @@ x-y 位置与空间边界内部相交。</p>
 集的起点，而不仅仅是轨道的位置部分。</p>
 <div class="figure align-default" id="id41">
 <img alt="_images/image-20230710084513414.png" src="_images/image-20230710084513414.png" />
-<p class="caption"><span class="caption-number">Fig. 404 </span><span class="caption-text">image-20230710084513414</span><a class="headerlink" href="#id41" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 405 </span><span class="caption-text">image-20230710084513414</span><a class="headerlink" href="#id41" title="Permalink to this image">¶</a></p>
 </div>
 <p>这是轨迹边界，以时间为垂直维度。
 它是一种螺旋楼梯，其台阶（相当于行进方法的时间步长）只有一个 ULP 高。</p>
@@ -607,7 +607,7 @@ trials集需要六分之一的存储空间。 由于乘法和加法仅使用 1 �
 unum 逻辑的复杂性更高 。</p>
 <div class="figure align-default" id="id42">
 <img alt="_images/image-20230710084658634.png" src="_images/image-20230710084658634.png" />
-<p class="caption"><span class="caption-number">Fig. 405 </span><span class="caption-text">image-20230710084658634</span><a class="headerlink" href="#id42" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 406 </span><span class="caption-text">image-20230710084658634</span><a class="headerlink" href="#id42" title="Permalink to this image">¶</a></p>
 </div>
 <p>请注意矩形块如何以几乎不重叠其角的方式相互接触。
 重叠是精确的时间计算，并且表明计算比看起来要精确得多。
@@ -616,7 +616,7 @@ unum 逻辑的复杂性更高 。</p>
 <p>这是一个近距离视图，显示了穿过 ubox 角的非常轻微重叠的轨迹。</p>
 <div class="figure align-default" id="id43">
 <img alt="_images/image-20230710085424741.png" src="_images/image-20230710085424741.png" />
-<p class="caption"><span class="caption-number">Fig. 406 </span><span class="caption-text">image-20230710085424741</span><a class="headerlink" href="#id43" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 407 </span><span class="caption-text">image-20230710085424741</span><a class="headerlink" href="#id43" title="Permalink to this image">¶</a></p>
 </div>
 <p>如果 x-y 范围在最后一个精确时间超过几个 ULP 宽，则表明空间步长半径 r
 对于所使用的精度而言太大。
@@ -641,7 +641,7 @@ x 和 y 维度中的 ubox 可以并行计算</p>
 在这种情况下，它不会影响结果，但这是一个值得养成的好习惯。</p>
 <div class="figure align-default" id="id44">
 <img alt="_images/image-20230710090140831.png" src="_images/image-20230710090140831.png" />
-<p class="caption"><span class="caption-number">Fig. 407 </span><span class="caption-text">image-20230710090140831</span><a class="headerlink" href="#id44" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 408 </span><span class="caption-text">image-20230710090140831</span><a class="headerlink" href="#id44" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>laststate</strong>集现在拥有开始下一个空间步进需的一切。 不再需要加速度值
 {a，b} 和旧的 <span class="math notranslate nohighlight">\(t_0\)</span>。</p>
@@ -671,7 +671,7 @@ v 新值的简单方法。</p>
 下图中浅蓝色所示：</p>
 <div class="figure align-default" id="id45">
 <img alt="_images/image-20230710093221894.png" src="_images/image-20230710093221894.png" />
-<p class="caption"><span class="caption-number">Fig. 408 </span><span class="caption-text">image-20230710093221894</span><a class="headerlink" href="#id45" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 409 </span><span class="caption-text">image-20230710093221894</span><a class="headerlink" href="#id45" title="Permalink to this image">¶</a></p>
 </div>
 <p>u 和 v 的第三个约束是角动量守恒定律。 由于 ULP 范围内的不精确运算，叉积
 <span class="math notranslate nohighlight">\(x v - y u\)</span>
@@ -680,14 +680,14 @@ v 新值的简单方法。</p>
 平面中的一条带，在穿过轴的地方稍微弯曲，如洋红色所示：</p>
 <div class="figure align-default" id="id46">
 <img alt="_images/image-20230710093748811.png" src="_images/image-20230710093748811.png" />
-<p class="caption"><span class="caption-number">Fig. 409 </span><span class="caption-text">image-20230710093748811</span><a class="headerlink" href="#id46" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 410 </span><span class="caption-text">image-20230710093748811</span><a class="headerlink" href="#id46" title="Permalink to this image">¶</a></p>
 </div>
 <p>传统的区间算术会让您创建一个函数来描述上面的类似领结的形状，该函数考虑 x
 和 y 所在的象限来查找边界线的斜率和轴截距，包括避免除以的特殊情况 零。
 该代码大约需要半页。 以下是参考实现中使用 unum 算术进行测试的情况：</p>
 <div class="figure align-default" id="id47">
 <img alt="_images/image-20230710093900299.png" src="_images/image-20230710093900299.png" />
-<p class="caption"><span class="caption-number">Fig. 410 </span><span class="caption-text">image-20230710093900299</span><a class="headerlink" href="#id47" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 411 </span><span class="caption-text">image-20230710093900299</span><a class="headerlink" href="#id47" title="Permalink to this image">¶</a></p>
 </div>
 <p>我们只需应用第 17
 章中表达的哲学：不需要“求解”方程，即通过求逆运算来获得用另一个值表示的一个值。
@@ -697,7 +697,7 @@ ubox，这不仅节省了工作量并收紧了界限，而且可以更好地模�
 <p>以下是参考实现中 <strong>complianceQ</strong> 测试的样子：</p>
 <div class="figure align-default" id="id48">
 <img alt="_images/image-20230710094018429.png" src="_images/image-20230710094018429.png" />
-<p class="caption"><span class="caption-number">Fig. 411 </span><span class="caption-text">image-20230710094018429</span><a class="headerlink" href="#id48" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 412 </span><span class="caption-text">image-20230710094018429</span><a class="headerlink" href="#id48" title="Permalink to this image">¶</a></p>
 </div>
 <p>请记住，<strong>laststate</strong> 具有与 <strong>new</strong> 相同的形式：t、x、y、u、v 的
 ubounds。为什么不像我们使用 <strong>new</strong> 那样简单地使用 <strong>laststate</strong>
@@ -707,13 +707,13 @@ ubounds。为什么不像我们使用 <strong>new</strong> 那样简单地使用
 使用区间算术，界限的增长速度至少与空间步数的平方一样快，并且很快界限就会包含原点并创建除以零的结果。</p>
 <div class="figure align-default" id="id49">
 <img alt="_images/image-20230710094230721.png" src="_images/image-20230710094230721.png" />
-<p class="caption"><span class="caption-number">Fig. 412 </span><span class="caption-text">image-20230710094230721</span><a class="headerlink" href="#id49" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 413 </span><span class="caption-text">image-20230710094230721</span><a class="headerlink" href="#id49" title="Permalink to this image">¶</a></p>
 </div>
 <p>因此，new 中的条目在任何维度上都不会超过一个 ULP。
 为了显示守恒测试的敏感性，以下是合规性测试后起始集的 u-v 尺寸：</p>
 <div class="figure align-default" id="id50">
 <img alt="_images/image-20230710101515418.png" src="_images/image-20230710101515418.png" />
-<p class="caption"><span class="caption-number">Fig. 413 </span><span class="caption-text">image-20230710101515418</span><a class="headerlink" href="#id50" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 414 </span><span class="caption-text">image-20230710101515418</span><a class="headerlink" href="#id50" title="Permalink to this image">¶</a></p>
 </div>
 <p>v 的 ubox 列表产生了七个元素。 只有一个符合要求，以青色显示；
 其他失败并显示为红色。 浅蓝色弧线是能量守恒的环。
@@ -732,7 +732,7 @@ ubox，并返回符合定律值的集合。 在 <strong>laststate</strong>
 上使用它可以为接下来的空间步骤提供一组起点：</p>
 <div class="figure align-default" id="id51">
 <img alt="_images/image-20230710102859013.png" src="_images/image-20230710102859013.png" />
-<p class="caption"><span class="caption-number">Fig. 414 </span><span class="caption-text">image-20230710102859013</span><a class="headerlink" href="#id51" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 415 </span><span class="caption-text">image-20230710102859013</span><a class="headerlink" href="#id51" title="Permalink to this image">¶</a></p>
 </div>
 <p>一般来说，enforcelaw 会修剪掉计算轨迹 ubox
 集中的大量“脂肪”，因为它认识到 u 和 v
@@ -757,14 +757,14 @@ ubox
 <strong>ubox</strong> 作为位置和速度的起点。 该代码只是前面显示的每个阶段的合并。</p>
 <div class="figure align-default" id="id52">
 <img alt="_images/image-20230710104237161.png" src="_images/image-20230710104237161.png" />
-<p class="caption"><span class="caption-number">Fig. 415 </span><span class="caption-text">image-20230710104237161</span><a class="headerlink" href="#id52" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 416 </span><span class="caption-text">image-20230710104237161</span><a class="headerlink" href="#id52" title="Permalink to this image">¶</a></p>
 </div>
 <p>下图是第三个空间步骤结束时的轨迹特写，大约是绕完整轨道的 2%。 x、y 和 t
 维度的精度损失在该比例下表现为重叠的 ubox。
 误差没有指数增长，只有线性增长。</p>
 <div class="figure align-default" id="id53">
 <img alt="_images/image-20230710104857720.png" src="_images/image-20230710104857720.png" />
-<p class="caption"><span class="caption-number">Fig. 416 </span><span class="caption-text">image-20230710104857720</span><a class="headerlink" href="#id53" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 417 </span><span class="caption-text">image-20230710104857720</span><a class="headerlink" href="#id53" title="Permalink to this image">¶</a></p>
 </div>
 <p>请注意，所有 x-y 范围的并集并不总是矩形；
 守恒定律剪掉了楼梯顶部台阶的一个角。
@@ -786,7 +786,7 @@ ubox 方法预测地球绕太阳一周后的位置有多准确？ 如果使用 {
 <h2>20.5 三体问题<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h2>
 <div class="figure align-default" id="id54">
 <img alt="_images/image-20230710105706854.png" src="_images/image-20230710105706854.png" />
-<p class="caption"><span class="caption-number">Fig. 417 </span><span class="caption-text">image-20230710105706854</span><a class="headerlink" href="#id54" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 418 </span><span class="caption-text">image-20230710105706854</span><a class="headerlink" href="#id54" title="Permalink to this image">¶</a></p>
 </div>
 <blockquote>
 <div><p>上图是电影《影子的游戏》中的一个画面。
@@ -831,14 +831,14 @@ ubox 方法预测地球绕太阳一周后的位置有多准确？ 如果使用 {
 包围，这些 ubox 被证明无法触及轨迹。</p>
 <div class="figure align-default" id="id55">
 <img alt="_images/image-20230710112049776.png" src="_images/image-20230710112049776.png" />
-<p class="caption"><span class="caption-number">Fig. 418 </span><span class="caption-text">image-20230710112049776</span><a class="headerlink" href="#id55" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 419 </span><span class="caption-text">image-20230710112049776</span><a class="headerlink" href="#id55" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="n">
 <h2>20.6 n-体问题和星系对撞<a class="headerlink" href="#n" title="Permalink to this heading">¶</a></h2>
 <div class="figure align-default" id="id56">
 <img alt="_images/image-20230710112149032.png" src="_images/image-20230710112149032.png" />
-<p class="caption"><span class="caption-number">Fig. 419 </span><span class="caption-text">image-20230710112149032</span><a class="headerlink" href="#id56" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 420 </span><span class="caption-text">image-20230710112149032</span><a class="headerlink" href="#id56" title="Permalink to this image">¶</a></p>
 </div>
 <blockquote>
 <div><p>大约四十亿年后，银河系将与仙女座星系发生碰撞。

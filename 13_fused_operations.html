@@ -195,7 +195,7 @@ Show Source
 <h1>13 融合操作（一次性表达式）<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
 <div class="figure align-default" id="id14">
 <img alt="_images/image-20230627094357246.png" src="_images/image-20230627094357246.png" />
-<p class="caption"><span class="caption-number">Fig. 193 </span><span class="caption-text">image-20230627094357246</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 194 </span><span class="caption-text">image-20230627094357246</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 <blockquote>
 <div><p>用于执行复杂算术的标准库例程因担心“从世界的边缘掉下来”而受到削弱，因为简单的算术可能会在临时计算中上溢或下溢。
@@ -248,12 +248,12 @@ u-layer 位移动则需要一些成本，无论是片外存储还是片上存储
 就会变成“很多”，尽管返回了正确的边界，但信息都丢失了：</p>
 <div class="figure align-default" id="id15">
 <img alt="_images/image-20230627105659670.png" src="_images/image-20230627105659670.png" />
-<p class="caption"><span class="caption-number">Fig. 194 </span><span class="caption-text">image-20230627105659670</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 195 </span><span class="caption-text">image-20230627105659670</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 <p>作为融合操作，答案在 u-layer 中保持精确且可表达：</p>
 <div class="figure align-default" id="id16">
 <img alt="_images/image-20230627105805151.png" src="_images/image-20230627105805151.png" />
-<p class="caption"><span class="caption-number">Fig. 195 </span><span class="caption-text">image-20230627105805151</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 196 </span><span class="caption-text">image-20230627105805151</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="id4">
@@ -368,7 +368,7 @@ ubound 返回。 类似地，使用 <strong>fsumg</strong>[ag] 找到一般区�
 作为小数。（顺便说一句，求和从1加到<span class="math notranslate nohighlight">\(\infty\)</span>的结果是<span class="math notranslate nohighlight">\(\frac{\pi^2}{6}=1.64493\cdots\)</span>）</p>
 <div class="figure align-default" id="id17">
 <img alt="_images/image-20230627144147870.png" src="_images/image-20230627144147870.png" />
-<p class="caption"><span class="caption-number">Fig. 196 </span><span class="caption-text">image-20230627144147870</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 197 </span><span class="caption-text">image-20230627144147870</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 <p>总和的限制比需要的要宽松得多； 它有 95 个 ULP 宽！
 一些数值分析专家表示，提高准确性的方法是找到对总和进行分组的方法，使相加的数字接近相同的量级，你可以想象这需要多少编程。
@@ -376,7 +376,7 @@ ubound 返回。 类似地，使用 <strong>fsumg</strong>[ag] 找到一般区�
 宽的不精确值：</p>
 <div class="figure align-default" id="id18">
 <img alt="_images/image-20230627144515773.png" src="_images/image-20230627144515773.png" />
-<p class="caption"><span class="caption-number">Fig. 197 </span><span class="caption-text">image-20230627144515773</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 198 </span><span class="caption-text">image-20230627144515773</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
 <p>该代码更容易编写，更容易阅读，执行速度更快（因为每次添加时它不必在
 g-layer和 u-layer之间来回），并且在此环境中尽可能准确（以最高精度的一个
@@ -386,7 +386,7 @@ ULP 宽）。 它在各个方面都获胜。 最重要的是，不需要数字�
 <h3>13.4.3 并行计算的一致结果<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
 <div class="figure align-default" id="id19">
 <img alt="_images/image-20230627144909325.png" src="_images/image-20230627144909325.png" />
-<p class="caption"><span class="caption-number">Fig. 198 </span><span class="caption-text">image-20230627144909325</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 199 </span><span class="caption-text">image-20230627144909325</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
 <blockquote>
 <div><p>天河二号超级计算机是2014年计算机集群的代表。 它拥有超过 300
@@ -474,19 +474,19 @@ u-layer的函数是<strong>fprodu</strong>[au].</p>
 510，并且小数域仅提供大约两位十进制的精度：</p>
 <div class="figure align-default" id="id20">
 <img alt="_images/image-20230627153729472.png" src="_images/image-20230627153729472.png" />
-<p class="caption"><span class="caption-number">Fig. 199 </span><span class="caption-text">image-20230627153729472</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 200 </span><span class="caption-text">image-20230627153729472</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
 <p>鉴于 0.02 被转换为不精确的 unum，乘积
 <span class="math notranslate nohighlight">\(400 \times 30 \times 0.02 = 240\)</span> 在 g-layer
 中得到了相当好的求值：</p>
 <div class="figure align-default" id="id21">
 <img alt="_images/image-20230627153901919.png" src="_images/image-20230627153901919.png" />
-<p class="caption"><span class="caption-number">Fig. 200 </span><span class="caption-text">image-20230627153901919</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 201 </span><span class="caption-text">image-20230627153901919</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
 <p>与另外两种使用单独乘法的方式进行对比：</p>
 <div class="figure align-default" id="id22">
 <img alt="_images/image-20230627154044440.png" src="_images/image-20230627154044440.png" />
-<p class="caption"><span class="caption-number">Fig. 201 </span><span class="caption-text">image-20230627154044440</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 202 </span><span class="caption-text">image-20230627154044440</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
 </div>
 <p>信息丢失可能是常见的在动态范围内的ULP宽度增加，或者如果中间的乘积落入
 <span class="math notranslate nohighlight">\((maxreal、\infty)\)</span> 范围（如上述第二种情况），则信息丢失会很严重.</p>
@@ -545,19 +545,19 @@ denominatorsu]，它还计算移动的位数和数字个数。
 <span class="math notranslate nohighlight">\((5 \times (3 \div 10))\)</span>，其中我们故意进行不利分组，首先进行除法操作：</p>
 <div class="figure align-default" id="id23">
 <img alt="_images/image-20230627162005119.png" src="_images/image-20230627162005119.png" />
-<p class="caption"><span class="caption-number">Fig. 202 </span><span class="caption-text">image-20230627162005119</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 203 </span><span class="caption-text">image-20230627162005119</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
 </div>
 <p>对应的融合操作保留了精确的结果</p>
 <div class="figure align-default" id="id24">
 <img alt="_images/image-20230627162044641.png" src="_images/image-20230627162044641.png" />
-<p class="caption"><span class="caption-number">Fig. 203 </span><span class="caption-text">image-20230627162044641</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 204 </span><span class="caption-text">image-20230627162044641</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
 </div>
 <p>几个世纪前，一位名叫约翰·沃利斯 (John Wallis)
 的英国数学家发现了一个奇怪的<span class="math notranslate nohighlight">\(\pi\)</span> 公式（“沃利斯积”）。
 它提供了一种方法来演示在分子和分母中进行大量乘法的融合乘积：</p>
 <div class="figure align-default" id="id25">
 <img alt="_images/image-20230627162218677.png" src="_images/image-20230627162218677.png" />
-<p class="caption"><span class="caption-number">Fig. 204 </span><span class="caption-text">image-20230627162218677</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 205 </span><span class="caption-text">image-20230627162218677</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
 </div>
 <p>也就是分子中无限多对偶数整数的乘积，除以分母中无限多对错开的奇数整数对的乘积。(
 顺便说一句，沃利斯是“<span class="math notranslate nohighlight">\(\infty\)</span>”符号的发明者，尽管他对它的数学定义更像是
@@ -565,7 +565,7 @@ denominatorsu]，它还计算移动的位数和数字个数。
 <p>以下是融合乘积比率例程如何计算 Wallis 产品的前几项，以及初始因子 2：</p>
 <div class="figure align-default" id="id26">
 <img alt="_images/image-20230627162716094.png" src="_images/image-20230627162716094.png" />
-<p class="caption"><span class="caption-number">Fig. 205 </span><span class="caption-text">image-20230627162716094</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 206 </span><span class="caption-text">image-20230627162716094</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
 </div>
 <p>环境设置为 {2, 4} 以演示使用此类融合操作的原因之一。 在 {2, 4}
 环境中，maxreal 约为

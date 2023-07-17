@@ -195,7 +195,7 @@ Show Source
 <h1>8 比较操作<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
 <div class="figure align-default" id="id9">
 <img alt="_images/image-20230619161604739.png" src="_images/image-20230619161604739.png" />
-<p class="caption"><span class="caption-number">Fig. 104 </span><span class="caption-text">image-20230619161604739</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 105 </span><span class="caption-text">image-20230619161604739</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <blockquote>
 <div><p>王朝年代的比较就像比较unums.
@@ -225,14 +225,14 @@ C.8。主要这是严格小于和严格大于函数，任何交叠，哪怕只�
 <p>例如，函数调用在[1,3], [3, 100]两个闭区间，结果是False。</p>
 <div class="figure align-default" id="id10">
 <img alt="_images/image-20230619163541874.png" src="_images/image-20230619163541874.png" />
-<p class="caption"><span class="caption-number">Fig. 105 </span><span class="caption-text">image-20230619163541874</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 106 </span><span class="caption-text">image-20230619163541874</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <p>这是因为两个闭区间都含有端点3. 但是如果测试是检查[1,3] &lt; (3,
 100]就会返回True.
 因为一个端点是开区间。浮点或是传统的区间数学不能做出这么精确的区分。</p>
 <div class="figure align-default" id="id11">
 <img alt="_images/image-20230619163602597.png" src="_images/image-20230619163602597.png" />
-<p class="caption"><span class="caption-number">Fig. 106 </span><span class="caption-text">image-20230619163602597</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 107 </span><span class="caption-text">image-20230619163602597</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <p>比较是先把u-layer参数通过<strong>u2g</strong>转换成通用的间隔，再通过g-layer的函数<strong>ltgQ</strong>判断。这个基本上复制了硬件的做法。大于的测试跟小于测试是一样的，只是输入参数交换而已。对应函数是g-layer的<strong>gtgQ</strong>和u-layer的<strong>gtuQ</strong>。</p>
 <p>为了对unum,
@@ -240,11 +240,11 @@ ubound用类似普通数比较的符号表达，定义用一个略弯曲的对�
 比如u-layer的比较 “<span class="math notranslate nohighlight">\(-2&lt;-1\)</span>”是如下表达</p>
 <div class="figure align-default" id="id12">
 <img alt="_images/image-20230619164857902.png" src="_images/image-20230619164857902.png" />
-<p class="caption"><span class="caption-number">Fig. 107 </span><span class="caption-text">image-20230619164857902</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 108 </span><span class="caption-text">image-20230619164857902</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="id13">
 <img alt="_images/image-20230619164937820.png" src="_images/image-20230619164937820.png" />
-<p class="caption"><span class="caption-number">Fig. 108 </span><span class="caption-text">image-20230619164937820</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 109 </span><span class="caption-text">image-20230619164937820</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="id4">
@@ -253,7 +253,7 @@ ubound用类似普通数比较的符号表达，定义用一个略弯曲的对�
 u、v在scatch pad中需要比较u&lt;v。</p>
 <div class="figure align-default" id="id14">
 <img alt="_images/image-20230619165236584.png" src="_images/image-20230619165236584.png" />
-<p class="caption"><span class="caption-number">Fig. 109 </span><span class="caption-text">image-20230619165236584</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 110 </span><span class="caption-text">image-20230619165236584</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 <p>我们可以忽略灰色部分数据，因为只需要知道u的上边界和v的下边界点。比较是按一定重要性的顺序拿出gbound的相关bit，能得出结果就中断返回。顺序是</p>
 <ul class="simple">
@@ -302,13 +302,13 @@ v]在<span class="math notranslate nohighlight">\(u \prec v\)</span> 或是
 equal！”。下面是一个测试两个ubound是否交叠的例子</p>
 <div class="figure align-default" id="id15">
 <img alt="_images/image-20230620092809780.png" src="_images/image-20230620092809780.png" />
-<p class="caption"><span class="caption-number">Fig. 110 </span><span class="caption-text">image-20230620092809780</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 111 </span><span class="caption-text">image-20230620092809780</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 <p>对于一个有overlap的情况，也就是不能排除所有点都不相同，“nowhere
 equal”测试正确地返回了False。</p>
 <div class="figure align-default" id="id16">
 <img alt="_images/image-20230620093514661.png" src="_images/image-20230620093514661.png" />
-<p class="caption"><span class="caption-number">Fig. 111 </span><span class="caption-text">image-20230620093514661</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 112 </span><span class="caption-text">image-20230620093514661</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 <p>“equal”表示相同的端点和相同的开闭属性，而“not nowhere
 equal”表明两个交叠的空间有可能代表了同一个数。我们用这个就像float中用的“在一个epsilon差距内相同”一样，在u-layer精度上做些让步的同时又保持了数学的严谨性。原型中提供一个函数nnequQ[u,
@@ -319,12 +319,12 @@ v]。这个函数很有用所以值得定义一个操作符<span class="math not
 <p>下面是一些用<span class="math notranslate nohighlight">\(\approx\)</span>的例子：一个精确值是不同于它相邻的ULP宽度的非精确值。</p>
 <div class="figure align-default" id="id17">
 <img alt="_images/image-20230620095825377.png" src="_images/image-20230620095825377.png" />
-<p class="caption"><span class="caption-number">Fig. 112 </span><span class="caption-text">image-20230620095825377</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 113 </span><span class="caption-text">image-20230620095825377</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 <p>有overlap，使用<span class="math notranslate nohighlight">\(\approx\)</span></p>
 <div class="figure align-default" id="id18">
 <img alt="_images/image-20230620095923341.png" src="_images/image-20230620095923341.png" />
-<p class="caption"><span class="caption-number">Fig. 113 </span><span class="caption-text">image-20230620095923341</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 114 </span><span class="caption-text">image-20230620095923341</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
 <p>浮点的算法通常需要测试答案是否收敛了。但是用浮点写一个迭代算法的停止条件是一个有风险的事情。比如一个这样的过程：“<span class="math notranslate nohighlight">\(x_{new}=f(x_{old})\)</span>
 until (stop condition)”.
@@ -357,7 +357,7 @@ Infinite?位，不同扩展精度长度？
 <h2>8.3 交集<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h2>
 <div class="figure align-default" id="id19">
 <img alt="_images/image-20230620112136556.png" src="_images/image-20230620112136556.png" />
-<p class="caption"><span class="caption-number">Fig. 114 </span><span class="caption-text">image-20230620112136556</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 115 </span><span class="caption-text">image-20230620112136556</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
 <p>当游戏从2D转换为3D的时候，游戏开发者挣扎着试图用浮点把交接处画正确。注意一些房子里面漏出了。那时候的低分辨率掩盖了这些错误产生的人为图案。这可以被看做是小于或是大于运算的错误，因为计算机对于哪组多边形更靠近观察者算错了。</p>
 <p>计算交集的代码看上去是练习写条件分支。我们必须考虑端点相对位置的各自可能性，包括开闭属性。附录C.8的代码对这样一个简单的操作是如此的繁琐，这正好说明了unum环境通过把这些需要仔细考虑的负担都从程序员转移到了它本属于的计算机系统上，他们的生活更轻松了。</p>
@@ -365,7 +365,7 @@ Infinite?位，不同扩展精度长度？
 v].下面例子显示了<span class="math notranslate nohighlight">\([-1, 3]\)</span>和<span class="math notranslate nohighlight">\((2, \infty]\)</span>的交集</p>
 <div class="figure align-default" id="id20">
 <img alt="_images/image-20230620113624441.png" src="_images/image-20230620113624441.png" />
-<p class="caption"><span class="caption-number">Fig. 115 </span><span class="caption-text">image-20230620113624441</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 116 </span><span class="caption-text">image-20230620113624441</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
 <p>现在该做真正的unum算术了，先从加减法开始。 ```</p>
 </div>

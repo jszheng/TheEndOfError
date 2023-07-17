@@ -258,25 +258,25 @@ unify例程可以是最后一步，它可以发现是否有可能将答案无损
 在{3，4}环境中，需要57位来表示两部分的ubound：</p>
 <div class="figure align-default" id="id6">
 <img alt="_images/image-20200804161609983.png" src="_images/image-20200804161609983.png" />
-<p class="caption"><span class="caption-number">Fig. 86 </span><span class="caption-text">image-20200804161609983</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 87 </span><span class="caption-text">image-20200804161609983</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>函数<strong>nbits</strong>[u]计算ubound u的位数,
 包含一个或两个unum数的总比特数，和额外一比特指示是单个或是一对unum表示的。(
 57 = 2*28+1 )</p>
 <div class="figure align-default" id="id7">
 <img alt="_images/image-20200804162316853.png" src="_images/image-20200804162316853.png" />
-<p class="caption"><span class="caption-number">Fig. 87 </span><span class="caption-text">image-20200804162316853</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 88 </span><span class="caption-text">image-20200804162316853</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>现在我们计算<span class="math notranslate nohighlight">\(\textbf{unify} \left [ \lbrace \hat{23.1}, \hat{23.9} \rbrace \right ]\)</span>,
 结果是一个数的ubound，需要的比特数少好多</p>
 <div class="figure align-default" id="id8">
 <img alt="_images/image-20230615143639753.png" src="_images/image-20230615143639753.png" />
-<p class="caption"><span class="caption-number">Fig. 88 </span><span class="caption-text">image-20230615143639753</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 89 </span><span class="caption-text">image-20230615143639753</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>看上去像一个16比特的数，多出一比特是表征只有一个数表示的范围</p>
 <div class="figure align-default" id="id9">
 <img alt="_images/image-20230615143826644.png" src="_images/image-20230615143826644.png" />
-<p class="caption"><span class="caption-number">Fig. 89 </span><span class="caption-text">image-20230615143826644</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 90 </span><span class="caption-text">image-20230615143826644</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <p>这个答案的信息量掉了些，因为表征的边界范围宽了些。范围扩大的比例是<span class="math notranslate nohighlight">\(\frac{24-23}{23.9-23.1}=1.25\)</span>,
 所以信息量减小比例是倒数<span class="math notranslate nohighlight">\(\frac{23.9-23.1}{24-23}=0.8\)</span>，约有20%的减少。但是表示的比特数目提高了<span class="math notranslate nohighlight">\(\frac{57}{17}=3.35\cdots\)</span>。所以每一比特表征的信息量提升比是<span class="math notranslate nohighlight">\(0.8 \times 3.35 \cdots = 2.68 \cdots\)</span></p>
@@ -293,12 +293,12 @@ unify例程可以是最后一步，它可以发现是否有可能将答案无损
 因为找不到提升那么多的简化方法。</p>
 <div class="figure align-default" id="id10">
 <img alt="_images/image-20230615150914021.png" src="_images/image-20230615150914021.png" />
-<p class="caption"><span class="caption-number">Fig. 90 </span><span class="caption-text">image-20230615150914021</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 91 </span><span class="caption-text">image-20230615150914021</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <p>而如果放低要求到2.5就能找到，如下</p>
 <div class="figure align-default" id="id11">
 <img alt="_images/image-20230615150940207.png" src="_images/image-20230615150940207.png" />
-<p class="caption"><span class="caption-number">Fig. 91 </span><span class="caption-text">image-20230615150940207</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 92 </span><span class="caption-text">image-20230615150940207</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <p>原型定义的<strong>smartunify</strong>函数源代码可以在附录C.6找到。读者可以想想有没有其他的policy来管理误差和最大化每比特信息量。比如可以还是保留两个端点的bound，但是端点数用更少的比特来表示。比如在{3,
 5}环境中，一个表示(23.1, 23.9)的ubound要求每个端点用完整的32bit
@@ -320,7 +320,7 @@ arithmetic那么有局限(不能表示左右端点为非精确数)。这么做�
 <p>对于一个环境，上面的常数对应的unum就是，可以在setup时候就产生出来：</p>
 <div class="figure align-default" id="id12">
 <img alt="_images/image-20230615160607032.png" src="_images/image-20230615160607032.png" />
-<p class="caption"><span class="caption-number">Fig. 92 </span><span class="caption-text">image-20230615160607032</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 93 </span><span class="caption-text">image-20230615160607032</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <p>这些值只需要在utag左边添加三比特 （utag= 1 0s 0s）</p>
 <p>例外是如果环境是{0, 0}, 那么<strong>negopeninfu</strong> = (<span class="math notranslate nohighlight">\(-\infty\)</span>,
@@ -339,7 +339,7 @@ arithmetic那么有局限(不能表示左右端点为非精确数)。这么做�
 {<span class="math notranslate nohighlight">\(-\hat{0.3}, \textbf{posopeninfu}\)</span>}是</p>
 <div class="figure align-default" id="id13">
 <img alt="_images/image-20230615162105888.png" src="_images/image-20230615162105888.png" />
-<p class="caption"><span class="caption-number">Fig. 93 </span><span class="caption-text">image-20230615162105888</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 94 </span><span class="caption-text">image-20230615162105888</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 <p>整个ubound只需要39比特来表示。</p>
 </div>
@@ -358,13 +358,13 @@ arithmetic那么有局限(不能表示左右端点为非精确数)。这么做�
 传统的浮点计算使用64比特表示1.0就有相当多的浪费：</p>
 <div class="figure align-default" id="id14">
 <img alt="_images/image-20230615164623489.png" src="_images/image-20230615164623489.png" />
-<p class="caption"><span class="caption-number">Fig. 94 </span><span class="caption-text">image-20230615164623489</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 95 </span><span class="caption-text">image-20230615164623489</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 <p>而unum中存储1.0只需要占用3bit 0，0，1。在一个支持到双精度的{4,
 6}的环境中，1.0只需要15比特表示:</p>
 <div class="figure align-default" id="id15">
 <img alt="_images/image-20230615164813866.png" src="_images/image-20230615164813866.png" />
-<p class="caption"><span class="caption-number">Fig. 95 </span><span class="caption-text">image-20230615164813866</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 96 </span><span class="caption-text">image-20230615164813866</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 <p>unum在表达小整数乘2的幂次的数是很简洁的，这种数在计算中比你想象的要常见得多。</p>
 <p><strong>原因4：左边数消去节省</strong>。加减数通常导致小数左右两边的有效数消去。unum可以聪明地发现并压缩消去的比特。这依赖于计算，需要大量实验来了解能节省的量。</p>

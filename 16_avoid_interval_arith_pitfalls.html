@@ -219,18 +219,18 @@ v=2x-y
 x 的集合，使得 <span class="math notranslate nohighlight">\(a \le x \le b\)</span>：</p>
 <div class="figure align-default" id="id7">
 <img alt="_images/image-20230629211426370.png" src="_images/image-20230629211426370.png" />
-<p class="caption"><span class="caption-number">Fig. 270 </span><span class="caption-text">image-20230629211426370</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 271 </span><span class="caption-text">image-20230629211426370</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>使用上一章定义的“信息”，区间结果隐藏了大量信息丢失的事实。
 从图形上看，我们从下图中以紫色显示的矩形边界开始。</p>
 <div class="figure align-default" id="id8">
 <img alt="_images/image-20230629211703497.png" src="_images/image-20230629211703497.png" />
-<p class="caption"><span class="caption-number">Fig. 271 </span><span class="caption-text">image-20230629211703497</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 272 </span><span class="caption-text">image-20230629211703497</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>u 和 v 值的真实范围由下面倾斜的蓝色平行四边形显示</p>
 <div class="figure align-default" id="id9">
 <img alt="_images/image-20230629211751451.png" src="_images/image-20230629211751451.png" />
-<p class="caption"><span class="caption-number">Fig. 272 </span><span class="caption-text">image-20230629211751451</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 273 </span><span class="caption-text">image-20230629211751451</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <p>然而，区间算术给我们的是包含平行四边形的整个矩形，它是解集的“包装器”：<span class="math notranslate nohighlight">\(3 \le x \le 7\)</span>
 和 <span class="math notranslate nohighlight">\(2 \le y \le 9\)</span>。 蓝色平行四边形的面积为
@@ -249,7 +249,7 @@ u 和 v
 2}：</p>
 <div class="figure align-default" id="id10">
 <img alt="_images/image-20230629212733907.png" src="_images/image-20230629212733907.png" />
-<p class="caption"><span class="caption-number">Fig. 273 </span><span class="caption-text">image-20230629212733907</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 274 </span><span class="caption-text">image-20230629212733907</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <p>这任然有足够的精度使得紫色区域内ULP小到<span class="math notranslate nohighlight">\(2^{-4}=\frac{1}{16}\)</span>，在紫色矩形内，但我们故意使用更大的
 ULP，因此 ubox 足够大，可以以图形方式显示。是时候使用另一个 ubox
@@ -264,7 +264,7 @@ ULP，因此 ubox 足够大，可以以图形方式显示。是时候使用另�
 列表的元组来形成全套矩形集的 ubox：</p>
 <div class="figure align-default" id="id11">
 <img alt="_images/image-20230629224315266.png" src="_images/image-20230629224315266.png" />
-<p class="caption"><span class="caption-number">Fig. 274 </span><span class="caption-text">image-20230629224315266</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 275 </span><span class="caption-text">image-20230629224315266</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <p>这是一个完美的平铺； 开放端点和封闭端点完美地结合在一起，没有重叠。
 矩形内或其边界上的每个实数 x 和 y 都只表示一次。
@@ -287,7 +287,7 @@ ubox，但它确实包含无法触及真实答案集的 ubox（最小 ULP 大小
 平面中的哪些 ubox 导致它们出现在 u-v 平面的结果中？</p>
 <div class="figure align-default" id="id12">
 <img alt="_images/image-20230630114952059.png" src="_images/image-20230630114952059.png" />
-<p class="caption"><span class="caption-number">Fig. 275 </span><span class="caption-text">image-20230630114952059</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 276 </span><span class="caption-text">image-20230630114952059</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <p>但如果这确实是要发送回主存储器的最终结果，则可以将其合并以节省位而不会丢失信息。</p>
 <p>上面所示的解集有 613 个 ubox，占用 15069 位。
@@ -295,7 +295,7 @@ ubox，但它确实包含无法触及真实答案集的 ubox（最小 ULP 大小
 ubox，总大小为 2281 位。</p>
 <div class="figure align-default" id="id13">
 <img alt="_images/image-20230630125112695.png" src="_images/image-20230630125112695.png" />
-<p class="caption"><span class="caption-number">Fig. 276 </span><span class="caption-text">image-20230630125112695</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 277 </span><span class="caption-text">image-20230630125112695</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 <p>根据集合最终使用的目的，您通常可以删除所有没有面积的
 ubox，以节省更多空间（“留下所有瓷砖，不留灌浆”）。</p>
@@ -306,7 +306,7 @@ ULP 尺寸相同。 下面的形状占用176个这样的像素，每个像素可
 = 5632 位，而不是 803 位。</p>
 <div class="figure align-default" id="id14">
 <img alt="_images/image-20230630132828441.png" src="_images/image-20230630132828441.png" />
-<p class="caption"><span class="caption-number">Fig. 277 </span><span class="caption-text">image-20230630132828441</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 278 </span><span class="caption-text">image-20230630132828441</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 <p>用作帧缓冲器的存储芯片中的少量逻辑就足以解释 ubox
 格式并扩展芯片内的位含义，而不是昂贵得多的芯片到芯片传输。 ubox
@@ -325,14 +325,14 @@ ULP宽为单位的的多维元素，来无脑暴力地应用大规模并行计�
 <p>对于正 x它看起来像下页上的曲线</p>
 <div class="figure align-default" id="id15">
 <img alt="_images/image-20230630134915221.png" src="_images/image-20230630134915221.png" />
-<p class="caption"><span class="caption-number">Fig. 278 </span><span class="caption-text">image-20230630134915221</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 279 </span><span class="caption-text">image-20230630134915221</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 <p>假设x是区间，比如<span class="math notranslate nohighlight">\(x=[1,2]\)</span>。分子的范围是[2,
 3]而分母的范围是[4,
 5]。上面的图很明显表示结果的范围应该是<span class="math notranslate nohighlight">\([\frac{1+1}{1+3}, \frac{2+1}{2+3}]=[0.5, 0.6]\)</span>。但是这里传统的间隔数学给出的边界是</p>
 <div class="figure align-default" id="id16">
 <img alt="_images/image-20230630135334562.png" src="_images/image-20230630135334562.png" />
-<p class="caption"><span class="caption-number">Fig. 279 </span><span class="caption-text">image-20230630135334562</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 280 </span><span class="caption-text">image-20230630135334562</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 <p>为什么区间变得不必要的放大了？
 因为计算机没有利用分子和分母的值相互依赖的事实。计算机算两个间隔的比例的方法是使用独立边界点的组合。比如<span class="math notranslate nohighlight">\(\frac{[2, 3]}{[4, 5]}\)</span>的边界点计算是<span class="math notranslate nohighlight">\(\frac{2}{4}, \frac{2}{5}, \frac{3}{4}, \frac{3}{5}\)</span>，选择出的最大边界点是<span class="math notranslate nohighlight">\([\frac{2}{5}, \frac{3}{4}]=[0.4, 0.75]\)</span>。这个边界范围是比真实的大3.5倍，所以71%的信息丢失了。</p>
@@ -342,14 +342,14 @@ ULP宽为单位的的多维元素，来无脑暴力地应用大规模并行计�
 <p>假设我们使用{2,3}环境，而且由于某种原因我们可以接受低精度的结果，愿意选择最小的ULP尺寸是<span class="math notranslate nohighlight">\(2^{-4}=\frac{1}{16}\)</span>。下面代码产生一个ubox的列表，代表了区间<span class="math notranslate nohighlight">\(x=[1, 2]\)</span>中间选择的ULP宽度的unum：<span class="math notranslate nohighlight">\(1, (1, 1.0625), 1.0625, … … , 1.9375, (1.9375, 2), 2\)</span>:</p>
 <div class="figure align-default" id="id17">
 <img alt="_images/image-20230630140659751.png" src="_images/image-20230630140659751.png" />
-<p class="caption"><span class="caption-number">Fig. 280 </span><span class="caption-text">image-20230630140659751</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 281 </span><span class="caption-text">image-20230630140659751</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 <p>如果我们对它们进行 unum
 计算并存储整个结果形状（为了清楚起见，还合并结果），我们会得到这组
 ubox：</p>
 <div class="figure align-default" id="id18">
 <img alt="_images/image-20230630140851159.png" src="_images/image-20230630140851159.png" />
-<p class="caption"><span class="caption-number">Fig. 281 </span><span class="caption-text">image-20230630140851159</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 282 </span><span class="caption-text">image-20230630140851159</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
 <p>当然，如果我们想要的只是 ubound 的范围，则无需像这样计算函数的整个形状；
 计算机将简单地跟踪使用 <strong>xub</strong> 元素计算的最小和最大结果。
@@ -408,17 +408,17 @@ x
 <p>用一个简单例子来说明这个问题，看看下面这个函数图： <span class="math notranslate nohighlight">\(y=1+2x+x^2\)</span></p>
 <div class="figure align-default" id="id19">
 <img alt="_images/image-20230630155608373.png" src="_images/image-20230630155608373.png" />
-<p class="caption"><span class="caption-number">Fig. 282 </span><span class="caption-text">image-20230630155608373</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 283 </span><span class="caption-text">image-20230630155608373</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
 <p>如果我们用一个宽度正好是<span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>的ubox集合，下图就是我们看到的一个近似（环境是{1，2}或更高，这样端点就是准确数值）</p>
 <div class="figure align-default" id="id20">
 <img alt="_images/image-20230630155832752.png" src="_images/image-20230630155832752.png" />
-<p class="caption"><span class="caption-number">Fig. 283 </span><span class="caption-text">image-20230630155832752</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 284 </span><span class="caption-text">image-20230630155832752</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
 <p>相反，其中两个 ubounds 将产生不必要的宽松结果，如下面的琥珀色所示：</p>
 <div class="figure align-default" id="id21">
 <img alt="_images/image-20230630155951304.png" src="_images/image-20230630155951304.png" />
-<p class="caption"><span class="caption-number">Fig. 284 </span><span class="caption-text">image-20230630155951304</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 285 </span><span class="caption-text">image-20230630155951304</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
 <p>这在求根时特别烦人，即 <span class="math notranslate nohighlight">\(x^2 + 2 x + 1 = 0\)</span> 的解。答案应该是精确的
 –1，但根据上图，它将是代表 (-1.5、-1] 的 ubound。
@@ -455,7 +455,7 @@ xg。 ubox 方法可以自动避免依赖性问题。</p>
 始终可以重新排列如下，其中参数的幂以蓝色显示，以便更容易看出右侧也是一个二次方程：</p>
 <div class="figure align-default" id="id22">
 <img alt="_images/image-20230630163752785.png" src="_images/image-20230630163752785.png" />
-<p class="caption"><span class="caption-number">Fig. 285 </span><span class="caption-text">image-20230630163752785</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 286 </span><span class="caption-text">image-20230630163752785</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
 </div>
 <p>换句话说，x 中的二次方程始终可以写成 x - x0 的二次方程。
 这对任意次数的多项式都成立。 一种方法是将左侧的 x 替换为 ((x - x0 ) + x0
@@ -468,13 +468,13 @@ x0 的有限项数泰勒级数）这里没有什么新内容；
 中的多项式，为了便于阅读, 使用了一些英文单词如“times”和“plus”。</p>
 <div class="figure align-default" id="id23">
 <img alt="_images/image-20230630164306374.png" src="_images/image-20230630164306374.png" />
-<p class="caption"><span class="caption-number">Fig. 286 </span><span class="caption-text">image-20230630164306374</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 287 </span><span class="caption-text">image-20230630164306374</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
 </div>
 <p>也许读者熟悉帕斯卡三角形，其中每个数字都是其上面两个数字的总和。
 蓝色对角线显示重写多项式中的系数来自何处。</p>
 <div class="figure align-default" id="id24">
 <img alt="_images/image-20230630165017634.png" src="_images/image-20230630165017634.png" />
-<p class="caption"><span class="caption-number">Fig. 287 </span><span class="caption-text">image-20230630165017634</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 288 </span><span class="caption-text">image-20230630165017634</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
 </div>
 <p>请注意，每个新系数最多使用 a、b、c 一次。
 这意味着它们可以在不丢失信息的情况下进行计算。 新系数可以在计算机的
@@ -483,12 +483,12 @@ g-layer 中精确计算。 那么这种转变有什么用呢？
 的系数为正数时，x 的每个幂的表现：</p>
 <div class="figure align-default" id="id25">
 <img alt="_images/image-20230630165514987.png" src="_images/image-20230630165514987.png" />
-<p class="caption"><span class="caption-number">Fig. 288 </span><span class="caption-text">image-20230630165514987</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 289 </span><span class="caption-text">image-20230630165514987</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
 </div>
 <p>如果系数是负数，上图就上下颠倒</p>
 <div class="figure align-default" id="id26">
 <img alt="_images/image-20230630165621709.png" src="_images/image-20230630165621709.png" />
-<p class="caption"><span class="caption-number">Fig. 289 </span><span class="caption-text">image-20230630165621709</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 290 </span><span class="caption-text">image-20230630165621709</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
 </div>
 <p>如果多项式中的所有项都以相同的方式斜率，那么评估区间只需评估其端点即可。
 当它们的斜率不同时，依赖性问题可能会因将斜率上升项与斜率下降项相加而出现。
@@ -508,7 +508,7 @@ ULP。
 的过程的一般方案，其中 x 是一般区间。</p>
 <div class="figure align-default" id="id27">
 <img alt="_images/image-20230701102400684.png" src="_images/image-20230701102400684.png" />
-<p class="caption"><span class="caption-number">Fig. 290 </span><span class="caption-text">image-20230701102400684</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 291 </span><span class="caption-text">image-20230701102400684</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
 </div>
 <p>也许这种方法似乎没有出现在区间算术文献中的一个原因是它大量使用 ubound
 能力来表达端点是开放还是封闭。
@@ -517,7 +517,7 @@ ULP。
 下一页图中的琥珀色区域不应该出现，但由于间隔闭合，所以别无选择。</p>
 <div class="figure align-default" id="id28">
 <img alt="_images/image-20230701102553452.png" src="_images/image-20230701102553452.png" />
-<p class="caption"><span class="caption-number">Fig. 291 </span><span class="caption-text">image-20230701102553452</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 292 </span><span class="caption-text">image-20230701102553452</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
 </div>
 <table border="2"><tr><td bgcolor="lightyellow"><p>传统区间算术忽略了“大于”和“大于或等于”之间的区别，因此从 –1.5 到 –0.5
 的整个范围看起来像一个根。</p>
@@ -535,12 +535,12 @@ ULP。
 <span class="math notranslate nohighlight">\(2^{-1}\)</span>步长创建涵盖 [-2, 7] 的 ubox 列表：</p>
 <div class="figure align-default" id="id29">
 <img alt="_images/image-20230701113517146.png" src="_images/image-20230701113517146.png" />
-<p class="caption"><span class="caption-number">Fig. 292 </span><span class="caption-text">image-20230701113517146</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 293 </span><span class="caption-text">image-20230701113517146</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
 </div>
 <p>这是最草率的方法：霍纳规则应用于未融合的 unum 算术。</p>
 <div class="figure align-default" id="id30">
 <img alt="_images/image-20230701113607540.png" src="_images/image-20230701113607540.png" />
-<p class="caption"><span class="caption-number">Fig. 293 </span><span class="caption-text">image-20230701113607540</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 294 </span><span class="caption-text">image-20230701113607540</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
 </div>
 <p>在左侧，三次项占主导地位，因此不存在依赖性问题。
 对于所示图的其余部分，不精确区间的多项式中的斜率上升和斜率下降项存在冲突，从而产生相当多的信息丢失。
@@ -551,7 +551,7 @@ ULP 宽度（以尽可能小的 ULP 宽度）的值。 下面是使用 <strong>p
 对同一个立方函数求值的样子：</p>
 <div class="figure align-default" id="id31">
 <img alt="_images/image-20230703105722760.png" src="_images/image-20230703105722760.png" />
-<p class="caption"><span class="caption-number">Fig. 294 </span><span class="caption-text">image-20230703105722760</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 295 </span><span class="caption-text">image-20230703105722760</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
 </div>
 <p>这才是更像样的结果。用{2，2}环境求多项式不可能表示得更精确了。</p>
 <p>其他的多项式间隔算法最头痛的是在根的附近，特别是有多重根。比如<span class="math notranslate nohighlight">\(8(x-1)^3\)</span>在<span class="math notranslate nohighlight">\(x=1\)</span>点有三重根。函数在这里的是如此平坦（沿x轴），以至于传统的方式都很难找到正确的跨越点。展开这个函数为</p>
@@ -560,17 +560,17 @@ ULP 宽度（以尽可能小的 ULP 宽度）的值。 下面是使用 <strong>p
 <p>按展开式表示，那么三重根就不是那么明显看出来了。用Horner规则计算机求解，实际上是当成<span class="math notranslate nohighlight">\(-8+x(24+x(-24+x(8)))\)</span>来计算。简单地用unum数，遵循Horner规则求解区间-1到3得到下面的图</p>
 <div class="figure align-default" id="id32">
 <img alt="_images/image-20230703110837695.png" src="_images/image-20230703110837695.png" />
-<p class="caption"><span class="caption-number">Fig. 295 </span><span class="caption-text">image-20230703110837695</span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 296 </span><span class="caption-text">image-20230703110837695</span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
 </div>
 <p>现在试试用<strong>polyg</strong>：</p>
 <div class="figure align-default" id="id33">
 <img alt="_images/image-20230703110921466.png" src="_images/image-20230703110921466.png" />
-<p class="caption"><span class="caption-number">Fig. 296 </span><span class="caption-text">image-20230703110921466</span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 297 </span><span class="caption-text">image-20230703110921466</span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
 </div>
 <p>这显然在根的附近更精确。下面是放大多项式根x=1附近的求值的ubox图</p>
 <div class="figure align-default" id="id34">
 <img alt="_images/image-20230703111056446.png" src="_images/image-20230703111056446.png" />
-<p class="caption"><span class="caption-number">Fig. 297 </span><span class="caption-text">image-20230703111056446</span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 298 </span><span class="caption-text">image-20230703111056446</span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>polyg</strong>函数是unum环境中找到可精确表示的根的最可靠的函数了。这也是unum算术解决其他方法都不能解决问题的一个实例。工程师现在总算可以回答“系统是否稳定”这一个问题了。答案依赖于对多项式的最紧密的求值。</p>
 </div>

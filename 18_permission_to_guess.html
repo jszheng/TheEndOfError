@@ -195,7 +195,7 @@ Show Source
 <h1>18 准许猜测<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
 <div class="figure align-default" id="id5">
 <img alt="_images/image-20230704212149407.png" src="_images/image-20230704212149407.png" />
-<p class="caption"><span class="caption-number">Fig. 333 </span><span class="caption-text">image-20230704212149407</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 334 </span><span class="caption-text">image-20230704212149407</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <blockquote>
 <div><p>如果幸运的话，浮点数有时比unums用严格方法来说，可以更快地猜出答案。在本章中，Unums还面临着来自Kahan教授的两个挑战问题。你觉得幸运吗？</p>
@@ -260,7 +260,7 @@ ubound或是通用的间隔，然后使用上面的算法产生一个精确的un
 <p>如果我们有足够的小数位来表示一个精确的中点，就会输出这个作为结果</p>
 <div class="figure align-default" id="id6">
 <img alt="_images/image-20230705103357686.png" src="_images/image-20230705103357686.png" />
-<p class="caption"><span class="caption-number">Fig. 334 </span><span class="caption-text">image-20230705103357686</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 335 </span><span class="caption-text">image-20230705103357686</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>请注意，这提高了表示精度。
 端点1和4只需要一位小数位来表示，但平均值2.5则需要两位小数位来表示。
@@ -269,7 +269,7 @@ ubound或是通用的间隔，然后使用上面的算法产生一个精确的un
 <p>任何有限数与正负无穷的平均都是那个无穷值。</p>
 <div class="figure align-default" id="id7">
 <img alt="_images/image-20230705103614990.png" src="_images/image-20230705103614990.png" />
-<p class="caption"><span class="caption-number">Fig. 335 </span><span class="caption-text">image-20230705103614990</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 336 </span><span class="caption-text">image-20230705103614990</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>guessu</strong> 函数还接受一般区间作为其输入参数。
 在下面的示例中，它是一个开区间，表示最小可能的 ULP 范围；
@@ -279,7 +279,7 @@ ubound或是通用的间隔，然后使用上面的算法产生一个精确的un
 边界用精确的小数表示时，通常你可以发现“最接近的偶数”端点就是最短的十进制表示的数：</p>
 <div class="figure align-default" id="id8">
 <img alt="_images/image-20230705104349549.png" src="_images/image-20230705104349549.png" />
-<p class="caption"><span class="caption-number">Fig. 336 </span><span class="caption-text">image-20230705104349549</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 337 </span><span class="caption-text">image-20230705104349549</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>当您确定有办法纠正猜测并推动其更接近真实答案时，猜测可能是最有效的方法。
 也就是说，当你可以证明用的数值算法是“稳定的”时。
@@ -323,7 +323,7 @@ ubound或是通用的间隔，然后使用上面的算法产生一个精确的un
 81]。而对<span class="math notranslate nohighlight">\(x^2/L\)</span>求值正是使用融合乘积比函数<strong>fprodratiou</strong>的好地方，可以减少信息丢失：</p>
 <div class="figure align-default" id="id9">
 <img alt="_images/image-20230705113643660.png" src="_images/image-20230705113643660.png" />
-<p class="caption"><span class="caption-number">Fig. 337 </span><span class="caption-text">image-20230705113643660</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 338 </span><span class="caption-text">image-20230705113643660</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <p>函数<span class="math notranslate nohighlight">\(f(x)=2x-x^2/77\)</span>显示了f有一个固定点在77。从区间 X
 中选择的精确值计算为更小的区间 [4.9875, 5]
@@ -336,7 +336,7 @@ ubound或是通用的间隔，然后使用上面的算法产生一个精确的un
 多项式求解器<strong>polyu</strong>应用在整个X的区间内使用都没有信息丢失。</p>
 <div class="figure align-default" id="id10">
 <img alt="_images/image-20230705131058936.png" src="_images/image-20230705131058936.png" />
-<p class="caption"><span class="caption-number">Fig. 338 </span><span class="caption-text">image-20230705131058936</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 339 </span><span class="caption-text">image-20230705131058936</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <p>可是等一下; 规则不是说<strong>我们不可能正确计算出</strong>多项式
 <span class="math notranslate nohighlight">\(f(x) = 2 x - x^2 / 77\)</span>。 当问题提出时，计算机不允许检测
@@ -346,14 +346,14 @@ ubound或是通用的间隔，然后使用上面的算法产生一个精确的un
 来模仿传统的区间算术，则绑定的 X 会扩展而不是收缩：</p>
 <div class="figure align-default" id="id11">
 <img alt="_images/image-20230705142125535.png" src="_images/image-20230705142125535.png" />
-<p class="caption"><span class="caption-number">Fig. 339 </span><span class="caption-text">image-20230705142125535</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 340 </span><span class="caption-text">image-20230705142125535</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <p>另一方面，如果我们代入函数的是该范围内的任何浮点数，即使是 <span class="math notranslate nohighlight">\(X\)</span>
 的最小值和最大值，函数 <span class="math notranslate nohighlight">\(f\)</span> 的 unum
 版本结果是严格的区间，很好地落在在固定点<span class="math notranslate nohighlight">\(L\)</span>的值附近 。</p>
 <div class="figure align-default" id="id12">
 <img alt="_images/image-20230705142726023.png" src="_images/image-20230705142726023.png" />
-<p class="caption"><span class="caption-number">Fig. 340 </span><span class="caption-text">image-20230705142726023</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 341 </span><span class="caption-text">image-20230705142726023</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <p>注意到unum的结果是不包含精确值77的，不是通常的间隔如(76.5,
 77]，<strong>因为那样会是个错误</strong>。这个数学函数经过有限次迭代的结果只能接近77而不可能到达77的。</p>
@@ -367,32 +367,32 @@ unum 输入的宽范围交替。 任何编译器都会立即检测到两个表�
 该例程根据间隔宽度自动调整 unum 宽度。</p>
 <div class="figure align-default" id="id13">
 <img alt="_images/image-20230705143646185.png" src="_images/image-20230705143646185.png" />
-<p class="caption"><span class="caption-number">Fig. 341 </span><span class="caption-text">image-20230705143646185</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 342 </span><span class="caption-text">image-20230705143646185</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 <p>从同样起始区间<span class="math notranslate nohighlight">\(X=[73, 81]\)</span>开始:</p>
 <div class="figure align-default" id="id14">
 <img alt="_images/image-20230705143746875.png" src="_images/image-20230705143746875.png" />
-<p class="caption"><span class="caption-number">Fig. 342 </span><span class="caption-text">image-20230705143746875</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 343 </span><span class="caption-text">image-20230705143746875</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 <p>这个迭代看上去是合理的，再做一次</p>
 <div class="figure align-default" id="id15">
 <img alt="_images/image-20230705143855948.png" src="_images/image-20230705143855948.png" />
-<p class="caption"><span class="caption-number">Fig. 343 </span><span class="caption-text">image-20230705143855948</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 344 </span><span class="caption-text">image-20230705143855948</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 <p>很小的依赖性错误还是使得结果包含了77并超越了一点点。这会带来问题吗？再迭代一次</p>
 <div class="figure align-default" id="id16">
 <img alt="_images/image-20230705144032625.png" src="_images/image-20230705144032625.png" />
-<p class="caption"><span class="caption-number">Fig. 344 </span><span class="caption-text">image-20230705144032625</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 345 </span><span class="caption-text">image-20230705144032625</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 <p>目前看来都好，固定点被定住在一个越来越小的区间中了。</p>
 <div class="figure align-default" id="id17">
 <img alt="_images/image-20230705144200712.png" src="_images/image-20230705144200712.png" />
-<p class="caption"><span class="caption-number">Fig. 345 </span><span class="caption-text">image-20230705144200712</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 346 </span><span class="caption-text">image-20230705144200712</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 <p>最后一次</p>
 <div class="figure align-default" id="id18">
 <img alt="_images/image-20230705144231847.png" src="_images/image-20230705144231847.png" />
-<p class="caption"><span class="caption-number">Fig. 346 </span><span class="caption-text">image-20230705144231847</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 347 </span><span class="caption-text">image-20230705144231847</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
 <p>好了好了。 看来迭代方法也同样适用于
 ubox，但产生的界限也无疑提醒我们问题的计算机版本与原始数学问题并不完全相同。
@@ -429,30 +429,30 @@ ubox，但产生的界限也无疑提醒我们问题的计算机版本与原始�
 其中边界是可表示的浮点数。很不幸的是IEEE浮点不能表示范围，不是正好用准确77作为起点的正确答案，用unum表示应该是</p>
 <div class="figure align-default" id="id19">
 <img alt="_images/image-20230705153750876.png" src="_images/image-20230705153750876.png" />
-<p class="caption"><span class="caption-number">Fig. 347 </span><span class="caption-text">image-20230705153750876</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 348 </span><span class="caption-text">image-20230705153750876</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
 <p>显然这个规则让我们知道这个开始的X区间是稳定范围，一个可以让猜测稳定的“漏斗”。所以我们来玩同样的游戏，用guessu函数来模仿浮点的鲁莽行为。同时我们也开启数据搬移追踪，来测量unum与浮点的代价差异。因为这个问题就是设计来奖励不精确和猜测，把环境降到{2,
 3}</p>
 <div class="figure align-default" id="id20">
 <img alt="_images/image-20230705154421608.png" src="_images/image-20230705154421608.png" />
-<p class="caption"><span class="caption-number">Fig. 348 </span><span class="caption-text">image-20230705154421608</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 349 </span><span class="caption-text">image-20230705154421608</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
 <p>定义好上述函数后试试迭代两次，从准确的unum数81开始</p>
 <div class="figure align-default" id="id21">
 <img alt="_images/image-20230705154529388.png" src="_images/image-20230705154529388.png" />
-<p class="caption"><span class="caption-number">Fig. 349 </span><span class="caption-text">image-20230705154529388</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 350 </span><span class="caption-text">image-20230705154529388</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
 <p>显然也不长，一次迭代就可以达到数学上的固定点。它每个数消耗了17.4比特，略略高于半精度的浮点。
 如果错误的收敛是你想要的，<strong>guessu</strong>也可以做得到。</p>
 <p>读者是否有觉得奇怪为啥不去找另外一个<span class="math notranslate nohighlight">\(f(x)=x\)</span>的固定点？下面是<span class="math notranslate nohighlight">\(f(x)\)</span>和<span class="math notranslate nohighlight">\(x\)</span>的函数图，其中淡蓝色的矩形包围在另外一个固定点。</p>
 <div class="figure align-default" id="id22">
 <img alt="_images/image-20230705155014768.png" src="_images/image-20230705155014768.png" />
-<p class="caption"><span class="caption-number">Fig. 350 </span><span class="caption-text">image-20230705155014768</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 351 </span><span class="caption-text">image-20230705155014768</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
 </div>
 <p>挑选任何一个-4到4之间的实数开始迭代， 使用传统的浮点算术</p>
 <div class="figure align-default" id="id23">
 <img alt="_images/image-20230705155124462.png" src="_images/image-20230705155124462.png" />
-<p class="caption"><span class="caption-number">Fig. 351 </span><span class="caption-text">image-20230705155124462</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 352 </span><span class="caption-text">image-20230705155124462</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
 </div>
 <p>哎呀糟糕了。
 浮点数的猜测方法在这个固定点上效果不太好，因为它恰巧是不稳定的。
@@ -475,7 +475,7 @@ f(f(x))，依此类推。
 不同？” 然后取该集合的补集：</p>
 <div class="figure align-default" id="id24">
 <img alt="_images/image-20230705160744357.png" src="_images/image-20230705160744357.png" />
-<p class="caption"><span class="caption-number">Fig. 352 </span><span class="caption-text">image-20230705160744357</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 353 </span><span class="caption-text">image-20230705160744357</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
 </div>
 <p>换句话说，从尝试间隔 [73, 81] 开始，求解器正确地将<em>除 77
 之外</em>的每个实数识别为非不动点。
@@ -484,7 +484,7 @@ f(f(x))，依此类推。
 的美妙之处在于它不需要指导去哪里寻找，而且它可以像找到稳定固定点一样轻松地找到<em>不稳定</em>的固定点：</p>
 <div class="figure align-default" id="id25">
 <img alt="_images/image-20230705161019338.png" src="_images/image-20230705161019338.png" />
-<p class="caption"><span class="caption-number">Fig. 353 </span><span class="caption-text">image-20230705161019338</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 354 </span><span class="caption-text">image-20230705161019338</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
 </div>
 <p>起始搜索区间中除 0 之外的所有内容都是非固定点，因此 0 是固定点。
 相反，迭代方法没有办法定位该固定点，除非它正好以 x = 0
@@ -518,7 +518,7 @@ try-everything）都是大规模并行的，能够使用与搜索范围内可表
 1。它描述了诸如通过狭缝开口衍射的光的强度之类的东西。</p>
 <div class="figure align-default" id="id26">
 <img alt="_images/image-20230705162656112.png" src="_images/image-20230705162656112.png" />
-<p class="caption"><span class="caption-number">Fig. 354 </span><span class="caption-text">image-20230705162656112</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 355 </span><span class="caption-text">image-20230705162656112</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
 </div>
 <p>假设我们对g函数做一点小的改动，在上面加一个小的扰动</p>
 <div class="math notranslate nohighlight" id="equation-18-permission-to-guess-0">
@@ -526,7 +526,7 @@ try-everything）都是大规模并行的，能够使用与搜索范围内可表
 <p>如果用同样的尺度画出函数图，这个扰动就太小了，所以下图放大了当x和f(x)都接近L的位置。</p>
 <div class="figure align-default" id="id27">
 <img alt="_images/image-20230705214022784.png" src="_images/image-20230705214022784.png" />
-<p class="caption"><span class="caption-number">Fig. 355 </span><span class="caption-text">image-20230705214022784</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 356 </span><span class="caption-text">image-20230705214022784</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
 </div>
 <p>不动点是稳定的，位于 <span class="math notranslate nohighlight">\(77.028\cdots\)</span>。 橙色曲线的斜率在 –1 和 1
 之间，因此这是一个稳定点。 它符合有关输入函数的规则。
@@ -535,7 +535,7 @@ try-everything）都是大规模并行的，能够使用与搜索范围内可表
 项将得到零：</p>
 <div class="figure align-default" id="id28">
 <img alt="_images/image-20230705214423878.png" src="_images/image-20230705214423878.png" />
-<p class="caption"><span class="caption-number">Fig. 356 </span><span class="caption-text">image-20230705214423878</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 357 </span><span class="caption-text">image-20230705214423878</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
 </div>
 <p>这意味着 h(x) 的计算与以前没有什么不同。 同样，f(x) = g(x) - h(x)
 的计算结果为 162 - 85.1875 = 76.8125，距离 77 仅 3 个 ULP。那里的 Sinc
@@ -549,7 +549,7 @@ try-everything）都是大规模并行的，能够使用与搜索范围内可表
 那么，在这个精度下，这就是固定点吗？</p>
 <div class="figure align-default" id="id29">
 <img alt="_images/image-20230705215517330.png" src="_images/image-20230705215517330.png" />
-<p class="caption"><span class="caption-number">Fig. 357 </span><span class="caption-text">image-20230705215517330</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 358 </span><span class="caption-text">image-20230705215517330</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
 </div>
 <p>不是。浮点只能落在 ULP 大小的精确倍数上，即 77 附近的
 <span class="math notranslate nohighlight">\(\frac{1}{16}\)</span>。再乘以 <span class="math notranslate nohighlight">\(16\pi\)</span>，Sinc
@@ -624,7 +624,7 @@ uboxes 找到了一个完美的 c-solution ，而 float
 根据循环的嵌套方式，最里面的操作看起来像点积：</p>
 <div class="figure align-default" id="id30">
 <img alt="_images/image-20230706090204938.png" src="_images/image-20230706090204938.png" />
-<p class="caption"><span class="caption-number">Fig. 358 </span><span class="caption-text">image-20230706090204938</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 359 </span><span class="caption-text">image-20230706090204938</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
 </div>
 <p>回想一下，unum 支持融合点积。 因此，如果 H
 中的每个条目都被视为精确值，则具有长度为 m 的向量的 unum 调用 <strong>fdotu</strong>

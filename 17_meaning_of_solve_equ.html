@@ -195,7 +195,7 @@ Show Source
 <h1>17 “解”方程到底是什么意思？<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
 <div class="figure align-default" id="id14">
 <img alt="_images/image-20230703120902426.png" src="_images/image-20230703120902426.png" />
-<p class="caption"><span class="caption-number">Fig. 298 </span><span class="caption-text">image-20230703120902426</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 299 </span><span class="caption-text">image-20230703120902426</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 <blockquote>
 <div><p>这是一个绝望的同学如何回答这个问题的。本章也是关于找x的，就像这个例子一样，我们可能以一种数学老师没有想到的方式找到这个x.</p>
@@ -220,7 +220,7 @@ c取反再被b除，完了。</p>
 <p>要是b是无限呢？或是负无限呢？如果c是有限的，那么公式<span class="math notranslate nohighlight">\(\frac{-c}{b}\)</span>得出0是答案。但是这不对，因为<span class="math notranslate nohighlight">\(\infty\cdot0=NaN\)</span>。又如果c是无限或是负无限呢？你没有办法把无限或是负无限相加得出一个有限数。所以一个很谨慎的答案有3个情况</p>
 <div class="figure align-default" id="id15">
 <img alt="_images/image-20230703133428436.png" src="_images/image-20230703133428436.png" />
-<p class="caption"><span class="caption-number">Fig. 299 </span><span class="caption-text">image-20230703133428436</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 300 </span><span class="caption-text">image-20230703133428436</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 <p>所以得出的一个基本原则是：计算“解算”一个方程跟数学上“解”一个方程是不一样的含义。你也许被教育着首先根据数学原理用逆函数把x变换到方程左边，然后将方程右边公式输入计算机。这过程中如上面所说，忽略了很多特殊情况从而带来了错误。</p>
 <p>更重要的是传统的计算数学有舍入-上溢-下溢的错误，所以不能相信它能匹配数学的答案，即使上面是最简单的情况。</p>
@@ -228,7 +228,7 @@ c取反再被b除，完了。</p>
 </td></tr></table><p>奇怪的是，所有声称解方程的计算机程序几乎没有一个真的做到这些。他们要么只给出一个值而忽略了其他可以满足的值，所以解是不完全的，要么就含有不能让原始方程式相等的值。即使是Mathematica软件也有时候糊涂了，比如说满足“0=0”的数值解是空集。</p>
 <div class="figure align-default" id="id16">
 <img alt="_images/image-20230703135521864.png" src="_images/image-20230703135521864.png" />
-<p class="caption"><span class="caption-number">Fig. 300 </span><span class="caption-text">image-20230703135521864</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 301 </span><span class="caption-text">image-20230703135521864</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 <p>如果你用浮点算术，对方程“<span class="math notranslate nohighlight">\(bx+c=0\)</span>”的解几乎<strong>总是错的</strong>。比如如果你试图用浮点解<span class="math notranslate nohighlight">\(7x-2=0\)</span>并使用<span class="math notranslate nohighlight">\(\frac{-c}{b}\)</span>公式计算，你会得到：</p>
 <ul class="simple">
@@ -245,7 +245,7 @@ c取反再被b除，完了。</p>
 <p>所以最终如果一个用浮点解x的程序后面来到一个像下面的测试语句</p>
 <div class="figure align-default" id="id17">
 <img alt="_images/image-20230703141436948.png" src="_images/image-20230703141436948.png" />
-<p class="caption"><span class="caption-number">Fig. 301 </span><span class="caption-text">image-20230703141436948</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 302 </span><span class="caption-text">image-20230703141436948</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 <p>不管用什么精度它总是会去做错误的事情。所以浮点数的一个绕过问题的方法是测试结果是否“<em>接近</em>”，而“接近”的定义是靠人定义，每个地方都不同。而且“接近”的定义到底是按绝对误差还是相对误差啊？还有更多需要人来决定的。这些绕过问题的方法让代码既难写又难读。</p>
 <div class="section" id="unum">
@@ -264,7 +264,7 @@ c取反再被b除，完了。</p>
 <p>一个unum程序后面可以做如下测试</p>
 <div class="figure align-default" id="id18">
 <img alt="_images/image-20230703150759553.png" src="_images/image-20230703150759553.png" />
-<p class="caption"><span class="caption-number">Fig. 302 </span><span class="caption-text">image-20230703150759553</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 303 </span><span class="caption-text">image-20230703150759553</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
 <p>无论使用什么环境，结果的True或是False都是正确的，也不需要插入“接近度”容错的修正代码</p>
 <p>那这跟区间算术有什么不一样呢？区间算术如果说使用半精度浮点表示边界点，就是<span class="math notranslate nohighlight">\(\frac{585}{2048} \le x \le \frac{586}{2048}\)</span>，
@@ -286,7 +286,7 @@ c取反再被b除，完了。</p>
 c都是闭区间<span class="math notranslate nohighlight">\([0, \frac{1}{16777216}]\)</span>, 那么去匹配下面这些选项吧</p>
 <div class="figure align-default" id="id19">
 <img alt="_images/image-20230703152746757.png" src="_images/image-20230703152746757.png" />
-<p class="caption"><span class="caption-number">Fig. 303 </span><span class="caption-text">image-20230703152746757</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 304 </span><span class="caption-text">image-20230703152746757</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>选哪个case呢</strong>？b和c都可以被当做非零或是零，答案就是很难看的多种选择包括:
 间隔<span class="math notranslate nohighlight">\([-\infty, 0]\)</span>, “空集”或是“所有实数”。</p>
@@ -301,7 +301,7 @@ c都是闭区间<span class="math notranslate nohighlight">\([0, \frac{1}{167772
 <p>比如下图是<span class="math notranslate nohighlight">\(bx+c\)</span>的图，其中b的范围是-0.5到0.25，交在y轴上的c范围是0.25到0.375.</p>
 <div class="figure align-default" id="id20">
 <img alt="_images/image-20230703154001093.png" src="_images/image-20230703154001093.png" />
-<p class="caption"><span class="caption-number">Fig. 304 </span><span class="caption-text">image-20230703154001093</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 305 </span><span class="caption-text">image-20230703154001093</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
 <p>从这个图上可以看到方程<span class="math notranslate nohighlight">\(bx+c=0\)</span>是两个不相连的范围。一个是从<span class="math notranslate nohighlight">\(-\infty\)</span>到-1,
 另外一个是从0.5到<span class="math notranslate nohighlight">\(\infty\)</span>.
@@ -310,7 +310,7 @@ c都是闭区间<span class="math notranslate nohighlight">\([0, \frac{1}{167772
 结果就是所有的数除了零。</p>
 <div class="figure align-default" id="id21">
 <img alt="_images/image-20230703154420787.png" src="_images/image-20230703154420787.png" />
-<p class="caption"><span class="caption-number">Fig. 305 </span><span class="caption-text">image-20230703154420787</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 306 </span><span class="caption-text">image-20230703154420787</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>读者的练习</strong>：方程<span class="math notranslate nohighlight">\(bx+c=0\)</span>也可以用融合的乘加来表示:
 <span class="math notranslate nohighlight">\(fmau[\hat{b},\hat{x}, \hat{c}]\approx\hat{0}\)</span>.
@@ -333,13 +333,13 @@ c都是闭区间<span class="math notranslate nohighlight">\([0, \frac{1}{167772
 <p>这就是为什么需要18种情况，还没有考虑特殊输入值如无穷和NaN情况。应该把这么复杂的代码做成数学库，让普通程序员无需处理这样的事情。下面的x-y图是这些case对于方程<span class="math notranslate nohighlight">\(y=bx+c\)</span>的所有表示</p>
 <div class="figure align-default" id="id22">
 <img alt="_images/image-20230703160428137.png" src="_images/image-20230703160428137.png" />
-<p class="caption"><span class="caption-number">Fig. 306 </span><span class="caption-text">image-20230703160428137</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 307 </span><span class="caption-text">image-20230703160428137</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
 </div>
 <p>其中比较微妙的一个方面是第一列，当c包含0，b=0的情况，解集是
 <span class="math notranslate nohighlight">\(-\infty \lt x \lt \infty\)</span>，为什么解集不包含无穷，图上画的好像是包含的。除非我们仔细定义方程为</p>
 <div class="figure align-default" id="id23">
 <img alt="_images/image-20230703161009911.png" src="_images/image-20230703161009911.png" />
-<p class="caption"><span class="caption-number">Fig. 307 </span><span class="caption-text">image-20230703161009911</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 308 </span><span class="caption-text">image-20230703161009911</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
 </div>
 <p>没有这样的定义，就不能说<span class="math notranslate nohighlight">\(x=\infty\)</span>满足方程<span class="math notranslate nohighlight">\(0 x+c=0\)</span>，因为乘法的结果将会是NaN.</p>
 <p>而注意左下角的解就变成了包含无穷了。b包含0且c包含0，结果的确是
@@ -354,7 +354,7 @@ c都是闭区间<span class="math notranslate nohighlight">\([0, \frac{1}{167772
 <h3>17.3.1 重温二次方程<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
 <div class="figure align-default" id="id24">
 <img alt="_images/image-20230703162600603.png" src="_images/image-20230703162600603.png" />
-<p class="caption"><span class="caption-number">Fig. 308 </span><span class="caption-text">image-20230703162600603</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 309 </span><span class="caption-text">image-20230703162600603</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
 </div>
 <p>在本书第一部分中，我们展示了用unum和最原始的二次方程解的公式求解如下二次方程<span class="math notranslate nohighlight">\(ax^2+bx+c=0\)</span>可以得出安全和可用的结果。二次方程解的公式是一个很好的逆操作方式的例子，一些人首先就需要努力才能推导出这个解</p>
 <div class="math notranslate nohighlight" id="equation-17-meaning-of-solve-equ-1">
@@ -363,7 +363,7 @@ c都是闭区间<span class="math notranslate nohighlight">\([0, \frac{1}{167772
 <p>上一节展示了解决线性方程用逆运算有多复杂。如果你需要建立一个unum库来解二次方程，用不同情况来逐一解决，那么下图就显示你要处理多么复杂的情况</p>
 <div class="figure align-default" id="id25">
 <img alt="_images/image-20230703170035500.png" src="_images/image-20230703170035500.png" />
-<p class="caption"><span class="caption-number">Fig. 309 </span><span class="caption-text">image-20230703170035500</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 310 </span><span class="caption-text">image-20230703170035500</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
 </div>
 <p>你一直被教导说二次方程最多有两个根，但是如果系数是非精确的，那么实际上实数轴上有三个区域都可以让方程为0.
 至少我们知道，如果a=0,
@@ -381,7 +381,7 @@ math提供了如此简单和无痛的东西，以至于它似乎好得令人难�
 的解，那么 unum 版本将产生 True。试试吧：</p>
 <div class="figure align-default" id="id26">
 <img alt="_images/image-20230703195956414.png" src="_images/image-20230703195956414.png" />
-<p class="caption"><span class="caption-number">Fig. 310 </span><span class="caption-text">image-20230703195956414</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 311 </span><span class="caption-text">image-20230703195956414</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
 </div>
 <p>只需一次乘法、一次加法和一次比较，unum math
 就筛选出是否需要任何进一步工作。False
@@ -393,12 +393,12 @@ math提供了如此简单和无痛的东西，以至于它似乎好得令人难�
 ub是任何ubound，这里用了polyu来避免任何依赖性问题让函数求值变得更宽松。</p>
 <div class="figure align-default" id="id27">
 <img alt="_images/image-20230703201727673.png" src="_images/image-20230703201727673.png" />
-<p class="caption"><span class="caption-number">Fig. 311 </span><span class="caption-text">image-20230703201727673</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 312 </span><span class="caption-text">image-20230703201727673</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
 </div>
 <p>第一步只是看看是否有解。找出答案只需要调用quad，使用整个实数线<span class="math notranslate nohighlight">\((-\infty, \infty)\)</span></p>
 <div class="figure align-default" id="id28">
 <img alt="_images/image-20230703201927438.png" src="_images/image-20230703201927438.png" />
-<p class="caption"><span class="caption-number">Fig. 312 </span><span class="caption-text">image-20230703201927438</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 313 </span><span class="caption-text">image-20230703201927438</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
 </div>
 <p>结果为真意味着值得再做一些检查。在第 1 部分中，使用的环境是最接近 IEEE
 单精度的环境，即 {3、5} 的环境;
@@ -432,14 +432,14 @@ ubound</em>”的任务可以用各种不同方式做，原型中做分割的函
 再往下就是使用最粗粒度的ULP尺度分割了。下图显示了整个分割过程。</p>
 <div class="figure align-default" id="id29">
 <img alt="_images/image-20230703211947848.png" src="_images/image-20230703211947848.png" />
-<p class="caption"><span class="caption-number">Fig. 313 </span><span class="caption-text">image-20230703211947848</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 314 </span><span class="caption-text">image-20230703211947848</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>solveforub</strong>函数返回c-solution:
 最小，完全和最紧致的满足方程式的可表示值的集合。试试在二次方程上使用看能否自动找到跟好的集合。我们不需要很大的指数，一个{2,
 5}的环境就足够了。解的范围付给变量<strong>sols</strong>。然后用十进制显示</p>
 <div class="figure align-default" id="id30">
 <img alt="_images/image-20230704074026301.png" src="_images/image-20230704074026301.png" />
-<p class="caption"><span class="caption-number">Fig. 314 </span><span class="caption-text">image-20230704074026301</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 315 </span><span class="caption-text">image-20230704074026301</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
 </div>
 <p>两个根的开区间表示边界只有一个最小ULP宽度，比用求逆的方式得出来的结果信息量多上百倍。</p>
 </div>
@@ -469,7 +469,7 @@ Work》。如果你有原版的拷贝，你可以看到标题中有个浮雕的�
 <p>阿克顿开玩笑的“注意小字印刷”的警告承认了现有数值技术的不令人满意的状态。就像积分例程一样，传统的数值分析教材提供单变量求解方程（求根）的大量方法，并附有这样的建议：“在情况A中使用它，但要小心，因为这样那样可能会出错，然后你应该尝试不同的方法。</p>
 <div class="figure align-default" id="id31">
 <img alt="_images/image-20230704082834198.png" src="_images/image-20230704082834198.png" />
-<p class="caption"><span class="caption-number">Fig. 315 </span><span class="caption-text">image-20230704082834198</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 316 </span><span class="caption-text">image-20230704082834198</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
 </div>
 <p>目前已有的数值上求解方程 <span class="math notranslate nohighlight">\(f(x) = 0\)</span> 根的方法通常具有如下缺点：</p>
 <ul class="simple">
@@ -495,13 +495,13 @@ x 值 f(x) 当做就是零。</p></li>
 <p>区间<span class="math notranslate nohighlight">\((0, \infty)\)</span>可以用{ubitmask, posinfu}表示</p>
 <div class="figure align-default" id="id32">
 <img alt="_images/image-20230704085710344.png" src="_images/image-20230704085710344.png" />
-<p class="caption"><span class="caption-number">Fig. 316 </span><span class="caption-text">image-20230704085710344</span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 317 </span><span class="caption-text">image-20230704085710344</span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
 </div>
 <p>说明<span class="math notranslate nohighlight">\(1/x\)</span>在上面区间是有根的。试试Warlpiri unum,
 唯一可用的解是<span class="math notranslate nohighlight">\(\infty\)</span></p>
 <div class="figure align-default" id="id33">
 <img alt="_images/image-20230704090029236.png" src="_images/image-20230704090029236.png" />
-<p class="caption"><span class="caption-number">Fig. 317 </span><span class="caption-text">image-20230704090029236</span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 318 </span><span class="caption-text">image-20230704090029236</span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
 </div>
 <p>另外一个例子，
 将环境设为足够低，并且问“满足方程<span class="math notranslate nohighlight">\(sin(x)=1\)</span>的x是什么？”。本质上就是问arcsin(1)的值。如果你只需要限制结果在主要范围中，你可以在conditionQ中约束角的范围。下面的代码找到所有的满足解，使用{2,
@@ -519,7 +519,7 @@ unum能产生什么样的ubound可以满足<span class="math notranslate nohighl
 <p>事实上不行的。看看下一页的五次多项式的图：</p>
 <div class="figure align-default" id="id34">
 <img alt="_images/image-20230704103410123.png" src="_images/image-20230704103410123.png" />
-<p class="caption"><span class="caption-number">Fig. 318 </span><span class="caption-text">image-20230704103410123</span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 319 </span><span class="caption-text">image-20230704103410123</span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
 </div>
 <p>基于浮点数的数值寻根方法在遇到这样的问题时很艰难。即使它们足够复杂，可以处理多阶根（多项式中在
 –1 处有一个三重根，在 2 处有一个双根），它们也会错误地将许多接近 –1
@@ -530,7 +530,7 @@ unum能产生什么样的ubound可以满足<span class="math notranslate nohighl
 <p>所以这里既没有逆函数，传统的数值方法给出最多也只能给出很差的答案。那么ubox方法可以解决这个问题吗？试试看</p>
 <div class="figure align-default" id="id35">
 <img alt="_images/image-20230704105031050.png" src="_images/image-20230704105031050.png" />
-<p class="caption"><span class="caption-number">Fig. 319 </span><span class="caption-text">image-20230704105031050</span><a class="headerlink" href="#id35" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 320 </span><span class="caption-text">image-20230704105031050</span><a class="headerlink" href="#id35" title="Permalink to this image">¶</a></p>
 </div>
 <p>ubox方法对高阶的多项式也是可行的，五阶没有什么特殊，只是一个最低的没有逆公式的多项式而已。如果根无法在计算环境中精确地表达，就返回包含根的最小ULP宽度的unum。</p>
 <p>这感觉就像一个进了糖果店的小孩，拥有了这样一个可以很好工作在如此多的场景下的求解器，还不需要什么思考，也不需要背什么求逆的代数公式了。</p>
@@ -541,7 +541,7 @@ unum能产生什么样的ubound可以满足<span class="math notranslate nohighl
 <p>你如何才能把x全部变换到方程左边呢？没有办法。但是“尝试所有”的方法不需要变换，因为它直接测试方程是否成立。在把上面例子装入<strong>solveforub</strong>前，考虑下一种有意思的用NaN的方法。solveforub可以自动算出函数在哪个domain。条件测试是这样：“f的求值会产生NaN吗？”。我们用整个实数区间作为初始</p>
 <div class="figure align-default" id="id36">
 <img alt="_images/image-20230704110425344.png" src="_images/image-20230704110425344.png" />
-<p class="caption"><span class="caption-number">Fig. 320 </span><span class="caption-text">image-20230704110425344</span><a class="headerlink" href="#id36" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 321 </span><span class="caption-text">image-20230704110425344</span><a class="headerlink" href="#id36" title="Permalink to this image">¶</a></p>
 </div>
 <p>这表明除非x是严格的正数，函数<span class="math notranslate nohighlight">\(log(x)-\frac{1}{x}\)</span>的答案是NaN。这个求解器抓住了0是不允许的，虽然log允许，但是<span class="math notranslate nohighlight">\(\frac{1}{x}\)</span>不可以。</p>
 <p><strong>注意：小心你要的是什么</strong>！solveforub只有当检查到区域的条件是真的才会继续优化，它不对返回假的区域做什么。这是上面这个技巧的作用。如果测试条件是“f
@@ -562,14 +562,14 @@ unum能产生什么样的ubound可以满足<span class="math notranslate nohighl
 而不是有不在的返回False。</p>
 <div class="figure align-default" id="id37">
 <img alt="_images/image-20230704165332342.png" src="_images/image-20230704165332342.png" />
-<p class="caption"><span class="caption-number">Fig. 321 </span><span class="caption-text">image-20230704165332342</span><a class="headerlink" href="#id37" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 322 </span><span class="caption-text">image-20230704165332342</span><a class="headerlink" href="#id37" title="Permalink to this image">¶</a></p>
 </div>
 <p>这样一开始范围是[<span class="math notranslate nohighlight">\(-\infty, \infty\)</span>]就会是真，
 <strong>solveforub</strong>就开始检查交的区域并且迭代优化子范围。</p>
 <p>能做不等式就隐含可以用<strong>solveforub</strong>迭代来找到函数某个区域的最大或是最小值。（如果指定的区域是整个实数轴，那么找到的就是全局的最大最小值，而且它还能找到局部极值）。如果寻找函数<span class="math notranslate nohighlight">\(f(x)\)</span>的最大值，初始开始看<span class="math notranslate nohighlight">\(f(x)&gt;maxreal\)</span>条件。如果任何区域可以找到，那么就结束了，这就是可表示的最大值。否则就做二分法，如同<strong>splitub</strong>一样。找到最大值的条件</p>
 <div class="figure align-default" id="id38">
 <img alt="_images/image-20230704174905485.png" src="_images/image-20230704174905485.png" />
-<p class="caption"><span class="caption-number">Fig. 322 </span><span class="caption-text">image-20230704174905485</span><a class="headerlink" href="#id38" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 323 </span><span class="caption-text">image-20230704174905485</span><a class="headerlink" href="#id38" title="Permalink to this image">¶</a></p>
 </div>
 <p>且有答案是非空集合。找最大值需要不超过<span class="math notranslate nohighlight">\(log_2(n)\)</span>次分割。如果unum环境有n个可以表示的值，那么这种方法找最大不超过<span class="math notranslate nohighlight">\(nlog_2(n)\)</span>次函数求值。这可能让让某些读者感到惊讶，以前他们在理论的计算机科学书中看到是寻找一个通用的连续函数的最大最小值是<strong>极为困难</strong>的，有句话是说“没有人知道如何快速地做到”。</p>
 </div>
@@ -624,19 +624,19 @@ y
 <p>下面是两个方程的系统，作为一个几何问题，是两条直线的交点。</p>
 <div class="figure align-default" id="id39">
 <img alt="_images/image-20230704193834586.png" src="_images/image-20230704193834586.png" />
-<p class="caption"><span class="caption-number">Fig. 323 </span><span class="caption-text">image-20230704193834586</span><a class="headerlink" href="#id39" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 324 </span><span class="caption-text">image-20230704193834586</span><a class="headerlink" href="#id39" title="Permalink to this image">¶</a></p>
 </div>
 <p>为了更实战且更有挑战性，假设系数不是准确的，而是有一个最小尺寸ULP的不确定性。比如</p>
 <div class="figure align-default" id="id40">
 <img alt="_images/image-20230704193913674.png" src="_images/image-20230704193913674.png" />
-<p class="caption"><span class="caption-number">Fig. 324 </span><span class="caption-text">image-20230704193913674</span><a class="headerlink" href="#id40" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 325 </span><span class="caption-text">image-20230704193913674</span><a class="headerlink" href="#id40" title="Permalink to this image">¶</a></p>
 </div>
 <p>这使得解集被拓宽成类似于平行四边形，因为现在解交叠的两个区域，那不是真的平行四边形，因为其对边并不平行。</p>
 <p>绘制上述系数的高值和低值的每个可能组合会创建一组边界，看起来像有人在 x-y
 平面上掉了一些未煮熟的意大利面</p>
 <div class="figure align-default" id="id41">
 <img alt="_images/image-20230704194346022.png" src="_images/image-20230704194346022.png" />
-<p class="caption"><span class="caption-number">Fig. 325 </span><span class="caption-text">image-20230704194346022</span><a class="headerlink" href="#id41" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 326 </span><span class="caption-text">image-20230704194346022</span><a class="headerlink" href="#id41" title="Permalink to this image">¶</a></p>
 </div>
 <p>一些传统区间算术的倡导者建议弄清楚 16
 条线中的哪一条构成了四边形的边界，这是一项非常繁琐的任务，绝对是“NP-hard”的处理方式。</p>
@@ -644,7 +644,7 @@ y
 平面并测试它们是否符合以下条件并不困难：</p>
 <div class="figure align-default" id="id42">
 <img alt="_images/image-20230704195202805.png" src="_images/image-20230704195202805.png" />
-<p class="caption"><span class="caption-number">Fig. 326 </span><span class="caption-text">image-20230704195202805</span><a class="headerlink" href="#id42" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 327 </span><span class="caption-text">image-20230704195202805</span><a class="headerlink" href="#id42" title="Permalink to this image">¶</a></p>
 </div>
 <p>其中au是unum的矩阵表示<span class="math notranslate nohighlight">\(\begin{pmatrix} (1, 1.0625) &amp;&amp; (0.4375, 0.5) \\ (0.8125, 0.875) &amp;&amp; (1, 1.0625) \end{pmatrix}\)</span>,
 xu表示未知量 (x, y), bu 表示右边值
@@ -654,14 +654,14 @@ xu表示未知量 (x, y), bu 表示右边值
 0]。令人惊讶的是结果的fails集是红色，solves集（绿色）则有4个区域。</p>
 <div class="figure align-default" id="id43">
 <img alt="_images/image-20230704201313546.png" src="_images/image-20230704201313546.png" />
-<p class="caption"><span class="caption-number">Fig. 327 </span><span class="caption-text">image-20230704201313546</span><a class="headerlink" href="#id43" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 328 </span><span class="caption-text">image-20230704201313546</span><a class="headerlink" href="#id43" title="Permalink to this image">¶</a></p>
 </div>
 <p>左上和右下角的solves区域是ubox的扩展区域，跨越<span class="math notranslate nohighlight">\((maxreal, \infty)\)</span>和(<span class="math notranslate nohighlight">\(-\infty, -maxreal\)</span>)。两个斜带其实都穿过了该区。这就是17.2.2节显示的二维形式的效果。注意准确的正负无穷是不满足条件的。</p>
 <p>在x=(3, 4)和y=(0,
 1)的孤立的ubox也穿过了两个斜带，但是他们满血这两个方程的位置点是不同的。</p>
 <div class="figure align-default" id="id44">
 <img alt="_images/image-20230704202355654.png" src="_images/image-20230704202355654.png" />
-<p class="caption"><span class="caption-number">Fig. 328 </span><span class="caption-text">image-20230704202355654</span><a class="headerlink" href="#id44" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 329 </span><span class="caption-text">image-20230704202355654</span><a class="headerlink" href="#id44" title="Permalink to this image">¶</a></p>
 </div>
 <p>我们应该把这个ubox当做虚假的结果而丢弃吗？这个例子是的。因为我们如果提升精度使得ULP从1变为<span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>,
 就会把这个点划掉了。但是如果环境是更粗的比如{0,
@@ -671,20 +671,20 @@ xu表示未知量 (x, y), bu 表示右边值
 <p>现在考虑油漆桶方法。获得起始种子的一种方法是使用“尝试所有”方法，直到找到在所有维度上都精确的ubox。另一种方法是尝试传统的数值方法，如高斯消除，从不精确的范围内选择精确值：</p>
 <div class="figure align-default" id="id45">
 <img alt="_images/image-20230704203325891.png" src="_images/image-20230704203325891.png" />
-<p class="caption"><span class="caption-number">Fig. 329 </span><span class="caption-text">image-20230704203325891</span><a class="headerlink" href="#id45" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 330 </span><span class="caption-text">image-20230704203325891</span><a class="headerlink" href="#id45" title="Permalink to this image">¶</a></p>
 </div>
 <p>为了确保我们没有像上面那样的解被单独拐角的情况，请在传统求解器的结果附近选择一对精确的unum，例如表示
 2 和 2.25 的
 unum。由于浮点数只是猜测，因此仍然需要验证unum对是否满足条件：</p>
 <div class="figure align-default" id="id46">
 <img alt="_images/image-20230704203506989.png" src="_images/image-20230704203506989.png" />
-<p class="caption"><span class="caption-number">Fig. 330 </span><span class="caption-text">image-20230704203506989</span><a class="headerlink" href="#id46" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 331 </span><span class="caption-text">image-20230704203506989</span><a class="headerlink" href="#id46" title="Permalink to this image">¶</a></p>
 </div>
 <p>我们现在有种子了。在调用油漆桶算法之前，请考虑如果我们尝试使用传统的区间算术和高斯消除会发生什么。</p>
 <p>结果如往常一样，很宽松</p>
 <div class="figure align-default" id="id47">
 <img alt="_images/image-20230704203656379.png" src="_images/image-20230704203656379.png" />
-<p class="caption"><span class="caption-number">Fig. 331 </span><span class="caption-text">image-20230704203656379</span><a class="headerlink" href="#id47" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 332 </span><span class="caption-text">image-20230704203656379</span><a class="headerlink" href="#id47" title="Permalink to this image">¶</a></p>
 </div>
 <p>反演线性方程组的公式，如克莱默规则或高斯消除，多次使用输入值并遇到依赖问题。相比之下，<strong>conditionQ</strong>检验中的方程每个输入值使用一次，因此答案没有松散开。</p>
 <p>ubox结果已合并在下面的图上。黑点显示单个值，类似于可能由传统数字“求解器”生成的值。但如您所见，当系数不精确时，它只是一个更大集合中的一个值。这就像问“找到x和y使得<span class="math notranslate nohighlight">\(x^2 + y^2 = 1\)</span>”并得到答案“x
@@ -693,7 +693,7 @@ unum。由于浮点数只是猜测，因此仍然需要验证unum对是否满足
 ubox解将不稳定性暴露为偏心形状的解集，有效地执行“灵敏度分析”，显示不精确的输入如何影响答案。</p>
 <div class="figure align-default" id="id48">
 <img alt="_images/image-20230704204521628.png" src="_images/image-20230704204521628.png" />
-<p class="caption"><span class="caption-number">Fig. 332 </span><span class="caption-text">image-20230704204521628</span><a class="headerlink" href="#id48" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 333 </span><span class="caption-text">image-20230704204521628</span><a class="headerlink" href="#id48" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>灰色</strong>矩形是由使用传统区间算术和高斯消除方法产生的松散边界。虽然松散，但它并非完全无用，因为它可以用作尝试一切搜索的起点，这比从整个
 x-y 平面开始搜索更快。</p>

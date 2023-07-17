@@ -195,7 +195,7 @@ Show Source
 <h1>9 加减法和无偏差舍入的迷<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
 <div class="figure align-default" id="id5">
 <img alt="_images/image-20230620123711433.png" src="_images/image-20230620123711433.png" />
-<p class="caption"><span class="caption-number">Fig. 116 </span><span class="caption-text">image-20230620123711433</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 117 </span><span class="caption-text">image-20230620123711433</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <blockquote>
 <div><p>1982 年，温哥华证券交易所建立了股票指数，初始值设为
@@ -239,12 +239,12 @@ y是精确可表示的u-layer数，如果结果是加法的和，用黑色。异
 <p>首先是g-layer加左端点的表</p>
 <div class="figure align-default" id="id6">
 <img alt="_images/image-20230620140839266.png" src="_images/image-20230620140839266.png" />
-<p class="caption"><span class="caption-number">Fig. 117 </span><span class="caption-text">image-20230620140839266</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 118 </span><span class="caption-text">image-20230620140839266</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>其次是g-layer加右端点的表</p>
 <div class="figure align-default" id="id7">
 <img alt="_images/image-20230620140903172.png" src="_images/image-20230620140903172.png" />
-<p class="caption"><span class="caption-number">Fig. 118 </span><span class="caption-text">image-20230620140903172</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 119 </span><span class="caption-text">image-20230620140903172</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>解包的unum格式比较容易看出在表中的位置。比如
 “<span class="math notranslate nohighlight">\(-\infty]\)</span>”就是<span class="math notranslate nohighlight">\(b_{63}\)</span>(小于0) 与上
@@ -258,35 +258,35 @@ x+y]的情况。如果x+y的几个不是个可表示的精确值，那么需要�
 <p>尝试一个含无穷的例子，有开和闭区间。为了清晰，我们把输入表示为间隔，再转换成ubound来计算。所以<span class="math notranslate nohighlight">\((-\infty, 4) \oplus (maxreal, \infty]\)</span>的结果是<span class="math notranslate nohighlight">\((-\infty, \infty]\)</span></p>
 <div class="figure align-default" id="id8">
 <img alt="_images/image-20230620151118566.png" src="_images/image-20230620151118566.png" />
-<p class="caption"><span class="caption-number">Fig. 119 </span><span class="caption-text">image-20230620151118566</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 120 </span><span class="caption-text">image-20230620151118566</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>左边变为开区间</p>
 <div class="figure align-default" id="id9">
 <img alt="_images/image-20230620151241275.png" src="_images/image-20230620151241275.png" />
-<p class="caption"><span class="caption-number">Fig. 120 </span><span class="caption-text">image-20230620151241275</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 121 </span><span class="caption-text">image-20230620151241275</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <p>无穷减无穷是NaN</p>
 <div class="figure align-default" id="id10">
 <img alt="_images/image-20230620151427862.png" src="_images/image-20230620151427862.png" />
-<p class="caption"><span class="caption-number">Fig. 121 </span><span class="caption-text">image-20230620151427862</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 122 </span><span class="caption-text">image-20230620151427862</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <p>尝试在一个{3，4}环境中做(2.25,
 2.5)加9，并且记录数据搬移量。加ubitmask是表示2.25右边一个ULP的区间，长度0.25.
 在u-layer, 这些数的表示如下</p>
 <div class="figure align-default" id="id11">
 <img alt="_images/image-20230620151810117.png" src="_images/image-20230620151810117.png" />
-<p class="caption"><span class="caption-number">Fig. 122 </span><span class="caption-text">image-20230620151810117</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 123 </span><span class="caption-text">image-20230620151810117</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <p>两个unum分别占用了13和15bit，我们还需要一比特记录是否是一部分还是两部分的ubound。ubound占用14和16bit。重置计数器，看结果</p>
 <div class="figure align-default" id="id12">
 <img alt="_images/image-20230620152202909.png" src="_images/image-20230620152202909.png" />
-<p class="caption"><span class="caption-number">Fig. 123 </span><span class="caption-text">image-20230620152202909</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 124 </span><span class="caption-text">image-20230620152202909</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <p>结果自动被扩展为18bit
 ubound。使用原型定义的函数汇报数据搬移量，得到如下表报告</p>
 <div class="figure align-default" id="id13">
 <img alt="_images/image-20230620152426725.png" src="_images/image-20230620152426725.png" />
-<p class="caption"><span class="caption-number">Fig. 124 </span><span class="caption-text">image-20230620152426725</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 125 </span><span class="caption-text">image-20230620152426725</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 <p>相同符合两个数相加通常会增加小数位数，或是指数位（未必，因为和的小数有可能reduce
 to lower
@@ -300,13 +300,13 @@ term?）。特别是对于指数相差过大的数，比如我们用手工做做
 5)， y是(-2, 4]:</p>
 <div class="figure align-default" id="id14">
 <img alt="_images/image-20230620154932159.png" src="_images/image-20230620154932159.png" />
-<p class="caption"><span class="caption-number">Fig. 125 </span><span class="caption-text">image-20230620154932159</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 126 </span><span class="caption-text">image-20230620154932159</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 <p>注意边角代表了开闭空间，只有一个角是完全方的，就是backview中(x=-1,
 y=4的位置)，其他都都是圆角。加法的结果表示为一个平面但最终投影在实线上，两边都是开区间。</p>
 <div class="figure align-default" id="id15">
 <img alt="_images/image-20230620155456424.png" src="_images/image-20230620155456424.png" />
-<p class="caption"><span class="caption-number">Fig. 126 </span><span class="caption-text">image-20230620155456424</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 127 </span><span class="caption-text">image-20230620155456424</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="unum">
@@ -325,7 +325,7 @@ fsize，可以在大部分时间捕获正确答案。</p>
 <p>比如这是在{3,4}环境中的两个unum</p>
 <div class="figure align-default" id="id16">
 <img alt="_images/image-20230620161742352.png" src="_images/image-20230620161742352.png" />
-<p class="caption"><span class="caption-number">Fig. 127 </span><span class="caption-text">image-20230620161742352</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 128 </span><span class="caption-text">image-20230620161742352</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 <p>指数相差12 (<span class="math notranslate nohighlight">\(2^{-8}对\)</span> <span class="math notranslate nohighlight">\(2^4\)</span>)。如果是两个IEEE
 16比特浮点相加，硬件检测到指数差已经超过小数10比特的长度，那么就直接丢弃掉小的数，回答是<span class="math notranslate nohighlight">\(30+\frac{1}{256}=30\)</span>
@@ -333,13 +333,13 @@ fsize，可以在大部分时间捕获正确答案。</p>
 就直接提升精度来完成这个加法</p>
 <div class="figure align-default" id="id17">
 <img alt="_images/image-20230620162524967.png" src="_images/image-20230620162524967.png" />
-<p class="caption"><span class="caption-number">Fig. 128 </span><span class="caption-text">image-20230620162524967</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 129 </span><span class="caption-text">image-20230620162524967</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 <p>如果我们检测到指数差异超过了<span class="math notranslate nohighlight">\(2^{fsizesize}\)</span>,就可以采用捷径，直接标注数据是不精确的。比如<span class="math notranslate nohighlight">\(\hat{1000}\oplus\hat{\frac{1}{256}}\)</span>
 就可以快速地给出一个正确的不精确结果</p>
 <div class="figure align-default" id="id18">
 <img alt="_images/image-20230620162913589.png" src="_images/image-20230620162913589.png" />
-<p class="caption"><span class="caption-number">Fig. 129 </span><span class="caption-text">image-20230620162913589</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 130 </span><span class="caption-text">image-20230620162913589</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -352,36 +352,36 @@ fsize，可以在大部分时间捕获正确答案。</p>
 会向上舍入到3.如果我们是13除以-6会舍入到-2.如果我们的舍入误差是随机的，平均每一个step误差增加0.5ULP。</p>
 <div class="figure align-default" id="id19">
 <img alt="_images/image-20230620163505196.png" src="_images/image-20230620163505196.png" />
-<p class="caption"><span class="caption-number">Fig. 130 </span><span class="caption-text">image-20230620163505196</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 131 </span><span class="caption-text">image-20230620163505196</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
 <p>向下舍入就是前面说的温哥华证券交易所使用的模式。他们使用3位十进制数值，但是每次更新指数永远向下舍入。误差图就是上图的垂直镜像。</p>
 <div class="figure align-default" id="id20">
 <img alt="_images/image-20230620203457608.png" src="_images/image-20230620203457608.png" />
-<p class="caption"><span class="caption-number">Fig. 131 </span><span class="caption-text">image-20230620203457608</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 132 </span><span class="caption-text">image-20230620203457608</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
 <p>一些应用，比如信号处理，或是简单的计算机图形学，舍入模式没有看上去的那么糟糕，原因是每个数据item只有少量的数学运算操作，所以舍入误差不会累积起来。但是对于温哥华证券交易所，下图是累积误差的样子，假设每次舍入都是统计学独立的。</p>
 <div class="figure align-default" id="id21">
 <img alt="_images/image-20230620204117762.png" src="_images/image-20230620204117762.png" />
-<p class="caption"><span class="caption-number">Fig. 132 </span><span class="caption-text">image-20230620204117762</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 133 </span><span class="caption-text">image-20230620204117762</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
 <p>向零舍入舍入比上面两个模式容错性强，因为计算有相同的几率是正的或是负的误差。比如两个向量的点积<span class="math notranslate nohighlight">\(a_1b_1+a_2b_2+\cdots+a_nb_n\)</span>.
 如果a和b的元素都以相同几率为正或负，那么舍入有一半是向上，一半是向下。</p>
 <p>最常用的舍入模式是无偏差舍入，就是替换正确答案为半个ULP以内的浮点数。如果是平局（正好都半个ULP），那么选择最近的偶数。无偏舍入需要额外的硬件，和执行时间。但是结果看上去更好看些。</p>
 <div class="figure align-default" id="id22">
 <img alt="_images/image-20230620204805829.png" src="_images/image-20230620204805829.png" />
-<p class="caption"><span class="caption-number">Fig. 133 </span><span class="caption-text">image-20230620204805829</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 134 </span><span class="caption-text">image-20230620204805829</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
 </div>
 <p>无偏舍入可以把平均误差减少到0.5到0.25个ULP之间。但是可以在任意方向。这就把我们带到了统计学家所说的随机运动问题。假设你多次抛掷一枚硬币，如果是正面你往前一步，反之后退一步。经过n次抛掷，你离开起点多少步。我们期望抛掷得到正面的平均数目是n/2,
 但是会有些偏差，近似是一个钟形曲线，如下图</p>
 <div class="figure align-default" id="id23">
 <img alt="_images/image-20230620205805573.png" src="_images/image-20230620205805573.png" />
-<p class="caption"><span class="caption-number">Fig. 134 </span><span class="caption-text">image-20230620205805573</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 135 </span><span class="caption-text">image-20230620205805573</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
 </div>
 <p>偏差是抛掷数量的平方根。</p>
 <p>所以推论是无偏差舍入的累积误差在很多次计算累积后都是可以容忍的。</p>
 <div class="figure align-default" id="id24">
 <img alt="_images/image-20230620210101442.png" src="_images/image-20230620210101442.png" />
-<p class="caption"><span class="caption-number">Fig. 135 </span><span class="caption-text">image-20230620210101442</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 136 </span><span class="caption-text">image-20230620210101442</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
 </div>
 <p>即使我们做1
 billion（<span class="math notranslate nohighlight">\(10^9\)</span>）个加法，推导出来的ULP数目通常在<span class="math notranslate nohighlight">\(\pm\sqrt{10^9}\)</span>个0.25ULP，这大概是7906个ULP，如果是用单精度累积，一个ULP是<span class="math notranslate nohighlight">\(\frac{1}{8388608}\)</span>,
@@ -428,7 +428,7 @@ billion的0到1间的随机数，统计学说结果应该是0.5 billion.</p>
 的 unum 会发生什么</p>
 <div class="figure align-default" id="id25">
 <img alt="_images/image-20230621084439329.png" src="_images/image-20230621084439329.png" />
-<p class="caption"><span class="caption-number">Fig. 136 </span><span class="caption-text">image-20230621084439329</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 137 </span><span class="caption-text">image-20230621084439329</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
 </div>
 <p>这比浮点数更好； 相同精度的浮点数将准确地返回数字 512。
 Unum至少警告我们，我们有一个“渐长的积垢”问题。 范围 (512,
@@ -444,26 +444,26 @@ Unum至少警告我们，我们有一个“渐长的积垢”问题。 范围 (5
 它仍然可以用 20 位 unum 有效地表达，但精度已下降到大约两位十进制小数：</p>
 <div class="figure align-default" id="id26">
 <img alt="_images/image-20230621092307613.png" src="_images/image-20230621092307613.png" />
-<p class="caption"><span class="caption-number">Fig. 137 </span><span class="caption-text">image-20230621092307613</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 138 </span><span class="caption-text">image-20230621092307613</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
 </div>
 <p>了解了准确性如何丢失后，这里给出 10^9 求和问题的“比例模型”。这次只是循环
 1000次，足以强制使用不精确的 unum：</p>
 <div class="figure align-default" id="id27">
 <img alt="_images/image-20230621092904911.png" src="_images/image-20230621092904911.png" />
-<p class="caption"><span class="caption-number">Fig. 138 </span><span class="caption-text">image-20230621092904911</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 139 </span><span class="caption-text">image-20230621092904911</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
 </div>
 <p>以上缺点都可以由计算系统自动跟踪和纠正。 第一种情况的自动测试很容易；
 如前所述，如果结果对于动态范围而言太小或太大，<strong>needmoreexpQ</strong>
 函数将返回 True。 例如，给 maxreal/2 加 1 不会超出环境的范围。</p>
 <div class="figure align-default" id="id28">
 <img alt="_images/image-20230621095943725.png" src="_images/image-20230621095943725.png" />
-<p class="caption"><span class="caption-number">Fig. 139 </span><span class="caption-text">image-20230621095943725</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 140 </span><span class="caption-text">image-20230621095943725</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
 </div>
 <p>但是将 1 加到 maxreal 会，因为表示和的唯一方法是使用开区间
 <span class="math notranslate nohighlight">\((maxreal，\infty)\)</span>。</p>
 <div class="figure align-default" id="id29">
 <img alt="_images/image-20230621101239670.png" src="_images/image-20230621101239670.png" />
-<p class="caption"><span class="caption-number">Fig. 140 </span><span class="caption-text">image-20230621101239670</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 141 </span><span class="caption-text">image-20230621101239670</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
 </div>
 <p>相对位宽如果是0.05就基本对应一个十进制数的精度。间隔(10,
 11)达到了一个十进制精度，因为<span class="math notranslate nohighlight">\(\frac{11-10}{11+10}=0.047\)</span>
@@ -500,18 +500,18 @@ Unum至少警告我们，我们有一个“渐长的积垢”问题。 范围 (5
 3} 环境中是可能的：</p>
 <div class="figure align-default" id="id30">
 <img alt="_images/image-20230621132754304.png" src="_images/image-20230621132754304.png" />
-<p class="caption"><span class="caption-number">Fig. 141 </span><span class="caption-text">image-20230621132754304</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 142 </span><span class="caption-text">image-20230621132754304</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
 </div>
 <p>显然[10, 11]只有一位精度，需要更多bit</p>
 <div class="figure align-default" id="id31">
 <img alt="_images/image-20230621132851277.png" src="_images/image-20230621132851277.png" />
-<p class="caption"><span class="caption-number">Fig. 142 </span><span class="caption-text">image-20230621132851277</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 143 </span><span class="caption-text">image-20230621132851277</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
 </div>
 <p>而间隔(500,
 504)在{3，3}环境中只有一个ULP宽度，相对宽度约0.004，所以无需提升精度。</p>
 <div class="figure align-default" id="id32">
 <img alt="_images/image-20230621133045237.png" src="_images/image-20230621133045237.png" />
-<p class="caption"><span class="caption-number">Fig. 143 </span><span class="caption-text">image-20230621133045237</span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 144 </span><span class="caption-text">image-20230621133045237</span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
 </div>
 <p>这种方法的流程图如下所示，其中蓝色显示的部分可以由程序员请求或自动执行。
 该策略与用于保护长时间运行的超级计算任务免受硬件故障影响的检查点重启方法非常相似，这也可以在应用程序级别或由操作系统自动完成。
@@ -520,7 +520,7 @@ Unum至少警告我们，我们有一个“渐长的积垢”问题。 范围 (5
 连续监控消除了继续进行明显“偏离轨道”的计算所浪费的时间。</p>
 <div class="figure align-default" id="id33">
 <img alt="_images/image-20230621144551097.png" src="_images/image-20230621144551097.png" />
-<p class="caption"><span class="caption-number">Fig. 144 </span><span class="caption-text">image-20230621144551097</span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 145 </span><span class="caption-text">image-20230621144551097</span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
 </div>
 <p>下面是一个软件实现此类监控的程序，我们首先以 {2, 2}
 环境开始，让计算机决定是否需要更多位。
@@ -528,12 +528,12 @@ Unum至少警告我们，我们有一个“渐长的积垢”问题。 范围 (5
 这些语句按相应的流程图颜色进行颜色编码，自动监控显示为蓝色。</p>
 <div class="figure align-default" id="id34">
 <img alt="_images/image-20230621144951071.png" src="_images/image-20230621144951071.png" />
-<p class="caption"><span class="caption-number">Fig. 145 </span><span class="caption-text">image-20230621144951071</span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 146 </span><span class="caption-text">image-20230621144951071</span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
 </div>
 <p>答案是精确的了，那目前到了什么样的环境呢？</p>
 <div class="figure align-default" id="id35">
 <img alt="_images/image-20230621145042415.png" src="_images/image-20230621145042415.png" />
-<p class="caption"><span class="caption-number">Fig. 146 </span><span class="caption-text">image-20230621145042415</span><a class="headerlink" href="#id35" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 147 </span><span class="caption-text">image-20230621145042415</span><a class="headerlink" href="#id35" title="Permalink to this image">¶</a></p>
 </div>
 <p>由于我们只要求两位小数的精度，relwidthtolerance 为 0.005，因此 [991,
 1010] 中包含的任何 ubound 的相对宽度测试都将通过。

@@ -195,7 +195,7 @@ Show Source
 <h1>5. 隐藏的草稿本和三个层次<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
 <div class="figure align-default" id="id13">
 <img alt="_images/image-20200728123218826.png" src="_images/image-20200728123218826.png" />
-<p class="caption"><span class="caption-number">Fig. 57 </span><span class="caption-text">image-20200728123218826</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 58 </span><span class="caption-text">image-20200728123218826</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 <blockquote>
 <div><center><p>在进行自动计算机之前，台式计算器的操作员可以在每次计算中跟踪有效数字，因为数字是手工输入的。
@@ -208,7 +208,7 @@ Show Source
 <p>当计算机设计人员构建用于浮点运算的硬件时，他们还分配空间来执行分数乘法，使其达到分数长度的两倍。要快速计算意味着能够同时算出“平行四边形”状的所有部分乘积，然后使用双倍长度累加器将总和垒起来。如下例产生8位舍入结果的简单8位乘8位乘法器的比特表示。这是人们用纸笔做计算的方式的二进制形式：</p>
 <div class="figure align-default" id="id14">
 <img alt="_images/image-20200728125311982.png" src="_images/image-20200728125311982.png" />
-<p class="caption"><span class="caption-number">Fig. 58 </span><span class="caption-text">image-20200728125311982</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 59 </span><span class="caption-text">image-20200728125311982</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 <p>淡蓝色位不会显示给用户，它们是隐藏的scratchpad的一部分（但是某些计算机上有指令可以得到低一半结果，是为了进行扩展精度的算术运算等操作）。还有类似的硬件可以进行浮点加减运算（由于它们的指数将二进制点放在不同的位置，因此通常必须首先做移位对齐），除法和平方根。如果四舍五入的规则定义正确，则所有计算机将返回相同的结果。没有兼容性问题，也没有任何意外。</p>
 <table border="2"><tr><td bgcolor="lightblue"><p>单层计算-是所有数字都以某种标准格式存储。还有一个内部层，即带有额外位的隐藏scratchpad，计算机可以在其上完美地执行数学运算，或者至少足够准确以保证标准格式能正确表示。</p>
@@ -217,7 +217,7 @@ Show Source
 <h3>5.1.1 Cray-1 超级计算机<a class="headerlink" href="#cray-1" title="Permalink to this heading">¶</a></h3>
 <div class="figure align-default" id="id15">
 <img alt="_images/image-20200728131428170.png" src="_images/image-20200728131428170.png" />
-<p class="caption"><span class="caption-number">Fig. 59 </span><span class="caption-text">image-20200728131428170</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 60 </span><span class="caption-text">image-20200728131428170</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 <blockquote>
 <div><center><p>加州山景城的计算机历史博物馆展示的Cray-1计算机</p>
@@ -229,7 +229,7 @@ Show Source
 分数只有48位，并且乘法scartchpad不完整，如原始Cray-1用户手册中的乘法平行四边形图所示：</p>
 <div class="figure align-default" id="id16">
 <img alt="_images/image-20200728150621308.png" src="_images/image-20200728150621308.png" />
-<p class="caption"><span class="caption-number">Fig. 60 </span><span class="caption-text">image-20200728150621308</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 61 </span><span class="caption-text">image-20200728150621308</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 <p>他们真是做了偷工减料。
 乘法平行四边形的一角被切除，留下了一个参差不齐的“乘法金字塔”，以节省门并提高速度。
@@ -250,7 +250,7 @@ Show Source
 <h3>5.1.2 C语言的最初定义<a class="headerlink" href="#c" title="Permalink to this heading">¶</a></h3>
 <div class="figure align-default" id="id17">
 <img alt="_images/image-20200728152600668.png" src="_images/image-20200728152600668.png" />
-<p class="caption"><span class="caption-number">Fig. 61 </span><span class="caption-text">image-20200728152600668</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 62 </span><span class="caption-text">image-20200728152600668</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 <p>scartchpad中完成的操作有时由软件而不是硬件定义。
 由Kernighan和Ritchie撰写的《
@@ -267,7 +267,7 @@ C语言编译器的供应商很快不得不抛出选项来禁用该规则，并�
 <h3>5.1.3 协处理器也来帮(dao)忙<a class="headerlink" href="#dao" title="Permalink to this heading">¶</a></h3>
 <div class="figure align-default" id="id18">
 <img alt="_images/image-20200728155027251.png" src="_images/image-20200728155027251.png" />
-<p class="caption"><span class="caption-number">Fig. 62 </span><span class="caption-text">image-20200728155027251</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 63 </span><span class="caption-text">image-20200728155027251</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
 <p>前面在在4.7节中的浮点类型的长栏中已经提到了Intel
 i8087协处理器，相当与unum带 <span class="math notranslate nohighlight">\(\lbrace 4，7 \rbrace\)</span> utag来表示。
@@ -359,7 +359,7 @@ ubound是最外面的端点。</p>
 <h3>5.2.2 为u-layers设计的处理器<a class="headerlink" href="#u-layers" title="Permalink to this heading">¶</a></h3>
 <div class="figure align-default" id="id19">
 <img alt="_images/image-20200729155256273.png" src="_images/image-20200729155256273.png" />
-<p class="caption"><span class="caption-number">Fig. 63 </span><span class="caption-text">image-20200729155256273</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 64 </span><span class="caption-text">image-20200729155256273</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
 <p>现在，微处理器芯片上的晶体管密度是如此之高，以至于在芯片上一次使用所有晶体管将远远超出功耗预算。将闲置的晶体管装在芯片上可能看起来很浪费，但是将它们想象成多人乘用车中空的座椅，或者如上图所示的伦敦机场的扫雪机。也许在任何一年中它们都没有使用多少小时，但是当您需要它们时，您会<em>确实</em>需要它们。不使用时，它们也不会增加太多额外成本。</p>
 <p>因此，用固定大小的寄存器构建一个unum处理器是明智的选择，该寄存器可以容纳unum直到某些规定的最大环境设置。芯片设计人员当然更喜欢固定大小的寄存器，除非每个位都在使用，长寄存器并不需要消耗全部功耗。</p>
@@ -384,7 +384,7 @@ gbound是一个用于unum的中间计算结果的数据结构，比unum环境的
 其他值构成一个2x6大小的表，如下所示：</p>
 <div class="figure align-default" id="id20">
 <img alt="_images/image-20200729172748273.png" src="_images/image-20200729172748273.png" />
-<p class="caption"><span class="caption-number">Fig. 64 </span><span class="caption-text">image-20200729172748273</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 65 </span><span class="caption-text">image-20200729172748273</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
 <p>其中带问号的是1比特，0表示False，1表示True.
 f和e值带有L或R下标表明他们是左或是右端点的数。组合起来数字表示<span class="math notranslate nohighlight">\(f \times 2^{e}\)</span>就像是浮点数或是unum的表示法一样，指示f表示的而是无符号<strong>整数</strong>，而不是介于1和2之间的一个小数。而且数值一定满足<span class="math notranslate nohighlight">\(f_L \times 2^{e_L} \le f_R \times 2^{e_R}\)</span>,
@@ -404,7 +404,7 @@ bound累加器。我们可以支持5,000个这样巨大的累加器，而且全�
 <p>举个gbound的示例，间隔<span class="math notranslate nohighlight">\((-0.046875，4]\)</span>可以写为<span class="math notranslate nohighlight">\((-3\times2^{-6}，1\times2^2]\)</span>，因此scratchpad将按以下方式存储它，其中斜体字的数量为单比特0或1：</p>
 <div class="figure align-default" id="id21">
 <img alt="_images/image-20200729180925997.png" src="_images/image-20200729180925997.png" />
-<p class="caption"><span class="caption-number">Fig. 65 </span><span class="caption-text">image-20200729180925997</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 66 </span><span class="caption-text">image-20200729180925997</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
 <p>初看起来gbounds是打算用于精确整数计算，但是只要足够好就可以保证返回到<strong>u-layer</strong>的值与精确算术是相同的。
 由于unum环境中的scratchpad基于gbounds，因此称为<strong>g-layer</strong>。</p>
@@ -418,20 +418,20 @@ bound累加器。我们可以支持5,000个这样巨大的累加器，而且全�
 原型用来下面2x2的表</p>
 <div class="figure align-default" id="id22">
 <img alt="_images/image-20200729183611861.png" src="_images/image-20200729183611861.png" />
-<p class="caption"><span class="caption-number">Fig. 66 </span><span class="caption-text">image-20200729183611861</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 67 </span><span class="caption-text">image-20200729183611861</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
 </div>
 <p>其中<strong>lo</strong>和<strong>hi</strong>分别是左和右的端点。而<strong>loQ</strong>和<strong>hiQ</strong>是<strong>True</strong>的时候表明端点是开区间，<strong>False</strong>表明是闭区间。如果<strong>gbound</strong>结果是<strong>NaN</strong>,
 那么表示为</p>
 <div class="figure align-default" id="id23">
 <img alt="_images/image-20200729183903483.png" src="_images/image-20200729183903483.png" />
-<p class="caption"><span class="caption-number">Fig. 67 </span><span class="caption-text">image-20200729183903483</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 68 </span><span class="caption-text">image-20200729183903483</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="nan-sun-microsystems">
 <h3>5.3.2 谁会用NaN, Sun Microsystems公司得到了讨厌的惊喜<a class="headerlink" href="#nan-sun-microsystems" title="Permalink to this heading">¶</a></h3>
 <div class="figure align-default" id="id24">
 <img alt="_images/image-20200729184128883.png" src="_images/image-20200729184128883.png" />
-<p class="caption"><span class="caption-number">Fig. 68 </span><span class="caption-text">image-20200729184128883</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 69 </span><span class="caption-text">image-20200729184128883</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
 </div>
 <blockquote>
 <div><center><p>NaN在g-layer中的存储方式使其非常快速，轻松地处理NaN值。
@@ -456,7 +456,7 @@ g-layer不需要做任何像符号代数一样复杂的事情。</p>
 <p>例如：如果g-layer需要计算</p>
 <div class="figure align-default" id="id25">
 <img alt="_images/image-20200729190044122.png" src="_images/image-20200729190044122.png" />
-<p class="caption"><span class="caption-number">Fig. 69 </span><span class="caption-text">image-20200729190044122</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 70 </span><span class="caption-text">image-20200729190044122</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
 </div>
 <p>这种表达永远不会进入g-layer，除非这是一种允许的我们称为“融合除法平方根”的融合操作，例如IBM的融合乘法FMA加法。
 提交给g-layer的一组标准化任务必须立即返回u-layer。
@@ -552,14 +552,14 @@ Ubound算法在跟踪精度方面更强大，因为端点的精度可以不同�
 例如，实数行上的区间<span class="math notranslate nohighlight">\([–2，3)\)</span>在左侧关闭但在右侧打开可以像这样可视化：</p>
 <div class="figure align-default" id="id26">
 <img alt="_images/image-20200730130235246.png" src="_images/image-20200730130235246.png" />
-<p class="caption"><span class="caption-number">Fig. 70 </span><span class="caption-text">image-20200730130235246</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 71 </span><span class="caption-text">image-20200730130235246</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
 </div>
 <p>假设x是<span class="math notranslate nohighlight">\((-1, \frac{3}{2})\)</span>, 那么<span class="math notranslate nohighlight">\(x^2\)</span>是什么？
 画出的<span class="math notranslate nohighlight">\(y=x^2\)</span>是抛物线在<span class="math notranslate nohighlight">\(-1 \lt x \lt \frac{3}{2}\)</span>的一部分，但如果我们用非常规的粗线绘制它，可以显示开（圆形）或闭（方形）端点，则有助于可视化进行算术时开或关属性的变化。
 输入范围以浅洋红色显示，输出范围以浅绿色显示：</p>
 <div class="figure align-default" id="id27">
 <img alt="_images/image-20200730131353632.png" src="_images/image-20200730131353632.png" />
-<p class="caption"><span class="caption-number">Fig. 71 </span><span class="caption-text">image-20200730131353632</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 72 </span><span class="caption-text">image-20200730131353632</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
 </div>
 <p>结果范围的上限显示为四舍五入（空心），但下限钝化以指示它包括零（封闭）。
 <span class="math notranslate nohighlight">\((-1 1.5)\)</span>的平方是<span class="math notranslate nohighlight">\([0，2.25)\)</span>。
@@ -568,7 +568,7 @@ Ubound算法在跟踪精度方面更强大，因为端点的精度可以不同�
 该错误源于选择以下以抽象计算机语言表示的循环结构之一：</p>
 <div class="figure align-default" id="id28">
 <img alt="_images/image-20200730132052388.png" src="_images/image-20200730132052388.png" />
-<p class="caption"><span class="caption-number">Fig. 72 </span><span class="caption-text">image-20200730132052388</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 73 </span><span class="caption-text">image-20200730132052388</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
 </div>
 <p>循环什么时候停止，是当您到达n或到之前？
 也即是确定是“小于”或“小于或等于”才停止？ 数组索引是从0开始还是从1开始？
@@ -609,7 +609,7 @@ h-layer 定义的是有一端是人的输入输出。</p>
 例如，余切以<span class="math notranslate nohighlight">\(\pi\)</span>的每个整数倍重复它在0到<span class="math notranslate nohighlight">\(\pi\)</span>之间执行的操作：</p>
 <div class="figure align-default" id="id29">
 <img alt="_images/image-20200730135904128.png" src="_images/image-20200730135904128.png" />
-<p class="caption"><span class="caption-number">Fig. 73 </span><span class="caption-text">image-20200730135904128</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 74 </span><span class="caption-text">image-20200730135904128</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
 </div>
 <p>对于这样的周期函数的计算软件库例程，任何实值输入的首先使用参数约简来找到等效角度；
 然后，查表或多项式插值可以准确地找<em>约简参数</em>三角函数值。
@@ -646,7 +646,7 @@ ubound, 误差损失最小的是二进制数值实际上是</p>
 <p>以下是一些有关h-layer的建议“语法规则”：表达有关输入的需求和让步的方法，以及计算机表达其对输出结果的准确性的表达方法。</p>
 <div class="figure align-default" id="id30">
 <img alt="_images/image-20200730151604493.png" src="_images/image-20200730151604493.png" />
-<p class="caption"><span class="caption-number">Fig. 74 </span><span class="caption-text">image-20200730151604493</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 75 </span><span class="caption-text">image-20200730151604493</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
 </div>
 <p>“…”代替“<span class="math notranslate nohighlight">\(\cdots\)</span>”很难阅读，因为省略号“…”中的点看起来像小数点，因此我们更倾向于将“<span class="math notranslate nohighlight">\(\cdots\)</span>”稍微升高一点，以表示“显示的最后一位数字后面有更多数字””。本书中使用该方法。原型程序不支持所有上面建议的格式。列在这里是为了说明已经有多种可读格式方式去表达的精确的和不精确的数。在包括unums的任何计算机语言中，语法都应支持表达输入要求和让步的方法，并且<strong>准确性信息必须始终包含在输出中</strong>。</p>
 <p>如果将计算出的数字发送到大容量存储中以备后用，那么保留二进制unum显然是避免丢失信息的最佳方法。如果必须将数字转换为代表h-layer十进制格式的字符，则上表提供了一些符号来帮助记录精度。如果我们忽略精度信息，那么就将数字错误地表示为精确的，这就是导致浮点算法如此之多问题的原因。</p>
@@ -655,13 +655,13 @@ ubound, 误差损失最小的是二进制数值实际上是</p>
 [fraction]</strong>，当分数是一个整数除以2的幂时，显示正确的小数位数以表示精确分数值。例如：</p>
 <div class="figure align-default" id="id31">
 <img alt="_images/image-20200730160802357.png" src="_images/image-20200730160802357.png" />
-<p class="caption"><span class="caption-number">Fig. 75 </span><span class="caption-text">image-20200730160802357</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 76 </span><span class="caption-text">image-20200730160802357</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
 </div>
 <p>可以将autoN函数与开闭信息结合使用，以准确显示unum或ubound。
 尽管将unums块存储为二进制要经济得多，但是如果要让一个块易于阅读更重要时，可以将ubund的数学表示存储为如下以空格分隔的字符串：</p>
 <div class="figure align-default" id="id32">
 <img alt="_images/image-20200730161139983.png" src="_images/image-20200730161139983.png" />
-<p class="caption"><span class="caption-number">Fig. 76 </span><span class="caption-text">image-20200730161139983</span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 77 </span><span class="caption-text">image-20200730161139983</span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
 </div>
 <p>所有这些字符串都可以完美地转换回其原始ubound（具有相同或更大的环境设置）。
 正如unum的长度可调有时反而可以节省空间一样，我们有时最好不要使用固定长度的格式。
@@ -693,30 +693,30 @@ unum”），其代码在附录C.5中，适用于对unums的实现细节感兴�
 首先，将环境设置为最多<span class="math notranslate nohighlight">\(2^2\)</span>个指数位和最多<span class="math notranslate nohighlight">\(2^3\)</span>个小数位：</p>
 <div class="figure align-default" id="id33">
 <img alt="_images/image-20200730163158928.png" src="_images/image-20200730163158928.png" />
-<p class="caption"><span class="caption-number">Fig. 77 </span><span class="caption-text">image-20200730163158928</span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 78 </span><span class="caption-text">image-20200730163158928</span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
 </div>
 <p>在这种环境下，下面显示是负无穷大的unum，除ubit之外，每个位都设置为1：</p>
 <div class="figure align-default" id="id34">
 <img alt="_images/image-20200730163313099.png" src="_images/image-20200730163313099.png" />
-<p class="caption"><span class="caption-number">Fig. 78 </span><span class="caption-text">image-20200730163313099</span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 79 </span><span class="caption-text">image-20200730163313099</span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
 </div>
 <p>一个unum环境还需要一些常量，例如<span class="math notranslate nohighlight">\(\pi\)</span>
 。<strong>x2u</strong>转换仅需要有关值的信息就可以确保正确转换为最小的ULP：</p>
 <div class="figure align-default" id="id35">
 <img alt="_images/image-20200730163552088.png" src="_images/image-20200730163552088.png" />
-<p class="caption"><span class="caption-number">Fig. 79 </span><span class="caption-text">image-20200730163552088</span><a class="headerlink" href="#id35" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 80 </span><span class="caption-text">image-20200730163552088</span><a class="headerlink" href="#id35" title="Permalink to this image">¶</a></p>
 </div>
 <p>注意这里我们可以用utag左边10bit就表示<span class="math notranslate nohighlight">\(\pi\)</span>的3位有效数字。</p>
 <p>如果我们计算中有NaN,
 我们假设一定是安静的NaN，否则我们就要停止运算了。这就是为什么g-layer只有一种NaN的原因。</p>
 <div class="figure align-default" id="id36">
 <img alt="_images/image-20200730164559780.png" src="_images/image-20200730164559780.png" />
-<p class="caption"><span class="caption-number">Fig. 80 </span><span class="caption-text">image-20200730164559780</span><a class="headerlink" href="#id36" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 81 </span><span class="caption-text">image-20200730164559780</span><a class="headerlink" href="#id36" title="Permalink to this image">¶</a></p>
 </div>
 <p>当实数正好是2的幂次时候，转换函数会优先将比特放在指数里这可以减少总共的比特数。</p>
 <div class="figure align-default" id="id37">
 <img alt="_images/image-20200730164818329.png" src="_images/image-20200730164818329.png" />
-<p class="caption"><span class="caption-number">Fig. 81 </span><span class="caption-text">image-20200730164818329</span><a class="headerlink" href="#id37" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 82 </span><span class="caption-text">image-20200730164818329</span><a class="headerlink" href="#id37" title="Permalink to this image">¶</a></p>
 </div>
 <p>看上去好像挺浪费因为有那么多前导0在指数上，但是每减少指数位数，小数位数长度会指数增加。这已经是最小表示了。</p>
 <p>太小的数在(0, smallsubnormal)的unum数表示： (TODO:
@@ -724,7 +724,7 @@ unum”），其代码在附录C.5中，适用于对unums的实现细节感兴�
 最短的表示应该是5位指数，需要{3，#}的环境才能表达，这个环境中只能用sub-normal来做了)</p>
 <div class="figure align-default" id="id38">
 <img alt="_images/image-20200730165514581.png" src="_images/image-20200730165514581.png" />
-<p class="caption"><span class="caption-number">Fig. 82 </span><span class="caption-text">image-20200730165514581</span><a class="headerlink" href="#id38" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 83 </span><span class="caption-text">image-20200730165514581</span><a class="headerlink" href="#id38" title="Permalink to this image">¶</a></p>
 </div>
 <table border="2"><tr><td bgcolor="lightgray"><p>读者的练习：当一个数特别大不能被精确表示比如 100^100，
 如何在环境{2，3}中表示？ 包含100^100最小比特数的不精确unum数是什么？
@@ -738,7 +738,7 @@ unum”），其代码在附录C.5中，适用于对unums的实现细节感兴�
 = x：</p>
 <div class="figure align-default" id="id39">
 <img alt="_images/image-20200730170803555.png" src="_images/image-20200730170803555.png" />
-<p class="caption"><span class="caption-number">Fig. 83 </span><span class="caption-text">image-20200730170803555</span><a class="headerlink" href="#id39" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 84 </span><span class="caption-text">image-20200730170803555</span><a class="headerlink" href="#id39" title="Permalink to this image">¶</a></p>
 </div>
 <p>全范围测试转换函数<strong>x2u</strong>和<strong>u2g</strong>看起来在精度极限内像是理想的互逆，但当然该图可能会错过某些尺度上的异常。右上方的图形检查从subnormal到normal的过渡，看起来仍然像连续线。但是如果将图放大到只有几个值的点，我们最终可以看到离散的unum矩形；它们包含理想的y
 =
@@ -763,7 +763,7 @@ x曲线上呈锯齿状，每一个台阶除了一个值，其他的都丢失了�
 下图总结了在各层之间移动的所有原型功能。</p>
 <div class="figure align-default" id="id40">
 <img alt="_images/image-20200730172257476.png" src="_images/image-20200730172257476.png" />
-<p class="caption"><span class="caption-number">Fig. 84 </span><span class="caption-text">image-20200730172257476</span><a class="headerlink" href="#id40" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 85 </span><span class="caption-text">image-20200730172257476</span><a class="headerlink" href="#id40" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>view</strong>函数很健壮，因为它们可以查看参数数据类型并根据需要自动进行转换。
 这就是为什么视图功能是指向左两条带箭头线的原因，因为值可以来自任一层。
@@ -776,7 +776,7 @@ x曲线上呈锯齿状，每一个台阶除了一个值，其他的都丢失了�
 <h2>5.7 浮点“对政府的工作就足够好”吗？<a class="headerlink" href="#id12" title="Permalink to this heading">¶</a></h2>
 <div class="figure align-default" id="id41">
 <img alt="_images/image-20200730174251692.png" src="_images/image-20200730174251692.png" />
-<p class="caption"><span class="caption-number">Fig. 85 </span><span class="caption-text">image-20200730174251692</span><a class="headerlink" href="#id41" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 86 </span><span class="caption-text">image-20200730174251692</span><a class="headerlink" href="#id41" title="Permalink to this image">¶</a></p>
 </div>
 <blockquote>
 <div><center><p>由于计算机程序试图将64位浮点数填充到16位制导系统中，导致1996年欧洲航天局“阿丽亚娜”

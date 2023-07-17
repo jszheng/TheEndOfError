@@ -195,7 +195,7 @@ Show Source
 <h1>10 乘法和除法<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
 <div class="figure align-default" id="id9">
 <img alt="_images/image-20230621153224229.png" src="_images/image-20230621153224229.png" />
-<p class="caption"><span class="caption-number">Fig. 147 </span><span class="caption-text">image-20230621153224229</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 148 </span><span class="caption-text">image-20230621153224229</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <blockquote>
 <div><p>在第一次海湾战争中，美国让爱国者导弹处于准备状态，以便在需要时立即发射，并保持准备状态好几天。
@@ -222,12 +222,12 @@ Show Source
 右端点是2。但是两个-1的情况不一样。下面这个例子的图，跟以前一样使用圆-方表示端点。三维图上乘积是一个鞍形的表面。</p>
 <div class="figure align-default" id="id10">
 <img alt="_images/image-20230623191756777.png" src="_images/image-20230623191756777.png" />
-<p class="caption"><span class="caption-number">Fig. 148 </span><span class="caption-text">image-20230623191756777</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 149 </span><span class="caption-text">image-20230623191756777</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <p>x-y平面上方看，乘积的最大值（蓝色线）是开（圆形）端点，在<span class="math notranslate nohighlight">\(2 \times 1=2\)</span>那里。要想看清楚最小点（橙色线），下图是从鞍形表面的下方看：</p>
 <div class="figure align-default" id="id11">
 <img alt="_images/image-20230623194036899.png" src="_images/image-20230623194036899.png" />
-<p class="caption"><span class="caption-number">Fig. 149 </span><span class="caption-text">image-20230623194036899</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 150 </span><span class="caption-text">image-20230623194036899</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <p>两个端点一个是闭的(-1x1),
 一个是开的（2x-0.5）。相反象限中的乘积将争夺极值，结果是闭的[-1, 2) 。</p>
@@ -244,7 +244,7 @@ Show Source
 <p>下面分别是g-layer的左右端的表，不含负值。其中洋红色的情况是需要思考的</p>
 <div class="figure align-default" id="id12">
 <img alt="_images/image-20230623200226349.png" src="_images/image-20230623200226349.png" />
-<p class="caption"><span class="caption-number">Fig. 150 </span><span class="caption-text">image-20230623200226349</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 151 </span><span class="caption-text">image-20230623200226349</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <p>如果两端点都负值，那么就如同我们用-x, -y去查表得到的结果。</p>
 <p>如果只有x或y是负值，那么我们将负的参数取反，同时改变表左和右。看上面的3d图，在第2，4象限，x,y越大，积离0越远。我们必须翻转极值的顺序。</p>
@@ -254,17 +254,17 @@ Show Source
 <p>尝试一下上面的例子，使用环境{2，4}</p>
 <div class="figure align-default" id="id13">
 <img alt="_images/image-20230623202157159.png" src="_images/image-20230623202157159.png" />
-<p class="caption"><span class="caption-number">Fig. 151 </span><span class="caption-text">image-20230623202157159</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 152 </span><span class="caption-text">image-20230623202157159</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 <p>传统浮点0乘以无穷是NaN</p>
 <div class="figure align-default" id="id14">
 <img alt="_images/image-20230623202319915.png" src="_images/image-20230623202319915.png" />
-<p class="caption"><span class="caption-number">Fig. 152 </span><span class="caption-text">image-20230623202319915</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 153 </span><span class="caption-text">image-20230623202319915</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 <p>但是用unum，我们可以在有些情况下得到答案</p>
 <div class="figure align-default" id="id15">
 <img alt="_images/image-20230623202433317.png" src="_images/image-20230623202433317.png" />
-<p class="caption"><span class="caption-number">Fig. 153 </span><span class="caption-text">image-20230623202433317</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 154 </span><span class="caption-text">image-20230623202433317</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 <p>就像加减法，当计算从g-layer转到u-layer时候，有可能从精确值变成不精确值，从而从闭区间变成开区间。</p>
 <p>而乘法有可能使得计算落入了(0, smallsubnormal)或是(-smallsubnormal, 0)</p>
@@ -273,7 +273,7 @@ Show Source
 <h2>10.2 unum乘法的硬件实现<a class="headerlink" href="#unum" title="Permalink to this heading">¶</a></h2>
 <div class="figure align-default" id="id16">
 <img alt="_images/image-20230623203738343.png" src="_images/image-20230623203738343.png" />
-<p class="caption"><span class="caption-number">Fig. 154 </span><span class="caption-text">image-20230623203738343</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 155 </span><span class="caption-text">image-20230623203738343</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 <blockquote>
 <div><p>每个好的工具系列都有各种尺寸的螺丝刀、钳子、锤子等。
@@ -304,12 +304,12 @@ u-layer时显然不会准确，则暂存器中的处理不需要准确。
 <p>乘法平行四边形是硬件高精度乘法器实现需要的面积为啥跟精度的平方成正比。到某个点需要更复杂的方法。对于一个unum对，只有一部分的平行四边形才会被使用，其他部分可以保持关闭状态来节省功耗。下图中橙红色部分是用来计算一个24x7的，蓝绿色的部分可以关闭不用。</p>
 <div class="figure align-default" id="id17">
 <img alt="_images/image-20230623211843624.png" src="_images/image-20230623211843624.png" />
-<p class="caption"><span class="caption-number">Fig. 155 </span><span class="caption-text">image-20230623211843624</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 156 </span><span class="caption-text">image-20230623211843624</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 <p>历史上，设计师也常常为了低精度的乘法器使用这个方法来分割乘法平行四边形，unum可以分割在任何地方，不一定在半中央。</p>
 <div class="figure align-default" id="id18">
 <img alt="_images/image-20230623212123085.png" src="_images/image-20230623212123085.png" />
-<p class="caption"><span class="caption-number">Fig. 156 </span><span class="caption-text">image-20230623212123085</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 157 </span><span class="caption-text">image-20230623212123085</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
 <p>这提供了一种方法可以同时计算ubound的两个端点，如果他们的小数位串和不超过最大长度的话。不过老实说现代的芯片并不缺乘法器。最新一代的Intel至强处理器有数百个乘法器，但是他们只占用芯片面积的百分之几。稍微修改加上识别上一节的左右乘法表，将用做支持一定环境大小的高速
 unum 乘法器，更大的数将需要扩展精度乘法。</p>
@@ -361,7 +361,7 @@ NOT，找到第 10.1 节中所示的左右乘法表条目的表达式</p>
 <h2>10.3 除法在论证中引入了不对称性<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h2>
 <div class="figure align-default" id="id19">
 <img alt="_images/image-20230624105717630.png" src="_images/image-20230624105717630.png" />
-<p class="caption"><span class="caption-number">Fig. 157 </span><span class="caption-text">image-20230624105717630</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 158 </span><span class="caption-text">image-20230624105717630</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
 <blockquote>
 <div><center><p>despair.com网站上我最喜欢的一张</p>
@@ -401,7 +401,7 @@ NOT，找到第 10.1 节中所示的左右乘法表条目的表达式</p>
 即使 Mathematica 中的区间算术也会犯这个错误。例如</p>
 <div class="figure align-default" id="id20">
 <img alt="_images/image-20230624122646849.png" src="_images/image-20230624122646849.png" />
-<p class="caption"><span class="caption-number">Fig. 158 </span><span class="caption-text">image-20230624122646849</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 159 </span><span class="caption-text">image-20230624122646849</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
 <p>这个答案破坏了间隔在数学上的含义规则：即返回端点之间的所有实际值。
 区间数据类型无法与用户进行交流说：“我的意思是，这个情况下，<span class="math notranslate nohighlight">\(–\infty\)</span>
@@ -416,11 +416,11 @@ NaN。 除了 NaN 之外，ubound 结果始终是连通集。</p>
 right” 表</p>
 <div class="figure align-default" id="id21">
 <img alt="_images/image-20230624200846523.png" src="_images/image-20230624200846523.png" />
-<p class="caption"><span class="caption-number">Fig. 159 </span><span class="caption-text">image-20230624200846523</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 160 </span><span class="caption-text">image-20230624200846523</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="id22">
 <img alt="_images/image-20230624200903184.png" src="_images/image-20230624200903184.png" />
-<p class="caption"><span class="caption-number">Fig. 160 </span><span class="caption-text">image-20230624200903184</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 161 </span><span class="caption-text">image-20230624200903184</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
 </div>
 <p>与往常一样，需要小心思考的案例以洋红色表示。
 只要开或闭端点类型不是两个输入的打开状态的简单“OR”，它们就会是有色的 [ ]
@@ -432,7 +432,7 @@ right” 表</p>
 由于两个计算都包含一个开端点，结果两端点都是开。</p>
 <div class="figure align-default" id="id23">
 <img alt="_images/image-20230624201946639.png" src="_images/image-20230624201946639.png" />
-<p class="caption"><span class="caption-number">Fig. 161 </span><span class="caption-text">image-20230624201946639</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 162 </span><span class="caption-text">image-20230624201946639</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
 </div>
 <p>原型代码有divideg和divideu函数分别用于g-layer和u-layer，见附件C.11。</p>
 <table border="2"><tr><td bgcolor="lightgray"><p>读者的练习在[2, 0]环境里有63个精确的unum值。如果unum u 和 v
@@ -460,7 +460,7 @@ ubound 操作将需要一对除法而不是一个。</p>
 的幂，而是存储无符号整数分子 p 和分母 q，两者都使用扩展精度存储</p>
 <div class="figure align-default" id="id24">
 <img alt="_images/image-20230624204217779.png" src="_images/image-20230624204217779.png" />
-<p class="caption"><span class="caption-number">Fig. 162 </span><span class="caption-text">image-20230624204217779</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 163 </span><span class="caption-text">image-20230624204217779</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
 </div>
 <p>这是一个更昂贵的内部暂存器，但在处理除法运算方面更胜一筹，因为它支持精确的有理算术。
 由于上面的暂存器看起来对于能源效率来说是一个很大的倒退，因此我们将在 g

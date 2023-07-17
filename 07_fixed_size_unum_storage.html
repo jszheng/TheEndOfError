@@ -195,7 +195,7 @@ Show Source
 <h1>7 定长的unum存储<a class="headerlink" href="#unum" title="Permalink to this heading">¶</a></h1>
 <div class="figure align-default" id="id3">
 <img alt="_images/image-20230615195044276.png" src="_images/image-20230615195044276.png" />
-<p class="caption"><span class="caption-number">Fig. 96 </span><span class="caption-text">image-20230615195044276</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 97 </span><span class="caption-text">image-20230615195044276</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <blockquote>
 <div><p><strong>托马斯·贝恩斯</strong>，托马斯·贝恩斯与澳大利亚<a class="reference external" href="https://zh.wikipedia.org/wiki/北領地">北领地</a>的原住民在维多利亚河口附近，1857年。在瓦尔皮里原住民与其他文化有太多接触之前，他们的计数系统是“一、二、多”。</p>
@@ -220,7 +220,7 @@ Signaling NaN和quiet
 NaN）。如下图表示在实数线上方是比特位向量，接着是通常的对于数和间隔的数学表示最后一行是英文表达数量的原住民词汇。</p>
 <div class="figure align-default" id="id4">
 <img alt="_images/image-20230615202420916.png" src="_images/image-20230615202420916.png" />
-<p class="caption"><span class="caption-number">Fig. 97 </span><span class="caption-text">image-20230615202420916</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 98 </span><span class="caption-text">image-20230615202420916</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>小学教的加法和乘法表通常是数字 0 到
 10。除此之外，您还需要推铅笔算法进行多位数运算，这让大多数学生从小就讨厌数学。
@@ -271,7 +271,7 @@ NaN）。如下图表示在实数线上方是比特位向量，接着是通常�
 <p>ubound集合中包含15个单点unum（如上一节所示），还有78个unum对，总共93个瓦尔皮里ubounds。前面说过可以总是使用unum对来节省一个指示pair的bit，单unum的表示用两个相同数表示，总共正好是一个byte。下面列出所有的ubounds，用三种不同方式表示：数学的(通用的间隔表示)，英语语言表示的，和比特串。</p>
 <div class="figure align-default" id="id5">
 <img alt="_images/image-20230619085206855.png" src="_images/image-20230619085206855.png" />
-<p class="caption"><span class="caption-number">Fig. 98 </span><span class="caption-text">image-20230619085206855</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 99 </span><span class="caption-text">image-20230619085206855</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>下面是一些瓦尔皮里ubounds的操作例子：</p>
 <table class="docutils align-default">
@@ -330,7 +330,7 @@ unum/ubound作为例子，因为这是如此少的简单的数，可以脑子直
 <p>要快速完成检测需要构建一个逻辑树，把16bit约减到1bit。如果只用NAND门和反相门来做，那么电路如下：</p>
 <div class="figure align-default" id="id6">
 <img alt="_images/image-20230619123741083.png" src="_images/image-20230619123741083.png" />
-<p class="caption"><span class="caption-number">Fig. 99 </span><span class="caption-text">image-20230619123741083</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 100 </span><span class="caption-text">image-20230619123741083</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>即使你对逻辑设计不懂，也能基本感觉到需要的复杂度和执行时间。如果一个反相器是一个单位门延迟，面积2个晶体管。一个NAND要4个晶体管面积和一个单位门延迟(CMOS逻辑)。这个逻辑树需要7个门延迟和110个晶体管。想象一下双精度浮点，那需要4倍的晶体管数量和11个门延迟。当然实际的实现会不太一样。如果所有的指数位都是1（and上所有比特），那么才会检测余下的比特是否全0，
 否则就不需要检测其他比特。而要判断隐藏的领头小数位是否1，需要判断所有指数位为0（or上所有比特），树形结构也跟上面的很相似。</p>
@@ -355,7 +355,7 @@ bit是unum的重要fature，是从一些bit组合而来，通过预先解码unum
 <p>我们同样也不想两步来提取信息，寄存器中es和fs域都留到最大。最后一个定长的寄存器表达的格式如下</p>
 <div class="figure align-default" id="id7">
 <img alt="_images/image-20230619145446130.png" src="_images/image-20230619145446130.png" />
-<p class="caption"><span class="caption-number">Fig. 100 </span><span class="caption-text">image-20230619145446130</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 101 </span><span class="caption-text">image-20230619145446130</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>summary位的创建一是从内存中读入寄存器时候解包算出来，而是算术运算后得到。其中的域如果底层指令能随便修改，会很容易创造出一个不一致的，互相矛盾的unum。所以解包后的数据一般不是给程序员摆弄的，只是给计算机系统来用。其中</p>
 <ul>
@@ -369,7 +369,7 @@ fsize，小数域的所有位都是0，
 指数位全是1的时候置位这个summary。注意这四个域都是变长的，右对齐。所以还是在解码后考虑环境的设置。还记得那个110个晶体管做的无限值的树形检测电路吗，这里只需要简单用<span class="math notranslate nohighlight">\(\overline{b_{63} \&amp; \overline{b_{61}}}\)</span>来计算出。这使得面积减小95%，执行时间小71%。也许芯片设计者就不太反对unum。由于解包后的格式是固定长度，也不需要rounding，异常处理可以更快更简单。解包过程本身是跟内存读取一起做的，存储的读时间通常远比解包时间长。</p>
 <div class="figure align-default" id="id8">
 <img alt="_images/image-20230619152519536.png" src="_images/image-20230619152519536.png" />
-<p class="caption"><span class="caption-number">Fig. 101 </span><span class="caption-text">image-20230619152519536</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 102 </span><span class="caption-text">image-20230619152519536</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>异常情况，比如x是不是NaN,
 无穷，可以跟其他硬件并行运行，假设回答会是NO。这样异常处理就不会增加正常算术运算的时间。这个判断的时间是并行的，很短。如果发现结果是YES，那么可以中断正常技术，但是能量已经浪费了。如果对功耗特别要求高的可以串行进行，用了summary位也不会占用太长时间。</p>
@@ -383,14 +383,14 @@ ubound的pair位。1表示还有高位的寄存器用来存储第二部分（如
 pad的真假位上（回顾一下带？的域）。</p>
 <div class="figure align-default" id="id9">
 <img alt="_images/image-20230619154910550.png" src="_images/image-20230619154910550.png" />
-<p class="caption"><span class="caption-number">Fig. 102 </span><span class="caption-text">image-20230619154910550</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 103 </span><span class="caption-text">image-20230619154910550</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <p>下面是一个例子，解包后的64b寄存器表示一个很小的范围(-smallsubnormal,
 0), 环境是{2, 3},
 就是开区间<span class="math notranslate nohighlight">\(\left ( -\frac{1}{16384}, 0 \right)\)</span></p>
 <div class="figure align-default" id="id10">
 <img alt="_images/image-20230619155254769.png" src="_images/image-20230619155254769.png" />
-<p class="caption"><span class="caption-number">Fig. 103 </span><span class="caption-text">image-20230619155254769</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 104 </span><span class="caption-text">image-20230619155254769</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <table border="4"><tr><td bgcolor="lightblue"><p>芯片设计者注意:
 空白寄存器部分是不用的，设计不应该导致耗费功耗，只要环境还是保持没有变.就像是机场的扫雪车一样，天气好的时候应该不需要启动引擎</p>

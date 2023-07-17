@@ -4,6 +4,10 @@ THE END of ERROR - Unum Computing
 
 Written By John L. Gustafson
 
+.. figure:: http://www.johngustafson.net/pix/TheEndOfError.png
+
+   The End of Error
+
 错误的终结 - unum计算方法
 =========================
 
@@ -16,7 +20,9 @@ kindle版本）
 
 注意unum系统自从2015年本书出版，到今天已经进化到第三版。最新版本现在被称为
 Posit（ https://posithub.org/
-），这是一种更像IEEE浮点数的定义，也有不同长度的标准定义。而本书关于完全消除计算错误的想法在Posit中被称为valid，目前还在发展过程中。等待John的下一本书吧。
+），这是一种更像IEEE浮点数的定义，也有不同长度的标准定义。而本书关于完全消除计算错误的想法在Posit中被称为valid，目前还在发展过程中。等待John的下一本书吧
+(或可以先看\ `Posit算术 <https://jszheng.github.io/PositArithmetic/>`__\ 文档来提前了解一下)
+。
 按照本书的说法，最终目的是让用户无需思考，都会被包装成完美的数学库供大家使用。
 
 .. toctree::
