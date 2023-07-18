@@ -4,7 +4,7 @@ THE END of ERROR - Unum Computing
 
 Written By John L. Gustafson
 
-.. figure:: http://www.johngustafson.net/pix/TheEndOfError.png
+.. figure:: assets/TheEndOfError.png
 
    The End of Error
 
